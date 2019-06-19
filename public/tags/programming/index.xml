@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Jared Connor</title>
+    <link>http://www.jaredtconnor.com/tags/programming/</link>
+    <description>Recent content in programming on Jared Connor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.jaredtconnor.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding Object Oriented Programming</title>
+      <link>http://www.jaredtconnor.com/blog/object_oriented_programming/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/object_oriented_programming/</guid>
+      <description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.</description>
+    </item>
+    
+  </channel>
+</rss>

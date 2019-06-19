@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Jared Connor">
+    <meta name="description" content="Jared Connor&#39;s personal website and blog">
+    <meta name="keywords" content="blog,developer,personal,economics,finance,analyst">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Stock Price Scraper"/>
+<meta name="twitter:description" content="Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the [Pandas]() package. On top of that, we can use the ever useful [BeautifulSoup]() package, which allows us to make automated scripts to interact with HTML backed webpages."/>
+
+    <meta property="og:title" content="Stock Price Scraper" />
+<meta property="og:description" content="Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the [Pandas]() package. On top of that, we can use the ever useful [BeautifulSoup]() package, which allows us to make automated scripts to interact with HTML backed webpages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.jaredtconnor.com/projects/stock-price-scaper/" />
+<meta property="article:published_time" content="2017-08-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-08-30T00:00:00&#43;00:00"/>
+
+
+    
+      <base href="http://www.jaredtconnor.com/projects/stock-price-scaper/">
+    
+    <title>
+  Stock Price Scraper · Jared Connor
+</title>
+
+    
+      <link rel="canonical" href="http://www.jaredtconnor.com/projects/stock-price-scaper/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="http://www.jaredtconnor.com/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+      <link rel="stylesheet" href="http://www.jaredtconnor.com/css/custom.css" />
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="http://www.jaredtconnor.com/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://www.jaredtconnor.com/img/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.5" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://www.jaredtconnor.com/">
+      Jared Connor
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://www.jaredtconnor.com/blog/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://www.jaredtconnor.com/projects/">Projects</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Stock Price Scraper</h1>
+    </header>
+
+    
+
+<h1 id="understanding-pandas-in-python">Understanding Pandas in Python:</h1>
+
+<p>This was one of my first projects in python to understand data frames. Anyone interested in
+data analysis with Python needs to understand how to use, manipulate, and structure data in
+ways that are useful and required for your analysis. Thankfully, there are some <em>incredibly</em>
+smart developers in this world that understand the importance of this task, so they developed
+the [<strong>Pandas</strong>]() package. On top of that, we can use the ever useful [<strong>BeautifulSoup</strong>]()
+package, which allows us to make automated scripts to interact with HTML backed webpages.</p>
+
+<p>The way Beautiful soup works is by making an HTML request to a specific web page, and
+given the structure of the webpage, we can specify places where we want to <em>scrape</em> information.</p>
+
+<p>First off, here are the dependencies:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">import</span> <span style="font-weight:bold">bs4</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">bs</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">datetime</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">dt</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">os</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">pandas</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">pd</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">pandas_datareader.data</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">web</span>
+<span style="font-weight:bold">from</span> <span style="font-weight:bold">pandas_datareader._utils</span> <span style="font-weight:bold">import</span> RemoteDataError
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">pickle</span>
+<span style="font-weight:bold">import</span> <span style="font-weight:bold">requests</span></code></pre></div>
+<p>This function below does just that: Obviously, we could write out a long list that contains all
+of the ticker symbols for the S&amp;P 500. But, there is probably structured data on some website
+(<em>cough</em> Wikipedia <em>cough</em>) that we can use for the heavy lifting.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-style:italic">#Scrapes wikipedia S&amp;P 500 ticker table to create object</span>
+<span style="font-weight:bold">def</span> save_sp500_tickers():
+    resp = requests.get(<span style="font-style:italic">&#34;https://en.wikipedia.org/wiki/List_of_S%26P_500_companies&#34;</span>)
+    soup = bs.BeautifulSoup(resp.text, <span style="font-style:italic">&#34;html.parser&#34;</span>)
+    table = soup.find(<span style="font-style:italic">&#39;table&#39;</span>, {<span style="font-style:italic">&#39;class&#39;</span>:<span style="font-style:italic">&#39;wikitable sortable&#39;</span>})
+    tickers = []
+
+    <span style="font-weight:bold">for</span> row <span style="font-weight:bold">in</span> table.find_all(<span style="font-style:italic">&#39;tr&#39;</span>)[1:]:
+        ticker = row.find_all(<span style="font-style:italic">&#39;td&#39;</span>)[0].text
+        tickers.append(ticker)
+
+    <span style="font-weight:bold">with</span> open(<span style="font-style:italic">&#39;sp500_tickers.pickle&#39;</span>, <span style="font-style:italic">&#39;wb&#39;</span>) <span style="font-weight:bold">as</span> f:
+        pickle.dump(tickers, f)</code></pre></div>
+<p>This gives us a great list for all 500 ticker symbols. If you aren&rsquo;t familiar with Pickles
+in Python, they are essentially a write-able file that can store data in a more compressed
+manner than, say, a csv file. More info on them can be found here: <strong>INSERT PICKLE LINK</strong></p>
+
+<p>No for the fun stuff, we need to actually pull the pricing info for given period of time.
+We will first pickle in our ticker list, then actually use the yahoo finance port via the
+pandas data reader library to pull real time pricing information for us. This package was
+maintained back when I began this project, but I believe it&rsquo;s been discontinued.
+<strong>INSERT ALTERNATIVE TO YAHOO FINANCE</strong>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-style:italic">#Gathering all ADJ close data from Yahoo API for tickers created</span>
+<span style="font-style:italic">#and storing in stock_data directory</span>
+<span style="font-weight:bold">def</span> get_data_from_yahoo(reload_sp500=False):
+    <span style="font-weight:bold">if</span> reload_sp500:
+        tickers = save_sp500_tickers()
+    <span style="font-weight:bold">else</span>:
+        <span style="font-weight:bold">with</span> open(<span style="font-style:italic">&#34;sp500_tickers.pickle&#34;</span>, <span style="font-style:italic">&#34;rb&#34;</span>) <span style="font-weight:bold">as</span> f:
+            tickers = pickle.load(f)
+
+    <span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> os.path.exists(<span style="font-style:italic">&#34;stock_data&#34;</span>):
+        os.makedirs(<span style="font-style:italic">&#34;stock_data&#34;</span>)
+
+
+    start = dt.datetime(2000,1,1)
+    end = dt.datetime(2016,12,31)
+
+    <span style="font-weight:bold">for</span> ticker <span style="font-weight:bold">in</span> tickers:
+        <span style="font-weight:bold">try</span>:
+            <span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> os.path.exists(<span style="font-style:italic">&#34;stock_data/{}&#34;</span>.format(ticker)):
+                df = web.DataReader(ticker, <span style="font-style:italic">&#39;yahoo&#39;</span>, start, end)
+                df.to_csv(<span style="font-style:italic">&#34;stock_data/{}&#34;</span>.format(ticker))
+                <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Gathered data on {}&#34;</span>.format(ticker))
+            <span style="font-weight:bold">else</span>:
+                <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Already have data for {}&#34;</span>.format(ticker))
+
+        <span style="font-weight:bold">except</span> RemoteDataError:
+            <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Data Error&#34;</span>)
+            <span style="font-weight:bold">continue</span>
+            
+get_data_from_yahoo()</code></pre></div>
+<p>The main for loop here is the money maker. We&rsquo;re going to iteratively step through each
+ticker, and using the pandas data reader, specify to pull the high price, low price, and
+volume for the specified date range on a daily basis. For each of these, we&rsquo;re going to pop
+this data out into a simple CSV file according to the ticker&rsquo;s name. Throw in some
+additional try/except catches and this process could easily work for pulling stock price information.</p>
+
+<h3 id="what-did-we-learn">What did we learn:</h3>
+
+<p>While this was one of my first projects, and hindsight is <sup>20</sup>&frasl;<sub>20</sub>, this started a rather deep and
+continued dive into thinking about problems from a data perspective. While I learned about data
+abstraction in my later computer science courses and am still learning about how to properly store
+this data, thinking this way provides a simple heuristic to solve problems:</p>
+
+<blockquote>
+<p>Any problem can typically be solved with information, and information exists as data somewhere</p>
+</blockquote>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Here you can find  projects I've conjured up, mostly relating to economics, data infastructures, computer science, and policy.</p>
+    
+     © 2019
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

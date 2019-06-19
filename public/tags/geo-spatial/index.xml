@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geo spatial on Jared Connor</title>
+    <link>http://www.jaredtconnor.com/tags/geo-spatial/</link>
+    <description>Recent content in geo spatial on Jared Connor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.jaredtconnor.com/tags/geo-spatial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Predict Economics Indicators with OpenStreetMap</title>
+      <link>http://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid>
+      <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
+This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description>
+    </item>
+    
+  </channel>
+</rss>

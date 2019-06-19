@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Jared Connor</title>
+    <link>http://www.jaredtconnor.com/blog/</link>
+    <description>Recent content in Blogs on Jared Connor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.jaredtconnor.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Questions about economics</title>
+      <link>http://www.jaredtconnor.com/blog/questions_about_economics/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/questions_about_economics/</guid>
+      <description>Questions About Economics I was lucky enough to be asked by one of my favorite undergrad professors, Ed Whitelaw, to come back down to Eugene to speak on a panel of his past students to speak. The topic included a career day regarding economics and what such an education means in the real world. Here are a number of the questions and my associated answers:
+ What economic tools/fields do you see as most critical to careers in your area?</description>
+    </item>
+    
+    <item>
+      <title>The Marvel of the Human Dad</title>
+      <link>http://www.jaredtconnor.com/blog/the-marvel-of-the-human-dad/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/the-marvel-of-the-human-dad/</guid>
+      <description>The marvel of the Human Dad is a great article I stumbled upon the other day. It&amp;rsquo;s about the studies done by Anna Machin, a Oxford anthropologist, on the role and anthropologic reasoning that homo sapien fathers contribute to the family. This is a stark contrast between nearly all other mammal species (specifically all other 95%) where the non investing fathers commonly leave or dont provide for the newborn.
+Her reasoning tails on the fact that humans typically have a very short gestation period, which requires a lot of nurturing, and even an entire period of growth that no other mammal experiences (adolescents).</description>
+    </item>
+    
+    <item>
+      <title>Understanding Object Oriented Programming</title>
+      <link>http://www.jaredtconnor.com/blog/object_oriented_programming/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/object_oriented_programming/</guid>
+      <description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.</description>
+    </item>
+    
+    <item>
+      <title>Conversations with Tyler: Robin Wiblin from 80000 Hours</title>
+      <link>http://www.jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</link>
+      <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</guid>
+      <description>I feel fairly comfortable stating that this is my favorite podcast of the year. Nearly anything that Tyler Cowen touches is filled to the Brim with nuggets of insight, but this piece takes the cake for being the most comprehensive categorization of his thoughts on moral philosophy, economics, how one should order themselves in the current economy and so on.
+It seems fitting that Robin Wiblin would be the person to incite such a conversation.</description>
+    </item>
+    
+    <item>
+      <title>Kierkegaard on boredom</title>
+      <link>http://www.jaredtconnor.com/blog/kierkegaard-on-busyness/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/kierkegaard-on-busyness/</guid>
+      <description>Kierkegaard on Boredom and Busyness: This was a great article about Soren Kierkegaard&amp;rsquo;s discourse on being busy. This article is incredibly easy to resonate with. Opposed to wallowing in the modern competitiveness of keeping up with the Jones, one should realize the drive for one to be busy as an indication of spinning their wheels to no ultimate aim or end.
+A short passage from the article:
+ For Kierkegaard, busy people are experiencing something indeterminate because their activities are not directed towards some particular good.</description>
+    </item>
+    
+    <item>
+      <title>Heads or Tails - Paper on big life choices</title>
+      <link>http://www.jaredtconnor.com/blog/heads-or-tails-experiment/</link>
+      <pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/heads-or-tails-experiment/</guid>
+      <description>Interesting paper by the ever excellent Steven Levitt, HEADS OR TAILS: THE IMPACT OF A COIN TOSS ON MAJOR LIFE DECISIONS AND SUBSEQUENT HAPPINESS</description>
+    </item>
+    
+    <item>
+      <title>Interactive Exploration of Dead End Careers</title>
+      <link>http://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid>
+      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there. While they attempted to view so called dead end jobs, which they roughly define as jobs that lack little wage growth later in their lives, the analysis illustrates a developing trend - the gradual widening of the high skill/high wage labor and low skill/low wage/service oriented labor.</description>
+    </item>
+    
+    <item>
+      <title>Predict Economics Indicators with OpenStreetMap</title>
+      <link>http://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid>
+      <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
+This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description>
+    </item>
+    
+    <item>
+      <title>First of Many!</title>
+      <link>http://www.jaredtconnor.com/blog/first-of-many/</link>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.jaredtconnor.com/blog/first-of-many/</guid>
+      <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
+So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description>
+    </item>
+    
+  </channel>
+</rss>
