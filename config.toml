@@ -44,6 +44,12 @@ disqusShortname = "#"
     icon = "fab fa-twitter fa-2x"
     weight = 3
     url = "https://twitter.com/Jared_ThomasC/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin fa-2x"
+    weight = 3
+    url = "https://www.linkedin.com/in/jaredconnor/`"
+
 
 # Menu links
 [[menu.main]]
