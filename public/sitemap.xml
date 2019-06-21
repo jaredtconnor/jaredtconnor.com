@@ -3,201 +3,201 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/</loc>
+    <loc>https://www.jaredtconnor.com/blog/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/</loc>
+    <loc>https://www.jaredtconnor.com/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/questions_about_economics/</loc>
+    <loc>https://www.jaredtconnor.com/blog/questions_about_economics/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jaredtconnor.com/tags/economics/</loc>
+    <loc>https://www.jaredtconnor.com/tags/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/education/</loc>
+    <loc>https://www.jaredtconnor.com/tags/economics/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/the-marvel-of-the-human-dad/</loc>
+    <loc>https://www.jaredtconnor.com/tags/education/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/the-marvel-of-the-human-dad/</loc>
     <lastmod>2019-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/anthropology/</loc>
-    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jaredtconnor.com/tags/family/</loc>
+    <loc>https://www.jaredtconnor.com/tags/anthropology/</loc>
     <lastmod>2019-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/object_oriented_programming/</loc>
+    <loc>https://www.jaredtconnor.com/tags/family/</loc>
+    <lastmod>2019-02-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/object_oriented_programming/</loc>
     <lastmod>2019-01-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/programming/</loc>
+    <loc>https://www.jaredtconnor.com/tags/programming/</loc>
     <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/python/</loc>
+    <loc>https://www.jaredtconnor.com/tags/python/</loc>
     <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</loc>
+    <loc>https://www.jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</loc>
     <lastmod>2018-12-05T19:04:32-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/effective_altruism/</loc>
-    <lastmod>2018-12-05T19:04:32-08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jaredtconnor.com/tags/philosophy/</loc>
+    <loc>https://www.jaredtconnor.com/tags/effective_altruism/</loc>
     <lastmod>2018-12-05T19:04:32-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/kierkegaard-on-busyness/</loc>
+    <loc>https://www.jaredtconnor.com/tags/philosophy/</loc>
+    <lastmod>2018-12-05T19:04:32-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/kierkegaard-on-busyness/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/life/</loc>
+    <loc>https://www.jaredtconnor.com/tags/life/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/mental_health/</loc>
+    <loc>https://www.jaredtconnor.com/tags/mental_health/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/heads-or-tails-experiment/</loc>
+    <loc>https://www.jaredtconnor.com/blog/heads-or-tails-experiment/</loc>
     <lastmod>2018-09-19T20:59:37-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/choices/</loc>
-    <lastmod>2018-09-19T20:59:37-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jaredtconnor.com/tags/happiness/</loc>
+    <loc>https://www.jaredtconnor.com/tags/choices/</loc>
     <lastmod>2018-09-19T20:59:37-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/psychology/</loc>
+    <loc>https://www.jaredtconnor.com/tags/happiness/</loc>
     <lastmod>2018-09-19T20:59:37-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</loc>
+    <loc>https://www.jaredtconnor.com/tags/psychology/</loc>
+    <lastmod>2018-09-19T20:59:37-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/data_analysis/</loc>
+    <loc>https://www.jaredtconnor.com/tags/data_analysis/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/employment/</loc>
+    <loc>https://www.jaredtconnor.com/tags/employment/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/labor/</loc>
+    <loc>https://www.jaredtconnor.com/tags/labor/</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</loc>
+    <loc>https://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</loc>
     <lastmod>2018-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/economic-output/</loc>
-    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.jaredtconnor.com/tags/geo-spatial/</loc>
+    <loc>https://www.jaredtconnor.com/tags/economic-output/</loc>
     <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/blog/first-of-many/</loc>
+    <loc>https://www.jaredtconnor.com/tags/geo-spatial/</loc>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/first-of-many/</loc>
     <lastmod>2017-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/intro/</loc>
+    <loc>https://www.jaredtconnor.com/tags/intro/</loc>
     <lastmod>2017-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/projects/</loc>
+    <loc>https://www.jaredtconnor.com/projects/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/projects/stock-price-scaper/</loc>
+    <loc>https://www.jaredtconnor.com/projects/stock-price-scaper/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/tags/web_scraping/</loc>
+    <loc>https://www.jaredtconnor.com/tags/web_scraping/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.jaredtconnor.com/categories/</loc>
+    <loc>https://www.jaredtconnor.com/categories/</loc>
     <priority>0</priority>
   </url>
   
