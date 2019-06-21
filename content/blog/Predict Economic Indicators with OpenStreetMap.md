@@ -11,7 +11,7 @@ publicly labeled tags and indicators of schools, universities, lamp posts, and
 post offices to see how much production and economic activity is coming from a
 specific region!
 
-![alt](images/blog_images/Interactive_exploration_careers.png)
+![alt](/images/blog_images/Interactive_exploration_careers.png)
 
 This could be of great use for economic research in countries where reliable data is a problem
 or to view competitive economies from a bird's eye view (_no pun intended_).

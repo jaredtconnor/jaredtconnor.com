@@ -23,7 +23,7 @@ disqusShortname = "#"
     favicon_32 = "/img/favicon-32x32.png"
     favicon_16 = "/img/favicon-16x16.png"
 
-    footercontent = "Here you can find  projects I've conjured up, mostly relating to economics, data infastructures, computer science, and policy."
+    footercontent = "Here you can find  projects and writings mostly relating to economics, data infrastructures, computer science, and policy."
 
     hidecredits = true
     hidecopyright = false

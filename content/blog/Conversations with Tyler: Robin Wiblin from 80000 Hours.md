@@ -5,7 +5,7 @@ draft: false
 tags: [economics, effective_altruism, philosophy]
 ---
 
-![https://medium.com/conversations-with-tyler/tyler-cowen-robert-wiblin-stubborn-attachments-80000-hours-podcast-359aa62aa8ab](images/blog_images/Conversations_with_Tyler_Robin_Wiblin.png)
+![https://medium.com/conversations-with-tyler/tyler-cowen-robert-wiblin-stubborn-attachments-80000-hours-podcast-359aa62aa8ab](/images/blog_images/Conversations_with_Tyler_Robin_Wiblin.png)
 
 I feel fairly comfortable stating that this is my favorite podcast of the year.
 Nearly anything that Tyler Cowen touches is filled to the Brim with nuggets of insight, but this piece takes the cake

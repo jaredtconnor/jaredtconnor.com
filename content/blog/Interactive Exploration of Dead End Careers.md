@@ -15,4 +15,4 @@ wage growth later in their lives, the analysis illustrates a developing trend - 
 gradual widening of the high skill/high wage labor and low skill/low wage/service oriented
 labor.  
 
-![alt text](/Interactive_exploration_careers.png)
+![alt text](/images/blog_images/Interactive_exploration_careers.png)
