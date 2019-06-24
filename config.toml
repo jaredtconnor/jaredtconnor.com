@@ -60,3 +60,7 @@ disqusShortname = "#"
     name = "Projects"
     weight = 2
     url = "/projects/"
+[[menu.main]]
+    name = "CV"
+    weight = 3
+    url = "/files/resume.pdf"
