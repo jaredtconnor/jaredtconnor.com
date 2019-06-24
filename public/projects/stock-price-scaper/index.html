@@ -112,30 +112,30 @@ package, which allows us to make automated scripts to interact with HTML backed 
 given the structure of the webpage, we can specify places where we want to <em>scrape</em> information.</p>
 
 <p>First off, here are the dependencies:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">import</span> <span style="font-weight:bold">bs4</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">bs</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">datetime</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">dt</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">os</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">pandas</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">pd</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">pandas_datareader.data</span> <span style="font-weight:bold">as</span> <span style="font-weight:bold">web</span>
-<span style="font-weight:bold">from</span> <span style="font-weight:bold">pandas_datareader._utils</span> <span style="font-weight:bold">import</span> RemoteDataError
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">pickle</span>
-<span style="font-weight:bold">import</span> <span style="font-weight:bold">requests</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">bs4</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">bs</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">datetime</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">dt</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">os</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas_datareader.data</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">web</span>
+<span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pandas_datareader._utils</span> <span style="color:#007020;font-weight:bold">import</span> RemoteDataError
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pickle</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">requests</span></code></pre></div>
 <p>This function below does just that: Obviously, we could write out a long list that contains all
 of the ticker symbols for the S&amp;P 500. But, there is probably structured data on some website
 (<em>cough</em> Wikipedia <em>cough</em>) that we can use for the heavy lifting.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-style:italic">#Scrapes wikipedia S&amp;P 500 ticker table to create object</span>
-<span style="font-weight:bold">def</span> save_sp500_tickers():
-    resp = requests.get(<span style="font-style:italic">&#34;https://en.wikipedia.org/wiki/List_of_S%26P_500_companies&#34;</span>)
-    soup = bs.BeautifulSoup(resp.text, <span style="font-style:italic">&#34;html.parser&#34;</span>)
-    table = soup.find(<span style="font-style:italic">&#39;table&#39;</span>, {<span style="font-style:italic">&#39;class&#39;</span>:<span style="font-style:italic">&#39;wikitable sortable&#39;</span>})
-    tickers = []
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#Scrapes wikipedia S&amp;P 500 ticker table to create object</span>
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">save_sp500_tickers</span>():
+    resp <span style="color:#666">=</span> requests<span style="color:#666">.</span>get(<span style="color:#4070a0">&#34;https://en.wikipedia.org/wiki/List_of_S%26P_500_companies&#34;</span>)
+    soup <span style="color:#666">=</span> bs<span style="color:#666">.</span>BeautifulSoup(resp<span style="color:#666">.</span>text, <span style="color:#4070a0">&#34;html.parser&#34;</span>)
+    table <span style="color:#666">=</span> soup<span style="color:#666">.</span>find(<span style="color:#4070a0">&#39;table&#39;</span>, {<span style="color:#4070a0">&#39;class&#39;</span>:<span style="color:#4070a0">&#39;wikitable sortable&#39;</span>})
+    tickers <span style="color:#666">=</span> []
 
-    <span style="font-weight:bold">for</span> row <span style="font-weight:bold">in</span> table.find_all(<span style="font-style:italic">&#39;tr&#39;</span>)[1:]:
-        ticker = row.find_all(<span style="font-style:italic">&#39;td&#39;</span>)[0].text
-        tickers.append(ticker)
+    <span style="color:#007020;font-weight:bold">for</span> row <span style="color:#007020;font-weight:bold">in</span> table<span style="color:#666">.</span>find_all(<span style="color:#4070a0">&#39;tr&#39;</span>)[<span style="color:#40a070">1</span>:]:
+        ticker <span style="color:#666">=</span> row<span style="color:#666">.</span>find_all(<span style="color:#4070a0">&#39;td&#39;</span>)[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>text
+        tickers<span style="color:#666">.</span>append(ticker)
 
-    <span style="font-weight:bold">with</span> open(<span style="font-style:italic">&#39;sp500_tickers.pickle&#39;</span>, <span style="font-style:italic">&#39;wb&#39;</span>) <span style="font-weight:bold">as</span> f:
-        pickle.dump(tickers, f)</code></pre></div>
+    <span style="color:#007020;font-weight:bold">with</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#39;sp500_tickers.pickle&#39;</span>, <span style="color:#4070a0">&#39;wb&#39;</span>) <span style="color:#007020;font-weight:bold">as</span> f:
+        pickle<span style="color:#666">.</span>dump(tickers, f)</code></pre></div>
 <p>This gives us a great list for all 500 ticker symbols. If you aren&rsquo;t familiar with Pickles
 in Python, they are essentially a write-able file that can store data in a more compressed
 manner than, say, a csv file. More info on them can be found here: <strong>INSERT PICKLE LINK</strong></p>
@@ -145,34 +145,34 @@ We will first pickle in our ticker list, then actually use the yahoo finance por
 pandas data reader library to pull real time pricing information for us. This package was
 maintained back when I began this project, but I believe it&rsquo;s been discontinued.
 <strong>INSERT ALTERNATIVE TO YAHOO FINANCE</strong>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-style:italic">#Gathering all ADJ close data from Yahoo API for tickers created</span>
-<span style="font-style:italic">#and storing in stock_data directory</span>
-<span style="font-weight:bold">def</span> get_data_from_yahoo(reload_sp500=False):
-    <span style="font-weight:bold">if</span> reload_sp500:
-        tickers = save_sp500_tickers()
-    <span style="font-weight:bold">else</span>:
-        <span style="font-weight:bold">with</span> open(<span style="font-style:italic">&#34;sp500_tickers.pickle&#34;</span>, <span style="font-style:italic">&#34;rb&#34;</span>) <span style="font-weight:bold">as</span> f:
-            tickers = pickle.load(f)
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#60a0b0;font-style:italic">#Gathering all ADJ close data from Yahoo API for tickers created</span>
+<span style="color:#60a0b0;font-style:italic">#and storing in stock_data directory</span>
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">get_data_from_yahoo</span>(reload_sp500<span style="color:#666">=</span>False):
+    <span style="color:#007020;font-weight:bold">if</span> reload_sp500:
+        tickers <span style="color:#666">=</span> save_sp500_tickers()
+    <span style="color:#007020;font-weight:bold">else</span>:
+        <span style="color:#007020;font-weight:bold">with</span> <span style="color:#007020">open</span>(<span style="color:#4070a0">&#34;sp500_tickers.pickle&#34;</span>, <span style="color:#4070a0">&#34;rb&#34;</span>) <span style="color:#007020;font-weight:bold">as</span> f:
+            tickers <span style="color:#666">=</span> pickle<span style="color:#666">.</span>load(f)
 
-    <span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> os.path.exists(<span style="font-style:italic">&#34;stock_data&#34;</span>):
-        os.makedirs(<span style="font-style:italic">&#34;stock_data&#34;</span>)
+    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">not</span> os<span style="color:#666">.</span>path<span style="color:#666">.</span>exists(<span style="color:#4070a0">&#34;stock_data&#34;</span>):
+        os<span style="color:#666">.</span>makedirs(<span style="color:#4070a0">&#34;stock_data&#34;</span>)
 
 
-    start = dt.datetime(2000,1,1)
-    end = dt.datetime(2016,12,31)
+    start <span style="color:#666">=</span> dt<span style="color:#666">.</span>datetime(<span style="color:#40a070">2000</span>,<span style="color:#40a070">1</span>,<span style="color:#40a070">1</span>)
+    end <span style="color:#666">=</span> dt<span style="color:#666">.</span>datetime(<span style="color:#40a070">2016</span>,<span style="color:#40a070">12</span>,<span style="color:#40a070">31</span>)
 
-    <span style="font-weight:bold">for</span> ticker <span style="font-weight:bold">in</span> tickers:
-        <span style="font-weight:bold">try</span>:
-            <span style="font-weight:bold">if</span> <span style="font-weight:bold">not</span> os.path.exists(<span style="font-style:italic">&#34;stock_data/{}&#34;</span>.format(ticker)):
-                df = web.DataReader(ticker, <span style="font-style:italic">&#39;yahoo&#39;</span>, start, end)
-                df.to_csv(<span style="font-style:italic">&#34;stock_data/{}&#34;</span>.format(ticker))
-                <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Gathered data on {}&#34;</span>.format(ticker))
-            <span style="font-weight:bold">else</span>:
-                <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Already have data for {}&#34;</span>.format(ticker))
+    <span style="color:#007020;font-weight:bold">for</span> ticker <span style="color:#007020;font-weight:bold">in</span> tickers:
+        <span style="color:#007020;font-weight:bold">try</span>:
+            <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020;font-weight:bold">not</span> os<span style="color:#666">.</span>path<span style="color:#666">.</span>exists(<span style="color:#4070a0">&#34;stock_data/{}&#34;</span><span style="color:#666">.</span>format(ticker)):
+                df <span style="color:#666">=</span> web<span style="color:#666">.</span>DataReader(ticker, <span style="color:#4070a0">&#39;yahoo&#39;</span>, start, end)
+                df<span style="color:#666">.</span>to_csv(<span style="color:#4070a0">&#34;stock_data/{}&#34;</span><span style="color:#666">.</span>format(ticker))
+                <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;Gathered data on {}&#34;</span><span style="color:#666">.</span>format(ticker))
+            <span style="color:#007020;font-weight:bold">else</span>:
+                <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;Already have data for {}&#34;</span><span style="color:#666">.</span>format(ticker))
 
-        <span style="font-weight:bold">except</span> RemoteDataError:
-            <span style="font-weight:bold">print</span>(<span style="font-style:italic">&#34;Data Error&#34;</span>)
-            <span style="font-weight:bold">continue</span>
+        <span style="color:#007020;font-weight:bold">except</span> RemoteDataError:
+            <span style="color:#007020;font-weight:bold">print</span>(<span style="color:#4070a0">&#34;Data Error&#34;</span>)
+            <span style="color:#007020;font-weight:bold">continue</span>
             
 get_data_from_yahoo()</code></pre></div>
 <p>The main for loop here is the money maker. We&rsquo;re going to iteratively step through each

@@ -123,20 +123,20 @@ of writing code in a specific language&rsquo;s syntax, its more so a manner to d
 <p>Classes are used to provide user defined data structure to objects that other wise wouldn&rsquo;t be possible. For example, if we were going to represent a dog, it would be mighty difficult with simple data structures. By defining classes, we can provide our own defined structure to the object of a dog, and tack on specifications that we think will be important. So we could define the dogs <code>breed</code>, <code>hair length</code>, <code>bubbaness</code> within the class, then utilize that further on in our program.</p>
 
 <p>So how would we define a class:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">Dog</span>:
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>:
     
-    species = <span style="font-style:italic">&#34;mammal&#34;</span>
+    species <span style="color:#666">=</span> <span style="color:#4070a0">&#34;mammal&#34;</span>
 
-    <span style="font-style:italic"># Initialization and Attributes</span>
-    <span style="font-weight:bold">def</span> __init__(self, name, breed, age):
-        self.name = name
-        self.breed = breed
-        self.age = age 
+    <span style="color:#60a0b0;font-style:italic"># Initialization and Attributes</span>
+    <span style="color:#007020;font-weight:bold">def</span> __init__(self, name, breed, age):
+        self<span style="color:#666">.</span>name <span style="color:#666">=</span> name
+        self<span style="color:#666">.</span>breed <span style="color:#666">=</span> breed
+        self<span style="color:#666">.</span>age <span style="color:#666">=</span> age 
 
-cody = Dog(<span style="font-style:italic">&#34;Cody&#34;</span>, <span style="font-style:italic">&#34;Australian Shepard&#34;</span>, 2)
-boon = Dog(<span style="font-style:italic">&#34;Boon&#34;</span>, <span style="font-style:italic">&#34;Golden Retriever&#34;</span>, 1)
+cody <span style="color:#666">=</span> Dog(<span style="color:#4070a0">&#34;Cody&#34;</span>, <span style="color:#4070a0">&#34;Australian Shepard&#34;</span>, <span style="color:#40a070">2</span>)
+boon <span style="color:#666">=</span> Dog(<span style="color:#4070a0">&#34;Boon&#34;</span>, <span style="color:#4070a0">&#34;Golden Retriever&#34;</span>, <span style="color:#40a070">1</span>)
 
-<span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;{cody.name} is a {cody.breed}, and {boon.name} is a {boon.breed}&#34;</span>)</code></pre></div>
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;{cody.name} is a {cody.breed}, and {boon.name} is a {boon.breed}&#34;</span>)</code></pre></div>
 <p>Should yield us an output of: <code>Cody is a Australian Shepard, and Boon is a Golden Retriever</code>.</p>
 
 <p>Which is awesome! Let&rsquo;s tear this apart. The <code>__init__</code> function, specifically a method (a function within a class), automatically runs upon a class&rsquo; initialization to populate the class with required information. Specifically for OOP, it is a <a href="https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)">constructor</a>. The <code>self</code> variable, while difficult to grasp a first, refers to the object itself, which can be assigned values and characteristics passed through upon initialization.</p>
@@ -144,27 +144,27 @@ boon = Dog(<span style="font-style:italic">&#34;Boon&#34;</span>, <span style="f
 <p>A really important concept to remember here is the difference between a <strong>class</strong> and a specific <strong>instance</strong> of a class. That is a complicated concept but can be understood as a class is a generalization of our object where as a specific instance of our object is just that, a specific case. Basically, the difference is an idea of a dog (a class) and the cute Bubba (a specific instance of a dog).</p>
 
 <p>To get a better idea of how we can reference the class, take this example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">Breeder</span>: 
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Breeder</span>: 
 
-    <span style="font-style:italic"># Initialization and Attributes </span>
-    <span style="font-weight:bold">def</span> __init__(self, name, location, breed_type):
-        self.name = name
-        self.location = location
-        self.breed_type = breed_type
+    <span style="color:#60a0b0;font-style:italic"># Initialization and Attributes </span>
+    <span style="color:#007020;font-weight:bold">def</span> __init__(self, name, location, breed_type):
+        self<span style="color:#666">.</span>name <span style="color:#666">=</span> name
+        self<span style="color:#666">.</span>location <span style="color:#666">=</span> location
+        self<span style="color:#666">.</span>breed_type <span style="color:#666">=</span> breed_type
 
-    <span style="font-style:italic"># Example of passing self</span>
-    <span style="font-weight:bold">def</span> description(self):
-        <span style="font-weight:bold">return</span> f<span style="font-style:italic">&#34;The {self.name} breeder, located in {self.location}, breeds {self.breed_type}&#34;</span>
+    <span style="color:#60a0b0;font-style:italic"># Example of passing self</span>
+    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">description</span>(self):
+        <span style="color:#007020;font-weight:bold">return</span> f<span style="color:#4070a0">&#34;The {self.name} breeder, located in {self.location}, breeds {self.breed_type}&#34;</span>
 
-    <span style="font-style:italic"># Example of instance method</span>
-    <span style="font-weight:bold">def</span> puppies_available(self, amount_of_puppies):
-        <span style="font-weight:bold">return</span> f<span style="font-style:italic">&#34;{self.name} has {amount_of_puppies} puppies available right now.&#34;</span>
+    <span style="color:#60a0b0;font-style:italic"># Example of instance method</span>
+    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">puppies_available</span>(self, amount_of_puppies):
+        <span style="color:#007020;font-weight:bold">return</span> f<span style="color:#4070a0">&#34;{self.name} has {amount_of_puppies} puppies available right now.&#34;</span>
 
 
-Golden_state_goldens = Breeder(<span style="font-style:italic">&#34;Golden State Goldens&#34;</span>, <span style="font-style:italic">&#34;California&#34;</span>, <span style="font-style:italic">&#34;Golden Retrievers&#34;</span>)
+Golden_state_goldens <span style="color:#666">=</span> Breeder(<span style="color:#4070a0">&#34;Golden State Goldens&#34;</span>, <span style="color:#4070a0">&#34;California&#34;</span>, <span style="color:#4070a0">&#34;Golden Retrievers&#34;</span>)
 
-<span style="font-weight:bold">print</span>(Golden_state_goldens.description)
-<span style="font-weight:bold">print</span>(puppies_available.puppies_available(10)</code></pre></div>
+<span style="color:#007020;font-weight:bold">print</span>(Golden_state_goldens<span style="color:#666">.</span>description)
+<span style="color:#007020;font-weight:bold">print</span>(puppies_available<span style="color:#666">.</span>puppies_available(<span style="color:#40a070">10</span>)</code></pre></div>
 <p>This yields us the result of:</p>
 
 <p><code>The Golden State Goldens breeder, located in California, breeds Golden Retrievers</code> and <code>Golden State Goldens has 10 puppies available right now</code>.</p>
@@ -176,17 +176,17 @@ Golden_state_goldens = Breeder(<span style="font-style:italic">&#34;Golden State
 <p>It also would be quite useful to modify an instance, such as this example:</p>
 
 <p>What the breeder we created sold one of it&rsquo;s really cute puppies?</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">Breeder</span>: 
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Breeder</span>: 
 
-    <span style="font-weight:bold">def</span> __init__(self, puppies_available): 
-        self.puppies_available = puppies_available
+    <span style="color:#007020;font-weight:bold">def</span> __init__(self, puppies_available): 
+        self<span style="color:#666">.</span>puppies_available <span style="color:#666">=</span> puppies_available
 
-    <span style="font-weight:bold">def</span> sold_puppy(self):
-        self.puppies_available -= 1
+    <span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">sold_puppy</span>(self):
+        self<span style="color:#666">.</span>puppies_available <span style="color:#666">-=</span> <span style="color:#40a070">1</span>
 
-Ozzy_Aussies = Breeder(6)
-Ozzy_Aussies.sold_puppy()
-<span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;Puppies Available: {Ozzy_Aussies.puppies_available}&#34;</span>)</code></pre></div>
+Ozzy_Aussies <span style="color:#666">=</span> Breeder(<span style="color:#40a070">6</span>)
+Ozzy_Aussies<span style="color:#666">.</span>sold_puppy()
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;Puppies Available: {Ozzy_Aussies.puppies_available}&#34;</span>)</code></pre></div>
 <p>Should output: <code>Puppies Available: 5</code></p>
 
 <h4 id="object-inheritance">Object Inheritance</h4>
@@ -194,22 +194,22 @@ Ozzy_Aussies.sold_puppy()
 <p>The last important thing I discovered is object inheritance. This is the concept where you can have a specific <em>parent</em> object, and further a <em>child</em> object can inherit the attributes from the parent while also defining it&rsquo;s own attributes.</p>
 
 <p>For example:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="font-weight:bold">class</span> <span style="font-weight:bold">Dog</span>:
-    species = <span style="font-style:italic">&#34;mammal&#34;</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Dog</span>:
+    species <span style="color:#666">=</span> <span style="color:#4070a0">&#34;mammal&#34;</span>
 
-    <span style="font-weight:bold">def</span> __init__(self, name, age):
-        self.name = name
-        self.age = age
+    <span style="color:#007020;font-weight:bold">def</span> __init__(self, name, age):
+        self<span style="color:#666">.</span>name <span style="color:#666">=</span> name
+        self<span style="color:#666">.</span>age <span style="color:#666">=</span> age
 
-<span style="font-weight:bold">class</span> <span style="font-weight:bold">Border_Collie</span>(Dog):
+<span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Border_Collie</span>(Dog):
 
-    energy_level = <span style="font-style:italic">&#34;Extremely High&#34;</span>
+    energy_level <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Extremely High&#34;</span>
 
-Gus = Dog(<span style="font-style:italic">&#34;Gus&#34;</span>, 10)
-Charlie = Border_Collie(<span style="font-style:italic">&#34;Charlie&#34;</span>, 1)
+Gus <span style="color:#666">=</span> Dog(<span style="color:#4070a0">&#34;Gus&#34;</span>, <span style="color:#40a070">10</span>)
+Charlie <span style="color:#666">=</span> Border_Collie(<span style="color:#4070a0">&#34;Charlie&#34;</span>, <span style="color:#40a070">1</span>)
 
-<span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;Charlies energy level: {Charlie.energy_level}&#34;</span>)
-<span style="font-weight:bold">print</span>(f<span style="font-style:italic">&#34;What kind of species is Charlie: {Charlie.species}&#34;</span>)</code></pre></div>
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;Charlies energy level: {Charlie.energy_level}&#34;</span>)
+<span style="color:#007020;font-weight:bold">print</span>(f<span style="color:#4070a0">&#34;What kind of species is Charlie: {Charlie.species}&#34;</span>)</code></pre></div>
 <p>Should output: <code>Charlies energy level: Extremely High</code> and <code>What kind of species is Charlie: mammal</code></p>
 
 <p>Functionally, the <code>Dog</code> class specifies the parent class of a dog. Then the child class, my boy Charlie, inherits all the characteristics of a dog but also additional attributes specific to the child class <code>Border_Collie</code>.</p>
