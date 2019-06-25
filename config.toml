@@ -51,7 +51,7 @@ disqusShortname = "#"
     url = "https://www.linkedin.com/in/jaredconnor/"
 [[params.social]]
     name = "Mail"
-    icon = "fab fa-envelope fa-2x"
+    icon = "fas fa-envelope fa-2x"
     weight = 4
     url = "mailto:jaredconnor301@gmail.com"
 
