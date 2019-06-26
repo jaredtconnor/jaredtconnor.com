@@ -11,6 +11,8 @@ pygmentsstyle = "friendly"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+googleAnalytics = "UA-107829262-1"
+
 disqusShortname = "#"
 
 [params]
