@@ -17,7 +17,7 @@
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the [Pandas]() package. On top of that, we can use the ever useful [BeautifulSoup]() package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
     </item>
     
   </channel>

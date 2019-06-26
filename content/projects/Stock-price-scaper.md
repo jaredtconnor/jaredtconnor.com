@@ -12,7 +12,7 @@ This was one of my first projects in python to understand data frames. Anyone in
 data analysis with Python needs to understand how to use, manipulate, and structure data in 
 ways that are useful and required for your analysis. Thankfully, there are some _incredibly_ 
 smart developers in this world that understand the importance of this task, so they developed
-the [__Pandas__]() package. On top of that, we can use the ever useful [__BeautifulSoup__]() 
+the [__Pandas__](https://pandas.pydata.org) package. On top of that, we can use the ever useful [__BeautifulSoup__](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
 package, which allows us to make automated scripts to interact with HTML backed webpages.
 
 The way Beautiful soup works is by making an HTML request to a specific web page, and 
@@ -55,13 +55,13 @@ def save_sp500_tickers():
 
 This gives us a great list for all 500 ticker symbols. If you aren't familiar with Pickles 
 in Python, they are essentially a write-able file that can store data in a more compressed 
-manner than, say, a csv file. More info on them can be found here: __INSERT PICKLE LINK__
+manner than, say, a csv file. More info on them can be found [here](https://ianlondon.github.io/blog/pickling-basics/)
 
-No for the fun stuff, we need to actually pull the pricing info for given period of time. 
+Now for the fun stuff, we need to actually pull the pricing info for given period of time. 
 We will first pickle in our ticker list, then actually use the yahoo finance port via the 
 pandas data reader library to pull real time pricing information for us. This package was 
 maintained back when I began this project, but I believe it's been discontinued. 
-__INSERT ALTERNATIVE TO YAHOO FINANCE__. 
+What can still be used is the [data reader](https://pandas-datareader.readthedocs.io/en/latest/) package associated with pandas. 
 
 ```python 
 
@@ -110,6 +110,6 @@ continued dive into thinking about problems from a data perspective. While I lea
 abstraction in my later computer science courses and am still learning about how to properly store 
 this data, thinking this way provides a simple heuristic to solve problems: 
 
-> Any problem can typically be solved with information, and information exists as data somewhere
+> Any problem can typically be solved with information, and information exists as data somewhere. 
 
 
