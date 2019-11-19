@@ -12,6 +12,26 @@
     
     
     <item>
+      <title>Stock Price Scraper</title>
+      <link>https://www.jaredtconnor.com/projects/stock-price-scaper/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+    </item>
+    
+    <item>
+      <title>Housing Price Analysis</title>
+      <link>https://www.jaredtconnor.com/projects/housing-price-analysis/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/projects/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+The project is broken up into two main sections:
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
+    </item>
+    
+    <item>
       <title>College debt is making it harder for people to get married</title>
       <link>https://www.jaredtconnor.com/blog/student_loans_are_making_it_harder/</link>
       <pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate>
@@ -117,15 +137,6 @@ This could be of great use for economic research in countries where reliable dat
       <guid>https://www.jaredtconnor.com/blog/first-of-many/</guid>
       <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
 So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description>
-    </item>
-    
-    <item>
-      <title>Stock Price Scraper</title>
-      <link>https://www.jaredtconnor.com/projects/stock-price-scaper/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
     </item>
     
   </channel>

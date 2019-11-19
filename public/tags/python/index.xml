@@ -12,21 +12,32 @@
     
     
     <item>
-      <title>Understanding Object Oriented Programming</title>
-      <link>https://www.jaredtconnor.com/blog/object_oriented_programming/</link>
-      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jaredtconnor.com/blog/object_oriented_programming/</guid>
-      <description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.</description>
-    </item>
-    
-    <item>
       <title>Stock Price Scraper</title>
       <link>https://www.jaredtconnor.com/projects/stock-price-scaper/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
       <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+    </item>
+    
+    <item>
+      <title>Housing Price Analysis</title>
+      <link>https://www.jaredtconnor.com/projects/housing-price-analysis/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/projects/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+The project is broken up into two main sections:
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Object Oriented Programming</title>
+      <link>https://www.jaredtconnor.com/blog/object_oriented_programming/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/blog/object_oriented_programming/</guid>
+      <description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.</description>
     </item>
     
   </channel>

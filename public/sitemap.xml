@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.jaredtconnor.com/projects/stock-price-scaper/</loc>
+    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/projects/housing-price-analysis/</loc>
+    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jaredtconnor.com/blog/</loc>
     <lastmod>2019-09-09T20:41:59-07:00</lastmod>
     <priority>0</priority>
@@ -208,13 +218,14 @@
   </url>
   
   <url>
-    <loc>https://www.jaredtconnor.com/projects/stock-price-scaper/</loc>
+    <loc>https://www.jaredtconnor.com/tags/web_scraping/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.jaredtconnor.com/tags/web_scraping/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+    <loc>https://www.jaredtconnor.com/tags/pandas/</loc>
+    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
