@@ -14,31 +14,48 @@
   
   <url>
     <loc>https://www.jaredtconnor.com/blog/</loc>
-    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.jaredtconnor.com/</loc>
-    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.jaredtconnor.com/tags/</loc>
-    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/visa-buyout-of-plaid/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/banking/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/economics/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/payments/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.jaredtconnor.com/blog/thoughts_on_mmt/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.jaredtconnor.com/tags/economics/</loc>
-    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
