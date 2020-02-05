@@ -13,9 +13,12 @@ Its not often that one gets to program with the physical world, but I must say, 
 
 # Research: 
 There were a couple of different ways to build something like this and we discussed most of them. 
-- A [gravity fed watering system](https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system) option to pump water into a single plant based. 
-- A [sprinkler based system](https://www.instructables.com/id/Arduino-Automatic-Watering-System-For-Plants/) which is hilariously overkill.
-- A [soaker hose watering system](https://www.youtube.com/watch?v=O_Q1WKCtWiA) based on temperature, UV, and soil moisture level sensors, though this is on the high end of what was needed.
+
+* A [gravity fed watering system](https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system) option to pump water into a single plant based. 
+
+* A [sprinkler based system](https://www.instructables.com/id/Arduino-Automatic-Watering-System-For-Plants/) which is hilariously overkill.
+
+* A [soaker hose watering system](https://www.youtube.com/watch?v=O_Q1WKCtWiA) based on temperature, UV, and soil moisture level sensors, though this is on the high end of what was needed.
 
 I knew that I wanted to run the system of a pump to be able to scale out to a full planter in the future. You could go with a solenoid activated water value to plumb into a house's existing water fittings as seen in option 3 which, arguably could be where I take this into the future, but for now the pump will do just fine. With a pump based system, we can actively water the plant on an as needed bases, just by pumping water into the pot. 
 
