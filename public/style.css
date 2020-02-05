@@ -94,7 +94,25 @@ code { background: #f9f9f9; }
 pre code { background: none; }
 
 /* Images, tables, misc. */
-img, iframe, video { max-width: 100%; }
+img[src$='#center']
+{
+    display: block;
+    margin: 0.7rem auto;
+  }
+
+img[src$='#floatleft']
+{
+    float:left;
+    margin: 0.7rem;     
+  }
+
+img[src$='#floatright']
+{
+    float:right;
+    margin: 0.7rem;      /* this margin is totally up to you */
+  }
+
+iframe, video { max-width: 100%; }
 main { hyphens: auto; }
 blockquote {
   background: #f9f9f9;
@@ -110,3 +128,4 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 tr:nth-child(even) { background: #eee }
+

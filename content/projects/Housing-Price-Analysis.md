@@ -2,7 +2,7 @@
 title: "Housing Price Analysis"
 repo: "https://github.com/jaredtconnor/national_housing_price_analysis"
 tags: [python, pandas, data_analysis]
-weight: 2
+weight: 3
 date: 2017-05-22 
 draft: false
 ---

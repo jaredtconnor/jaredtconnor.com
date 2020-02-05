@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.jaredtconnor.com/projects/microcontroller-watering-system/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jaredtconnor.com/projects/stock-price-scaper/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
   </url>
@@ -50,6 +55,30 @@
   <url>
     <loc>https://www.jaredtconnor.com/tags/payments/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/iot/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/projects/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/microcontrollers/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -241,12 +270,6 @@
   <url>
     <loc>https://www.jaredtconnor.com/tags/intro/</loc>
     <lastmod>2017-11-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jaredtconnor.com/projects/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
