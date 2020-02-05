@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on Jared Connor</title>
+    <link>https://www.jaredtconnor.com/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on Jared Connor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.jaredtconnor.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arduino Watering System</title>
+      <link>https://www.jaredtconnor.com/projects/microcontroller-watering-system/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/projects/microcontroller-watering-system/</guid>
+      <description>Its not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After a number of projects that blew my mind, I decided to piggy backed on his experience to create a project of my own; a self sustaining watering system for plants.</description>
+    </item>
+    
+  </channel>
+</rss>
