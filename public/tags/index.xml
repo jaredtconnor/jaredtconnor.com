@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Jared Connor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.jaredtconnor.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>economics</title>
+      <link>https://www.jaredtconnor.com/tags/economics/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/tags/economics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>finance</title>
+      <link>https://www.jaredtconnor.com/tags/finance/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/tags/finance/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>banking</title>
@@ -17,15 +35,6 @@
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/tags/banking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>economics</title>
-      <link>https://www.jaredtconnor.com/tags/economics/</link>
-      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jaredtconnor.com/tags/economics/</guid>
       <description></description>
     </item>
     
