@@ -6,7 +6,7 @@
     <description>Recent content on Jared Connor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.jaredtconnor.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/microcontroller-watering-system/</guid>
-      <description>Its not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After a number of projects that blew my mind, I decided to piggy backed on his experience to create a project of my own; a self sustaining watering system for plants.</description>
+      <description>It&amp;rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade.</description>
     </item>
     
     <item>
@@ -38,6 +38,15 @@
       <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
 The project is broken up into two main sections:
 1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
+    </item>
+    
+    <item>
+      <title>The United States is Risking Their Position in the Global Financial System</title>
+      <link>https://www.jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</guid>
+      <description>It would be very tough to argue against the fact that we&amp;rsquo;re living in changing times. The COVID-19 pandemic is forcing a global economic shutdown on par with the great depression. Unemployment is spiking. In the U.S., the temporary lift through federal fiscal stimulus payments is working but there is uncertainty regarding how long this can be sustained before the tide of credit issues overflows businesses. Through such uncertainty, one should attempt to separate the temporary changes from the overall structural shifts in economic, political, and social structures.</description>
     </item>
     
     <item>

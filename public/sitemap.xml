@@ -19,19 +19,36 @@
   
   <url>
     <loc>https://www.jaredtconnor.com/blog/</loc>
-    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.jaredtconnor.com/</loc>
-    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.jaredtconnor.com/tags/</loc>
-    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</loc>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/economics/</loc>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/tags/finance/</loc>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -42,12 +59,6 @@
   
   <url>
     <loc>https://www.jaredtconnor.com/tags/banking/</loc>
-    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.jaredtconnor.com/tags/economics/</loc>
     <lastmod>2020-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

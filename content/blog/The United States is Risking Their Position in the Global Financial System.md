@@ -22,7 +22,7 @@ Alternatively, what if China's position isn't to take over in the structure of t
 
 It is difficult to predict when or if a digitally dominant financial system could take hold. View the pains of a cryptocurrency advocates for evidence. With all of the changes occurring in the wake of the pandemic though, several important themes are coming to light: 
 
-1) The United States needs to find some way to reverse the downward slide in leadership approvals. 
-2) There are plenty of developed countries that seek to step out of the influence of the financial system governed by our politics. 
+1. The United States needs to find some way to reverse the downward slide in leadership approvals. 
+2.  There are plenty of developed countries that seek to step out of the influence of the financial system governed by our politics. 
 
 Importantly, there is also room for positives to be taken here. With a globally connected economy, I don't view these shifts as entirely zero-sum. It could be possible for two financial systems to develop, either governed by economic bodies or underlying technologies. In the post-Bretton Woods era, a merely analog world necessitated a system governed by a single or several small entities. It could be the case that a digital dominant system increases the ability of other countries to have a voice in global trade. 
