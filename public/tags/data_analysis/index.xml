@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data_analysis on Jared Connor</title>
+    <title>data_analysis on Noteworthy</title>
     <link>https://www.jaredtconnor.com/tags/data_analysis/</link>
-    <description>Recent content in data_analysis on Jared Connor</description>
+    <description>Recent content in data_analysis on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/data_analysis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/data_analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stock Price Scraper</title>
       <link>https://www.jaredtconnor.com/projects/stock-price-scaper/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames.</description>
     </item>
     
     <item>
@@ -26,9 +22,7 @@
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/housing-price-analysis/</guid>
-      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
-The project is broken up into two main sections:
-1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis.</description>
     </item>
     
     <item>
@@ -37,7 +31,7 @@ The project is broken up into two main sections:
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid>
-      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there. While they attempted to view so called dead end jobs, which they roughly define as jobs that lack little wage growth later in their lives, the analysis illustrates a developing trend - the gradual widening of the high skill/high wage labor and low skill/low wage/service oriented labor.</description>
+      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there.</description>
     </item>
     
     <item>
@@ -46,8 +40,7 @@ The project is broken up into two main sections:
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid>
-      <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
-This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description>
+      <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country.</description>
     </item>
     
   </channel>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Jared Connor</title>
+    <title>Tags on Noteworthy</title>
     <link>https://www.jaredtconnor.com/tags/</link>
-    <description>Recent content in Tags on Jared Connor</description>
+    <description>Recent content in Tags on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>economics</title>
       <link>https://www.jaredtconnor.com/tags/economics/</link>
@@ -48,20 +44,20 @@
     </item>
     
     <item>
-      <title>IOT</title>
-      <link>https://www.jaredtconnor.com/tags/iot/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jaredtconnor.com/tags/iot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>c&#43;&#43;</title>
       <link>https://www.jaredtconnor.com/tags/c&#43;&#43;/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IOT</title>
+      <link>https://www.jaredtconnor.com/tags/iot/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/tags/iot/</guid>
       <description></description>
     </item>
     

@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>education on Jared Connor</title>
+    <title>education on Noteworthy</title>
     <link>https://www.jaredtconnor.com/tags/education/</link>
-    <description>Recent content in education on Jared Connor</description>
+    <description>Recent content in education on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 09 Sep 2019 20:41:59 -0700</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/education/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Sep 2019 20:41:59 -0700</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/education/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>College debt is making it harder for people to get married</title>
       <link>https://www.jaredtconnor.com/blog/student_loans_are_making_it_harder/</link>
       <pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/student_loans_are_making_it_harder/</guid>
-      <description>It is pretty well known that the outstanding college debt burden is surging and having spill over effects on individual&amp;rsquo;s choices. Per a Federal Reserve Report, 36 percent of individuals aged 24-32 owned homes in 2014, down from the reported 45 percent in 2004. I read this article discussing the effects of co-signing for a partner&amp;rsquo;s college debt.
-As the burden of debt increases in both size and the number of effected individuals, the decision for one to marry into one&amp;rsquo;s debt burden might increasingly be a sticking point for young couples.</description>
+      <description>It is pretty well known that the outstanding college debt burden is surging and having spill over effects on individual&amp;rsquo;s choices.</description>
     </item>
     
     <item>
@@ -27,8 +22,7 @@ As the burden of debt increases in both size and the number of effected individu
       <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/reed-students-validate-college-ranking/</guid>
-      <description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
-They noted that without being able to derive the statistical model it is uncertain to determine if schools are being properly ranked and there is significant errors with a weighted-sum model (Clarke 2004).</description>
+      <description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system.</description>
     </item>
     
     <item>
@@ -37,8 +31,7 @@ They noted that without being able to derive the statistical model it is uncerta
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/questions_about_economics/</guid>
-      <description>Questions About Economics I was lucky enough to be asked by one of my favorite undergrad professors, Ed Whitelaw, to come back down to Eugene to speak on a panel of his past students to speak. The topic included a career day regarding economics and what such an education means in the real world. Here are a number of the questions and my associated answers:
- What economic tools/fields do you see as most critical to careers in your area?</description>
+      <description>Questions About Economics I was lucky enough to be asked by one of my favorite undergrad professors, Ed Whitelaw, to come back down to Eugene to speak on a panel of his past students to speak.</description>
     </item>
     
   </channel>

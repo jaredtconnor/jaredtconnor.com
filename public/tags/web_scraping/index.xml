@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web_scraping on Jared Connor</title>
+    <title>web_scraping on Noteworthy</title>
     <link>https://www.jaredtconnor.com/tags/web_scraping/</link>
-    <description>Recent content in web_scraping on Jared Connor</description>
+    <description>Recent content in web_scraping on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/web_scraping/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/web_scraping/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stock Price Scraper</title>
       <link>https://www.jaredtconnor.com/projects/stock-price-scaper/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames.</description>
     </item>
     
   </channel>
