@@ -1,25 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>payments on Jared Connor</title>
+    <title>payments on Noteworthy</title>
     <link>https://www.jaredtconnor.com/tags/payments/</link>
-    <description>Recent content in payments on Jared Connor</description>
+    <description>Recent content in payments on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/payments/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/payments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Visa&#39;s acquisition of Plaid</title>
       <link>https://www.jaredtconnor.com/blog/visa-buyout-of-plaid/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.jaredtconnor.com/blog/visa-buyout-of-plaid/</guid>
-      <description>On January 13th, 2020, Visa came out publicly announcing the purchase of the banking startup called Plaid, which provided a service that actually connected fintech startups with the ability to connect to the modern banking payment rails.
-There is a great summary of the deal here from Quartz.
-The implications of this, considering the $5.3 billion dollar price tag, are substantial on the legacy banking system. Described in this article, both Visa and Plaid operate within a three player market comprised of the consumers, the banks, and the merchants.</description>
+      <description>On January 13th, 2020, Visa came out publicly announcing the purchase of the banking startup called Plaid, which provided a service that actually connected fintech startups with the ability to connect to the modern banking payment rails.</description>
     </item>
     
   </channel>
