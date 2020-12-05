@@ -123,6 +123,11 @@
   </url>
   
   <url>
+    <loc>https://www.jaredtconnor.com/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.jaredtconnor.com/blog/questions_about_economics/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
   </url>
@@ -260,6 +265,11 @@
   <url>
     <loc>https://www.jaredtconnor.com/tags/pandas/</loc>
     <lastmod>2017-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.jaredtconnor.com/about/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
