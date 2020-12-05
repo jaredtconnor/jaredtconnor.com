@@ -1,6 +1,6 @@
 baseURL = "https://www.jaredtconnor.com/"
 languageCode = "en-us"
-title = "Noteworthy"
+title = "Jared Connor"
 theme = "noteworthy"
 enableRobotsTXT = true
 paginate = 4 # Set the number of posts to show before overflowing to the next page.
@@ -13,7 +13,7 @@ googleAnalytics = ""
   tag = "tags"
 
 [author]
-	name = "kimcc"
+	name = "Jared Connor"
 
 # Set to false to disallow raw HTML in markdown files
 [markup.goldmark.renderer]
@@ -21,93 +21,50 @@ googleAnalytics = ""
 
 [params]
 	math = true
-	# Blog description at the top of the homepage. Supports markdown.
-	description = "Noteworthy is a minimalist Hugo theme, perfect for writers and bloggers."
+	
+  description = ""
 
     showReadMore = false
-
-    # Set enableKofi to true to enable the Ko-fi support button. Add your Ko-fi ID to link to your account.
-    enableKofi = false
-    kofi = ""
-
-	# Add links to your accounts. Remove the ones you don't want to include.
-	# Main
-	email = "#"
-    facebook = "#"
-    twitter = "#"
-	instagram = "#"
-	tumblr = "#"
-	reddit = "#"
-	pinterest = "#"
-	youtube = "#"
-    vimeo = "#"
-	weibo = "#"
-	vk = "#"
-	linkedin = "#"
-
-	# Writing
-    medium = "#"
-	blogger = "#"
-	wordpress = "#"
-
-	# Creative & Visual
-    dribbble = "#"
-	behance = "#"
-	deviantart = "#"
-	flickr = "#"
-
-    # Audio & Music
-    soundcloud = "#"
-
-	# Programming
-    github = "#"
-	stackoverflow = "#"
-	gitlab = "#"
-	codepen = "#"
-
-    # Academic
-    googlescholar = "#"
-    impactstory = "#"
-    orcid = "#"  
+  
+  # Social Accounts and Icons
+	email = "jaredconnor301@gmail.com"
+  twitter = "https://twitter.com/Jared_ThomasC"
+  linkedin = "https://www.linkedin.com/in/jaredconnor/"
+  github = "https://github.com/jaredtconnor"
 
 # Menu links along the sidebar navigation.
 [[menu.main]]
 	identifier = "about"
 	name = "About"
 	url = "/about/"
-	weight = 1 # Weight is an integer used to sort the menu items. The sorting goes from smallest to largest numbers. If weight is not defined for each menu entry, Hugo will sort the entries alphabetically.
+	weight = 1
 
 [[menu.main]]
-	identifier = "tags"
-	name = "Tags"
-	url = "/tags/"
+	identifier = "blog" 
+	name = "Blog"
+	url = ""
 	weight = 2
 
 [[menu.main]]
-	name = "Archives"
-	identifier = "archives"
-	url = "/archives/"
+	identifier = "projects"
+	name = "Projects"
+	url = "/projects/"
 	weight = 3
+
+[[menu.main]]
+	identifier = "archives"
+	name = "Archives"
+	url = "/archives/"
+	weight = 4
 
 # Privacy configurations: https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
-  [privacy.disqus]
-    disable = false
   [privacy.googleAnalytics]
     anonymizeIP = true
     disable = false
     respectDoNotTrack = false
     useSessionStorage = false
-  [privacy.instagram]
-    disable = false
-    simple = false
   [privacy.twitter]
     disable = false
     enableDNT = false
     simple = false
-  [privacy.vimeo]
-    disable = false
-    simple = false
-  [privacy.youtube]
-    disable = false
-    privacyEnhanced = true

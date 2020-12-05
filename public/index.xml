@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Noteworthy</title>
+    <title>Jared Connor</title>
     <link>https://www.jaredtconnor.com/</link>
-    <description>Recent content on Noteworthy</description>
+    <description>Recent content on Jared Connor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/index.xml" rel="self" type="application/rss+xml" />
@@ -89,6 +89,15 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://www.jaredtconnor.com/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Questions about economics</title>
       <link>https://www.jaredtconnor.com/blog/questions_about_economics/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -167,6 +176,15 @@
       
       <guid>https://www.jaredtconnor.com/blog/first-of-many/</guid>
       <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.jaredtconnor.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jaredtconnor.com/about/</guid>
+      <description>This is my blog Hey there nice to meet you, for a background we&amp;rsquo;ll cover that in a bit.</description>
     </item>
     
   </channel>
