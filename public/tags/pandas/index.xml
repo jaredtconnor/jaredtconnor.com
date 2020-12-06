@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pandas on Jared Connor</title>
-    <link>https://www.jaredtconnor.com/tags/pandas/</link>
-    <description>Recent content in pandas on Jared Connor</description>
+    <title>pandas on Signs of Improvement</title>
+    <link>https://jaredtconnor.com/tags/pandas/</link>
+    <description>Recent content in pandas on Signs of Improvement</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/pandas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Housing Price Analysis</title>
-      <link>https://www.jaredtconnor.com/projects/housing-price-analysis/</link>
+      <link>https://jaredtconnor.com/projects/housing-price-analysis/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/projects/housing-price-analysis/</guid>
-      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis.</description>
+      <guid>https://jaredtconnor.com/projects/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+The project is broken up into two main sections:
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
     </item>
     
   </channel>

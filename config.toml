@@ -1,70 +1,72 @@
-baseURL = "https://www.jaredtconnor.com/"
+baseURL = "https://jaredtconnor.com"
 languageCode = "en-us"
-title = "Jared Connor"
-theme = "noteworthy"
-enableRobotsTXT = true
-paginate = 4 # Set the number of posts to show before overflowing to the next page.
-summaryLength = 10 # Configure how long the post summary should be on the homepage.
+title = "Signs of Improvement"
+theme = "cactus"
+copyright = "Jared C." # cactus will use title if copyright is not set
+# googleAnalytics = "UA-1234-5"
 
-# Add your Google Analytics identifier: UA-XXXXXXXX-X
-googleAnalytics = "" 
+# summaryLength = 2
 
-[taxonomies]
-  tag = "tags"
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-[author]
-	name = "Jared Connor"
+[[menu.main]]
+name = "Writings"
+url = "/blog"
+weight = 2
 
-# Set to false to disallow raw HTML in markdown files
-[markup.goldmark.renderer]
-    unsafe = true
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
 
 [params]
-	math = true
+
+  colortheme = "white" # dark, light, white, or classic
+  rss = true # generate rss feed. default value is false
+  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+
+  # Home page settings
+  description = "Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale." 
+  mainSection = "blog" # your main section
+  showAllPostsOnHomePage = false # default
+  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
+  tagsOverview = false # show tags overview by default.
+  showProjectsList = true # show projects list by default (if projects data file exists).
+  projectsUrl = "https://github.com/gohugoio" # title link for projects list
+
+  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+  dateFormat = "2006-01-02" # default
+
+  # Post page settings
+  show_updated = false # default
+
+  [params.comments]
+    enabled = false # default
+    engine = "disqus" # more supported engines will be added.
 	
-  description = ""
-
-    showReadMore = false
-  
-  # Social Accounts and Icons
-	email = "jaredconnor301@gmail.com"
-  twitter = "https://twitter.com/Jared_ThomasC"
-  linkedin = "https://www.linkedin.com/in/jaredconnor/"
-  github = "https://github.com/jaredtconnor"
-
-# Menu links along the sidebar navigation.
-[[menu.main]]
-	identifier = "about"
-	name = "About"
-	url = "/about/"
-	weight = 1
-
-[[menu.main]]
-	identifier = "blog" 
-	name = "Blog"
-	url = ""
-	weight = 2
-
-[[menu.main]]
-	identifier = "projects"
-	name = "Projects"
-	url = "/projects/"
-	weight = 3
-
-[[menu.main]]
-	identifier = "archives"
-	name = "Archives"
-	url = "/archives/"
-	weight = 4
-
-# Privacy configurations: https://gohugo.io/about/hugo-and-gdpr/
-[privacy]
-  [privacy.googleAnalytics]
-    anonymizeIP = true
-    disable = false
-    respectDoNotTrack = false
-    useSessionStorage = false
-  [privacy.twitter]
-    disable = false
-    enableDNT = false
-    simple = false
+  # Social Media lings
+  # https://fontawesome.com/icons?d=gallery&s=brands
+  [[params.social]]
+    name = "linkedin"
+    link = "https://www.linkedin.com/in/jaredconnor/"
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/jaredtconnor"
+  [[params.social]]
+    name = "email"
+    link = "jaredconnor301@gmail.com "  # no need for "mailto:" in the head
