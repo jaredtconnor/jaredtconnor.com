@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>intro on Jared Connor</title>
-    <link>https://www.jaredtconnor.com/tags/intro/</link>
-    <description>Recent content in intro on Jared Connor</description>
+    <title>intro on Signs of Improvement</title>
+    <link>https://jaredtconnor.com/tags/intro/</link>
+    <description>Recent content in intro on Signs of Improvement</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/intro/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Thu, 23 Nov 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First of Many!</title>
-      <link>https://www.jaredtconnor.com/blog/first-of-many/</link>
+      <link>https://jaredtconnor.com/blog/first-of-many/</link>
       <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/blog/first-of-many/</guid>
-      <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here.</description>
+      <guid>https://jaredtconnor.com/blog/first-of-many/</guid>
+      <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
+So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description>
     </item>
     
   </channel>

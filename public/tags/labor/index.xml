@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>labor on Jared Connor</title>
-    <link>https://www.jaredtconnor.com/tags/labor/</link>
-    <description>Recent content in labor on Jared Connor</description>
+    <title>labor on Signs of Improvement</title>
+    <link>https://jaredtconnor.com/tags/labor/</link>
+    <description>Recent content in labor on Signs of Improvement</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jaredtconnor.com/tags/labor/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/labor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interactive Exploration of Dead End Careers</title>
-      <link>https://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link>
+      <link>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid>
-      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there.</description>
+      <guid>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid>
+      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there. While they attempted to view so called dead end jobs, which they roughly define as jobs that lack little wage growth later in their lives, the analysis illustrates a developing trend - the gradual widening of the high skill/high wage labor and low skill/low wage/service oriented labor.</description>
     </item>
     
   </channel>
