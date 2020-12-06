@@ -1,283 +1,280 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Jared Connor</title>
-    <link>https://www.jaredtconnor.com/tags/</link>
-    <description>Recent content in Tags on Jared Connor</description>
+    <title>Tags on Signs of Improvement</title>
+    <link>https://jaredtconnor.com/tags/</link>
+    <description>Recent content in Tags on Signs of Improvement</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.jaredtconnor.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>economics</title>
-      <link>https://www.jaredtconnor.com/tags/economics/</link>
+      <link>https://jaredtconnor.com/tags/economics/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/economics/</guid>
+      <guid>https://jaredtconnor.com/tags/economics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>finance</title>
-      <link>https://www.jaredtconnor.com/tags/finance/</link>
+      <link>https://jaredtconnor.com/tags/finance/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/finance/</guid>
+      <guid>https://jaredtconnor.com/tags/finance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>banking</title>
-      <link>https://www.jaredtconnor.com/tags/banking/</link>
+      <link>https://jaredtconnor.com/tags/banking/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/banking/</guid>
+      <guid>https://jaredtconnor.com/tags/banking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>payments</title>
-      <link>https://www.jaredtconnor.com/tags/payments/</link>
+      <link>https://jaredtconnor.com/tags/payments/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/payments/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IOT</title>
-      <link>https://www.jaredtconnor.com/tags/iot/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jaredtconnor.com/tags/iot/</guid>
+      <guid>https://jaredtconnor.com/tags/payments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>c&#43;&#43;</title>
-      <link>https://www.jaredtconnor.com/tags/c&#43;&#43;/</link>
+      <link>https://jaredtconnor.com/tags/c&#43;&#43;/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/c&#43;&#43;/</guid>
+      <guid>https://jaredtconnor.com/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IOT</title>
+      <link>https://jaredtconnor.com/tags/iot/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/tags/iot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microcontrollers</title>
-      <link>https://www.jaredtconnor.com/tags/microcontrollers/</link>
+      <link>https://jaredtconnor.com/tags/microcontrollers/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/microcontrollers/</guid>
+      <guid>https://jaredtconnor.com/tags/microcontrollers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>debt</title>
-      <link>https://www.jaredtconnor.com/tags/debt/</link>
+      <link>https://jaredtconnor.com/tags/debt/</link>
       <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/debt/</guid>
+      <guid>https://jaredtconnor.com/tags/debt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>education</title>
-      <link>https://www.jaredtconnor.com/tags/education/</link>
+      <link>https://jaredtconnor.com/tags/education/</link>
       <pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/education/</guid>
+      <guid>https://jaredtconnor.com/tags/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>relationships</title>
-      <link>https://www.jaredtconnor.com/tags/relationships/</link>
+      <link>https://jaredtconnor.com/tags/relationships/</link>
       <pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/relationships/</guid>
+      <guid>https://jaredtconnor.com/tags/relationships/</guid>
       <description></description>
     </item>
     
     <item>
       <title>statistics</title>
-      <link>https://www.jaredtconnor.com/tags/statistics/</link>
+      <link>https://jaredtconnor.com/tags/statistics/</link>
       <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/statistics/</guid>
+      <guid>https://jaredtconnor.com/tags/statistics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>anthropology</title>
-      <link>https://www.jaredtconnor.com/tags/anthropology/</link>
+      <link>https://jaredtconnor.com/tags/anthropology/</link>
       <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/anthropology/</guid>
+      <guid>https://jaredtconnor.com/tags/anthropology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>family</title>
-      <link>https://www.jaredtconnor.com/tags/family/</link>
+      <link>https://jaredtconnor.com/tags/family/</link>
       <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/family/</guid>
+      <guid>https://jaredtconnor.com/tags/family/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>https://www.jaredtconnor.com/tags/programming/</link>
+      <link>https://jaredtconnor.com/tags/programming/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/programming/</guid>
+      <guid>https://jaredtconnor.com/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://www.jaredtconnor.com/tags/python/</link>
+      <link>https://jaredtconnor.com/tags/python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/python/</guid>
+      <guid>https://jaredtconnor.com/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>effective_altruism</title>
-      <link>https://www.jaredtconnor.com/tags/effective_altruism/</link>
+      <link>https://jaredtconnor.com/tags/effective_altruism/</link>
       <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/effective_altruism/</guid>
+      <guid>https://jaredtconnor.com/tags/effective_altruism/</guid>
       <description></description>
     </item>
     
     <item>
       <title>philosophy</title>
-      <link>https://www.jaredtconnor.com/tags/philosophy/</link>
+      <link>https://jaredtconnor.com/tags/philosophy/</link>
       <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/philosophy/</guid>
+      <guid>https://jaredtconnor.com/tags/philosophy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>https://www.jaredtconnor.com/tags/life/</link>
+      <link>https://jaredtconnor.com/tags/life/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/life/</guid>
+      <guid>https://jaredtconnor.com/tags/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mental_health</title>
-      <link>https://www.jaredtconnor.com/tags/mental_health/</link>
+      <link>https://jaredtconnor.com/tags/mental_health/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/mental_health/</guid>
+      <guid>https://jaredtconnor.com/tags/mental_health/</guid>
       <description></description>
     </item>
     
     <item>
       <title>choices</title>
-      <link>https://www.jaredtconnor.com/tags/choices/</link>
+      <link>https://jaredtconnor.com/tags/choices/</link>
       <pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/choices/</guid>
+      <guid>https://jaredtconnor.com/tags/choices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>happiness</title>
-      <link>https://www.jaredtconnor.com/tags/happiness/</link>
+      <link>https://jaredtconnor.com/tags/happiness/</link>
       <pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/happiness/</guid>
+      <guid>https://jaredtconnor.com/tags/happiness/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psychology</title>
-      <link>https://www.jaredtconnor.com/tags/psychology/</link>
+      <link>https://jaredtconnor.com/tags/psychology/</link>
       <pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/psychology/</guid>
+      <guid>https://jaredtconnor.com/tags/psychology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data_analysis</title>
-      <link>https://www.jaredtconnor.com/tags/data_analysis/</link>
+      <link>https://jaredtconnor.com/tags/data_analysis/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/data_analysis/</guid>
+      <guid>https://jaredtconnor.com/tags/data_analysis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>employment</title>
-      <link>https://www.jaredtconnor.com/tags/employment/</link>
+      <link>https://jaredtconnor.com/tags/employment/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/employment/</guid>
+      <guid>https://jaredtconnor.com/tags/employment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>labor</title>
-      <link>https://www.jaredtconnor.com/tags/labor/</link>
+      <link>https://jaredtconnor.com/tags/labor/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/labor/</guid>
+      <guid>https://jaredtconnor.com/tags/labor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>economic output</title>
-      <link>https://www.jaredtconnor.com/tags/economic-output/</link>
+      <link>https://jaredtconnor.com/tags/economic-output/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/economic-output/</guid>
+      <guid>https://jaredtconnor.com/tags/economic-output/</guid>
       <description></description>
     </item>
     
     <item>
       <title>geo spatial</title>
-      <link>https://www.jaredtconnor.com/tags/geo-spatial/</link>
+      <link>https://jaredtconnor.com/tags/geo-spatial/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/geo-spatial/</guid>
+      <guid>https://jaredtconnor.com/tags/geo-spatial/</guid>
       <description></description>
     </item>
     
     <item>
       <title>intro</title>
-      <link>https://www.jaredtconnor.com/tags/intro/</link>
+      <link>https://jaredtconnor.com/tags/intro/</link>
       <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/intro/</guid>
+      <guid>https://jaredtconnor.com/tags/intro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>web_scraping</title>
-      <link>https://www.jaredtconnor.com/tags/web_scraping/</link>
+      <link>https://jaredtconnor.com/tags/web_scraping/</link>
       <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/web_scraping/</guid>
+      <guid>https://jaredtconnor.com/tags/web_scraping/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pandas</title>
-      <link>https://www.jaredtconnor.com/tags/pandas/</link>
+      <link>https://jaredtconnor.com/tags/pandas/</link>
       <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jaredtconnor.com/tags/pandas/</guid>
+      <guid>https://jaredtconnor.com/tags/pandas/</guid>
       <description></description>
     </item>
     
