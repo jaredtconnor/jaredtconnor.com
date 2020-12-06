@@ -1,72 +1,72 @@
-baseurl = "https://www.jaredtconnor.com/"
-title = "Jared Connor"
-theme = "hugo-coder"
-languagecode = "en"
-defaultcontentlanguage = "en"
+baseURL = "https://jaredtconnor.com"
+languageCode = "en-us"
+title = "Signs of Improvement"
+theme = "cactus"
+copyright = "Jared C." # cactus will use title if copyright is not set
+# googleAnalytics = "UA-1234-5"
 
-paginate = 20
-canonifyurls = true
+# summaryLength = 2
 
-pygmentsstyle = "friendly"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-googleAnalytics = "UA-107829262-1"
+[[menu.main]]
+name = "Writings"
+url = "/blog"
+weight = 2
 
-disqusShortname = "#"
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
 
 [params]
-    author = "Jared Connor"
-    info = "Financial Analyst for Umpqua Bank"
-    description = "Jared Connor's personal website and blog"
-    keywords = "blog,developer,personal,economics,finance,analyst"
-    avatarurl = "images/portrait.jpeg"
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+  colortheme = "white" # dark, light, white, or classic
+  rss = true # generate rss feed. default value is false
+  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
 
-    footercontent = "Here you can find  projects and writings mostly relating to economics, data infrastructures, computer science, and policy."
+  # Home page settings
+  description = "Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale." 
+  mainSection = "blog" # your main section
+  showAllPostsOnHomePage = false # default
+  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
+  tagsOverview = false # show tags overview by default.
+  showProjectsList = true # show projects list by default (if projects data file exists).
+  projectsUrl = "https://github.com/gohugoio" # title link for projects list
 
-    hidecredits = true
-    hidecopyright = false
+  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+  dateFormat = "2006-01-02" # default
 
-    rtl = false
+  # Post page settings
+  show_updated = false # default
 
-    math = true
-    custom_css = ["css/custom.css"]
-
-# Social links
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github fa-2x"
-    weight = 1
-    url = "https://github.com/jaredtconnor/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
-    weight = 3
-    url = "https://twitter.com/Jared_ThomasC/"
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin fa-2x"
-    weight = 3
-    url = "https://www.linkedin.com/in/jaredconnor/"
-[[params.social]]
-    name = "Mail"
-    icon = "fas fa-envelope fa-2x"
-    weight = 4
-    url = "mailto:jaredconnor301@gmail.com"
-
-# Menu links
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/blog/"
-[[menu.main]]
-    name = "Projects"
-    weight = 2
-    url = "/projects/"
-[[menu.main]]
-    name = "CV"
-    weight = 3
-    url = "/files/resume.pdf"
+  [params.comments]
+    enabled = false # default
+    engine = "disqus" # more supported engines will be added.
+	
+  # Social Media lings
+  # https://fontawesome.com/icons?d=gallery&s=brands
+  [[params.social]]
+    name = "linkedin"
+    link = "https://www.linkedin.com/in/jaredconnor/"
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/jaredtconnor"
+  [[params.social]]
+    name = "email"
+    link = "jaredconnor301@gmail.com "  # no need for "mailto:" in the head
