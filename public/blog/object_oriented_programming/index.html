@@ -1,221 +1,71 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Understanding Object Oriented Programming | Signs of Improvement</title>
-  <meta name="description" content="Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Understanding Object Oriented Programming" />
-<meta property="og:description" content="Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
-So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jaredtconnor.com/blog/object_oriented_programming/" />
-<meta property="article:published_time" content="2019-01-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-01-05T00:00:00+00:00" />
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Understanding Object Oriented Programming"/>
-<meta name="twitter:description" content="Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
-So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists."/>
-
-  
-  
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Understanding Object Oriented Programming | Signs of Improvement</title><meta name=description content="Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale."><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Understanding Object Oriented Programming"><meta property="og:description" content="Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
+So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists."><meta property="og:type" content="article"><meta property="og:url" content="https://jaredtconnor.com/blog/object_oriented_programming/"><meta property="article:published_time" content="2019-01-05T00:00:00+00:00"><meta property="article:modified_time" content="2019-01-05T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Understanding Object Oriented Programming"><meta name=twitter:description content="Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
+So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists."><link rel=stylesheet href=https://jaredtconnor.com/css/style-white.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://jaredtconnor.com/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><header id=header><a href=https://jaredtconnor.com><div id=logo style=background-image:url(https://jaredtconnor.com/images/logo.png)></div><div id=title><h1>Signs of Improvement</h1></div></a><div id=nav><ul><li class=icon><a href=#><i class="fas fa-bars fa-2x"></i></a></li><li><a href=/>Home</a></li><li><a href=/blog>Writings</a></li><li><a href=/tags>Tags</a></li><li><a href=/about>About</a></li></ul></div></header><article class=post itemscope itemtype=http://schema.org/BlogPosting><div class=content itemprop=articleBody><h1 id=classes-and-programming-paradigms-for-python>Classes and Programming Paradigms for Python</h1><p>Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use
+of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to <em>attempt</em> to arrive at a solution. All that said, these paradigms are different ways to solve problems.</p><p>So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists. All of these are available to write programs that could reference string input from a file or numbers to represent the amount of sales in a specific month.</p><p>But what if we were to try to represent a more complex <em>object</em> that can&rsquo;t be distilled down to just a number or string. That&rsquo;s where these paradigms come into play.</p><h3 id=object-oriented-and-procedural-programming>Object Oriented and Procedural Programming</h3><p>While Python was technically developed as a Object Oriented Programming (<em>OOP</em>) language, that still doesn&rsquo;t mean it&rsquo;s perfectly suitable for Procedural Programming situations.</p><ul><li><p>Object Oriented Programming is an approach to model the world or a system by the it&rsquo;s main components. That is to say, it is a manner to break problems down into it&rsquo;s inter=connective components and the relations between those components.</p></li><li><p>Procedural Programming on the other hand is an approach to model a program down by a chronological recipe that arrives at a solution through a series of steps.</p></li></ul><h3 id=classes-in-python>Classes in Python</h3><p>Classes are used to provide user defined data structure to objects that other wise wouldn&rsquo;t be possible. For example, if we were going to represent a dog, it would be mighty difficult with simple data structures. By defining classes, we can provide our own defined structure to the object of a dog, and tack on specifications that we think will be important. So we could define the dogs <code>breed</code>, <code>hair length</code>, <code>bubbaness</code> within the class, then utilize that further on in our program.</p><p>So how would we define a class:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Dog</span>:
     
-  
-  
-  <link rel="stylesheet" href="https://jaredtconnor.com/css/style-white.css">
-  
-  
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
+    species <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;mammal&#34;</span>
 
-  
-<link rel="icon" type="image/png" href="https://jaredtconnor.com/images/favicon.ico" />
+    <span style=color:#75715e># Initialization and Attributes</span>
+    <span style=color:#66d9ef>def</span> __init__(self, name, breed, age):
+        self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+        self<span style=color:#f92672>.</span>breed <span style=color:#f92672>=</span> breed
+        self<span style=color:#f92672>.</span>age <span style=color:#f92672>=</span> age 
 
-  
-  
-  
-  
-</head>
+cody <span style=color:#f92672>=</span> Dog(<span style=color:#e6db74>&#34;Cody&#34;</span>, <span style=color:#e6db74>&#34;Australian Shepard&#34;</span>, <span style=color:#ae81ff>2</span>)
+boon <span style=color:#f92672>=</span> Dog(<span style=color:#e6db74>&#34;Boon&#34;</span>, <span style=color:#e6db74>&#34;Golden Retriever&#34;</span>, <span style=color:#ae81ff>1</span>)
 
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+<span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#34;{cody.name} is a {cody.breed}, and {boon.name} is a {boon.breed}&#34;</span>)
 
-    <header id="header">
-  <a href="https://jaredtconnor.com">
-  
-    <div id="logo" style="background-image: url(https://jaredtconnor.com/images/logo.png)"></div>
-  
-  <div id="title">
-    <h1>Signs of Improvement</h1>
-  </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/blog">Writings</a></li>
-      
-        <li><a href="/tags">Tags</a></li>
-      
-        <li><a href="/about">About</a></li>
-      
-    </ul>
-  </div>
-</header>
+</code></pre></div><p>Should yield us an output of: <code>Cody is a Australian Shepard, and Boon is a Golden Retriever</code>.</p><p>Which is awesome! Let&rsquo;s tear this apart. The <code>__init__</code> function, specifically a method (a function within a class), automatically runs upon a class' initialization to populate the class with required information. Specifically for OOP, it is a <a href=https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>constructor</a>. The <code>self</code> variable, while difficult to grasp a first, refers to the object itself, which can be assigned values and characteristics passed through upon initialization.</p><p>A really important concept to remember here is the difference between a <strong>class</strong> and a specific <strong>instance</strong> of a class. That is a complicated concept but can be understood as a class is a generalization of our object where as a specific instance of our object is just that, a specific case. Basically, the difference is an idea of a dog (a class) and the cute Bubba (a specific instance of a dog).</p><p>To get a better idea of how we can reference the class, take this example:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Breeder</span>: 
+
+    <span style=color:#75715e># Initialization and Attributes </span>
+    <span style=color:#66d9ef>def</span> __init__(self, name, location, breed_type):
+        self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+        self<span style=color:#f92672>.</span>location <span style=color:#f92672>=</span> location
+        self<span style=color:#f92672>.</span>breed_type <span style=color:#f92672>=</span> breed_type
+
+    <span style=color:#75715e># Example of passing self</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>description</span>(self):
+        <span style=color:#66d9ef>return</span> f<span style=color:#e6db74>&#34;The {self.name} breeder, located in {self.location}, breeds {self.breed_type}&#34;</span>
+
+    <span style=color:#75715e># Example of instance method</span>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>puppies_available</span>(self, amount_of_puppies):
+        <span style=color:#66d9ef>return</span> f<span style=color:#e6db74>&#34;{self.name} has {amount_of_puppies} puppies available right now.&#34;</span>
 
 
+Golden_state_goldens <span style=color:#f92672>=</span> Breeder(<span style=color:#e6db74>&#34;Golden State Goldens&#34;</span>, <span style=color:#e6db74>&#34;California&#34;</span>, <span style=color:#e6db74>&#34;Golden Retrievers&#34;</span>)
 
-    
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<span style=color:#66d9ef>print</span>(Golden_state_goldens<span style=color:#f92672>.</span>description)
+<span style=color:#66d9ef>print</span>(puppies_available<span style=color:#f92672>.</span>puppies_available(<span style=color:#ae81ff>10</span>)
 
-  <div class="content" itemprop="articleBody">
-  
-    <h1 id="classes-and-programming-paradigms-for-python">Classes and Programming Paradigms for Python</h1>
-<p>Programming paradigms, at least in my case of teaching myself programming, was something that I didn&rsquo;t stress but should have. While programming requires the use
-of writing code in a specific language&rsquo;s syntax, its more so a manner to distill a problem into a procedure to <em>attempt</em> to arrive at a solution. All that said, these paradigms are different ways to solve problems.</p>
-<p>So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists. All of these are available to write programs that could reference string input from a file or numbers to represent the amount of sales in a specific month.</p>
-<p>But what if we were to try to represent a more complex <em>object</em> that can&rsquo;t be distilled down to just a number or string. That&rsquo;s where these paradigms come into play.</p>
-<h3 id="object-oriented-and-procedural-programming">Object Oriented and Procedural Programming</h3>
-<p>While Python was technically developed as a Object Oriented Programming (<em>OOP</em>) language, that still doesn&rsquo;t mean it&rsquo;s perfectly suitable for Procedural Programming situations.</p>
-<ul>
-<li>
-<p>Object Oriented Programming is an approach to model the world or a system by the it&rsquo;s main components. That is to say, it is a manner to break problems down into it&rsquo;s inter=connective components and the relations between those components.</p>
-</li>
-<li>
-<p>Procedural Programming on the other hand is an approach to model a program down by a chronological recipe that arrives at a solution through a series of steps.</p>
-</li>
-</ul>
-<h3 id="classes-in-python">Classes in Python</h3>
-<p>Classes are used to provide user defined data structure to objects that other wise wouldn&rsquo;t be possible. For example, if we were going to represent a dog, it would be mighty difficult with simple data structures. By defining classes, we can provide our own defined structure to the object of a dog, and tack on specifications that we think will be important. So we could define the dogs <code>breed</code>, <code>hair length</code>, <code>bubbaness</code> within the class, then utilize that further on in our program.</p>
-<p>So how would we define a class:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>:
-    
-    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mammal&#34;</span>
+</code></pre></div><p>This yields us the result of:</p><p><code>The Golden State Goldens breeder, located in California, breeds Golden Retrievers</code> and <code>Golden State Goldens has 10 puppies available right now</code>.</p><p>In general, the <em>self</em> variable quite literally is referencing the specific instance. If we think of the class as a <a href=https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)>factory</a> it helps make the idea of the <em>init</em> and <em>self</em> concepts a bit more clear.</p><h4 id=modifying-classes>Modifying Classes</h4><p>It also would be quite useful to modify an instance, such as this example:</p><p>What the breeder we created sold one of it&rsquo;s really cute puppies?</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Breeder</span>: 
 
-    <span style="color:#75715e"># Initialization and Attributes</span>
-    <span style="color:#66d9ef">def</span> __init__(self, name, breed, age):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>breed <span style="color:#f92672">=</span> breed
-        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age 
+    <span style=color:#66d9ef>def</span> __init__(self, puppies_available): 
+        self<span style=color:#f92672>.</span>puppies_available <span style=color:#f92672>=</span> puppies_available
 
-cody <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#34;Cody&#34;</span>, <span style="color:#e6db74">&#34;Australian Shepard&#34;</span>, <span style="color:#ae81ff">2</span>)
-boon <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#34;Boon&#34;</span>, <span style="color:#e6db74">&#34;Golden Retriever&#34;</span>, <span style="color:#ae81ff">1</span>)
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sold_puppy</span>(self):
+        self<span style=color:#f92672>.</span>puppies_available <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
 
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{cody.name} is a {cody.breed}, and {boon.name} is a {boon.breed}&#34;</span>)
+Ozzy_Aussies <span style=color:#f92672>=</span> Breeder(<span style=color:#ae81ff>6</span>)
+Ozzy_Aussies<span style=color:#f92672>.</span>sold_puppy()
+<span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#34;Puppies Available: {Ozzy_Aussies.puppies_available}&#34;</span>)
+</code></pre></div><p>Should output: <code>Puppies Available: 5</code></p><h4 id=object-inheritance>Object Inheritance</h4><p>The last important thing I discovered is object inheritance. This is the concept where you can have a specific <em>parent</em> object, and further a <em>child</em> object can inherit the attributes from the parent while also defining it&rsquo;s own attributes.</p><p>For example:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Dog</span>:
+    species <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;mammal&#34;</span>
 
-</code></pre></div><p>Should yield us an output of: <code>Cody is a Australian Shepard, and Boon is a Golden Retriever</code>.</p>
-<p>Which is awesome! Let&rsquo;s tear this apart. The <code>__init__</code> function, specifically a method (a function within a class), automatically runs upon a class' initialization to populate the class with required information. Specifically for OOP, it is a <a href="https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)">constructor</a>. The <code>self</code> variable, while difficult to grasp a first, refers to the object itself, which can be assigned values and characteristics passed through upon initialization.</p>
-<p>A really important concept to remember here is the difference between a <strong>class</strong> and a specific <strong>instance</strong> of a class. That is a complicated concept but can be understood as a class is a generalization of our object where as a specific instance of our object is just that, a specific case. Basically, the difference is an idea of a dog (a class) and the cute Bubba (a specific instance of a dog).</p>
-<p>To get a better idea of how we can reference the class, take this example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Breeder</span>: 
+    <span style=color:#66d9ef>def</span> __init__(self, name, age):
+        self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+        self<span style=color:#f92672>.</span>age <span style=color:#f92672>=</span> age
 
-    <span style="color:#75715e"># Initialization and Attributes </span>
-    <span style="color:#66d9ef">def</span> __init__(self, name, location, breed_type):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>location <span style="color:#f92672">=</span> location
-        self<span style="color:#f92672">.</span>breed_type <span style="color:#f92672">=</span> breed_type
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Border_Collie</span>(Dog):
 
-    <span style="color:#75715e"># Example of passing self</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">description</span>(self):
-        <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;The {self.name} breeder, located in {self.location}, breeds {self.breed_type}&#34;</span>
+    energy_level <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Extremely High&#34;</span>
 
-    <span style="color:#75715e"># Example of instance method</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">puppies_available</span>(self, amount_of_puppies):
-        <span style="color:#66d9ef">return</span> f<span style="color:#e6db74">&#34;{self.name} has {amount_of_puppies} puppies available right now.&#34;</span>
+Gus <span style=color:#f92672>=</span> Dog(<span style=color:#e6db74>&#34;Gus&#34;</span>, <span style=color:#ae81ff>10</span>)
+Charlie <span style=color:#f92672>=</span> Border_Collie(<span style=color:#e6db74>&#34;Charlie&#34;</span>, <span style=color:#ae81ff>1</span>)
 
-
-Golden_state_goldens <span style="color:#f92672">=</span> Breeder(<span style="color:#e6db74">&#34;Golden State Goldens&#34;</span>, <span style="color:#e6db74">&#34;California&#34;</span>, <span style="color:#e6db74">&#34;Golden Retrievers&#34;</span>)
-
-<span style="color:#66d9ef">print</span>(Golden_state_goldens<span style="color:#f92672">.</span>description)
-<span style="color:#66d9ef">print</span>(puppies_available<span style="color:#f92672">.</span>puppies_available(<span style="color:#ae81ff">10</span>)
-
-</code></pre></div><p>This yields us the result of:</p>
-<p><code>The Golden State Goldens breeder, located in California, breeds Golden Retrievers</code> and <code>Golden State Goldens has 10 puppies available right now</code>.</p>
-<p>In general, the <em>self</em> variable quite literally is referencing the specific instance. If we think of the class as a <a href="https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)">factory</a> it helps make the idea of the <em>init</em> and <em>self</em> concepts a bit more clear.</p>
-<h4 id="modifying-classes">Modifying Classes</h4>
-<p>It also would be quite useful to modify an instance, such as this example:</p>
-<p>What the breeder we created sold one of it&rsquo;s really cute puppies?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Breeder</span>: 
-
-    <span style="color:#66d9ef">def</span> __init__(self, puppies_available): 
-        self<span style="color:#f92672">.</span>puppies_available <span style="color:#f92672">=</span> puppies_available
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sold_puppy</span>(self):
-        self<span style="color:#f92672">.</span>puppies_available <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-
-Ozzy_Aussies <span style="color:#f92672">=</span> Breeder(<span style="color:#ae81ff">6</span>)
-Ozzy_Aussies<span style="color:#f92672">.</span>sold_puppy()
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Puppies Available: {Ozzy_Aussies.puppies_available}&#34;</span>)
-</code></pre></div><p>Should output: <code>Puppies Available: 5</code></p>
-<h4 id="object-inheritance">Object Inheritance</h4>
-<p>The last important thing I discovered is object inheritance. This is the concept where you can have a specific <em>parent</em> object, and further a <em>child</em> object can inherit the attributes from the parent while also defining it&rsquo;s own attributes.</p>
-<p>For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>:
-    species <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mammal&#34;</span>
-
-    <span style="color:#66d9ef">def</span> __init__(self, name, age):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Border_Collie</span>(Dog):
-
-    energy_level <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Extremely High&#34;</span>
-
-Gus <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#34;Gus&#34;</span>, <span style="color:#ae81ff">10</span>)
-Charlie <span style="color:#f92672">=</span> Border_Collie(<span style="color:#e6db74">&#34;Charlie&#34;</span>, <span style="color:#ae81ff">1</span>)
-
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Charlies energy level: {Charlie.energy_level}&#34;</span>)
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;What kind of species is Charlie: {Charlie.species}&#34;</span>)
-</code></pre></div><p>Should output: <code>Charlies energy level: Extremely High</code> and <code>What kind of species is Charlie: mammal</code></p>
-<p>Functionally, the <code>Dog</code> class specifies the parent class of a dog. Then the child class, my boy Charlie, inherits all the characteristics of a dog but also additional attributes specific to the child class <code>Border_Collie</code>.</p>
-<p>All of this should allow us to write programs and solutions to problems in blocks. I&rsquo;ve ran into problems at work where writing a program in a procedural form is rather difficult because it requires you to break down the problem in sequential order. Sometimes procedures  might be great, especially things that follow a nice order (think of things like recipes). Yet classes and instances, more generally objects, allow us to easily solve problems that are dynamic and abstract in nature. I know I have a couple of scripts out there that are 500-750+ lines, which could easily be whittled down to a handful of modules that interact with each other. Adding this to my tool belt!</p>
-
-  
-  </div>
-</article>
-
-
-    <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2020  Jared C. 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/blog">Writings</a></li>
-         
-        <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-
-  </div>
-</body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-</html>
+<span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#34;Charlies energy level: {Charlie.energy_level}&#34;</span>)
+<span style=color:#66d9ef>print</span>(f<span style=color:#e6db74>&#34;What kind of species is Charlie: {Charlie.species}&#34;</span>)
+</code></pre></div><p>Should output: <code>Charlies energy level: Extremely High</code> and <code>What kind of species is Charlie: mammal</code></p><p>Functionally, the <code>Dog</code> class specifies the parent class of a dog. Then the child class, my boy Charlie, inherits all the characteristics of a dog but also additional attributes specific to the child class <code>Border_Collie</code>.</p><p>All of this should allow us to write programs and solutions to problems in blocks. I&rsquo;ve ran into problems at work where writing a program in a procedural form is rather difficult because it requires you to break down the problem in sequential order. Sometimes procedures might be great, especially things that follow a nice order (think of things like recipes). Yet classes and instances, more generally objects, allow us to easily solve problems that are dynamic and abstract in nature. I know I have a couple of scripts out there that are 500-750+ lines, which could easily be whittled down to a handful of modules that interact with each other. Adding this to my tool belt!</p></div></article><footer id=footer><div class=footer-left>Copyright &copy; 2020 Jared C.</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/blog>Writings</a></li><li><a href=/tags>Tags</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script></html>
