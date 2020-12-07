@@ -1,226 +1,69 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Arduino Watering System | Signs of Improvement</title>
-  <meta name="description" content="Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Arduino Watering System" />
-<meta property="og:description" content="It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://jaredtconnor.com/projects/microcontroller-watering-system/" />
-<meta property="article:published_time" content="2020-01-15T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-15T00:00:00+00:00" />
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Arduino Watering System"/>
-<meta name="twitter:description" content="It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade."/>
-
-  
-  
-    
-  
-  
-  <link rel="stylesheet" href="https://jaredtconnor.com/css/style-white.css">
-  
-  
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-<link rel="icon" type="image/png" href="https://jaredtconnor.com/images/favicon.ico" />
-
-  
-  
-  
-  
-</head>
-
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-    <header id="header">
-  <a href="https://jaredtconnor.com">
-  
-    <div id="logo" style="background-image: url(https://jaredtconnor.com/images/logo.png)"></div>
-  
-  <div id="title">
-    <h1>Signs of Improvement</h1>
-  </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/blog">Writings</a></li>
-      
-        <li><a href="/tags">Tags</a></li>
-      
-        <li><a href="/about">About</a></li>
-      
-    </ul>
-  </div>
-</header>
-
-
-
-    
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="content" itemprop="articleBody">
-  
-    <p><img src="/images/project_images/arduino_project/full_build.png#center" alt="water testing"></p>
-<p>It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade. The smell of a fresh jade plant in the early spring morning is something else. Creating a system that could sustainably water this plant seemed interesting, plus, there are a ton of examples online I could reference.</p>
-<h1 id="research">Research:</h1>
-<p>There were a couple of different ways to build something like this and we discussed most of them.</p>
-<ul>
-<li>
-<p>A <a href="https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system">gravity fed watering system</a> option to pump water for a single plant.</p>
-</li>
-<li>
-<p>A <a href="https://www.instructables.com/id/Arduino-Automatic-Watering-System-For-Plants/">sprinkler based system</a> which is interesting.</p>
-</li>
-<li>
-<p>A <a href="https://www.youtube.com/watch?v=O_Q1WKCtWiA">soaker hose watering system</a> based on temperature, UV, and soil moisture level sensors, though this is on the high end of what was needed.</p>
-</li>
-</ul>
-<p>I knew that I wanted to run the system of a pump to be able to scale out to a full planter in the future. You could go with a solenoid activated water value to plumb into a house’s existing water fittings as seen in option 3 which, arguably could be where I take this into the future, but for now the pump will do just fine. With a pump-based system, we can actively water the plant on as-needed bases, just by pumping water into the pot.</p>
-<h1 id="requirements">Requirements:</h1>
-<ol>
-<li>
-<p><a href="https://store.arduino.cc/usa/arduino-uno-rev3">Arduino Uno</a>: The flavor of microcontroller you decide to go with is ultimately a personal preference. My brother had an extra Uno laying around, so I used that.</p>
-</li>
-<li>
-<p><a href="https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/python-circuitpython-test">Seesaw Capacitive Soil Sensor</a>: To know when the soil requires water, we need a sensor to quantify the moisture level of the soil. There are two types of soil sensors available 1) a capacitive moisture sensor that senses the soil’s ability to store an electrical charge and a 2) resistive moisture sensor which sends a current through the soil to view the level of resistance. After researching several projects, I’ve read that the resistive sensors are prone to corrosion, so I decided to utilize a capacitive sensor that utilizes the I2C protocol. I2C, a variant of data transfer protocol for controllers, is commonly used for <a href="https://dronebotworkshop.com/i2c-arduino-arduino/">microcontroller sensors</a> and communicating with other objects. There is more info <a href="https://electrosome.com/interfacing-soil-moisture-sensor-arduino/">here</a> if you would like to build this off an analog system.</p>
-</li>
-<li>
-<p>A 12v pump: To eventually pump water to the plant, we need some kind of pump. I decided to go with a <a href="https://www.amazon.com/gp/product/B074MZYS37/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&amp;psc=1">Bayite 12v pump</a> to allow for the capacity to add more sensors for more pots or an entire garden watering system. Alternatively, you could likely find a small pump that runs off the micro controller’s power, such as any <a href="https://www.amazon.com/Gikfun-Peristaltic-Connector-Aquarium-Analytic/dp/B01IUVHB8E/ref=sr_1_9?keywords=5v+water+pump&amp;qid=1580185420&amp;sr=8-9">dosing pump</a>, but we decided to go with a more powerful option.</p>
-</li>
-<li>
-<p><a href="https://www.adafruit.com/product/3191">A 5v Relay</a>: By going with a larger pump, power systems come into play. Our pump is running off 5-volt power, whereas the watering pump has auxiliary power at 12-volts. To switch power to the pump on and off, we need a relay to turn on and off based on the moisture reading from the controller.</p>
-</li>
-</ol>
-<h1 id="code">Code:</h1>
-<p>The structure of this code is fairly simple. The top is set up to define all variables. Our moisture level is defined based on the <a href="https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/overview">range</a> provided by the sensor docs. The <code>setup()</code> block is meant to initialize our serial output and then confirm if the sensor is providing input. The main <code>loop()</code> block should be considered analogous to a <code>main()</code> function in C++ programming.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Adafruit_seesaw.h&#34;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Arduino Watering System | Signs of Improvement</title><meta name=description content="Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale."><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Arduino Watering System"><meta property="og:description" content="It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade."><meta property="og:type" content="article"><meta property="og:url" content="https://jaredtconnor.com/projects/microcontroller-watering-system/"><meta property="article:published_time" content="2020-01-15T00:00:00+00:00"><meta property="article:modified_time" content="2020-01-15T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Arduino Watering System"><meta name=twitter:description content="It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade."><link rel=stylesheet href=https://jaredtconnor.com/css/style-white.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://jaredtconnor.com/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><header id=header><a href=https://jaredtconnor.com><div id=logo style=background-image:url(https://jaredtconnor.com/images/logo.png)></div><div id=title><h1>Signs of Improvement</h1></div></a><div id=nav><ul><li class=icon><a href=#><i class="fas fa-bars fa-2x"></i></a></li><li><a href=/>Home</a></li><li><a href=/blog>Writings</a></li><li><a href=/tags>Tags</a></li><li><a href=/about>About</a></li></ul></div></header><article class=post itemscope itemtype=http://schema.org/BlogPosting><div class=content itemprop=articleBody><p><img src=/images/project_images/arduino_project/full_build.png#center alt="water testing"></p><p>It&rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade. The smell of a fresh jade plant in the early spring morning is something else. Creating a system that could sustainably water this plant seemed interesting, plus, there are a ton of examples online I could reference.</p><h1 id=research>Research:</h1><p>There were a couple of different ways to build something like this and we discussed most of them.</p><ul><li><p>A <a href=https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system>gravity fed watering system</a> option to pump water for a single plant.</p></li><li><p>A <a href=https://www.instructables.com/id/Arduino-Automatic-Watering-System-For-Plants/>sprinkler based system</a> which is interesting.</p></li><li><p>A <a href="https://www.youtube.com/watch?v=O_Q1WKCtWiA">soaker hose watering system</a> based on temperature, UV, and soil moisture level sensors, though this is on the high end of what was needed.</p></li></ul><p>I knew that I wanted to run the system of a pump to be able to scale out to a full planter in the future. You could go with a solenoid activated water value to plumb into a house’s existing water fittings as seen in option 3 which, arguably could be where I take this into the future, but for now the pump will do just fine. With a pump-based system, we can actively water the plant on as-needed bases, just by pumping water into the pot.</p><h1 id=requirements>Requirements:</h1><ol><li><p><a href=https://store.arduino.cc/usa/arduino-uno-rev3>Arduino Uno</a>: The flavor of microcontroller you decide to go with is ultimately a personal preference. My brother had an extra Uno laying around, so I used that.</p></li><li><p><a href=https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/python-circuitpython-test>Seesaw Capacitive Soil Sensor</a>: To know when the soil requires water, we need a sensor to quantify the moisture level of the soil. There are two types of soil sensors available 1) a capacitive moisture sensor that senses the soil’s ability to store an electrical charge and a 2) resistive moisture sensor which sends a current through the soil to view the level of resistance. After researching several projects, I’ve read that the resistive sensors are prone to corrosion, so I decided to utilize a capacitive sensor that utilizes the I2C protocol. I2C, a variant of data transfer protocol for controllers, is commonly used for <a href=https://dronebotworkshop.com/i2c-arduino-arduino/>microcontroller sensors</a> and communicating with other objects. There is more info <a href=https://electrosome.com/interfacing-soil-moisture-sensor-arduino/>here</a> if you would like to build this off an analog system.</p></li><li><p>A 12v pump: To eventually pump water to the plant, we need some kind of pump. I decided to go with a <a href="https://www.amazon.com/gp/product/B074MZYS37/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1">Bayite 12v pump</a> to allow for the capacity to add more sensors for more pots or an entire garden watering system. Alternatively, you could likely find a small pump that runs off the micro controller’s power, such as any <a href="https://www.amazon.com/Gikfun-Peristaltic-Connector-Aquarium-Analytic/dp/B01IUVHB8E/ref=sr_1_9?keywords=5v+water+pump&qid=1580185420&sr=8-9">dosing pump</a>, but we decided to go with a more powerful option.</p></li><li><p><a href=https://www.adafruit.com/product/3191>A 5v Relay</a>: By going with a larger pump, power systems come into play. Our pump is running off 5-volt power, whereas the watering pump has auxiliary power at 12-volts. To switch power to the pump on and off, we need a relay to turn on and off based on the moisture reading from the controller.</p></li></ol><h1 id=code>Code:</h1><p>The structure of this code is fairly simple. The top is set up to define all variables. Our moisture level is defined based on the <a href=https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/overview>range</a> provided by the sensor docs. The <code>setup()</code> block is meant to initialize our serial output and then confirm if the sensor is providing input. The main <code>loop()</code> block should be considered analogous to a <code>main()</code> function in C++ programming.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;Adafruit_seesaw.h&#34;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span>
 Adafruit_seesaw ss;
 
-<span style="color:#75715e">// Defining constant variables
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> pumpPin <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> ledPin <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>; 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> moisture_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">750</span>; 
+<span style=color:#75715e>// Defining constant variables
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> pumpPin <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> ledPin <span style=color:#f92672>=</span> <span style=color:#ae81ff>12</span>; 
+<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> moisture_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>750</span>; 
 
-<span style="color:#75715e">// Defining other variables
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> pumpPower <span style="color:#f92672">=</span> LOW;    <span style="color:#75715e">// Preset pump power to off
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> ledPower <span style="color:#f92672">=</span> LOW;     <span style="color:#75715e">// Preset LED power to off
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">long</span> watering_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">5000</span>;    <span style="color:#75715e">// amount of time pump will water (1 sec = 1000 ms)
-</span><span style="color:#75715e"></span>
+<span style=color:#75715e>// Defining other variables
+</span><span style=color:#75715e></span><span style=color:#66d9ef>int</span> pumpPower <span style=color:#f92672>=</span> LOW;    <span style=color:#75715e>// Preset pump power to off
+</span><span style=color:#75715e></span><span style=color:#66d9ef>int</span> ledPower <span style=color:#f92672>=</span> LOW;     <span style=color:#75715e>// Preset LED power to off
+</span><span style=color:#75715e></span><span style=color:#66d9ef>long</span> watering_time <span style=color:#f92672>=</span> <span style=color:#ae81ff>5000</span>;    <span style=color:#75715e>// amount of time pump will water (1 sec = 1000 ms)
+</span><span style=color:#75715e></span>
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setup</span>() {
 
-  Serial.begin(<span style="color:#ae81ff">115200</span>);
+  Serial.begin(<span style=color:#ae81ff>115200</span>);
 
-  Serial.println(<span style="color:#e6db74">&#34;################### Soil Sensor v.2.0 ###################&#34;</span>);
+  Serial.println(<span style=color:#e6db74>&#34;################### Soil Sensor v.2.0 ###################&#34;</span>);
 
-  <span style="color:#75715e">// Detect to see if soil sensor is available
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>ss.begin(<span style="color:#ae81ff">0x36</span>)) {
-    Serial.println(<span style="color:#e6db74">&#34;ERROR! seesaw not found&#34;</span>);
-    <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>);
-  } <span style="color:#66d9ef">else</span> {
-    Serial.print(<span style="color:#e6db74">&#34;seesaw started! version: &#34;</span>);
+  <span style=color:#75715e>// Detect to see if soil sensor is available
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>ss.begin(<span style=color:#ae81ff>0x36</span>)) {
+    Serial.println(<span style=color:#e6db74>&#34;ERROR! seesaw not found&#34;</span>);
+    <span style=color:#66d9ef>while</span>(<span style=color:#ae81ff>1</span>);
+  } <span style=color:#66d9ef>else</span> {
+    Serial.print(<span style=color:#e6db74>&#34;seesaw started! version: &#34;</span>);
     Serial.println(ss.getVersion(), HEX);
   }
 
-  <span style="color:#75715e">// Initializing Output Pins
-</span><span style="color:#75715e"></span>  pinMode(pumpPin, OUTPUT);
+  <span style=color:#75715e>// Initializing Output Pins
+</span><span style=color:#75715e></span>  pinMode(pumpPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
 
 }
 
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+<span style=color:#66d9ef>void</span> <span style=color:#a6e22e>loop</span>() {
 
-  <span style="color:#75715e">// Read the capacitive soil sensor to get moisture reading (200: very dry | 2000: very wet)
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">float</span> tempC <span style="color:#f92672">=</span> ss.getTemp();
-  <span style="color:#66d9ef">uint16_t</span> capread <span style="color:#f92672">=</span> ss.touchRead(<span style="color:#ae81ff">0</span>);
+  <span style=color:#75715e>// Read the capacitive soil sensor to get moisture reading (200: very dry | 2000: very wet)
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>float</span> tempC <span style=color:#f92672>=</span> ss.getTemp();
+  <span style=color:#66d9ef>uint16_t</span> capread <span style=color:#f92672>=</span> ss.touchRead(<span style=color:#ae81ff>0</span>);
 
-  <span style="color:#75715e">// Printing out the current moisture
-</span><span style="color:#75715e"></span>  Serial.print(<span style="color:#e6db74">&#34;Temperature: &#34;</span>); Serial.print(tempC); Serial.println(<span style="color:#e6db74">&#34;*C&#34;</span>);
-  Serial.print(<span style="color:#e6db74">&#34;Capacitive: &#34;</span>); 
+  <span style=color:#75715e>// Printing out the current moisture
+</span><span style=color:#75715e></span>  Serial.print(<span style=color:#e6db74>&#34;Temperature: &#34;</span>); Serial.print(tempC); Serial.println(<span style=color:#e6db74>&#34;*C&#34;</span>);
+  Serial.print(<span style=color:#e6db74>&#34;Capacitive: &#34;</span>); 
   Serial.println(capread);
 
-  <span style="color:#75715e">// Conditional block to water the plant if the moisture level is too low
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(capread <span style="color:#f92672">&lt;=</span> moisture_level){
-    Serial.println(<span style="color:#e6db74">&#34;Moisture below threshold&#34;</span>);
+  <span style=color:#75715e>// Conditional block to water the plant if the moisture level is too low
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span>(capread <span style=color:#f92672>&lt;=</span> moisture_level){
+    Serial.println(<span style=color:#e6db74>&#34;Moisture below threshold&#34;</span>);
     
       digitalWrite(pumpPin, HIGH);
       digitalWrite(ledPin, LOW);
 
-      delay(<span style="color:#ae81ff">5000</span>);
+      delay(<span style=color:#ae81ff>5000</span>);
 
       digitalWrite(pumpPin, LOW);
       digitalWrite(ledPin, HIGH);
 
-     } <span style="color:#66d9ef">else</span> {
+     } <span style=color:#66d9ef>else</span> {
       digitalWrite(pumpPin, LOW);
       digitalWrite(ledPin, HIGH);
      }
  
-  delay(<span style="color:#ae81ff">300000</span>); 
-  <span style="color:#75715e">// 5 Mins = 300000
-</span><span style="color:#75715e"></span>}
-</code></pre></div>
-<h1 id="pictures">Pictures:</h1>
-<p><img src="/images/project_images/arduino_project/box.png#center" alt="Pump in box"></p>
-<p><img src="/images/project_images/arduino_project/pump.png#center" alt="Bayite Pump"></p>
-<p><img src="/images/project_images/arduino_project/uno_detail.png#center" alt="Board Detail"></p>
-<p><img src="/images/project_images/arduino_project/mock_build.png#center" alt="Mock Build"></p>
-<p><img src="/images/project_images/arduino_project/testing.png#center" alt="Soil testing"></p>
-<p>For an update, I will provide pictures in the spring once the jade plant begins to bloom. In terms of improvements towards this project, I would like to explore the use of a logging system. An <a href="https://startingelectronics.org/software/arduino/web-server/01-log-data/">SD card logging</a> system appears to be possible, or Adafruit just released a <a href="https://io.adafruit.com/">graphical UI</a> called <em>Adafruit IO</em>. <a href="https://aws.amazon.com/iot-things-graph/">AWS</a> also provides an IoT system that allows for controller integrations, but again we would need to incorporate some GSM, Bluetooth, or WiFi shield for this system.</p>
-
-  
-  </div>
-</article>
-
-
-    <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2020  Jared C. 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/blog">Writings</a></li>
-         
-        <li><a href="/tags">Tags</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-
-  </div>
-</body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-</html>
+  delay(<span style=color:#ae81ff>300000</span>); 
+  <span style=color:#75715e>// 5 Mins = 300000
+</span><span style=color:#75715e></span>}
+</code></pre></div><h1 id=pictures>Pictures:</h1><p><img src=/images/project_images/arduino_project/box.png#center alt="Pump in box"></p><p><img src=/images/project_images/arduino_project/pump.png#center alt="Bayite Pump"></p><p><img src=/images/project_images/arduino_project/uno_detail.png#center alt="Board Detail"></p><p><img src=/images/project_images/arduino_project/mock_build.png#center alt="Mock Build"></p><p><img src=/images/project_images/arduino_project/testing.png#center alt="Soil testing"></p><p>For an update, I will provide pictures in the spring once the jade plant begins to bloom. In terms of improvements towards this project, I would like to explore the use of a logging system. An <a href=https://startingelectronics.org/software/arduino/web-server/01-log-data/>SD card logging</a> system appears to be possible, or Adafruit just released a <a href=https://io.adafruit.com/>graphical UI</a> called <em>Adafruit IO</em>. <a href=https://aws.amazon.com/iot-things-graph/>AWS</a> also provides an IoT system that allows for controller integrations, but again we would need to incorporate some GSM, Bluetooth, or WiFi shield for this system.</p></div></article><footer id=footer><div class=footer-left>Copyright &copy; 2020 Jared C.</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/blog>Writings</a></li><li><a href=/tags>Tags</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script></html>
