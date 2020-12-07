@@ -1,9 +1,13 @@
 ---
-title: "Student Debt Increasing"
+title: Student Debt Increasing
 date: 2019-12-10
-tags: [debt, economics]
-source:
+tags:
+  - debt
+  - economics
+source: null
 draft: false
+featuredimage: /images/uploads/8e68aed1-4472-45e0-a141-78454ce6fb64_1_201_a.jpeg
+author: Jared C.
 ---
 
 [Student Loans A Lot Like The Subprime Mortgage Debacle, Watchdog Says](https://www.npr.org/2019/12/09/785527874/student-loans-a-lot-like-the-subprime-mortgage-debacle-watchdog-says) - From NPR
