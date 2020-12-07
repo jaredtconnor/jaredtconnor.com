@@ -1,2 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>statistics on Signs of Improvement</title><link>https://jaredtconnor.com/tags/statistics/</link><description>Recent content in statistics on Signs of Improvement</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Jared C.</copyright><lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/statistics/index.xml" rel="self" type="application/rss+xml"/><item><title>Reed students validate college ranking</title><link>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</link><pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</guid><description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
-They noted that without being able to derive the statistical model it is uncertain to determine if schools are being properly ranked and there is significant errors with a weighted-sum model (Clarke 2004).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics on Signs of Improvement</title>
+    <link>https://jaredtconnor.com/tags/statistics/</link>
+    <description>Recent content in statistics on Signs of Improvement</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Wed, 07 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reed students validate college ranking</title>
+      <link>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</guid>
+      <description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
+They noted that without being able to derive the statistical model it is uncertain to determine if schools are being properly ranked and there is significant errors with a weighted-sum model (Clarke 2004).</description>
+    </item>
+    
+  </channel>
+</rss>
