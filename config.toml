@@ -1,7 +1,7 @@
 baseURL = "https://jaredtconnor.com"
 languageCode = "en-us"
 title = "Signs of Improvement"
-theme = "cactus"
+theme = "hugo-theme-cactus"
 copyright = "Jared C." # cactus will use title if copyright is not set
 # googleAnalytics = "UA-1234-5"
 

@@ -1,20 +1,202 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Signs of Improvement</title><link>https://jaredtconnor.com/</link><description>Recent content on Signs of Improvement</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Jared C.</copyright><lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Arduino Watering System</title><link>https://jaredtconnor.com/projects/microcontroller-watering-system/</link><pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/projects/microcontroller-watering-system/</guid><description>It&amp;rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade.</description></item><item><title>Stock Price Scraper</title><link>https://jaredtconnor.com/projects/stock-price-scaper/</link><pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/projects/stock-price-scaper/</guid><description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description></item><item><title>Housing Price Analysis</title><link>https://jaredtconnor.com/projects/housing-price-analysis/</link><pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/projects/housing-price-analysis/</guid><description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Signs of Improvement</title>
+    <link>https://jaredtconnor.com/</link>
+    <description>Recent content on Signs of Improvement</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jared C.</copyright>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino Watering System</title>
+      <link>https://jaredtconnor.com/projects/microcontroller-watering-system/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/projects/microcontroller-watering-system/</guid>
+      <description>It&amp;rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade.</description>
+    </item>
+    
+    <item>
+      <title>Stock Price Scraper</title>
+      <link>https://jaredtconnor.com/projects/stock-price-scaper/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/projects/stock-price-scaper/</guid>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+    </item>
+    
+    <item>
+      <title>Housing Price Analysis</title>
+      <link>https://jaredtconnor.com/projects/housing-price-analysis/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/projects/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
 The project is broken up into two main sections:
-1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description></item><item><title>The United States is Risking Their Position in the Global Financial System</title><link>https://jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</link><pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</guid><description>It would be very tough to argue against the fact that we&amp;rsquo;re living in changing times. The COVID-19 pandemic is forcing a global economic shutdown on par with the great depression. Unemployment is spiking. In the U.S., the temporary lift through federal fiscal stimulus payments is working but there is uncertainty regarding how long this can be sustained before the tide of credit issues overflows businesses. Through such uncertainty, one should attempt to separate the temporary changes from the overall structural shifts in economic, political, and social structures.</description></item><item><title>Visa's acquisition of Plaid</title><link>https://jaredtconnor.com/blog/visa-buyout-of-plaid/</link><pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/visa-buyout-of-plaid/</guid><description>On January 13th, 2020, Visa came out publicly announcing the purchase of the banking startup called Plaid, which provided a service that actually connected fintech startups with the ability to connect to the modern banking payment rails.
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
+    </item>
+    
+    <item>
+      <title>The United States is Risking Their Position in the Global Financial System</title>
+      <link>https://jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</guid>
+      <description>It would be very tough to argue against the fact that we&amp;rsquo;re living in changing times. The COVID-19 pandemic is forcing a global economic shutdown on par with the great depression. Unemployment is spiking. In the U.S., the temporary lift through federal fiscal stimulus payments is working but there is uncertainty regarding how long this can be sustained before the tide of credit issues overflows businesses. Through such uncertainty, one should attempt to separate the temporary changes from the overall structural shifts in economic, political, and social structures.</description>
+    </item>
+    
+    <item>
+      <title>Visa&#39;s acquisition of Plaid</title>
+      <link>https://jaredtconnor.com/blog/visa-buyout-of-plaid/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/visa-buyout-of-plaid/</guid>
+      <description>On January 13th, 2020, Visa came out publicly announcing the purchase of the banking startup called Plaid, which provided a service that actually connected fintech startups with the ability to connect to the modern banking payment rails.
 There is a great summary of the deal here from Quartz.
-The implications of this, considering the $5.3 billion dollar price tag, are substantial on the legacy banking system. Described in this article, both Visa and Plaid operate within a three player market comprised of the consumers, the banks, and the merchants.</description></item><item><title>Thoughts On Modern Monetary Theory</title><link>https://jaredtconnor.com/blog/thoughts_on_mmt/</link><pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/thoughts_on_mmt/</guid><description>Gregory Mankiw recently provided his take on MMT in A Skeptic’s Guide to Modern Monetary Theory. There has been a lot of hype around this modern take on macroeconomics which has been pitched as a fix for the current monetary regime that policy makers currently hold.
+The implications of this, considering the $5.3 billion dollar price tag, are substantial on the legacy banking system. Described in this article, both Visa and Plaid operate within a three player market comprised of the consumers, the banks, and the merchants.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts On Modern Monetary Theory</title>
+      <link>https://jaredtconnor.com/blog/thoughts_on_mmt/</link>
+      <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/thoughts_on_mmt/</guid>
+      <description>Gregory Mankiw recently provided his take on MMT in A Skeptic’s Guide to Modern Monetary Theory. There has been a lot of hype around this modern take on macroeconomics which has been pitched as a fix for the current monetary regime that policy makers currently hold.
 In it, Makiw provides his take on the movement&amp;rsquo;s salient points. In summary, MMT takes the stand that:
-A government that is responsible for printing it&amp;rsquo;s own currency can never be subject to budget constraints due to the ability to create more currency.</description></item><item><title>Student Debt Increasing</title><link>https://jaredtconnor.com/blog/increasing_student_debt_loads/</link><pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/increasing_student_debt_loads/</guid><description>Student Loans A Lot Like The Subprime Mortgage Debacle, Watchdog Says - From NPR
+  A government that is responsible for printing it&amp;rsquo;s own currency can never be subject to budget constraints due to the ability to create more currency.</description>
+    </item>
+    
+    <item>
+      <title>Student Debt Increasing</title>
+      <link>https://jaredtconnor.com/blog/increasing_student_debt_loads/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/increasing_student_debt_loads/</guid>
+      <description>Student Loans A Lot Like The Subprime Mortgage Debacle, Watchdog Says - From NPR
 While I do believe that comments about &amp;ldquo;the next thing to blow up the economy&amp;rdquo; are undue, the amount of student debt and it&amp;rsquo;s rate of growth are unsustainable for long.
-&amp;ldquo;Michael McPherson is an economist and former college president who studies higher education financing. &amp;ldquo;I think of a crisis as being a situation which is getting rapidly worse,&amp;rdquo; he says.</description></item><item><title>College debt is making it harder for people to get married</title><link>https://jaredtconnor.com/blog/student_loans_are_making_it_harder/</link><pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate><guid>https://jaredtconnor.com/blog/student_loans_are_making_it_harder/</guid><description>It is pretty well known that the outstanding college debt burden is surging and having spill over effects on individual&amp;rsquo;s choices. Per a Federal Reserve Report, 36 percent of individuals aged 24-32 owned homes in 2014, down from the reported 45 percent in 2004. I read this article discussing the effects of co-signing for a partner&amp;rsquo;s college debt.
-As the burden of debt increases in both size and the number of effected individuals, the decision for one to marry into one&amp;rsquo;s debt burden might increasingly be a sticking point for young couples.</description></item><item><title>Reed students validate college ranking</title><link>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</link><pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</guid><description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
-They noted that without being able to derive the statistical model it is uncertain to determine if schools are being properly ranked and there is significant errors with a weighted-sum model (Clarke 2004).</description></item><item><title>Questions about economics</title><link>https://jaredtconnor.com/blog/questions_about_economics/</link><pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/questions_about_economics/</guid><description>Questions About Economics I was lucky enough to be asked by one of my favorite undergrad professors, Ed Whitelaw, to come back down to Eugene to speak on a panel of his past students to speak. The topic included a career day regarding economics and what such an education means in the real world. Here are a number of the questions and my associated answers:
-What economic tools/fields do you see as most critical to careers in your area?</description></item><item><title>The Marvel of the Human Dad</title><link>https://jaredtconnor.com/blog/the-marvel-of-the-human-dad/</link><pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/the-marvel-of-the-human-dad/</guid><description>The marvel of the Human Dad is a great article I stumbled upon the other day. It&amp;rsquo;s about the studies done by Anna Machin, a Oxford anthropologist, on the role and anthropologic reasoning that homo sapien fathers contribute to the family. This is a stark contrast between nearly all other mammal species (specifically all other 95%) where the non investing fathers commonly leave or dont provide for the newborn.
-Her reasoning tails on the fact that humans typically have a very short gestation period, which requires a lot of nurturing, and even an entire period of growth that no other mammal experiences (adolescents).</description></item><item><title>Understanding Object Oriented Programming</title><link>https://jaredtconnor.com/blog/object_oriented_programming/</link><pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/object_oriented_programming/</guid><description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
-So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists.</description></item><item><title>Conversations with Tyler: Robin Wiblin from 80000 Hours</title><link>https://jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</link><pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate><guid>https://jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</guid><description>I feel fairly comfortable stating that this is my favorite podcast of the year. Nearly anything that Tyler Cowen touches is filled to the Brim with nuggets of insight, but this piece takes the cake for being the most comprehensive categorization of his thoughts on moral philosophy, economics, how one should order themselves in the current economy and so on.
-It seems fitting that Robin Wiblin would be the person to incite such a conversation.</description></item><item><title>Kierkegaard on boredom</title><link>https://jaredtconnor.com/blog/kierkegaard-on-busyness/</link><pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/kierkegaard-on-busyness/</guid><description>Kierkegaard on Boredom and Busyness: This was a great article about Soren Kierkegaard&amp;rsquo;s discourse on being busy. This article is incredibly easy to resonate with. Opposed to wallowing in the modern competitiveness of keeping up with the Jones, one should realize the drive for one to be busy as an indication of spinning their wheels to no ultimate aim or end.
+ &amp;ldquo;Michael McPherson is an economist and former college president who studies higher education financing. &amp;ldquo;I think of a crisis as being a situation which is getting rapidly worse,&amp;rdquo; he says.</description>
+    </item>
+    
+    <item>
+      <title>College debt is making it harder for people to get married</title>
+      <link>https://jaredtconnor.com/blog/student_loans_are_making_it_harder/</link>
+      <pubDate>Mon, 09 Sep 2019 20:41:59 -0700</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/student_loans_are_making_it_harder/</guid>
+      <description>It is pretty well known that the outstanding college debt burden is surging and having spill over effects on individual&amp;rsquo;s choices. Per a Federal Reserve Report, 36 percent of individuals aged 24-32 owned homes in 2014, down from the reported 45 percent in 2004. I read this article discussing the effects of co-signing for a partner&amp;rsquo;s college debt.
+As the burden of debt increases in both size and the number of effected individuals, the decision for one to marry into one&amp;rsquo;s debt burden might increasingly be a sticking point for young couples.</description>
+    </item>
+    
+    <item>
+      <title>Reed students validate college ranking</title>
+      <link>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/reed-students-validate-college-ranking/</guid>
+      <description>I came across this great article about a group of Reed students in a statistics course that reverse engineered the US News College Ranking System in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
+They noted that without being able to derive the statistical model it is uncertain to determine if schools are being properly ranked and there is significant errors with a weighted-sum model (Clarke 2004).</description>
+    </item>
+    
+    <item>
+      <title>Questions about economics</title>
+      <link>https://jaredtconnor.com/blog/questions_about_economics/</link>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/questions_about_economics/</guid>
+      <description>Questions About Economics I was lucky enough to be asked by one of my favorite undergrad professors, Ed Whitelaw, to come back down to Eugene to speak on a panel of his past students to speak. The topic included a career day regarding economics and what such an education means in the real world. Here are a number of the questions and my associated answers:
+  What economic tools/fields do you see as most critical to careers in your area?</description>
+    </item>
+    
+    <item>
+      <title>The Marvel of the Human Dad</title>
+      <link>https://jaredtconnor.com/blog/the-marvel-of-the-human-dad/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/the-marvel-of-the-human-dad/</guid>
+      <description>The marvel of the Human Dad is a great article I stumbled upon the other day. It&amp;rsquo;s about the studies done by Anna Machin, a Oxford anthropologist, on the role and anthropologic reasoning that homo sapien fathers contribute to the family. This is a stark contrast between nearly all other mammal species (specifically all other 95%) where the non investing fathers commonly leave or dont provide for the newborn.
+Her reasoning tails on the fact that humans typically have a very short gestation period, which requires a lot of nurturing, and even an entire period of growth that no other mammal experiences (adolescents).</description>
+    </item>
+    
+    <item>
+      <title>Understanding Object Oriented Programming</title>
+      <link>https://jaredtconnor.com/blog/object_oriented_programming/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/object_oriented_programming/</guid>
+      <description>Classes and Programming Paradigms for Python Programming paradigms, at least in my case of teaching myself programming, was something that I didn&amp;rsquo;t stress but should have. While programming requires the use of writing code in a specific language&amp;rsquo;s syntax, its more so a manner to distill a problem into a procedure to attempt to arrive at a solution. All that said, these paradigms are different ways to solve problems.
+So, I assume we know about the normal data types available for Python, like floats, integers, strings, and lists.</description>
+    </item>
+    
+    <item>
+      <title>Conversations with Tyler: Robin Wiblin from 80000 Hours</title>
+      <link>https://jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</link>
+      <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</guid>
+      <description>I feel fairly comfortable stating that this is my favorite podcast of the year. Nearly anything that Tyler Cowen touches is filled to the Brim with nuggets of insight, but this piece takes the cake for being the most comprehensive categorization of his thoughts on moral philosophy, economics, how one should order themselves in the current economy and so on.
+It seems fitting that Robin Wiblin would be the person to incite such a conversation.</description>
+    </item>
+    
+    <item>
+      <title>Kierkegaard on boredom</title>
+      <link>https://jaredtconnor.com/blog/kierkegaard-on-busyness/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/kierkegaard-on-busyness/</guid>
+      <description>Kierkegaard on Boredom and Busyness: This was a great article about Soren Kierkegaard&amp;rsquo;s discourse on being busy. This article is incredibly easy to resonate with. Opposed to wallowing in the modern competitiveness of keeping up with the Jones, one should realize the drive for one to be busy as an indication of spinning their wheels to no ultimate aim or end.
 A short passage from the article:
-For Kierkegaard, busy people are experiencing something indeterminate because their activities are not directed towards some particular good.</description></item><item><title>Heads or Tails - Paper on big life choices</title><link>https://jaredtconnor.com/blog/heads-or-tails-experiment/</link><pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate><guid>https://jaredtconnor.com/blog/heads-or-tails-experiment/</guid><description>Interesting paper by the ever excellent Steven Levitt, HEADS OR TAILS: THE IMPACT OF A COIN TOSS ON MAJOR LIFE DECISIONS AND SUBSEQUENT HAPPINESS</description></item><item><title>Interactive Exploration of Dead End Careers</title><link>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link><pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid><description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there. While they attempted to view so called dead end jobs, which they roughly define as jobs that lack little wage growth later in their lives, the analysis illustrates a developing trend - the gradual widening of the high skill/high wage labor and low skill/low wage/service oriented labor.</description></item><item><title>Predict Economics Indicators with OpenStreetMap</title><link>https://jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</link><pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid><description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
-This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description></item><item><title>First of Many!</title><link>https://jaredtconnor.com/blog/first-of-many/</link><pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/blog/first-of-many/</guid><description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
-So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description></item><item><title/><link>https://jaredtconnor.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jaredtconnor.com/about/</guid><description>Hey there! My name is Jared. I am a financial analyst working for Umpqua Bank in Portland, Oregon. Here you can find my writings on all things ranging from economics, finance, philosophy, software development, and data infrastructures. This blog is a hope to publish and distribute information in the aim towards small improvements (based upon Tyler Cowen&amp;rsquo;s) ideas of a marginal revolution towards a better world.
-Interests Still developing</description></item></channel></rss>
+ For Kierkegaard, busy people are experiencing something indeterminate because their activities are not directed towards some particular good.</description>
+    </item>
+    
+    <item>
+      <title>Heads or Tails - Paper on big life choices</title>
+      <link>https://jaredtconnor.com/blog/heads-or-tails-experiment/</link>
+      <pubDate>Wed, 19 Sep 2018 20:59:37 -0700</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/heads-or-tails-experiment/</guid>
+      <description>Interesting paper by the ever excellent Steven Levitt, HEADS OR TAILS: THE IMPACT OF A COIN TOSS ON MAJOR LIFE DECISIONS AND SUBSEQUENT HAPPINESS</description>
+    </item>
+    
+    <item>
+      <title>Interactive Exploration of Dead End Careers</title>
+      <link>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</guid>
+      <description>I read this wonderful analysis, originally posted by Zippia on the dynamics of salaries across age and labor demographics, via the PUMS (Public Use Microdata Sample) for you acronym junkies out there. While they attempted to view so called dead end jobs, which they roughly define as jobs that lack little wage growth later in their lives, the analysis illustrates a developing trend - the gradual widening of the high skill/high wage labor and low skill/low wage/service oriented labor.</description>
+    </item>
+    
+    <item>
+      <title>Predict Economics Indicators with OpenStreetMap</title>
+      <link>https://jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid>
+      <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
+This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description>
+    </item>
+    
+    <item>
+      <title>First of Many!</title>
+      <link>https://jaredtconnor.com/blog/first-of-many/</link>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/first-of-many/</guid>
+      <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
+So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jaredtconnor.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/about/</guid>
+      <description>Hey there! My name is Jared. I am a financial analyst working for Umpqua Bank in Portland, Oregon. Here you can find my writings on all things ranging from economics, finance, philosophy, software development, and data infrastructures. This blog is a hope to publish and distribute information in the aim towards small improvements (based upon Tyler Cowen&amp;rsquo;s) ideas of a marginal revolution towards a better world.
+Interests Still developing</description>
+    </item>
+    
+  </channel>
+</rss>
