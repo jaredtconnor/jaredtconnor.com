@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jaredtconnor.com/projects/microcontroller-watering-system/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jaredtconnor.com/projects/stock-price-scaper/</loc>
-    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jaredtconnor.com/projects/housing-price-analysis/</loc>
-    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jaredtconnor.com/blog/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
   </url>
@@ -63,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://jaredtconnor.com/blog/microcontroller-watering-system/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jaredtconnor.com/tags/c&#43;&#43;/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url>
@@ -74,11 +64,6 @@
   
   <url>
     <loc>https://jaredtconnor.com/tags/microcontrollers/</loc>
-    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jaredtconnor.com/projects/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -253,8 +238,18 @@
   </url>
   
   <url>
+    <loc>https://jaredtconnor.com/blog/stock-price-scaper/</loc>
+    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jaredtconnor.com/tags/web_scraping/</loc>
     <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jaredtconnor.com/blog/housing-price-analysis/</loc>
+    <lastmod>2017-05-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
