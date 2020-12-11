@@ -1,8 +1,6 @@
 ---
 title: "Arduino Watering System"
-repo: ""
 tags: [microcontrollers, c++, IOT]
-weight: 1  
 date: 2020-01-15
 draft: false
 ---

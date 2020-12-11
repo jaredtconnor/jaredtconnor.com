@@ -9,26 +9,6 @@
     <copyright>Jared C.</copyright>
     <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/tags/data_analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Stock Price Scraper</title>
-      <link>https://jaredtconnor.com/projects/stock-price-scaper/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
-    </item>
-    
-    <item>
-      <title>Housing Price Analysis</title>
-      <link>https://jaredtconnor.com/projects/housing-price-analysis/</link>
-      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/projects/housing-price-analysis/</guid>
-      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
-The project is broken up into two main sections:
-1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
-    </item>
-    
-    <item>
       <title>Interactive Exploration of Dead End Careers</title>
       <link>https://jaredtconnor.com/blog/interactive-exploration-of-dead-end-careers/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
@@ -45,6 +25,26 @@ The project is broken up into two main sections:
       <guid>https://jaredtconnor.com/blog/predict-economic-indicators-with-openstreetmap/</guid>
       <description>This was a really cool article regarding the use of OpenStreeMap to predict the economic potential and output of a country. Specifically he is using publicly labeled tags and indicators of schools, universities, lamp posts, and post offices to see how much production and economic activity is coming from a specific region!
 This could be of great use for economic research in countries where reliable data is a problem or to view competitive economies from a bird&amp;rsquo;s eye view (no pun intended).</description>
+    </item>
+    
+    <item>
+      <title>Stock Price Scraper</title>
+      <link>https://jaredtconnor.com/blog/stock-price-scaper/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/stock-price-scaper/</guid>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+    </item>
+    
+    <item>
+      <title>Housing Price Analysis</title>
+      <link>https://jaredtconnor.com/blog/housing-price-analysis/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+The project is broken up into two main sections:
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
     </item>
     
   </channel>

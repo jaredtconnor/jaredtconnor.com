@@ -9,35 +9,6 @@
     <copyright>Jared C.</copyright>
     <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Arduino Watering System</title>
-      <link>https://jaredtconnor.com/projects/microcontroller-watering-system/</link>
-      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/projects/microcontroller-watering-system/</guid>
-      <description>It&amp;rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade.</description>
-    </item>
-    
-    <item>
-      <title>Stock Price Scraper</title>
-      <link>https://jaredtconnor.com/projects/stock-price-scaper/</link>
-      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/projects/stock-price-scaper/</guid>
-      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
-    </item>
-    
-    <item>
-      <title>Housing Price Analysis</title>
-      <link>https://jaredtconnor.com/projects/housing-price-analysis/</link>
-      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/projects/housing-price-analysis/</guid>
-      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
-The project is broken up into two main sections:
-1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
-    </item>
-    
-    <item>
       <title>The United States is Risking Their Position in the Global Financial System</title>
       <link>https://jaredtconnor.com/blog/the-united-states-is-risking-their-position-in-the-global-financial-system/</link>
       <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
@@ -55,6 +26,15 @@ The project is broken up into two main sections:
       <description>On January 13th, 2020, Visa came out publicly announcing the purchase of the banking startup called Plaid, which provided a service that actually connected fintech startups with the ability to connect to the modern banking payment rails.
 There is a great summary of the deal here from Quartz.
 The implications of this, considering the $5.3 billion dollar price tag, are substantial on the legacy banking system. Described in this article, both Visa and Plaid operate within a three player market comprised of the consumers, the banks, and the merchants.</description>
+    </item>
+    
+    <item>
+      <title>Arduino Watering System</title>
+      <link>https://jaredtconnor.com/blog/microcontroller-watering-system/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/microcontroller-watering-system/</guid>
+      <description>It&amp;rsquo;s not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade.</description>
     </item>
     
     <item>
@@ -186,6 +166,26 @@ This could be of great use for economic research in countries where reliable dat
       <guid>https://jaredtconnor.com/blog/first-of-many/</guid>
       <description>Welcome! Well it&amp;rsquo;s awesome to see that you&amp;rsquo;ve found it here. After quite some time, I finally was able to publish this via Hugo. That was a headache in itself because Github pages and Hugo don&amp;rsquo;t play nicely with each other, but nonetheless.
 So this site is going to hold basically everything I&amp;rsquo;m working on and want everyone to see. Publishing content is a great thing to do in the age where your website/blog basically is your new business card.</description>
+    </item>
+    
+    <item>
+      <title>Stock Price Scraper</title>
+      <link>https://jaredtconnor.com/blog/stock-price-scaper/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/stock-price-scaper/</guid>
+      <description>Understanding Pandas in Python: This was one of my first projects in python to understand data frames. Anyone interested in data analysis with Python needs to understand how to use, manipulate, and structure data in ways that are useful and required for your analysis. Thankfully, there are some incredibly smart developers in this world that understand the importance of this task, so they developed the Pandas package. On top of that, we can use the ever useful BeautifulSoup package, which allows us to make automated scripts to interact with HTML backed webpages.</description>
+    </item>
+    
+    <item>
+      <title>Housing Price Analysis</title>
+      <link>https://jaredtconnor.com/blog/housing-price-analysis/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaredtconnor.com/blog/housing-price-analysis/</guid>
+      <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
+The project is broken up into two main sections:
+1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
     </item>
     
     <item>
