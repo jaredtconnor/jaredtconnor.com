@@ -6,25 +6,3 @@ command = "hugo"
 HUGO_VERSION = "0.79.0"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
-
-[context.split1]
-command = "hugo --enableGitInfo"
-
-[context.split1.environment]
-HUGO_VERSION = "0.79.0"
-HUGO_ENV = "production"
-
-[context.deploy-preview]
-command = "hugo"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.79.0"
-
-[context.branch-deploy]
-command = "hugo"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.79.0"
-
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
