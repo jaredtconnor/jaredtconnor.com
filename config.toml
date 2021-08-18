@@ -1,84 +1,45 @@
-baseURL = "https://jaredtconnor.com"
-languageCode = "en-us"
+baseurl = "https://jaredtconnor.com"
 title = "Signs of Improvement"
-theme = "hugo-theme-cactus"
-copyright = "Jared C." # cactus will use title if copyright is not set
-# googleAnalytics = "UA-1234-5"
+author = "Jared Connor"
+canonifyurls = true
+languagecode = "en"
+theme = "hugo-tanka"
 
-# summaryLength = 2
+enableEmoji = true
+hasCJKLanguage = false
 
-# Main menu which appears below site header.
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+pygmentsstyle = "vs"
+pygmentscodefences = true
 
-[[menu.main]]
-name = "Writings"
-url = "/blog"
-weight = 2
-
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 3
-
-[[menu.main]]
-name = "About"
-url = "/about"
-weight = 4
-
-
-[markup]
-  [markup.tableOfContents]
-    endLevel = 4
-    ordered = false
-    startLevel = 2
-
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true
-    style = "manni"
-    tabWidth = 4
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
 [params]
+  sitename = "Signs of Improvement"
+  faviconfile = "images/favicon.png"
+  highlightjs = true
+  highlightjslanguages = ["r", "python", "stan"]
+  uselatex = true
+  progressively = false
+# commentsrepo = "user/repo"
 
-  colortheme = "white" # dark, light, white, or classic
-  rss = true # generate rss feed. default value is false
-  googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
-  # Home page settings
-  description = "Hey there! My name is Jared. I am a financial analyst living in Portland, OR. Here you can find my writings on all things ranging from economics, finance, writing, philosophy, and computers. I love reasoning about changes that can have marginal improvements on both the micro and macro scale." 
-  mainSection = "blog" # your main section
-  showAllPostsOnHomePage = false # default
-  postsOnHomePage = 5 # this option will be ignored if showAllPostsOnHomePage is set to true
-  tagsOverview = false # show tags overview by default.
-  showProjectsList = true # show projects list by default (if projects data file exists).
-  projectsUrl = "https://github.com/gohugoio" # title link for projects list
-
-  # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
-  dateFormat = "2006-01-02" # default
-
-  # Post page settings
-  show_updated = false # default
-
-  [params.comments]
-    enabled = false # default
-    engine = "disqus" # more supported engines will be added.
-	
-  # Social Media lings
-  # https://fontawesome.com/icons?d=gallery&s=brands
-  [[params.social]]
-    name = "linkedin"
-    link = "https://www.linkedin.com/in/jaredconnor/"
-  [[params.social]]
-    name = "github"
-    link = "https://github.com/jaredtconnor"
-  [[params.social]]
-    name = "email"
-    link = "jaredconnor301@gmail.com "  # no need for "mailto:" in the head
+[[menu.primary]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.primary]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[menu.primary]]
+    name = "GitHub"
+    url = "https://github.com/jaredtconnor"
+    weight = 3
+[[menu.primary]]
+    name = "Twitter"
+    url = "https://twitter.com/home"
+    weight = 4
