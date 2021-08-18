@@ -5,8 +5,7 @@
     <link>https://jaredtconnor.com/</link>
     <description>Recent content on Signs of Improvement</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Jared C.</copyright>
+    <language>en</language>
     <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jaredtconnor.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The United States is Risking Their Position in the Global Financial System</title>
@@ -110,6 +109,17 @@ So, I assume we know about the normal data types available for Python, like floa
     </item>
     
     <item>
+      <title>About me</title>
+      <link>https://jaredtconnor.com/about/</link>
+      <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
+      
+      <guid>https://jaredtconnor.com/about/</guid>
+      <description>Hey there! I&amp;rsquo;m Jared Connor. Someone who is attempting to etch out a piece of this digital world, through writing, code, and ideas.
+I&amp;rsquo;m focused on searching for technologies that drive for economic optimization. This implies understanding technology trends that lead to sustained growth. Along with personal strategies that improve one&amp;rsquo;s personal efficiency and ideas.
+I&amp;rsquo;m a financial analyst for the treasury department at Umpqua Bank, on the team that runs their interest rate risk reporting.</description>
+    </item>
+    
+    <item>
       <title>Conversations with Tyler: Robin Wiblin from 80000 Hours</title>
       <link>https://jaredtconnor.com/blog/conversations-with-tyler-robin-wiblin-from-80000-hours/</link>
       <pubDate>Wed, 05 Dec 2018 19:04:32 -0800</pubDate>
@@ -186,16 +196,6 @@ So this site is going to hold basically everything I&amp;rsquo;m working on and 
       <description>This was one of my initial projects in python to attempt to understand the language&amp;rsquo;s capabilites for data analysis. It is based on the great work done by Harrison and Python Programming, and I cannot attest enough to how amazing these tutorials are.
 The project is broken up into two main sections:
 1) Data Gathering: I would argue one of the most important libraries to first understand if you are interested in diving into anlaysis must be Pandas.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://jaredtconnor.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jaredtconnor.com/about/</guid>
-      <description>Hey there! My name is Jared. I am a financial analyst working for Umpqua Bank in Portland, Oregon. Here you can find my writings on all things ranging from economics, finance, philosophy, software development, and data infrastructures. This blog is a hope to publish and distribute information in the aim towards small improvements (based upon Tyler Cowen&amp;rsquo;s) ideas of a marginal revolution towards a better world.
-Interests Still developing</description>
     </item>
     
   </channel>
