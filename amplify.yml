@@ -9,6 +9,7 @@ frontend:
         - mv hugo /usr/bin/hugo 
         - rm -rf hugo_extended_0.62.2_Linux-64bit.tar.gz
         - hugo version
+        - git submodule add https://github.com/nanxstats/hugo-tanka.git themes/hugo-tanka
         - hugo
   artifacts:
     # IMPORTANT - Please verify your build output directory
