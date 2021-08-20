@@ -1,0 +1,19 @@
+version: 0.1
+frontend:
+  phases:
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands:
+        - wget https://github.com/gohugoio/hugo/releases/download/v0.62.2/hugo_extended_0.62.2_Linux-64bit.tar.gz
+        - tar -xf hugo_extended_0.62.2_Linux-64bit.tar.gz
+        - mv hugo /usr/bin/hugo 
+        - rm -rf hugo_extended_0.62.2_Linux-64bit.tar.gz
+        - hugo version
+        - hugo
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: public
+    files:
+      - '**/*'
+  cache:
+    paths: []
