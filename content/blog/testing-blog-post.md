@@ -1,6 +1,5 @@
 +++
 date = 2021-08-21T07:00:00Z
-draft = true
 tags = ["testing", "blog"]
 title = "Testing Blog Post"
 
