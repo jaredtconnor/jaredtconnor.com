@@ -6,7 +6,7 @@ title = "Installing Node on Linux via WSL"
 +++
 I've been working quite a bit on personal projects and such on my Windows machine via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL") along with an [Ubuntu](https://ubuntu.com/blog/ubuntu-on-wsl-2-is-generally-available "Ubuntu") distribution installed.
 
-Part of that, especially for developing any Node.js or Express application requires installing node correctly. To do show:
+Part of that, especially for developing any Node.js or Express application requires installing node correctly. To do so:
 
     curl -o- http://raw.githubusercontent/creationix/nvm/v0.33.0/install.sh | bash
 
@@ -23,7 +23,7 @@ Now, we should be able to close and restart our shell. Then install Node directl
 nvm install -lts
 ```
 
-This should install the latest LTS version of Node.js. To verify the installation worked correctly, we cna run `node -- version` which should output:
+This should install the latest LTS version of Node.js. To verify the installation worked correctly, we can run `node --version` which should output:
 
 ``` 
 # => [version_number]
