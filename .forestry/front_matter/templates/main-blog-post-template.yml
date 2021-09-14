@@ -11,3 +11,5 @@ fields:
 - type: list
   name: tags
   label: tags
+pages:
+- content/blog/installing-node-on-linux-via-wsl.md
