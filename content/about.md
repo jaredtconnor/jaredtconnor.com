@@ -1,7 +1,6 @@
 ---
 title: About me
 date: 2018-12-05T19:04:32.000-08:00
-
 ---
 Hey there! I'm Jared Connor. Someone who is attempting to etch out a piece of this digital world, through writing, code, and ideas.
 
