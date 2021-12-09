@@ -1,4 +1,4 @@
-baseurl = "/"
+baseURL = 'http://jaredtconnor.com/'
 title = "Signs of Improvement"
 author = "Jared Connor"
 canonifyurls = true
@@ -47,3 +47,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     name = "Twitter"
     url = "https://twitter.com/home"
     weight = 5
+[[menu.primary]]
+    name = "Clippings"
+    url = "/clippings/"
+    weight = 6
