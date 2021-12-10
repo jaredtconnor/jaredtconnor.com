@@ -1,29 +1,13 @@
-name: Build & deploy
-
-on:
-  push:
-    branches: 
-    - main 
-
+on: [push]
+name: Deploy Hugo to Firebase
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@master
-      
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.2.0
+    - uses: actions/checkout@v1
       with:
-        hugo-version: '0.63.1'
-
-    - name: Build with Hugo
-      run: hugo --gc --minify --cleanDestinationDir
-      
-    - name: Deploy to Firebase
-      uses: w9jds/firebase-action@master
+        submodules: true
+    - uses: ryank90/action-hugo-firebase-deploy@master
       with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        firebase-token: ${{ secrets.FIREBASE_TOKEN }}
+        hugo-params: -minify // Optional. Any params for the `hugo` command. [Refer doc here](https://gohugo.io/commands/hugo/) 
