@@ -1,4 +1,5 @@
-baseURL = 'https://jaredtconnor-webiste.web.app'
+baseURL_testing = '//jaredtconnor-webiste.web.app'
+baseURL = '/'
 title = "Signs of Improvement"
 author = "Jared Connor"
 canonifyurls = true
