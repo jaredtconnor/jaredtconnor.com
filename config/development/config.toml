@@ -1,4 +1,4 @@
-baseURL = 'http://jaredtconnor.com/'
+baseURL = '/'
 title = "Signs of Improvement"
 author = "Jared Connor"
 canonifyurls = true
