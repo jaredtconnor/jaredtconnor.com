@@ -1,6 +1,5 @@
 ---
 title: "Stock Price Scraper"
-tags: [python, web_scraping, data_analysis]
 date: 2017-08-30
 draft: false
 ---

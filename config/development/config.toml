@@ -1,26 +1,4 @@
 baseURL = 'http://localhost:5050'
-title = "Signs of Improvement"
-author = "Jared Connor"
-canonifyurls = true
-languagecode = "en"
-theme = "hugo-tanka"
-
-enableEmoji = true
-hasCJKLanguage = false
-
-pygmentsstyle = "vs"
-pygmentscodefences = true
-
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
-
-[params]
-  sitename = "Signs of Improvement"
-  faviconfile = "images/favicon.png"
-  highlightjs = true
-  highlightjslanguages = ["r", "python", "stan"]
-  uselatex = true
-  progressively = false
-# commentsrepo = "user/repo"
 
 [markup]
   [markup.goldmark]
@@ -37,7 +15,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     weight = 2
 [[menu.primary]]
     name = "Projects"
-    url = "/projects/"
+    url = "/project/"
     weight = 3
 [[menu.primary]]
     name = "GitHub"
@@ -49,5 +27,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\
     weight = 5
 [[menu.primary]]
     name = "Clippings"
-    url = "/clippings/"
+    url = "/clipping/"
     weight = 6
