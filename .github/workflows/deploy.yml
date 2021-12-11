@@ -1,13 +1,20 @@
-on: [push]
-name: Deploy Hugo to Firebase
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
-    - uses: ryank90/action-hugo-firebase-deploy@master
-      with:
-        firebase-token: ${{ secrets.FIREBASE_TOKEN }}
-        hugo-params: -D // Optional. Any params for the `hugo` command. [Refer doc here](https://gohugo.io/commands/hugo/) 
+ steps:
+ 
+ - name: 'gcr.io/cloud-builders/curl'
+   entrypoint: '/bin/sh'
+   args:
+   - '-c'
+   - |
+     curl -sL https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_extended_0.82.0_Linux-64bit.tar.gz | tar -zxv
+     ./hugo    
+
+- name: 'gcr.io/cloud-builders/wget'
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - |
+    # Get firebase CLI
+    wget -O firebase https://firebase.tools/bin/linux/latest
+    chmod +x firebase
+    # Deploy site
+    ./firebase deploy --project=$PROJECT_ID --only=hosting    
