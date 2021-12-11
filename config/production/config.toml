@@ -1,27 +1,4 @@
-baseURL_testing = '//jaredtconnor-webiste.web.app'
-baseURL = '/'
-title = "Signs of Improvement"
-author = "Jared Connor"
-canonifyurls = true
-languagecode = "en"
-theme = "hugo-tanka"
-
-enableEmoji = true
-hasCJKLanguage = false
-
-pygmentsstyle = "vs"
-pygmentscodefences = true
-
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
-
-[params]
-  sitename = "Signs of Improvement"
-  faviconfile = "images/favicon.png"
-  highlightjs = true
-  highlightjslanguages = ["r", "python", "stan"]
-  uselatex = true
-  progressively = false
-# commentsrepo = "user/repo"
+baseURL = '//jaredtconnor-webiste.web.app'
 
 [markup]
   [markup.goldmark]
