@@ -1,4 +1,4 @@
-baseURL = 'https://jaredtconnor-webiste.web.app/'
+baseURL = 'https://www.jaredtconnor.com'
 
 [markup]
   [markup.goldmark]
