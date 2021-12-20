@@ -9,7 +9,24 @@ theme = "piovoso"
   favicon = "img/url"
 
 [menu]
-  [[menu.navigation]]
-    name = 'link'
-    url = 'link'
-    
+  [[menu.main]]
+    name = 'About'
+    url = 'about'
+  [[menu.main]]
+    name = 'About'
+    url = 'about'
+  [[menu.main]]
+    name = 'Blog'
+    url = 'blog'
+  [[menu.main]]
+    name = 'Projects'
+    url = 'project'
+  [[menu.main]]
+    name = 'Clippings'
+    url = 'clipping'
+  [[menu.main]]
+    name = 'Github'
+    url = 'https://github.com/jaredtconnor'
+  [[menu.main]]
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/jaredconnor/'
