@@ -29,7 +29,3 @@ theme = "piovoso"
     name = 'Twitter'
     url = 'https://twitter.com/Jared_ThomasC'
     weight = 5
-  [[menu.main]]
-    name = 'LinkedIn'
-    url = 'https://www.linkedin.com/in/jaredconnor/'
-    weight = 6
