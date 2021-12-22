@@ -1,6 +1,7 @@
 ---
 title: About me
 lastmod: 2021-12-21
+layout: about
 ---
 Hey there! I'm Jared Connor. Someone who is attempting to etch out a piece of this digital world, through writing, code, and ideas.
 
