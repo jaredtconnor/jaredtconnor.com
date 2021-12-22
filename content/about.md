@@ -16,6 +16,8 @@ This blog is an attempt to openly learn. I learn best when I have to explain the
 
 A list of important axioms and opinions that frame my thinking:
 
-* The labor market is a powerful optimization tool that one should never lose track of in terms of skills obtained and the list of things to learn.
-* There is a paradox between the onset of information technology/computers and increased productivity. [1](https://cs.stanford.edu/people/eroberts/cs201/projects/productivity-paradox/background.html)
-* Order emerges in the steady-states of non-equilibrium systems. [2](https://danco.substack.com/p/dancoland-part-2-just-so-stories?token=eyJ1c2VyX2lkIjoyMDg4MzY0MCwicG9zdF9pZCI6MzkwNzAxMDMsIl8iOiJWRG00RCIsImlhdCI6MTYzMDM0MDc1MCwiZXhwIjoxNjMwMzQ0MzUwLCJpc3MiOiJwdWItODYyMyIsInN1YiI6InBvc3QtcmVhY3Rpb24ifQ.TVQJLiOcFkEsg_T6HPMzLF0z9C2QxXg6m0ptl358jE0 "2")
+1 - The labor market is a powerful optimization tool that one should never lose track of in terms of skills obtained and the list of things to learn.
+
+2 - There is a paradox between the onset of information technology/computers and increased productivity. [1](https://cs.stanford.edu/people/eroberts/cs201/projects/productivity-paradox/background.html)
+
+3 - Order emerges in the steady-states of non-equilibrium systems. [2](https://danco.substack.com/p/dancoland-part-2-just-so-stories?token=eyJ1c2VyX2lkIjoyMDg4MzY0MCwicG9zdF9pZCI6MzkwNzAxMDMsIl8iOiJWRG00RCIsImlhdCI6MTYzMDM0MDc1MCwiZXhwIjoxNjMwMzQ0MzUwLCJpc3MiOiJwdWItODYyMyIsInN1YiI6InBvc3QtcmVhY3Rpb24ifQ.TVQJLiOcFkEsg_T6HPMzLF0z9C2QxXg6m0ptl358jE0 "2")
