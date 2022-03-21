@@ -4,8 +4,8 @@ date: 2021-12-11T08:40:37-08:00
 description: Microcontroller based watering system made from and Aurdino
 tags:
   - C/C++
-  - Microcontrollers
-  - Embedded
+  - microcontrollers
+  - embedded
 draft: false
 ---
 
