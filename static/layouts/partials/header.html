@@ -1,24 +1,23 @@
-<div class="mt-xl header">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a href="{{ .Site.BaseURL }}">
-                    <h1 class="name">{{ .Site.Params.sitename }}</h1>
-                </a>
-            </div>
-        </div>
+<head>
+	<title> {{.Title}} </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="{{ .Description }}">
+	{{ if .Site.Params.author }}
+	<meta name="author" content="{{ .Site.Params.author}}" />
+	{{ end }}
 
-        <div class="row justify-content-center">
-            <ul class="nav nav-primary">
-                {{ range .Site.Menus.primary.ByWeight }}
-                <li class="nav-item">
-                    <a class="nav-link{{ if .Identifier }} text-{{ .Identifier }}{{ end }}" href="{{ .URL }}">
-                        {{ .Pre }}
-                        {{ .Name }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
-    </div>
-</div>
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-MSXHPH5');</script>
+	<!-- End Google Tag Manager -->
+
+	<link rel="stylesheet"
+		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<link href="https://font
