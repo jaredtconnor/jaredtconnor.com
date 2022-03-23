@@ -5,8 +5,11 @@ description: Linux based shell program illustrating process API in C
 tags:
   - C/C++
   - systems
-draft: true
+draft: false
 ---
 
-[Github](https://github.com/jaredtconnor/smallsh) | [Demo]()
+[Github](https://github.com/jaredtconnor/smallsh)
+
+
+![Gif](/images/project_images/smallsh_project/smallsh.gif)
 
