@@ -6,10 +6,12 @@ tags:
   - C
   - systems
   - encryption
-draft: true
+draft: false
 ---
 
 [Github](https://github.com/jaredtconnor/c-encryption-service) 
+
+![Project-gif](/images/project_images/c-encryption-server/c-encryption-service.gif)
 
 ### Outline
 
