@@ -6,7 +6,7 @@ tags:
   - C
   - systems
   - encryption
-draft: false
+draft: true
 ---
 
 ## Overview 
