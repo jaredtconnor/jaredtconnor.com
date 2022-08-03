@@ -1,6 +1,6 @@
 ---
 title: "Aurdino Watering System"
-date: 2021-12-11T08:40:37-08:00
+date: 2020-01-30
 description: Microcontroller based watering system made from and Aurdino
 tags:
   - C

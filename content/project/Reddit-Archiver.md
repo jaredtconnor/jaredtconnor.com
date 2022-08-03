@@ -1,6 +1,6 @@
 ---
 title: "Reddit Archiver"
-date: 2022-03-18T04:40:21-07:00
+date: 2021-12-26
 description: Python and Flask based CRUD application deployed with AWS RDS
 tags:
   - python
