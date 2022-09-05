@@ -12,7 +12,6 @@ draft: false
 ## Overview 
 [Github](https://github.com/jaredtconnor/c-encryption-service) 
 
-
 This project served two main purposes. The first was to provide an example of TCP-based communication with C through setting up a persistent multi-threaded server listening for clients. Secondly, the project also served as a gentle introduction to encryption services, specifically a [**One Time Pad**](https://en.wikipedia.org/wiki/One-time_pad) cipher for encryption. 
 
 ![Project-gif](/images/project_images/c-encryption-server/c-encryption-service.gif)

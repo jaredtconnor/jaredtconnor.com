@@ -8,6 +8,7 @@ tags:
 draft: false
 ---
 
+## Overview
 [Github](https://github.com/jaredtconnor/smallsh)
 
 This project was challenging but ultimately rewarding. Like some of my previous work thus far, I developed this while attending [Oregon State's](https://eecs.oregonstate.edu/academic/online-cs-postbacc) Computer Science program during my [Operating Systems](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?subject=CS&coursenumber=344&termcode=all) course. 
@@ -16,7 +17,6 @@ This project was challenging but ultimately rewarding. Like some of my previous 
 
 First a note about these classes of projects. Many university computer science programs request students to write a minimal C shell. [Stephen Brennan](https://brennan.io/) has a good comment [here](https://brennan.io/2016/03/29/dishonesty/) discouraging academic dishonesty. Also, Stephen's original [post](https://brennan.io/2014/01/16/write-a-shell-in-c/) on the details of writing a basic Unix-based shell is a wonderful starting point and I would recommend reading the article if you have a chance.
 
-## Overview
 A [shell](https://en.wikipedia.org/wiki/Shell_(computing)) is command line interpreter that provides a user interface to execute and manipulate the operating system for a Unix-based system (though Windows-based machines have similar interfaces). This project provides a great starting point to understand how processes and executables run at the systems level. Conceptually, this is a great introduction to [POSIXbased process APIs](https://www.ibm.com/docs/en/ztpf/2020?topic=system-posix-compliant-apis-process-control) to manage and access the underlying processes being executable by the operating system.
 
 Conceptually, the required life cycle of a shell is fairly minimal, all things considered: 
