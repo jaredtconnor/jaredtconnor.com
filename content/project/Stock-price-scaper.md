@@ -5,7 +5,7 @@ description: Pandas based series on web scraping for financial data
 draft: false
 ---
 
-# Understanding Pandas in Python:
+## Overview
 This was one of my first projects in python to understand data frames. Anyone interested in 
 data analysis with Python needs to understand how to use, manipulate, and structure data in 
 ways that are useful and required for your analysis. Thankfully, there are some _incredibly_ 
@@ -102,7 +102,7 @@ volume for the specified date range on a daily basis. For each of these, we're g
 this data out into a simple CSV file according to the ticker's name. Throw in some
 additional try/except catches and this process could easily work for pulling stock price information. 
 
-### What did we learn: 
+## Learning Outcomes
 While this was one of my first projects, and hindsight is 20/20, this started a rather deep and 
 continued dive into thinking about problems from a data perspective. While I learned about data 
 abstraction in my later computer science courses and am still learning about how to properly store 

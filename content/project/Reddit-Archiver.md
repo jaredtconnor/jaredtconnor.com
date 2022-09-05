@@ -8,13 +8,13 @@ tags:
 draft: false
 ---
 
+## Overview
 [Github](https://github.com/jaredtconnor/Reddit-Archiver) | [Demo](https://reddit-archiver.herokuapp.com/)
 
 This project was a basic [CRUD](https://developer.mozilla.org/en-US/docs/Glossary/CRUD) application built with Python and [Flask](https://flask.palletsprojects.com/en/2.0.x/) we created in my [Intro to Databases](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?subject=CS&coursenumber=340&termcode=all) course. I was able to work with [lindsaygoins](https://github.com/lindsaygoins) on this, another C.S. student in the program at the time.
 
 ![Subreddits](/images/project_images/reddit_archiver/subreddits.png)
 
-## Overview
 The actual implementation of the app wasn't too complex, utilizing Bootstrap 5 and a form get/post pattern to update values. The project description was to define a correct data schema and entity-relationship model to properly allow data to flow into, from, and correctly edit within a web-based SQL solution. The implementation of the web application was up to the teams.
 
 Our initial idea for the project was to archive [Reddit](https://www.reddit.com/) subreddits, posts, comments, and users, almost a re-designed Reddit page driven by some scraping/API service and scheduled via a cron job running on a cloud Linux VM. 
