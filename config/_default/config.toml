@@ -2,7 +2,7 @@ title = "Atomic Thoughts"
 author = "Jared Connor"
 languagecode = "en"
 theme = "piovoso"
-googleAnalytics = "G-ECQJXP6HMT"
+googleAnalytics = "G-ECQJXP6HMT" 
 
 [params]
   description = "description"
@@ -22,13 +22,23 @@ googleAnalytics = "G-ECQJXP6HMT"
     name = 'Projects'
     url = 'project'
     weight = 3
-  [[menu.main]]
+  [[menu.social]] 
     name = 'Github'
     url = 'https://github.com/jaredtconnor'
-    weight = 4
-  [[menu.main]]
+    weight = 1 
+    pre='fa-brands fa-github'
+  [[menu.social]]
+    name = 'Rss'
+    url = 'index.xml'
+    weight = 2 
+    pre='fa-solid fa-rss' 
+  [[menu.social]]
     name = 'Twitter'
     url = 'https://twitter.com/Jared_ThomasC'
-    weight = 5
-
-
+    weight = 3 
+    pre='fa-brands fa-twitter'  
+  [[menu.social]]
+    name = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/jaredconnor/'
+    weight = 4
+    pre='fa-brands fa-linkedin'  
