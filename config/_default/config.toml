@@ -42,3 +42,8 @@ googleAnalytics = "G-ECQJXP6HMT"
     url = 'https://www.linkedin.com/in/jaredconnor/'
     weight = 4
     pre='fa-brands fa-linkedin'  
+  [[menu.social]]
+    name = 'Mail'
+    url = 'mailto:info@jaredtconnor.com'
+    weight = 5
+    pre='fa-solid fa-envelope'  
