@@ -1,19 +1,21 @@
 ---
 title: "Aurdino Watering System"
-date: 2021-12-11T08:40:37-08:00
+date: 2020-01-30
 description: Microcontroller based watering system made from and Aurdino
 tags:
-  - C/C++
-  - Microcontrollers
-  - Embedded
+  - C
+  - microcontrollers
+  - embedded
 draft: false
 ---
+
+## Overview
 
 ![water testing](/images/project_images/arduino_project/full_build.png#center)
 
 It's not often that one gets to program with the physical world, but I must say, this project sparked a newfound appreciation for programming. For a back story, my brother has been playing around with Arduino controllers for a while now. After several projects that blew my mind, I decided to piggyback on his experience to create a project of my own; a self-sustaining watering system for plants. During the summer months in Oregon, I’ve started to enjoy growing my plants, specifically jade. The smell of a fresh jade plant in the early spring morning is something else. Creating a system that could sustainably water this plant seemed interesting, plus, there are a ton of examples online I could reference.
 
-# Research: 
+## Research: 
 There were a couple of different ways to build something like this and we discussed most of them.
 
 * A [gravity fed watering system](https://circuitdigest.com/microcontroller-projects/arduino-automatic-plant-watering-system) option to pump water for a single plant.    
@@ -24,7 +26,7 @@ There were a couple of different ways to build something like this and we discus
 
 I knew that I wanted to run the system of a pump to be able to scale out to a full planter in the future. You could go with a solenoid activated water value to plumb into a house’s existing water fittings as seen in option 3 which, arguably could be where I take this into the future, but for now the pump will do just fine. With a pump-based system, we can actively water the plant on as-needed bases, just by pumping water into the pot.
 
-# Requirements: 
+## Requirements: 
 1. [Arduino Uno](https://store.arduino.cc/usa/arduino-uno-rev3): The flavor of microcontroller you decide to go with is ultimately a personal preference. My brother had an extra Uno laying around, so I used that.
 
 2. [Seesaw Capacitive Soil Sensor](https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/python-circuitpython-test): To know when the soil requires water, we need a sensor to quantify the moisture level of the soil. There are two types of soil sensors available 1) a capacitive moisture sensor that senses the soil’s ability to store an electrical charge and a 2) resistive moisture sensor which sends a current through the soil to view the level of resistance. After researching several projects, I’ve read that the resistive sensors are prone to corrosion, so I decided to utilize a capacitive sensor that utilizes the I2C protocol. I2C, a variant of data transfer protocol for controllers, is commonly used for [microcontroller sensors](https://dronebotworkshop.com/i2c-arduino-arduino/) and communicating with other objects. There is more info [here](https://electrosome.com/interfacing-soil-moisture-sensor-arduino/) if you would like to build this off an analog system. 
@@ -107,7 +109,7 @@ void loop() {
 }
 {{< / highlight >}}
 
-# Pictures:
+## Pictures:
 ![Pump in box](/images/project_images/arduino_project/box.png#center)
 
 ![Bayite Pump](/images/project_images/arduino_project/pump.png#center)

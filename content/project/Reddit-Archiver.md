@@ -1,6 +1,6 @@
 ---
 title: "Reddit Archiver"
-date: 2022-03-18T04:40:21-07:00
+date: 2021-12-26
 description: Python and Flask based CRUD application deployed with AWS RDS
 tags:
   - python
@@ -8,13 +8,13 @@ tags:
 draft: false
 ---
 
+## Overview
 [Github](https://github.com/jaredtconnor/Reddit-Archiver) | [Demo](https://reddit-archiver.herokuapp.com/)
 
 This project was a basic [CRUD](https://developer.mozilla.org/en-US/docs/Glossary/CRUD) application built with Python and [Flask](https://flask.palletsprojects.com/en/2.0.x/) we created in my [Intro to Databases](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?subject=CS&coursenumber=340&termcode=all) course. I was able to work with [lindsaygoins](https://github.com/lindsaygoins) on this, another C.S. student in the program at the time.
 
 ![Subreddits](/images/project_images/reddit_archiver/subreddits.png)
 
-# Overview: 
 The actual implementation of the app wasn't too complex, utilizing Bootstrap 5 and a form get/post pattern to update values. The project description was to define a correct data schema and entity-relationship model to properly allow data to flow into, from, and correctly edit within a web-based SQL solution. The implementation of the web application was up to the teams.
 
 Our initial idea for the project was to archive [Reddit](https://www.reddit.com/) subreddits, posts, comments, and users, almost a re-designed Reddit page driven by some scraping/API service and scheduled via a cron job running on a cloud Linux VM. 
@@ -29,7 +29,7 @@ To move things to a cloud-based solution, we migrated everything up to an [AWS R
 
 ![Posts Form](/images/project_images/reddit_archiver/post_form.png)
 
-# Learning Outcomes:
+## Learning Outcomes
 
  1. *Co-working*  - Co-working on a project is a ton of fun. Working with my partner on this project was enjoyable and a great lesson how to properly version control and push/pull changes to a collaborative repository.
 
