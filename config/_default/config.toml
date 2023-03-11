@@ -46,4 +46,19 @@ googleAnalytics = "G-ECQJXP6HMT"
     name = 'Mail'
     url = 'mailto:info@jaredtconnor.com'
     weight = 5
-    pre='fa-solid fa-envelope'  
+    pre='fa-solid fa-envelope'   
+
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = true 
+    codeFences = true
+    guessSyntax = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'doom-one'
+    tabWidth = 4
