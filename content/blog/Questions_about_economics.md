@@ -6,8 +6,6 @@ source:
 draft: false
 ---
 
-# Questions About Economics
-
 I was lucky enough to be asked by one of my favorite undergrad professors, [Ed Whitelaw](https://econw.com/staff), to come back down to Eugene to speak on a panel of his past students to speak. The topic included a career day regarding economics and what such an education means in the real world. Here are a number of the questions and my associated answers: 
 
 1.	_What economic tools/fields do you see as most critical to careers in your area? Has this changed during your career:_
@@ -49,15 +47,4 @@ I was lucky enough to be asked by one of my favorite undergrad professors, [Ed W
 10.	_Other words of wisdom to share with the audience:_
 
     It sounds cliché, but always stay humble and never assume you are right. A lot of problems in our world have been introduced by hubris. Entire economies have fallen because of it. I forget who said it but the quote goes “I would rather hire a person with an IQ or 100 whom thinks they have one of 80 than someone with an IQ with 110 who thinks it’s 150”. Also, know that you can have an impact on this world. Look up Tyler Cowen, and you wont be sorry. 
-
-
-
-
-
-
-
-
-
-
-
 
