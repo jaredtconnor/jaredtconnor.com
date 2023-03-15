@@ -991,10 +991,6 @@ prose.a:hover {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1043,20 +1039,17 @@ prose.a:hover {
 .flex {
   display: flex;
 }
-.h-screen {
-  height: 100vh;
-}
 .w-1\/5 {
   width: 20%;
 }
 .w-4\/5 {
   width: 80%;
 }
+.max-w-lg {
+  max-width: 32rem;
+}
 .max-w-none {
   max-width: none;
-}
-.max-w-xl {
-  max-width: 36rem;
 }
 .list-none {
   list-style-type: none;
