@@ -2,7 +2,8 @@
 title: About me
 lastmod: 2021-12-21
 layout: about
----
+--- 
+
 Hey there! I'm Jared Connor. Someone who is attempting to etch out a piece of this digital world, through writing, code, and ideas.
 
 I'm focused on searching for technologies that drive for economic optimization. This implies understanding technology trends that lead to sustained growth. Along with personal strategies that improve one's personal efficiency and ideas.
