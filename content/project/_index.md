@@ -4,7 +4,3 @@ summary: Here are some of my best projects to date. These range from projects I 
 layout: projects
 draft: false
 ---
-
-# Projects
-
-Testing!!!!!

@@ -5,23 +5,3 @@ baseURL = 'https://jaredtconnor.com'
     [markup.goldmark.renderer]
       unsafe = true
 
-[[menu.primary]]
-    name = "Home"
-    url = "/"
-    weight = 1
-[[menu.primary]]
-    name = "About"
-    url = "/about/"
-    weight = 2
-[[menu.primary]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 3
-[[menu.primary]]
-    name = "GitHub"
-    url = "https://github.com/jaredtconnor"
-    weight = 4
-[[menu.primary]]
-    name = "Twitter"
-    url = "https://twitter.com/home"
-    weight = 5

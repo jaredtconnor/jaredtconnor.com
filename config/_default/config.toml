@@ -5,7 +5,7 @@ theme = "piovoso"
 googleAnalytics = "G-ECQJXP6HMT" 
 
 [params]
-  description = "description"
+  description = "Personal website and blog"
   avatar = "img/url"
   favicon = "img/url"
 
@@ -21,7 +21,8 @@ googleAnalytics = "G-ECQJXP6HMT"
   [[menu.main]]
     name = 'Projects'
     url = 'project'
-    weight = 3
+    weight = 3 
+
   [[menu.social]] 
     name = 'Github'
     url = 'https://github.com/jaredtconnor'
