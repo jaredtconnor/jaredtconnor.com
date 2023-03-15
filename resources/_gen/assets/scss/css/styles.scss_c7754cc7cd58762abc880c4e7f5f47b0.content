@@ -555,6 +555,34 @@ prose.a:hover {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
 .prose {
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -984,12 +1012,39 @@ prose.a:hover {
   --tw-prose-invert-th-borders: #525252;
   --tw-prose-invert-td-borders: #404040;
 }
+.container {
+  max-width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px;
+  }
+}
 .m-1 {
   margin: 0.25rem;
 }
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .my-2 {
   margin-top: 0.5rem;
@@ -998,10 +1053,6 @@ prose.a:hover {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 .mb-10 {
   margin-bottom: 2.5rem;
@@ -1033,23 +1084,26 @@ prose.a:hover {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
 .block {
   display: block;
 }
 .flex {
   display: flex;
 }
-.w-1\/5 {
-  width: 20%;
+.w-\[1000px\] {
+  width: 1000px;
 }
-.w-4\/5 {
-  width: 80%;
-}
-.max-w-lg {
-  max-width: 32rem;
+.min-w-0 {
+  min-width: 0px;
 }
 .max-w-none {
   max-width: none;
+}
+.flex-auto {
+  flex: 1 1 auto;
 }
 .list-none {
   list-style-type: none;
@@ -1063,9 +1117,6 @@ prose.a:hover {
 .items-start {
   align-items: flex-start;
 }
-.items-center {
-  align-items: center;
-}
 .justify-center {
   justify-content: center;
 }
@@ -1075,6 +1126,13 @@ prose.a:hover {
 .bg-neutral-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.pr-5 {
+  padding-right: 1.25rem;
 }
 .text-center {
   text-align: center;
@@ -1174,6 +1232,9 @@ prose.a:hover {
   .md\:mt-20 {
     margin-top: 5rem;
   }
+  .md\:w-\[150px\] {
+    width: 150px;
+  }
   .md\:flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -1189,6 +1250,10 @@ prose.a:hover {
   }
 }
 @media (min-width: 1024px) {
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .lg\:mt-32 {
     margin-top: 8rem;
   }
