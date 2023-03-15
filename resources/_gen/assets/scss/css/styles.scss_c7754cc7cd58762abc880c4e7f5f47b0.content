@@ -1093,9 +1093,6 @@ prose.a:hover {
 .flex {
   display: flex;
 }
-.w-\[1000px\] {
-  width: 1000px;
-}
 .min-w-0 {
   min-width: 0px;
 }
