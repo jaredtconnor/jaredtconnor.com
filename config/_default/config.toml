@@ -62,4 +62,8 @@ googleAnalytics = "G-ECQJXP6HMT"
     noClasses = true
     noHl = false
     style = 'doom-one'
-    tabWidth = 4
+    tabWidth = 4 
+
+
+[build]
+writeStats = true
