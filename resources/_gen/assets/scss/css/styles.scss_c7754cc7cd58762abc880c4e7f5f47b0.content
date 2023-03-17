@@ -54,13 +54,19 @@ hr {
 /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
 /*
 Remove the default font size and weight for headings.
 */
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -74,7 +80,7 @@ a {
 /*
 Add the correct font weight in Edge and Safari.
 */
-
+b,
 strong {
   font-weight: bolder;
 }
@@ -83,6 +89,8 @@ strong {
 2. Correct the odd `em` font sizing in all browsers.
 */
 code,
+kbd,
+samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
   font-size: 1em; /* 2 */
@@ -90,27 +98,65 @@ pre {
 /*
 Add the correct font size in all browsers.
 */
+small {
+  font-size: 80%;
+}
 /*
 Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
 /*
 1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
 2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 3. Remove gaps between table borders by default.
 */
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
 /*
 1. Change the font styles in all browsers.
 2. Remove the margin in Firefox and Safari.
 3. Remove default padding in all browsers.
 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
 /*
 Remove the inheritance of text transform in Edge and Firefox.
 */
+button,
+select {
+  text-transform: none;
+}
 /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Remove default button styles.
 */
-
+button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
@@ -121,12 +167,21 @@ Remove the inheritance of text transform in Edge and Firefox.
 /*
 Use the modern Firefox focus style for all focusable elements.
 */
+:-moz-focusring {
+  outline: auto;
+}
 /*
 Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
 /*
 Add the correct vertical alignment in Chrome and Firefox.
 */
+progress {
+  vertical-align: baseline;
+}
 /*
 Correct the cursor style of increment and decrement buttons in Safari.
 */
@@ -159,21 +214,37 @@ Remove the inner padding in Chrome and Safari on macOS.
 /*
 Add the correct display in Chrome and Safari.
 */
+summary {
+  display: list-item;
+}
 /*
 Removes the default spacing and border for appropriate elements.
 */
 blockquote,
+dl,
+dd,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 hr,
+figure,
 p,
 pre {
   margin: 0;
 }
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+legend {
+  padding: 0;
+}
 ol,
-ul {
+ul,
+menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -181,35 +252,64 @@ ul {
 /*
 Prevent resizing textareas horizontally by default.
 */
+textarea {
+  resize: vertical;
+}
 /*
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
 /*
 Set the default cursor for buttons.
 */
+button,
+[role="button"] {
+  cursor: pointer;
+}
 /*
 Make sure disabled buttons don't get the pointer cursor.
 */
+:disabled {
+  cursor: default;
+}
 /*
 1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
 2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 img,
-iframe {
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
 /* Make elements with the HTML hidden attribute stay hidden by default */
-[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'] {
+[hidden] {
+  display: none;
+}
+[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -225,7 +325,7 @@ img {
   line-height: 1.5rem;
   --tw-shadow: 0 0 #0000;
 }
-[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus {
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
@@ -237,6 +337,14 @@ img {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   border-color: #2563eb;
 }
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+input::placeholder,textarea::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
 ::-webkit-datetime-edit-fields-wrapper {
   padding: 0;
 }
@@ -246,6 +354,24 @@ img {
 ::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {
   padding-top: 0;
   padding-bottom: 0;
+}
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+}
+[multiple] {
+  background-image: initial;
+  background-position: initial;
+  background-repeat: unset;
+  background-size: initial;
+  padding-right: 0.75rem;
+  -webkit-print-color-adjust: unset;
+          print-color-adjust: unset;
 }
 [type='checkbox'],[type='radio'] {
   -webkit-appearance: none;
@@ -955,6 +1081,9 @@ prose.a:hover {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -963,6 +1092,9 @@ prose.a:hover {
 }
 .flex {
   display: flex;
+}
+.min-w-0 {
+  min-width: 0px;
 }
 .max-w-none {
   max-width: none;
@@ -985,6 +1117,10 @@ prose.a:hover {
 .bg-neutral-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .px-20 {
   padding-left: 5rem;
@@ -1084,6 +1220,9 @@ prose.a:hover {
   .md\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+  .md\:mt-0 {
+    margin-top: 0px;
   }
   .md\:mt-20 {
     margin-top: 5rem;
