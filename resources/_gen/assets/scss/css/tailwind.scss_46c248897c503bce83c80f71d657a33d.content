@@ -1,0 +1,27 @@
+/* TailwindCSS base styles */
+/* see https://tailwindcss.com/docs/functions-and-directives#tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+
+@layer base { 
+  prose.a {
+   @apply underline text-sky-600 hover:text-blue-800  
+ }
+} 
+
+@layer utilities {    
+  .hover-bg {
+    background: 
+      linear-gradient(#bae6fd 0 0) no-repeat
+      calc(200% - var(--i,0)*100%) 100% / 200% calc(100%*var(--i,0) + .08em);
+    transition: .3s calc(var(--i,0)*.3s), background-position .3s calc(.3s - calc(var(--i,0)*.3s));
+  }
+  .hover-bg:hover {
+    --i: 1;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0ZGluIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6InN0ZGluIiwic291cmNlc0NvbnRlbnQiOlsiLyogVGFpbHdpbmRDU1MgYmFzZSBzdHlsZXMgKi9cbi8qIHNlZSBodHRwczovL3RhaWx3aW5kY3NzLmNvbS9kb2NzL2Z1bmN0aW9ucy1hbmQtZGlyZWN0aXZlcyN0YWlsd2luZCAqL1xuQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7XG5AdGFpbHdpbmQgdmFyaWFudHM7XG5cblxuQGxheWVyIGJhc2UgeyBcbiAgcHJvc2UuYSB7XG4gICBAYXBwbHkgdW5kZXJsaW5lIHRleHQtc2t5LTYwMCBob3Zlcjp0ZXh0LWJsdWUtODAwICBcbiB9XG59IFxuXG5AbGF5ZXIgdXRpbGl0aWVzIHsgICAgXG4gIC5ob3Zlci1iZyB7XG4gICAgYmFja2dyb3VuZDogXG4gICAgICBsaW5lYXItZ3JhZGllbnQoI2JhZTZmZCAwIDApIG5vLXJlcGVhdFxuICAgICAgY2FsYygyMDAlIC0gdmFyKC0taSwwKSoxMDAlKSAxMDAlIC8gMjAwJSBjYWxjKDEwMCUqdmFyKC0taSwwKSArIC4wOGVtKTtcbiAgICB0cmFuc2l0aW9uOiAuM3MgY2FsYyh2YXIoLS1pLDApKi4zcyksIGJhY2tncm91bmQtcG9zaXRpb24gLjNzIGNhbGMoLjNzIC0gY2FsYyh2YXIoLS1pLDApKi4zcykpO1xuICB9XG4gIC5ob3Zlci1iZzpob3ZlciB7XG4gICAgLS1pOiAxO1xuICB9XG59XG4iXX0= */
