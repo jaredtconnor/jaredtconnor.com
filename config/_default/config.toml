@@ -22,6 +22,10 @@ googleAnalytics = "G-ECQJXP6HMT"
     name = 'Projects'
     url = 'project'
     weight = 3 
+  [[menu.main]]
+    name = 'RSS'
+    url = 'index.xml'
+    weight = 4
 
   [[menu.social]] 
     name = 'Github'
@@ -29,24 +33,19 @@ googleAnalytics = "G-ECQJXP6HMT"
     weight = 1 
     pre='fa-brands fa-github'
   [[menu.social]]
-    name = 'Rss'
-    url = 'index.xml'
-    weight = 2 
-    pre='fa-solid fa-rss' 
-  [[menu.social]]
     name = 'Twitter'
     url = 'https://twitter.com/Jared_ThomasC'
-    weight = 3 
+    weight = 2
     pre='fa-brands fa-twitter'  
   [[menu.social]]
     name = 'LinkedIn'
     url = 'https://www.linkedin.com/in/jaredconnor/'
-    weight = 4
+    weight = 3
     pre='fa-brands fa-linkedin'  
   [[menu.social]]
     name = 'Mail'
     url = 'mailto:info@jaredtconnor.com'
-    weight = 5
+    weight = 4
     pre='fa-solid fa-envelope'   
 
 
