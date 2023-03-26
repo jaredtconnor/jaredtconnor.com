@@ -1,3 +1,6 @@
 [submodule "themes/piovoso"]
 	path = themes/piovoso
 	url = https://github.com/jaredtconnor/piovoso
+[submodule "piovoso"]
+	path = piovoso
+	url = https://github.com/jaredtconnor/piovoso
