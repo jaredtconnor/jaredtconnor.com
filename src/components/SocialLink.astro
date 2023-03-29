@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { href, icon, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+---
+
+<a
+  href={href}
+  class="transition-all hover:bg-sky-200 hover:text-slate-800"
+  {...props}
+>
+  <slot />
+</a>
