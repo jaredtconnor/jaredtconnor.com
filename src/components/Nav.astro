@@ -1,0 +1,41 @@
+---
+import { SITE_TITLE } from "../consts";
+
+import NavLink from "./NavLink.astro";
+import SocialLink from "./SocialLink.astro";
+---
+
+<div
+  class="md:w-[150px] -mx-4 font-san pr-5 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden"
+>
+  <div class="top-0 lg:sticky lg:top-0 md:top-0">
+    <div
+      class="flex flex-col ml-2 mb-2 md:ml-0 md:px-0 md:mb-8 md:flex-row items-start font-sans font-bold"
+    >
+      Site Title
+    </div>
+    <nav
+      class="flex overflow-hidden flex-row md:flex-col items-start relative mt-4 md:px-0 pb-0 fade md:overflow-auto md:relative"
+    >
+      <div
+        class="list-none flex flex-row md:flex-col md:mt-0 md:mb-0 sm:max-md:space-x-4"
+      >
+        <NavLink href="/blog">Blog</NavLink>
+        <NavLink href="/about">About</NavLink>
+        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/feed">Feed</NavLink>
+      </div>
+    </nav>
+    <nav
+      class="flex overflow-hidden flex-row md:flex-col items-start relative mt-4 px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+    >
+      <div class="list-none flex flex-row mb-10"></div>
+      <SocialLink href="https://twitter.com/astrodotbuild" target="_blank">
+        Twitter
+      </SocialLink>
+      <SocialLink href="https://github.com/withastro/astro" target="_blank">
+        GitHub
+      </SocialLink>
+    </nav>
+  </div>
+</div>

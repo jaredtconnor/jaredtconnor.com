@@ -6,12 +6,11 @@ type Props = HTMLAttributes<"a">;
 const { href, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
   href={href}
-  class="text-white underline transition hover:bg-white"
+  class="transition-all hover:bg-sky-200 hover:text-slate-800"
   {...props}
 >
   <slot />
