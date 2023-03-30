@@ -1,8 +1,8 @@
 ---
-import { SITE_TITLE } from "../consts";
-
 import NavLink from "./NavLink.astro";
 import SocialLink from "./SocialLink.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <div
@@ -12,7 +12,7 @@ import SocialLink from "./SocialLink.astro";
     <div
       class="flex flex-col ml-2 mb-2 md:ml-0 md:px-0 md:mb-8 md:flex-row items-start font-sans font-bold"
     >
-      Site Title
+      {SITE_TITLE}
     </div>
     <nav
       class="flex overflow-hidden flex-row md:flex-col items-start relative mt-4 md:px-0 pb-0 fade md:overflow-auto md:relative"
@@ -27,15 +27,25 @@ import SocialLink from "./SocialLink.astro";
       </div>
     </nav>
     <nav
-      class="flex overflow-hidden flex-row md:flex-col items-start relative mt-4 px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+      class="flex overflow-hidden flex-col md:flex-col items-start relative mt-4 px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
     >
       <div class="list-none flex flex-row mb-10"></div>
-      <SocialLink href="https://twitter.com/astrodotbuild" target="_blank">
-        Twitter
-      </SocialLink>
-      <SocialLink href="https://github.com/withastro/astro" target="_blank">
-        GitHub
-      </SocialLink>
+      <SocialLink
+        href="https://github.com/withastro/astro"
+        icon="fa-brands fa-github"
+      />
+      <SocialLink
+        href="https://twitter.com/astrodotbuild"
+        icon="fa-brands fa-twitter"
+      />
+      <SocialLink
+        href="https://twitter.com/astrodotbuild"
+        icon="fa-brands fa-linkedin"
+      />
+      <SocialLink
+        href="https://twitter.com/astrodotbuild"
+        icon="fa-solid fa-envelope"
+      />
     </nav>
   </div>
 </div>
