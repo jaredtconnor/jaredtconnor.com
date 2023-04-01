@@ -192,13 +192,6 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
-"first-post.md": {
-  id: "first-post.md",
-  slug: "first-post",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
 "installing-node-on-linux-via-wsl.md": {
   id: "installing-node-on-linux-via-wsl.md",
   slug: "installing-node-on-linux-via-wsl",
@@ -206,30 +199,9 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
-"markdown-style-guide.md": {
-  id: "markdown-style-guide.md",
-  slug: "markdown-style-guide",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
 "object_oriented_programming.md": {
   id: "object_oriented_programming.md",
   slug: "object_oriented_programming",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
-"second-post.md": {
-  id: "second-post.md",
-  slug: "second-post",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
-"third-post.md": {
-  id: "third-post.md",
-  slug: "third-post",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
