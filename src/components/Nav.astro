@@ -2,51 +2,37 @@
 import NavLink from "./NavLink.astro";
 import SocialLink from "./SocialLink.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
 ---
 
-<header
-  class="flex items-center pt-4 pb-4 mb-4 flex-row flex-wrap justify-center"
->
-  <div id="links">
-    <a class="title-link" href="/">Home</a>
-    <span class="gap"></span>
-    <a class="title-link" href="/blog">Blog</a>
-    <span class="gap"></span>
-    <a class="title-link" href="/tags">Tags</a>
-    <span class="gap"></span>
-    <a class="title-link" href="/blog/feed.xml">Feed</a>
-  </div>
-</header>
-
-<div class="flex items-center pt-4 pb-4 mb-4 flex-row flex-wrap justify-center">
-  <div class="">
-    {SITE_TITLE}
-  </div>
-
-  <nav class="">
-    <NavLink href="/blog">Blog</NavLink>
-    <NavLink href="/about">About</NavLink>
-    <NavLink href="/projects">Projects</NavLink>
-    <NavLink href="/feed">Feed</NavLink>
-  </nav>
-
-  <nav class="">
-    <SocialLink
-      href="https://github.com/withastro/astro"
-      icon="fa-brands fa-github"
-    />
-    <SocialLink
-      href="https://twitter.com/astrodotbuild"
-      icon="fa-brands fa-twitter"
-    />
-    <SocialLink
-      href="https://twitter.com/astrodotbuild"
-      icon="fa-brands fa-linkedin"
-    />
-    <SocialLink
-      href="https://twitter.com/astrodotbuild"
-      icon="fa-solid fa-envelope"
-    />
-  </nav>
+<div class="hover-bg hover:text-slate-800 break-words space-y-10 mb-5">
+  {SITE_TITLE}
 </div>
+
+<nav
+  class="flex overflow-hidden flex-row md:flex-col items-start relative px-4 mb-5 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+>
+  <NavLink href="/blog">Blog</NavLink>
+  <NavLink href="/about">About</NavLink>
+  <NavLink href="/projects">Projects</NavLink>
+  <NavLink href="/feed">Feed</NavLink>
+</nav>
+
+<nav class="">
+  <SocialLink
+    href="https://github.com/withastro/astro"
+    icon="fa-brands fa-github"
+  />
+  <SocialLink
+    href="https://twitter.com/astrodotbuild"
+    icon="fa-brands fa-twitter"
+  />
+  <SocialLink
+    href="https://twitter.com/astrodotbuild"
+    icon="fa-brands fa-linkedin"
+  />
+  <SocialLink
+    href="https://twitter.com/astrodotbuild"
+    icon="fa-solid fa-envelope"
+  />
+</nav>
