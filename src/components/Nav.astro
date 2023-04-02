@@ -5,6 +5,20 @@ import SocialLink from "./SocialLink.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
+<header
+  class="flex items-center pt-4 pb-4 mb-4 flex-row flex-wrap justify-center"
+>
+  <div id="links">
+    <a class="title-link" href="/">Home</a>
+    <span class="gap"></span>
+    <a class="title-link" href="/blog">Blog</a>
+    <span class="gap"></span>
+    <a class="title-link" href="/tags">Tags</a>
+    <span class="gap"></span>
+    <a class="title-link" href="/blog/feed.xml">Feed</a>
+  </div>
+</header>
+
 <div
   class="md:w-[150px] -mx-4 font-san pr-5 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden"
 >
