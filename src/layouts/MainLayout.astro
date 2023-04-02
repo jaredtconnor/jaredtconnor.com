@@ -8,10 +8,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <!DOCTYPE html>
 <html lang="en" class="bg-neutral-800 text-white">
-  <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  <body class="">
-    <Nav />
+  <head>
+    <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body
+    class="max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto"
+  >
+    <div
+      class="md:w-[150px] -mx-4 font-san pr-5 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden"
+    >
+      <div class="top-0 lg:sticky lg:top-0 md:top-0">
+        <Nav />
+      </div>
+    </div>
     <slot />
-    <Footer />
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
