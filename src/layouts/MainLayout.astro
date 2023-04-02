@@ -17,13 +17,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <div
       class="md:w-[150px] -mx-4 font-san pr-5 md:flex-shrink-0 md:mx-0 md:px-0 overflow-hidden"
     >
-      <div class="top-0 lg:sticky lg:top-0 md:top-0">
+      <div class="sticky top-0 right-0">
         <Nav />
       </div>
     </div>
-    <slot />
-    <footer>
-      <Footer />
-    </footer>
+    <div class="min-h-screen flex flex-col">
+      <slot />
+      <footer class="mt-auto">
+        <Footer />
+      </footer>
+    </div>
   </body>
 </html>
