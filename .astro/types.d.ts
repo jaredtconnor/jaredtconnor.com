@@ -217,6 +217,29 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
 },
+"project": {
+"Reddit-Archiver.md": {
+  id: "Reddit-Archiver.md",
+  slug: "reddit-archiver",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
+"Stock-price-scaper.md": {
+  id: "Stock-price-scaper.md",
+  slug: "stock-price-scaper",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
+"aurdino-watering-system.md": {
+  id: "aurdino-watering-system.md",
+  slug: "aurdino-watering-system",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
+},
 
 	};
 

@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("project")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<div>
+  {
+    posts.map((post) => (
+      <a href={`/projects/${post.slug}/`} class="flex flex-col space-y-1 mb-4">
+        <div class="flex flex-col w-full transition hover:bg-sky-200 hover:text-slate-800">
+          {post.data.title}
+        </div>
+        <span class="font-mono text-xs text-neutral-500 tracking-tighter">
+          <FormattedDate date={post.data.date} />
+        </span>
+      </a>
+    ))
+  }
+</div>
