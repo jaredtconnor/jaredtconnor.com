@@ -1,32 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-
-import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
-
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+import PostList from "../components/PostList.astro";
 ---
 
 <MainLayout>
-  <section>
-    <div>
-      {
-        posts.map((post) => (
-          <a class="flex flex-col space-y-1 mb-4">
-            <a
-              class="flex flex-col w-full transition hover:bg-sky-200 hover:text-slate-800"
-              href={`/blog/${post.slug}/`}
-            >
-              {post.data.title}
-            </a>
-            <span class="font-mono text-xs text-neutral-500 tracking-tighter">
-              <FormattedDate date={post.data.date} />
-            </span>
-          </a>
-        ))
-      }
-    </div>
-  </section>
+  <PostList />
 </MainLayout>

@@ -5,8 +5,12 @@ import SocialLink from "./SocialLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<div class="hover-bg hover:text-slate-800 break-words space-y-10 mb-5">
-  {SITE_TITLE}
+<div
+  class="flex flex-col ml-2 mb-2 md:ml-0 md:px-0 md:mb-8 md:flex-row items-start font-sans font-bold"
+>
+  <a href="/" class="hover-bg hover:text-slate-800 break-words">
+    {SITE_TITLE}
+  </a>
 </div>
 
 <nav
