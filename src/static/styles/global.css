@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { 
+    font-family: "Inter", sans-serif; 
+  }  
+
+}
+
+
+.hover-bg {
+  background: 
+    linear-gradient(#bae6fd 0 0) no-repeat
+    calc(200% - var(--i,0)*100%) 100% / 200% calc(100%*var(--i,0) + .08em);
+  transition: .3s calc(var(--i,0)*.3s), background-position .3s calc(.3s - calc(var(--i,0)*.3s));
+}
+.hover-bg:hover {
+  --i: 1;
+}

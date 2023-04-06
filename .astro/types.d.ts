@@ -218,6 +218,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] },
 },
 "project": {
+"C-Encryption-Client.md": {
+  id: "C-Encryption-Client.md",
+  slug: "c-encryption-client",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
 "Reddit-Archiver.md": {
   id: "Reddit-Archiver.md",
   slug: "reddit-archiver",
@@ -225,9 +232,23 @@ declare module 'astro:content' {
   collection: "project",
   data: InferEntrySchema<"project">
 } & { render(): Render[".md"] },
+"Smallsh.md": {
+  id: "Smallsh.md",
+  slug: "smallsh",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
 "Stock-price-scaper.md": {
   id: "Stock-price-scaper.md",
   slug: "stock-price-scaper",
+  body: string,
+  collection: "project",
+  data: InferEntrySchema<"project">
+} & { render(): Render[".md"] },
+"Unity-Breakout-ML-Agent.md": {
+  id: "Unity-Breakout-ML-Agent.md",
+  slug: "unity-breakout-ml-agent",
   body: string,
   collection: "project",
   data: InferEntrySchema<"project">
