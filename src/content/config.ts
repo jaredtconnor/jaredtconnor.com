@@ -17,6 +17,7 @@ const projectCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     // Transform string to Date object
+    description: z.string(),
     date: z
       .string()
       .or(z.date())
