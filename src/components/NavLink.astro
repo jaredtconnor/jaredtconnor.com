@@ -8,14 +8,12 @@ const { href, ...props } = Astro.props;
 const { pathname } = Astro.url;
 ---
 
-<div
-  class="list-none flex flex-row md:flex-col md:mt-0 md:mb-0 sm:max-md:space-x-4"
+<a
+  href={href}
+  class="transition-all hover:bg-sky-200 hover:text-slate-800"
+  {...props}
 >
-  <a
-    href={href}
-    class="transition-all hover:bg-sky-200 hover:text-slate-800"
-    {...props}
-  >
+  <span class="relative py-[5px] px-[10px] md:pl-[8px]">
     <slot />
-  </a>
-</div>
+  </span>
+</a>
