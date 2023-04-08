@@ -7,8 +7,10 @@ export interface Props {
 const { href, icon } = Astro.props;
 ---
 
-<a href={href} class="lg:py-[5px] md:pl-[5px]">
-  <span class="icon transition hover:bg-sky-200 hover:text-slate-800">
+<a href={href} class="lg:py-[5px] md:pl-[2px]">
+  <span
+    class="icon transition hover:bg-sky-200 hover:text-slate-800 relative py-[2px] px-[3px]"
+  >
     <i class={icon}></i>
     <slot />
   </span>
