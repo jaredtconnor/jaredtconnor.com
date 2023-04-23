@@ -6,6 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://jaredtconnor.com",
   integrations: [mdx(), tailwind({
     config: {
       applyBaseStyles: false
