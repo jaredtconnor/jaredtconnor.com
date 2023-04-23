@@ -1,22 +1,29 @@
 
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+export async function getStaticPaths({ paginate, rss }) {
+  const allPosts = Astro.fetchContent('./*.md');
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-export async function get(context) {
-  const blog = await getCollection('blog');
-  return rss({
-    title: 'Atomic Thoughts | Jared Connor',
-    description: 'A humble Astronaut’s guide to the stars',
-    description: 'Atomic snippets of ideas',
-    site: context.site,
-    items: blog.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      customData: post.data.customData,
-      // Compute RSS link from post `slug`
-      // This example assumes all posts are rendered as `/blog/[slug]` routes
-      link: `/blog/${post.slug}/`,
-    })),
-  });
+  rss({
+    title: "Jared Connor| Blog",
+    description: "Atomic Thougghts",
+    customData: `<language>en-us</language>`,
+
+    items: allPosts.map((item) => {
+
+      const customData = `<guid isPermaLink="true">https://rainsberger.ca${item.url}</guid>`
+
+      return {
+        title: item.title,
+        description: item.description,
+        link: item.url,
+        pubDate: item.date,
+        customData,
+      }
+    }),
+
+    dest: "/feed.xml",
+
+  })
+
+  return paginate(sortedPosts, { pageSize: 25 })
 }
