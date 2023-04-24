@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { rssSchema } from "@astrojs/rss";
 
 const blogCollection = defineCollection({
   // Type-check frontmatter using a schema
