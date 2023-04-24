@@ -1,29 +1,31 @@
 
-export async function getStaticPaths({ paginate, rss }) {
-  const allPosts = Astro.fetchContent('./*.md');
-  const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
-  rss({
-    title: "Jared Connor| Blog",
-    description: "Atomic Thougghts",
-    customData: `<language>en-us</language>`,
+export async function get(context) {
 
-    items: allPosts.map((item) => {
+  const allPosts = await getCollection('blog', (post) => {
+    return post;
+  });
 
-      const customData = `<guid isPermaLink="true">https://rainsberger.ca${item.url}</guid>`
+  const sortedPosts = allPosts.sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
 
-      return {
-        title: item.title,
-        description: item.description,
-        link: item.url,
-        pubDate: item.date,
-        customData,
-      }
-    }),
+  const posts = sortedPosts
 
-    dest: "/feed.xml",
-
-  })
-
-  return paginate(sortedPosts, { pageSize: 25 })
+  return rss({
+    xmlns: { h: 'http://www.w3.org/TR/html4/' },
+    title: 'my title',
+    description: 'my description',
+    site: context.site,
+    customData: '<language>en-us</language>',
+    items: posts.map((post) => ({
+      title: `Post ${post.data.id}`,
+      pubDate: post.data.date,
+      description:
+        post.data.description || post.data.excerpt || post.data.content || '',
+      link: `/post/${post.data.id}/`,
+    })),
+  });
 }
