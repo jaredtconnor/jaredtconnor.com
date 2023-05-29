@@ -1,6 +1,6 @@
 ---
 title: "Understanding Object Oriented Programming"
-date: 2019-01-05
+pubDate: 2019-01-05
 tags: ["programming", "python"]
 draft: false
 ---

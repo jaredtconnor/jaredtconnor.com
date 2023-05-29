@@ -1,6 +1,6 @@
 ---
 title: "Kierkegaard on boredom"
-date: 2018-10-08
+pubDate: 2018-10-08
 tags: [philosophy, life, mental_health]
 draft: false
 ---

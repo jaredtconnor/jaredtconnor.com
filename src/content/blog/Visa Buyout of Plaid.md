@@ -1,6 +1,6 @@
 ---
 title: "Visa's acquisition of Plaid"
-date: 2020-01-20
+pubDate: 2020-01-20
 tags: [economics, payments, banking]
 draft: false
 ---

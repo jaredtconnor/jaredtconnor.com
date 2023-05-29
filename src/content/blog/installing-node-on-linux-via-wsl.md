@@ -1,6 +1,6 @@
 ---
 title: "Installing Node on Linux via WSL"
-date: 2021-08-24
+pubDate: 2021-08-24
 tags: []
 --- 
 

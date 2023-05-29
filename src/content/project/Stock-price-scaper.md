@@ -1,6 +1,6 @@
 ---
 title: "Stock Price Scraper"
-date: 2017-08-30
+pubDate: 2017-08-30
 description: "Pandas based series on web scraping for financial data"
 draft: false
 ---

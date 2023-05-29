@@ -1,6 +1,6 @@
 ---
 title: "Reddit Archiver"
-date: 2022-03-18
+pubDate: 2022-03-18
 description: "Python and Flask based CRUD application deployed with AWS RDS"
 tags: [python, data]
 draft: false

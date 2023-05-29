@@ -1,6 +1,6 @@
 ---
 title: "C Encryption Service"
-date: 2022-03-02
+pubDate: 2022-03-02
 description: "Multithreaded client/server service for encryption/decryption using One Time Pad cipher written in C"
 tags: [C, systems, encryption]
 draft: false

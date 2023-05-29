@@ -1,6 +1,6 @@
 ---
 title: "Interactive Exploration of Dead End Careers"
-date: 2018-08-20
+pubDate: 2018-08-20
 tags: [employment, labor, data_analysis]
 source:
 draft: false

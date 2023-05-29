@@ -1,6 +1,6 @@
 ---
 title: "Student Debt Increasing"
-date: 2019-12-10
+pubDate: 2019-12-10
 tags: [debt, economics]
 draft: false
 ---

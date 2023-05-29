@@ -1,6 +1,6 @@
 ---
 title: "The Marvel of the Human Dad"
-date: 2019-02-12
+pubDate: 2019-02-12
 tags: [anthropology, family]
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "First of Many!"
-date: 2017-11-23
+pubDate: 2017-11-23
 tags: [intro]
 ---
 
