@@ -1,7 +1,13 @@
 ---
 const today = new Date();
+import { SITE_TITLE } from "../consts";
 ---
 
-<div class="container mx-auto text-start">
-  &copy; {today.getFullYear()} Jared Connor. All rights reserved.
-</div>
+<footer class="footer footer-center w-full p-4">
+  <div class="text-center font-mono text-sm text-neutral-500 tracking-tighter">
+    <p>
+      &copy; {today.getFullYear()} All rights reserved -
+      <a class="" href="mailto:jaredconnor301@gmail.com">{SITE_TITLE}</a>
+    </p>
+  </div>
+</footer>
