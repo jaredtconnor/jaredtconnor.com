@@ -1,6 +1,6 @@
 ---
 title: "Conversations with Tyler: Robin Wiblin from 80000 Hours"
-date: 2018-12-05
+pubDate: 2018-12-05
 draft: false
 tags: [economics, effective_altruism, philosophy]
 ---

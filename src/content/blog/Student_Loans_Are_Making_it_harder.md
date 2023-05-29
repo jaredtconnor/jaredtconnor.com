@@ -1,6 +1,6 @@
 ---
 title: "College debt is making it harder for people to get married"
-date: 2019-09-09
+pubDate: 2019-09-09
 tags: [relationships, economics, education]
 draft: false
 ---

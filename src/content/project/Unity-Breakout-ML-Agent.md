@@ -1,6 +1,6 @@
 ---
 title: "Unity Breakout Game"
-date: 2022-08-05
+pubDate: 2022-08-05
 description: "Atari Breakout clone built in Unity using reinforcement Learning for the computer agent"
 tags: [Unity, Game Development, Machine Learning]
 draft: false

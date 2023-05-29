@@ -1,6 +1,6 @@
 ---
 title: "Thoughts On Modern Monetary Theory"
-date: 2019-12-27
+pubDate: 2019-12-27
 tags: ["economics"]
 draft: false
 ---

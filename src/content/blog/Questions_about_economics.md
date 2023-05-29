@@ -1,6 +1,6 @@
 ---
 title: "Questions about economics"
-date: 2019-04-26
+pubDate: 2019-04-26
 tags: [economics, education]
 draft: false
 ---

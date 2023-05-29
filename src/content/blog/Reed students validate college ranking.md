@@ -1,6 +1,6 @@
 ---
 title: "Reed students validate college ranking"
-date: 2019-08-07
+pubDate: 2019-08-07
 tags: [education, statistics]
 draft: false
 ---

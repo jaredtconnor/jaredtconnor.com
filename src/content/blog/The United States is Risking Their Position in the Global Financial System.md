@@ -1,6 +1,6 @@
 ---
 title: "The United States is Risking Their Position in the Global Financial System"
-date: 2020-06-14
+pubDate: 2020-06-14
 tags: ["finance", "economics"]
 draft: false
 ---

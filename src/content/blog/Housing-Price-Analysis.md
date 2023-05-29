@@ -1,7 +1,7 @@
 ---
 title: "Housing Price Analysis"
 tags: [python, pandas, data_analysis]
-date: 2018-05-22 
+pubDate: 2018-05-22 
 draft: false
 ---
 
