@@ -1,1 +1,3 @@
-Personal website and blog, built with [Astro](https://astro.build/)
+# Personal Site
+
+Built with [Astro](https://astro.build/)
