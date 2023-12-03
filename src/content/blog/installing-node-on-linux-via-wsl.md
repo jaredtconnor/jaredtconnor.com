@@ -1,10 +1,10 @@
 ---
-title: "Installing Node on Linux via WSL"
+title: 'Installing Node on Linux via WSL'
 pubDate: 2021-08-24
 tags: []
---- 
+---
 
-I've been working quite a bit on personal projects and such on my Windows machine via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL") along with an [Ubuntu](https://ubuntu.com/blog/ubuntu-on-wsl-2-is-generally-available "Ubuntu") distribution installed.
+I've been working quite a bit on personal projects and such on my Windows machine via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10 'WSL') along with an [Ubuntu](https://ubuntu.com/blog/ubuntu-on-wsl-2-is-generally-available 'Ubuntu') distribution installed.
 
 Part of that, especially for developing any Node.js or Express application requires installing node correctly. To do so:
 
@@ -27,11 +27,10 @@ nvm install -lts
 
 This should install the latest LTS version of Node.js. To verify the installation worked correctly, we can run `node --version` which should output:
 
-``` bash
+```bash
 # => [version_number]
 ```
 
 Which indicates the latest installed and sourced version running.
-
 
 Source: [Install Node.js locally](https://heynode.com/tutorial/install-nodejs-locally-nvm/)

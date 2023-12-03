@@ -1,5 +1,5 @@
 ---
-title: "First of Many!"
+title: 'First of Many!'
 pubDate: 2017-11-23
 tags: [intro]
 ---
@@ -16,4 +16,4 @@ There are many blogs like this ran by stunning intellectuals that provide the sa
 
 The goal of this blog is to display links, articles, and thoughts corresponding to information that I'm digesting on a daily or weekly basis. I've never been a big fan of social media and the publicity that it receives, so sectioning off a small section of the vast web could be a viable space to display everything. As of right now, I have no set agenda or topics to cover with content. _Forewarning_, articles and posts will likely be related to financial, economic, technology, philosophy, and statistics right now, simply because that's what I find myself interested in at the current time. But think very well (and likely will) could change.
 
-As of right now, I haven't came up with a name for the blog. Nick Szabo's [Unenumerated](http://unenumerated.blogspot.com) is a dream title for a blog of that caliber. Should mine be __Implied Powers__? __Syneídēsis__ (it's Greek for consciousness)? Something philosophy based or should it be economics/technology based? It's yet to be determined, nor does it need to be right now.
+As of right now, I haven't came up with a name for the blog. Nick Szabo's [Unenumerated](http://unenumerated.blogspot.com) is a dream title for a blog of that caliber. Should mine be **Implied Powers**? **Syneídēsis** (it's Greek for consciousness)? Something philosophy based or should it be economics/technology based? It's yet to be determined, nor does it need to be right now.

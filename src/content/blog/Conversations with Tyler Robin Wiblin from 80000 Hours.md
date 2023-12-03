@@ -1,5 +1,5 @@
 ---
-title: "Conversations with Tyler: Robin Wiblin from 80000 Hours"
+title: 'Conversations with Tyler: Robin Wiblin from 80000 Hours'
 pubDate: 2018-12-05
 draft: false
 tags: [economics, effective_altruism, philosophy]

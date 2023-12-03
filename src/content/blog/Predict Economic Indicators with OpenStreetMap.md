@@ -1,5 +1,5 @@
 ---
-title: "Predict Economics Indicators with OpenStreetMap"
+title: 'Predict Economics Indicators with OpenStreetMap'
 pubDate: 2018-06-11
 tags: [geo spatial, economics, economic output, data_analysis]
 draft: false

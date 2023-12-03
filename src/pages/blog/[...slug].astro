@@ -1,19 +1,19 @@
 ---
-import { getEntryBySlug } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
+import { getEntryBySlug } from 'astro:content'
+import BlogPost from '../../layouts/BlogPost.astro'
 
-const { slug } = Astro.params;
+const { slug } = Astro.params
 if (slug == undefined) {
-  throw new Error("Slug is required");
+  throw new Error('Slug is required')
 }
 
-const entry = await getEntryBySlug("blog", slug);
+const entry = await getEntryBySlug('blog', slug)
 
 if (entry == undefined) {
-  return Astro.redirect("/404");
+  return Astro.redirect('/404')
 }
 
-const { Content } = await entry.render();
+const { Content } = await entry.render()
 
 // import { CollectionEntry, getCollection } from "astro:content";
 

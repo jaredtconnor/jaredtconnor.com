@@ -1,24 +1,25 @@
 ---
-title: "Stock Price Scraper"
+title: 'Stock Price Scraper'
 pubDate: 2017-08-30
-description: "Pandas based series on web scraping for financial data"
+description: 'Pandas based series on web scraping for financial data'
 draft: false
 ---
 
 # Understanding Pandas in Python:
-This was one of my first projects in python to understand data frames. Anyone interested in 
-data analysis with Python needs to understand how to use, manipulate, and structure data in 
-ways that are useful and required for your analysis. Thankfully, there are some _incredibly_ 
+
+This was one of my first projects in python to understand data frames. Anyone interested in
+data analysis with Python needs to understand how to use, manipulate, and structure data in
+ways that are useful and required for your analysis. Thankfully, there are some _incredibly_
 smart developers in this world that understand the importance of this task, so they developed
-the [__Pandas__](https://pandas.pydata.org) package. On top of that, we can use the ever useful [__BeautifulSoup__](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
+the [**Pandas**](https://pandas.pydata.org) package. On top of that, we can use the ever useful [**BeautifulSoup**](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 package, which allows us to make automated scripts to interact with HTML backed webpages.
 
-The way Beautiful soup works is by making an HTML request to a specific web page, and 
+The way Beautiful soup works is by making an HTML request to a specific web page, and
 given the structure of the webpage, we can specify places where we want to _scrape_ information.
 
-First off, here are the dependencies: 
+First off, here are the dependencies:
 
-```python 
+```python
 import bs4 as bs
 import datetime as dt
 import os
@@ -31,7 +32,7 @@ import requests
 
 This function below does just that: Obviously, we could write out a long list that contains all
 of the ticker symbols for the S&P 500. But, there is probably structured data on some website
-(*cough* Wikipedia *cough*) that we can use for the heavy lifting. 
+(_cough_ Wikipedia _cough_) that we can use for the heavy lifting.
 
 ```python
 
@@ -51,17 +52,17 @@ def save_sp500_tickers():
 
 ```
 
-This gives us a great list for all 500 ticker symbols. If you aren't familiar with Pickles 
-in Python, they are essentially a write-able file that can store data in a more compressed 
+This gives us a great list for all 500 ticker symbols. If you aren't familiar with Pickles
+in Python, they are essentially a write-able file that can store data in a more compressed
 manner than, say, a csv file. More info on them can be found [here](https://ianlondon.github.io/blog/pickling-basics/)
 
-Now for the fun stuff, we need to actually pull the pricing info for given period of time. 
-We will first pickle in our ticker list, then actually use the yahoo finance port via the 
-pandas data reader library to pull real time pricing information for us. This package was 
-maintained back when I began this project, but I believe it's been discontinued. 
-What can still be used is the [data reader](https://pandas-datareader.readthedocs.io/en/latest/) package associated with pandas. 
+Now for the fun stuff, we need to actually pull the pricing info for given period of time.
+We will first pickle in our ticker list, then actually use the yahoo finance port via the
+pandas data reader library to pull real time pricing information for us. This package was
+maintained back when I began this project, but I believe it's been discontinued.
+What can still be used is the [data reader](https://pandas-datareader.readthedocs.io/en/latest/) package associated with pandas.
 
-```python 
+```python
 
 #Gathering all ADJ close data from Yahoo API for tickers created
 #and storing in stock_data directory
@@ -91,23 +92,22 @@ def get_data_from_yahoo(reload_sp500=False):
         except RemoteDataError:
             print("Data Error")
             continue
-            
+
 get_data_from_yahoo()
 
 ```
 
-The main for loop here is the money maker. We're going to iteratively step through each 
-ticker, and using the pandas data reader, specify to pull the high price, low price, and 
+The main for loop here is the money maker. We're going to iteratively step through each
+ticker, and using the pandas data reader, specify to pull the high price, low price, and
 volume for the specified date range on a daily basis. For each of these, we're going to pop
 this data out into a simple CSV file according to the ticker's name. Throw in some
-additional try/except catches and this process could easily work for pulling stock price information. 
+additional try/except catches and this process could easily work for pulling stock price information.
 
-### What did we learn: 
-While this was one of my first projects, and hindsight is 20/20, this started a rather deep and 
-continued dive into thinking about problems from a data perspective. While I learned about data 
-abstraction in my later computer science courses and am still learning about how to properly store 
-this data, thinking this way provides a simple heuristic to solve problems: 
+### What did we learn:
 
-> Any problem can typically be solved with information, and information exists as data somewhere. 
+While this was one of my first projects, and hindsight is 20/20, this started a rather deep and
+continued dive into thinking about problems from a data perspective. While I learned about data
+abstraction in my later computer science courses and am still learning about how to properly store
+this data, thinking this way provides a simple heuristic to solve problems:
 
-
+> Any problem can typically be solved with information, and information exists as data somewhere.

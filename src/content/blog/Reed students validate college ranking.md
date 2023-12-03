@@ -1,11 +1,11 @@
 ---
-title: "Reed students validate college ranking"
+title: 'Reed students validate college ranking'
 pubDate: 2019-08-07
 tags: [education, statistics]
 draft: false
 ---
 
-I came across this great article about a group of Reed students in a statistics course that reverse engineered the [US News College Ranking System](https://www.usnews.com/best-colleges) in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course. 
+I came across this great article about a group of Reed students in a statistics course that reverse engineered the [US News College Ranking System](https://www.usnews.com/best-colleges) in oder to determine if Reed was being penalized by not filling out info for the the proprietary ranking system. How did they validated it? Statistics of course.
 
 ![](/images/blog_images/Reed_college_ranking_heatmap.png)
 

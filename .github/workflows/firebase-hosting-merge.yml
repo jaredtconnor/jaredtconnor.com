@@ -6,11 +6,10 @@ on:
       - main
   pull_request:
     branches:
-      - main 
+      - main
 
 jobs:
   deploy_to_firebase_hosting:
-
     runs-on: ubuntu-latest
 
     steps:

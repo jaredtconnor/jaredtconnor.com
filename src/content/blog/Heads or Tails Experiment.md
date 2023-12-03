@@ -1,5 +1,5 @@
 ---
-title: "Heads or Tails - Paper on big life choices"
+title: 'Heads or Tails - Paper on big life choices'
 pubDate: 2018-09-19
 draft: false
 tags: [happiness, psychology, choices]
