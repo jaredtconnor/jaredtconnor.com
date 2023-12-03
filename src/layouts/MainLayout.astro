@@ -2,27 +2,14 @@
 import Head from '../components/Head.astro'
 import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
+import MainContent from '../components/MainContent.astro'
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 ---
 
 <!doctype html>
-<html lang="en" class="bg-neutral-800 text-white">
+<html lang="en">
   <head>
-    <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body
-    class="max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto"
-  >
-    <!-- Nav Bar -->
-    <Nav />
-
-    <div class="min-h-screen flex flex-col">
-      <!-- Main Content -->
-      <slot />
-
-      <!-- Footer -->
-      <Footer />
-    </div>
-  </body>
+    <Head title={SITE_TITLE} description={SITE_DESCRIPTION} /> 
+  </head>    
 </html>
