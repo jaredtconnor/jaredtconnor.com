@@ -26,8 +26,8 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "astro-analytics": "^2.6.0",
-    "prettier": "3.1.0",
-    "prettier-plugin-astro": "0.12.2",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
     "wrangler": "^2.14.0"
   }
 }

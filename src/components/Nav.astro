@@ -1,37 +1,36 @@
 ---
 import { SITE_TITLE } from '../consts'
+import NavLink from './NavLink.astro'
+import SocialLink from './SocialLink.astro'
 ---
 
-<nav class="p-4 min-[480px]:pl-8 min-[480px]:pr-8">
-  <div class="items-center justify-between m-auto min-[960px]:flex">
-    <a
-      href="https://lethain.com/"
-      class="text-black/[0.9] text-2xl inline-block">Irrational Exuberance</a
-    >
-    <div class="items-center min-[960px]:flex">
-      <ul class="list-disc mr-4">
-        <li class="text-xl pr-4 inline-block">
-          <a href="https://lethain.com/featured/" class="text-black/[0.9]"
-            >Popular</a
-          >
-        </li>
-        <li class="text-xl pr-4 inline-block">
-          <a href="https://lethain.com/tags/" class="text-black/[0.9]">Tags</a>
-        </li>
-        <li class="text-xl pr-4 inline-block">
-          <a href="https://lethain.com/newsletter/" class="text-black/[0.9]"
-            >Newsletter</a
-          >
-        </li>
-        <li class="text-xl pr-4 inline-block">
-          <a href="https://lethain.com/feeds.xml" class="text-black/[0.9]"
-            >RSS</a
-          >
-        </li>
-        <li class="text-xl pr-4 inline-block">
-          <a href="https://lethain.com/about" class="text-black/[0.9]">About</a>
-        </li>
-      </ul>
+<div
+  class="text-neutral-800 px-3 pt-6 relative pb-0 min-[685px]:pt-8 min-[685px]:pr-2 min-[685px]:pb-0 min-[685px]:pl-2 min-[960px]:pt-6 min-[960px]:pr-2 min-[960px]:pb-0 min-[960px]:pl-2"
+>
+  <div>
+    <div class="items-center flex min-[685px]:block">
+      <h2
+        class="text-lg font-semibold my-3 ml-2 min-[960px]:mt-12 min-[685px]:ml-0"
+      >
+        {SITE_TITLE}
+        <a
+          href="https://twitter.com/loopstrangely"
+          class="text-blue-700 font-medium">@loopstrangely</a
+        >
+      </h2>
     </div>
+    <p class="text-neutral-500 mb-3 min-[960px]:mb-7 min-[685px]:mb-6">
+      About me contents
+    </p>
+
+    <ul
+      class="p-0 m-0 leading-6 text-center text-neutral-800"
+      style="list-style: none;"
+    >
+      <NavLink href="/blog">Blog</NavLink>
+      <NavLink href="/about">About</NavLink>
+      <NavLink href="/projects">Projects</NavLink>
+      <NavLink href="/rss.xml">Feed</NavLink>
+    </ul>
   </div>
-</nav>
+</div>
