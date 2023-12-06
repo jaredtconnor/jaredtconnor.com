@@ -2,16 +2,26 @@
 export interface Props {
   href: string
   icon: string
+  name: string
 }
 
-const { href, icon } = Astro.props
+const { href, icon, name } = Astro.props
 ---
 
-<a href={href} class="lg:py-[5px] md:pl-[2px]">
-  <span
-    class="icon transition hover:bg-sky-200 hover:text-slate-800 relative py-[2px] px-[3px]"
+<li
+  class="flex justify-center content-center items-center p-0 m-1 w-8 h-8 leading-9 text-center border border-solid border-neutral-200 text-neutral-800"
+  style="border-radius: 50%; list-style: outside none none;"
+>
+  <a
+    class="flex text-center border-0 cursor-pointer focus:text-blue-700 hover:text-blue-700"
+    href={href}
+    rel="noopener noreferrer"
+    target="_blank"
+    style="text-decoration: none; transition: color 0.25s ease 0s; list-style: outside none none;"
   >
+    <title class="text-neutral-800" style="list-style: outside none none;">
+      {name}
+    </title>
     <i class={icon}></i>
-    <slot />
-  </span>
-</a>
+  </a>
+</li>
