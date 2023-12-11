@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
         <div class="flex flex-col w-full transition hover:bg-sky-200 hover:text-slate-800">
           {post.data.title}
         </div>
-        <span class="font-mono text-xs text-neutral-500 tracking-tighter">
+        <span class="text-xs text-neutral-500 tracking-tighter">
           <FormattedDate date={post.data.pubDate} />
         </span>
       </a>

@@ -19,7 +19,7 @@ const posts = (await getCollection('project')).sort(
           </div>
         </div>
         <div class="text-sm">{post.data.description}</div>
-        <span class="font-mono text-xs text-neutral-500 tracking-tighter">
+        <span class="text-xs text-neutral-500 tracking-tighter">
           <FormattedDate date={post.data.pubDate} />
         </span>
       </a>
