@@ -1,14 +1,46 @@
 {
-  "name": "astroad",
-  "description": "A pre-configured setup for easy website development with Astro and Payload CMS using Docker.",
-  "license": "MIT",
-  "version": "1.1",
+  "name": "turbopress",
+  "description": "A web + headless CMS turborepo",
+  "private": true,
   "scripts": {
-    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml  up --build",
-    "prod": "docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build",
-    "stop": "docker compose -f docker-compose.yml -f docker-compose-dev.yml down && docker compose -f docker-compose.yml -f docker-compose-prod.yml down"
+    "prepare": "husky install",
+    "build": "turbo build",
+    "build:api": "dotenv -- turbo build --filter=api",
+    "build:web": "dotenv -- turbo build --filter=web",
+    "dev": "dotenv -- turbo dev",
+    "dev:api": "dotenv -- turbo dev --filter=api",
+    "dev:web": "dotenv -- turbo dev --filter=web",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,astro}\"",
+    "generate:types": "dotenv -- pnpm --filter=api generate:types ",
+    "serve:api": "dotenv -- turbo serve --filter=api",
+    "serve:web": "dotenv -- turbo serve --filter=web",
+    "serve": "dotenv -- turbo serve"
   },
-  "dependencies": {
-    "sharp": "^0.33.1"
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "latest",
+    "eslint-config-custom": "*",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "prettier-plugin-svelte": "latest",
+    "turbo": "latest"
+  },
+  "preinstall": "npx only-allow pnpm",
+  "lint-staged": {
+    "apps/**/*.{js,ts,astro}": [
+      "eslint --fix"
+    ],
+    "packages/**/*.{js,ts,astro}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   }
 }
