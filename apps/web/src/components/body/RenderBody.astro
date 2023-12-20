@@ -1,0 +1,36 @@
+---
+import type {
+  FormattedElement,
+  FormattedText,
+  PageContent,
+  PageList,
+  ReusableContent,
+} from "@turbopress/api/types";
+import RenderContent from "../RenderReusableContent.astro";
+import RenderPageContent from "./RenderPageContent.astro";
+// import RenderPageList from "./page-list/RenderPageList.astro";
+import RenderPageList from "./page-list/RenderPageList.svelte";
+interface Props {
+  blocks?: (PageList | ReusableContent | PageContent)[];
+  content?: (FormattedElement | FormattedText)[];
+}
+
+const { blocks = [], content } = Astro.props;
+
+if (blocks.length === 0) return;
+---
+
+<main class="p-6 flex flex-wrap">
+  {
+    blocks.map((block) => {
+      if (!block.id) return;
+      if (block.blockType == "reusableContent" && block.reference?.value)
+        return <RenderContent content={block.reference.value} />;
+      if (block.blockType == "pageContent")
+        return <RenderPageContent {content} />;
+      if (block.blockType == "pageList")
+        return <RenderPageList {block} client:only />;
+      return <div>{block.id}</div>;
+    })
+  }
+</main>

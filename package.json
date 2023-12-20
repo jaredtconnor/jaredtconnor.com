@@ -16,7 +16,8 @@
     "generate:types": "dotenv -- pnpm --filter=api generate:types ",
     "serve:api": "dotenv -- turbo serve --filter=api",
     "serve:web": "dotenv -- turbo serve --filter=web",
-    "serve": "dotenv -- turbo serve"
+    "serve": "dotenv -- turbo serve", 
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",
