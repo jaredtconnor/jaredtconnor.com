@@ -1,68 +1,34 @@
-# TurboPress starter
+# Payload CMS & Astro Template
 
-This is a starter Astro + Payload CMS project using Turborepo.
+This is a template for [Payload CMS](https://payloadcms.com) and [Astro](https://astro.build)
+It is a simple blog template with a few pages and a blog post collection.
+It is fully typed with TypeScript.
 
-## Why Astro?
+## Getting Started
 
-Astro allow you to use your favorite UI components and libraries. Mix and match React, Preact, Svelte, Vue, SolidJS, AlpineJS, and Lit to build your own website.
+1. Clone this repository
+2. Run `npm install`
+3. set `MONGODB_URI` in `backend/.env` with a MongoDB connection string (run locally or use a service like [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+4. Run `cd backend && npm run dev` to start the development server for payload
+5. In another terminal run `cd frontend && npm run dev` to start the development server for astro
 
-## Why PayloadCMS?
+## Modify the Template
 
-I need a headless CMS that is easy to use with TypeScript support. PayloadCMS work really well in this use case.
+After changing any of the payload config in `backend/src/payload.config.ts` you will need to regenerate the types for the frontend. To do this, run `npm run generate:types` in the `backend` directory. Then add fetch functions with the new types to `frontend/src/api.ts`
 
-## What's inside?
+## Deploying
 
-This Turborepo includes the following packages/apps:
+To deploy this template, there are a couple of options.
 
-### Apps and Packages
+### Deploying separately
 
-- `api`: a [Payload](https://payloadcms.com/) app
-- `web`: an [Astro](https://astro.build/) app
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-prettier` and `eslint-configg-turbo`)
+The frontend and backend can be deployed separately. The frontend can be deployed to any static hosting service like [Netlify](https://www.netlify.com) or [Vercel](https://vercel.com) or [CloudflarePage](https://pages.cloudflare.com/). The backend can be deployed to any Node.js hosting service like [Heroku](https://www.heroku.com) or [Vercel](https://vercel.com).
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Deploying together
 
-### Utilities
+The frontend and backend can be deployed together. Astro can be run as a [node service](https://docs.astro.build/en/guides/integrations-guide/node/) with SSR enabled and can be called from the backend in the `backend/src/server.ts` file.
 
-This Turborepo has some additional tools already setup for you:
+## Documentation
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [TailwindCSS](https://tailwindcss.com/) for CSS utility
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-## Prerequisites
-
-Install `nodejs`, `pnpm` and `turborepo` on your local machine
-
-## Develop
-
-Create a `.env` file in the root folder, you can use the `.env.example` file as an example
-
-I use `pnpm` for this project.
-
-Run the following command:
-
-```sh
-pnpm installl
-pnpm dev
-```
-
-By default, the payloadCMS will run on port 3000, and Astro will be served on port 3001.
-
-## Build & Serve (NodeJs)
-
-```sh
-pnpm build
-pnpm serve
-```
-
-## TypeScript support
-
-To fully utilize the type safe features, manually generate the types for PayloadCMS by runng `pnpm generate:types`
-
-Then, you can import the types easily as simple as
-
-```ts
-import type { User } from "@turbopress/api/types";
-```
+- [Payload CMS](https://payloadcms.com/docs/)
+- [Astro](https://docs.astro.build/en/getting-started/)
