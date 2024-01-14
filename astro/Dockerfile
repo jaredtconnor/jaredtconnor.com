@@ -1,24 +1,20 @@
 FROM node:lts-alpine as base
-RUN apk update && apk add --no-cache libc6-compat
-RUN corepack enable
-RUN corepack prepare pnpm@latest --activate
-
 WORKDIR /base
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 COPY . .
 
 FROM base AS dev
 ENV NODE_ENV=development
 EXPOSE 3000
-CMD ["pnpm","dev"]
+CMD ["yarn","dev"]
 
 FROM base AS build
 ENV NODE_ENV=production
 WORKDIR /build
 COPY --from=base /base .
 ADD "https://random-uuid.deno.dev" skipcache
-RUN pnpm build
+RUN yarn build
 
 FROM nginx:stable AS prod
 COPY nginx.conf /etc/nginx/nginx.conf
