@@ -9,7 +9,6 @@ ENV NODE_ENV=development
 EXPOSE 3001
 CMD ["yarn","dev"]
 
-
 FROM base AS build
 ENV NODE_ENV=production
 WORKDIR /build
