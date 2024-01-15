@@ -13,10 +13,11 @@
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts node -r tsconfig-paths/register node_modules/payload/dist/bin/index.js generate:types"
   },
   "dependencies": {
+    "@payloadcms/richtext-lexical": "^0.5.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
-    "payload": "^1.15.6",
+    "payload": "^2.8.0",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
