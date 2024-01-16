@@ -1,31 +1,31 @@
 ---
-import { SITE_TITLE } from '../consts'
-import NavLink from './NavLink.astro'
-import SocialLink from './SocialLink.astro'
+import { SITE_TITLE } from "../const";
+import NavLink from "./NavLink.astro";
+import SocialLink from "./SocialLink.astro";
 ---
 
 <div
-  class="text-neutral-800 px-3 pt-6 relative pb-0 min-[685px]:pt-8 min-[685px]:pr-2 min-[685px]:pb-0 min-[685px]:pl-2 min-[960px]:pt-6 min-[960px]:pr-2 min-[960px]:pb-0 min-[960px]:pl-2"
+  class="relative px-3 pb-0 pt-6 text-neutral-800 min-[685px]:pb-0 min-[685px]:pl-2 min-[685px]:pr-2 min-[685px]:pt-8 min-[960px]:pb-0 min-[960px]:pl-2 min-[960px]:pr-2 min-[960px]:pt-6"
 >
   <div>
-    <div class="items-center flex min-[685px]:block">
+    <div class="flex items-center min-[685px]:block">
       <h2
-        class="text-lg font-semibold my-3 ml-2 min-[960px]:mt-12 min-[685px]:ml-0"
+        class="my-3 ml-2 text-lg font-semibold min-[685px]:ml-0 min-[960px]:mt-12"
       >
         {SITE_TITLE}
         <a
           href="https://twitter.com/loopstrangely"
-          class="text-blue-700 font-medium">@loopstrangely</a
+          class="font-medium text-blue-700">@loopstrangely</a
         >
       </h2>
     </div>
-    <p class="text-neutral-500 mb-3 min-[960px]:mb-7 min-[685px]:mb-6">
+    <p class="mb-3 text-neutral-500 min-[685px]:mb-6 min-[960px]:mb-7">
       Software Engineer and Data Analyst. I think and write about the impacts of
       technology on the economy.
     </p>
 
     <ul
-      class="p-0 m-0 leading-6 text-center text-neutral-800"
+      class="m-0 p-0 text-center leading-6 text-neutral-800"
       style="list-style: none;"
     >
       <NavLink href="/blog">Blog</NavLink>
@@ -35,7 +35,7 @@ import SocialLink from './SocialLink.astro'
     </ul>
 
     <ul
-      class="flex flex-grow-0 flex-shrink-0 justify-center p-0 my-2 -mx-1 leading-6 text-neutral-800 sm:justify-center"
+      class="-mx-1 my-2 flex flex-shrink-0 flex-grow-0 justify-center p-0 leading-6 text-neutral-800 sm:justify-center"
       style="flex-flow: wrap; list-style: none;"
     >
       <SocialLink

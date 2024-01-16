@@ -25,7 +25,7 @@ export default buildConfig({
   },
   collections: [Posts, Users, Media],
   typescript: {
-    outputFile: path.resolve('/', 'payload-types.ts'),
+    outputFile: path.resolve('/', 'types.ts'),
   },
   editor: lexicalEditor({}),
   db: mongooseAdapter({
