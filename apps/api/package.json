@@ -1,0 +1,38 @@
+{
+  "name": "@turbopress/api",
+  "description": "Headless CMS based on Payload",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "build:payload": "payload build",
+    "build:server": "tsc",
+    "build": "pnpm copyfiles && pnpm build:payload && pnpm build:server",
+    "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
+    "generate:types": "payload generate:types",
+    "lint": "eslint  \"./src/**/*.{js,ts}\" --fix",
+    "serve": "PAYLOAD_CONFIG_PATH=dist/payload.config.js node dist/server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "latest",
+    "@aws-sdk/lib-storage": "latest",
+    "@payloadcms/db-mongodb": "^1.4.0",
+    "@payloadcms/plugin-cloud-storage": "latest",
+    "@payloadcms/plugin-seo": "latest",
+    "@payloadcms/richtext-lexical": "^0.5.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "payload": "latest"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "copyfiles": "^2.4.1",
+    "eslint": "latest",
+    "eslint-config-custom": "*",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.8.4",
+    "webpack-hot-middleware": "^2.25.4"
+  }
+}
