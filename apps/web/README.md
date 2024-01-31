@@ -1,13 +1,47 @@
-# Astro with Tailwind
+# create-svelte
 
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+
+| Technology  | Usage             |
+| ----------- | ----------------- |
+| [Sveltekit] | Svelte Framework  |
+| [UnoCSS]    | Atomic Css engine |
+
+## Creating a project
+
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npx degit adroyt/sveltekit
+
+# create a new project in my-app
+npx degit adroyt/sveltekit my-app
 ```
-npm create astro@latest -- --template with-tailwindcss
+
+## Developing
+
+Once you've created a project and installed dependencies with `yarn` (or `npm install` or `pnpm install`), start a development server:
+
+```bash
+yarn dev
+
+# or start the server and open the app in a new browser tab
+yarn dev -- --open
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+## Building
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+To create a production version of your app:
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+```bash
+yarn build
+```
+
+You can preview the production build with `yarn preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+[sveltekit]: https://kit.svelte.dev
+[unocss]: https://github.com/unocss/unocss
+[vanilla extract]: https://vanilla-extract.style

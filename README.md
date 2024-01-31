@@ -1,68 +1,68 @@
-# TurboPress starter
+# Svelte-Kit + PayloadCMS Turborepo
 
-This is a starter Astro + Payload CMS project using Turborepo.
-
-## Why Astro?
-
-Astro allow you to use your favorite UI components and libraries. Mix and match React, Preact, Svelte, Vue, SolidJS, AlpineJS, and Lit to build your own website.
-
-## Why PayloadCMS?
-
-I need a headless CMS that is easy to use with TypeScript support. PayloadCMS work really well in this use case.
+This is an custom made Turborepo starter.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This [Turborepo] includes the following packages/apps:
 
-### Apps and Packages
+### Apps
 
-- `api`: a [Payload](https://payloadcms.com/) app
-- `web`: an [Astro](https://astro.build/) app
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-prettier` and `eslint-configg-turbo`)
+Each app is 100% [TypeScript].
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- `web`: a [Svelte-kit] web app with [UnoCSS] for styling
+- `server`: an [Express] app with [PayloadCMS] and [tRPC] setup
+
+### Packages
+
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
 
 ### Utilities
 
 This Turborepo has some additional tools already setup for you:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [TailwindCSS](https://tailwindcss.com/) for CSS utility
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [TypeScript] for static type checking
+- [ESLint] for code linting
+- [Prettier] for code formatting
 
-## Prerequisites
+## Getting Started
 
-Install `nodejs`, `pnpm` and `turborepo` on your local machine
-
-## Develop
-
-Create a `.env` file in the root folder, you can use the `.env.example` file as an example
-
-I use `pnpm` for this project.
-
-Run the following command:
+This project uses [pnpm].
 
 ```sh
-pnpm installl
+npx degit HanielU/turbo-sk-payload my-app # download the project
+
+cd my-app # navigate into the project
+
+pnpm install # install dependencies
+```
+
+### Running the apps
+
+In the project root and run the following command.
+
+```sh
 pnpm dev
 ```
 
-By default, the payloadCMS will run on port 3000, and Astro will be served on port 3001.
+This will run both the Svelte-kit and Payload apps in parallel.
 
-## Build & Serve (NodeJs)
+## License
 
-```sh
-pnpm build
-pnpm serve
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## TypeScript support
+<!-- initialise all the links used -->
 
-To fully utilize the type safe features, manually generate the types for PayloadCMS by runng `pnpm generate:types`
-
-Then, you can import the types easily as simple as
-
-```ts
-import type { User } from "@turbopress/api/types";
-```
+[turborepo]: https://turbo.build/repo
+[eslint]: https://eslint.org
+[express]: https://expressjs.com
+[fastify]: https://www.fastify.io
+[payloadcms]: https://www.payloadcms.com
+[prettier]: https://prettier.io
+[prisma]: https://www.prisma.io
+[svelte-kit]: https://kit.svelte.dev
+[unocss]: https://github.com/unocss/unocss
+[trpc]: https://trpc.io
+[typescript]: https://www.typescriptlang.org
+[rust]: https://www.rust-lang.org
+[pnpm]: https://pnpm.io
