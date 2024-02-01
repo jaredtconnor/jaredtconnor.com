@@ -1,4 +1,5 @@
 import path from "path";
+import { S3UploadCollectionConfig } from "payload-s3-upload";
 import type { Media } from "payload/generated-types";
 import type { CollectionConfig } from "payload/types";
 
@@ -18,57 +19,89 @@ const Media: CollectionConfig = {
   // https://github.com/richardvanbergen/payload-plugin-cloud-storage as an example
   upload: {
     // from the imageSizes below, the admin UI will show this size for previewing
-    adminThumbnail: "thumbnail",
+    // adminThumbnail: "thumbnail",
 
     // staticDir tell Payload where to store files to and allows them to be served
     staticDir: path.resolve(__dirname, "../../media"),
+    staticURL: path.resolve(__dirname, "../../media"),
 
-    // limit the types of files allowed and request validation
-    mimeTypes: [
-      "image/png",
-      "image/jpeg",
-      "image/webp",
-      "image/svg+xml",
-      "application/pdf",
-    ],
-
-    // in addition to the original file, Payload saves resized images automatically
-    imageSizes: [
-      {
-        name: "thumbnail",
-        width: 480,
-        height: 320,
+    s3: {
+      bucket: process.env.S3_BUCKET_NAME,
+      // prefix: 'images/', // files will be stored in bucket folder images/xyz
+      prefix: ({ doc }) => `assets/${doc.type}`, // dynamic prefixes are possible too
+      commandInput: {
+        // optionally, use here any valid PutObjectCommandInput property
+        // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/putobjectcommandinput.html
+        ACL: "public-read",
       },
-      {
-        name: "portrait",
-        width: 768,
-        height: 1024,
-      },
-      {
-        name: "landscape",
-        width: 768,
-        height: 360,
-      },
-      {
-        name: "hero",
-        width: 1920,
-        height: 1080,
-      },
-    ],
+    },
+    adminThumbnail: ({ doc }) => process.env.S3_BUCKET + `/${doc.filename}`,
   },
 
-  // upload collections inherit base fields for file information and imageSizes, then add your own for users to change
+  // // limit the types of files allowed and request validation
+  // mimeTypes: [
+  //   "image/png",
+  //   "image/jpeg",
+  //   "image/webp",
+  //   "image/svg+xml",
+  //   "application/pdf",
+  // ],
+
+  // in addition to the original file, Payload saves resized images automatically
+  // imageSizes: [
+  //   {
+  //     name: "thumbnail",
+  //     width: 480,
+  //     height: 320,
+  //   },
+  //   {
+  //     name: "portrait",
+  //     width: 768,
+  //     height: 1024,
+  //   },
+  //   {
+  //     name: "landscape",
+  //     width: 768,
+  //     height: 360,
+  //   },
+  //   {
+  //     name: "hero",
+  //     width: 1920,
+  //     height: 1080,
+  //   },
+  // ],
+
+  // create a field to access uploaded files in s3 from payload api
   fields: [
     {
-      name: "alt",
-      label: "Alt Text (For accessibility)",
-      localized: true,
+      name: "url",
       type: "text",
+      access: {
+        create: () => false,
+      },
       admin: {
-        condition: (data: Media) => data.mimeType?.startsWith("image/"),
+        disabled: true,
+      },
+      hooks: {
+        afterRead: [
+          ({ data: doc }) =>
+            `https://my-bucket.s3.eu-west-3.amazonaws.com/images/${doc.type}/${doc.filename}`,
+        ],
       },
     },
   ],
+  // // upload collections inherit base fields for file information and imageSizes, then add your own for users to change
+  // fields: [
+  //   {
+  //     name: "alt",
+  //     label: "Alt Text (For accessibility)",
+  //     localized: true,
+  //     type: "text",
+  //     admin: {
+  //       condition: (data: Media) => data.mimeType?.startsWith("image/"),
+  //     },
+  //   },
+  // ],
 };
 
 export default Media;
