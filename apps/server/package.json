@@ -36,6 +36,7 @@
     "payload": "^2.0.14",
     "payload-plugin-lexical": "^0.6.6",
     "payload-plugin-oauth": "^2.0.1",
+    "payload-s3-upload": "^2.1.1",
     "react": "^18.2.0",
     "react-email": "1.9.1",
     "short-uuid": "^4.2.2",

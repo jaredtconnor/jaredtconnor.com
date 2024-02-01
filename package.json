@@ -4,10 +4,13 @@
     "build:no-logs": "turbo run build --output-logs=errors-only",
     "build": "turbo run build --continue",
     "build:web": "turbo run build --filter=web",
+    "build:web-astro": "turbo run build --filter=web-astro",
     "start": "turbo run start",
     "start:web": "turbo run start --filter=web",
+    "start:web-astro": "turbo run start --filter=web-astro",
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --filter=web",
+    "dev:web-astro": "turbo run dev --filter=web-astro",
     "dev:server": "turbo run dev --filter=server",
     "build:server": "turbo run build --filter=server",
     "start:server": "turbo run start --filter=server",
@@ -15,10 +18,13 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "eslint": "^8.46.0",
+    "eslint": "^8.56.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "^2.8.8",
-    "prettier-plugin-svelte": "^2.10.0",
-    "turbo": "^1.10.12"
+    "prettier-plugin-svelte": "^2.10.1",
+    "turbo": "^1.12.1"
+  },
+  "dependencies": {
+    "wrangler": "^3.26.0"
   }
 }

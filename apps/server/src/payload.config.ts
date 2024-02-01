@@ -37,8 +37,8 @@ export default buildConfig({
     }),
   },
   editor: lexicalEditor(),
-  cors: whitelist,
-  csrf: whitelist,
+  // cors: "*",
+  // csrf: "*",
   collections: [Categories, Customers, Media, Posts, Tags, Users],
   plugins: [
     // nestedDocs({
@@ -69,7 +69,7 @@ export default buildConfig({
             ? null
             : s3Adapter({
                 config: {
-                  region: process.env.S3_REGION,
+                  // region: process.env.S3_REGION,
                   credentials: {
                     accessKeyId: process.env.S3_ACCESS_KEY_ID,
                     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,

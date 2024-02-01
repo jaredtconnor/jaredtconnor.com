@@ -1,0 +1,30 @@
+---
+import { SITE_TITLE } from '../consts'
+import NavLink from './NavLink.astro'
+import SocialLink from './SocialLink.astro'
+---
+
+<div class="leading-6 text-left break-words text-stone-50">
+  <a
+    href="/"
+    class="inline-block mr-2 text-left cursor-pointer text-slate-400"
+    aria-label="Home"
+  >
+    <i
+      class="inline-block not-italic font-black leading-none text-slate-400"
+      role="presentation"></i>
+  </a>
+
+  <NavLink href="/blog">Blog</NavLink>
+  <NavLink href="/about">About</NavLink>
+  <NavLink href="/projects">Projects</NavLink>
+
+  <div
+    class="flex flex-row gap-2 leading-6 text-left break-words text-stone-50"
+  >
+    <!-- <button class="fa fa-circle-half-stroke" aria-label="Enable high contrast mode" tooltip="High contrast"></button> -->
+    <i
+      class="inline-block p-1 not-italic font-normal leading-none text-center text-amber-500 break-words cursor-pointer"
+    ></i>
+  </div>
+</div>

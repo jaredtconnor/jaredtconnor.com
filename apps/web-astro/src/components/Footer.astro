@@ -1,0 +1,26 @@
+---
+const today = new Date()
+import { SITE_TITLE } from '../consts'
+---
+
+<footer class="p-6 leading-5 text-center break-words text-stone-50">
+  <div class="flex flex-col gap-2 text-sm text-center text-stone-50">
+    <p class="m-0 break-words">© 2023 Jared Connor. All rights reserved.</p>
+    <p class="m-0 break-words">
+      <a href="/imprint" class="inline-block cursor-pointer text-slate-400">
+        Imprint
+      </a>
+       |
+      <a href="/search" class="inline-block cursor-pointer text-slate-400">
+        Search
+      </a>
+       |
+      <a href="/rss.xml" class="inline-block cursor-pointer text-slate-400">
+        RSS
+        <i
+          class="inline-block not-italic font-black leading-none"
+          role="presentation"></i>
+      </a>
+    </p>
+  </div>
+</footer>
