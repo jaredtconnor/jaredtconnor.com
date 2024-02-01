@@ -71,6 +71,9 @@ importers:
       express:
         specifier: ^4.18.2
         version: 4.18.2
+      frontmatter:
+        specifier: ^0.0.3
+        version: 0.0.3
       node-cron:
         specifier: ^3.0.2
         version: 3.0.2
@@ -92,12 +95,27 @@ importers:
       react-email:
         specifier: 1.9.1
         version: 1.9.1
+      remark-gfm:
+        specifier: ^4.0.0
+        version: 4.0.0
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
+      remark-slate-transformer:
+        specifier: ^0.9.0
+        version: 0.9.0(unified@11.0.4)
       short-uuid:
         specifier: ^4.2.2
         version: 4.2.2
+      slugify:
+        specifier: ^1.6.6
+        version: 1.6.6
       superjson:
         specifier: ^1.12.3
         version: 1.12.3
+      unified:
+        specifier: ^11.0.4
+        version: 11.0.4
       zod:
         specifier: ^3.21.4
         version: 3.21.4
@@ -8824,6 +8842,12 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /frontmatter@0.0.3:
+    resolution: {integrity: sha512-mp/uBpxwnfYSl3cjtESYHuOvNWfYEwUjhFjXYbX9zA5b/dAX7qvON3sQQmvnOMUpi21GVG7RQ/ODX0Te28QiOw==}
+    dependencies:
+      js-yaml: 3.14.1
+    dev: false
+
   /fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
     dev: false
@@ -10525,6 +10549,20 @@ packages:
       mdast-util-gfm-table: 2.0.0
       mdast-util-gfm-task-list-item: 2.0.0
       mdast-util-to-markdown: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /mdast-util-math@3.0.0:
+    resolution: {integrity: sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w==}
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.3
+      devlop: 1.1.0
+      longest-streak: 3.1.0
+      mdast-util-from-markdown: 2.0.0
+      mdast-util-to-markdown: 2.1.0
+      unist-util-remove-position: 5.0.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -13052,6 +13090,19 @@ packages:
       vfile: 6.0.1
     dev: false
 
+  /remark-slate-transformer@0.9.0(unified@11.0.4):
+    resolution: {integrity: sha512-GU98OakSBgjX7M+jZ26X8CD+i4kcl76MY+sCf4om84if3Kr51iTNzdUtukpp6V3rhfq2+X4e6fazqN31ikUy/Q==}
+    peerDependencies:
+      unified: '>=11.0.0'
+    dependencies:
+      '@types/mdast': 4.0.3
+      mdast-util-math: 3.0.0
+      tslib: 2.6.2
+      unified: 11.0.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /remark-smartypants@2.1.0:
     resolution: {integrity: sha512-qoF6Vz3BjU2tP6OfZqHOvCU0ACmu/6jhGaINSQRI9mM7wCxNQTKB3JUAN4SVoN2ybElEDTxBIABRep7e569iJw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -13572,6 +13623,11 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: false
+
+  /slugify@1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
+    engines: {node: '>=8.0.0'}
     dev: false
 
   /smart-buffer@4.2.0:
