@@ -4,6 +4,7 @@
   "private": true,
   "main": "src/trpc/router.ts",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint --ignore-path=../../.eslintignore .",
     "format": "prettier --write --ignore-path=../../.prettierignore .",
@@ -34,6 +35,7 @@
     "express": "^4.18.2",
     "frontmatter": "^0.0.3",
     "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.2",
     "payload": "^2.0.14",
     "payload-plugin-lexical": "^0.6.6",
     "payload-plugin-oauth": "^2.0.1",

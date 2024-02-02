@@ -77,6 +77,9 @@ importers:
       node-cron:
         specifier: ^3.0.2
         version: 3.0.2
+      node-fetch:
+        specifier: ^3.3.2
+        version: 3.3.2
       payload:
         specifier: ^2.0.14
         version: 2.0.14(@types/react@18.2.33)(esbuild@0.17.19)(typescript@5.1.6)(webpack@5.90.0)
@@ -85,7 +88,7 @@ importers:
         version: 0.6.6(payload@2.0.14)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.11)
       payload-plugin-oauth:
         specifier: ^2.0.1
-        version: 2.0.1(mongodb@4.17.2)(node-fetch@2.7.0)(passport@0.6.0)(payload@2.0.14)(react@18.2.0)
+        version: 2.0.1(mongodb@4.17.2)(node-fetch@3.3.2)(passport@0.6.0)(payload@2.0.14)(react@18.2.0)
       payload-s3-upload:
         specifier: ^2.1.1
         version: 2.1.1(@aws-sdk/client-s3@3.441.0)(payload@2.0.14)
@@ -1802,12 +1805,12 @@ packages:
       js-yaml: 4.1.0
     dev: false
 
-  /@bothrs/util@3.1.3(node-fetch@2.7.0):
+  /@bothrs/util@3.1.3(node-fetch@3.3.2):
     resolution: {integrity: sha512-hlSYPa8LO3TvD3E7jYs4+ECwuG/0t0YN0rz1DR1IRqv7GRrdSLHRdLmFmpxkgm+lQuclpwZOKKO+Eu3j9ZIN6g==}
     peerDependencies:
       node-fetch: 2.x
     dependencies:
-      node-fetch: 2.7.0
+      node-fetch: 3.3.2
     dev: false
 
   /@clack/core@0.3.3:
@@ -7602,7 +7605,6 @@ packages:
   /data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
-    dev: true
 
   /dataloader@2.2.2:
     resolution: {integrity: sha512-8YnDaaf7N3k/q5HnTJVuzSyLETjoZjVmHc4AeKAzOvKHEFQKcn64OKBfzHYtE9zGjctNM7V9I0MfnUVLpi7M5g==}
@@ -8691,7 +8693,6 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
-    dev: true
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -8826,7 +8827,6 @@ packages:
     engines: {node: '>=12.20.0'}
     dependencies:
       fetch-blob: 3.2.0
-    dev: true
 
   /forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
@@ -11395,7 +11395,6 @@ packages:
   /node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
-    dev: true
 
   /node-fetch-native@1.4.1:
     resolution: {integrity: sha512-NsXBU0UgBxo2rQLOeWNZqS3fvflWePMECr8CoSWoSTqCqGbVVsvl9vZu1HfQicYN0g5piV9Gh8RTEvo/uP752w==}
@@ -11420,7 +11419,6 @@ packages:
       data-uri-to-buffer: 4.0.1
       fetch-blob: 3.2.0
       formdata-polyfill: 4.0.10
-    dev: true
 
   /node-forge@1.3.1:
     resolution: {integrity: sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==}
@@ -11936,14 +11934,14 @@ packages:
       - yjs
     dev: false
 
-  /payload-plugin-oauth@2.0.1(mongodb@4.17.2)(node-fetch@2.7.0)(passport@0.6.0)(payload@2.0.14)(react@18.2.0):
+  /payload-plugin-oauth@2.0.1(mongodb@4.17.2)(node-fetch@3.3.2)(passport@0.6.0)(payload@2.0.14)(react@18.2.0):
     resolution: {integrity: sha512-J3RWDyZ0bodT7L1+sAeni8UvUKLO/tzKB44kniwnC1Anup8lLIw+l+BF0Xm1ITwWUFRWsV1sPUrkf5xijOrhow==}
     peerDependencies:
       passport: ^0.6
       payload: ^2
       react: ^18
     dependencies:
-      '@bothrs/util': 3.1.3(node-fetch@2.7.0)
+      '@bothrs/util': 3.1.3(node-fetch@3.3.2)
       connect-mongo: 4.6.0(express-session@1.17.3)(mongodb@4.17.2)
       debug: 4.3.4
       express-session: 1.17.3
@@ -15324,7 +15322,6 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
-    dev: true
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}

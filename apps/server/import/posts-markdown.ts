@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import payload from "payload";
 import dotenv from "dotenv";
 import path from "path";
@@ -57,7 +58,7 @@ const tryImport = async (): Promise<void> => {
         parsed.data.hasOwnProperty("draft") && parsed.data.draft === true
           ? "draft"
           : "published",
-      author: "649b79e5733cb2bb5e6d4cfe", // cheating with Payload author ID
+      author: "65bb1b8879fd7ba202916a79", // cheating with Payload author ID
       publishedDate: parsed.data.pubDate,
       createdAt: parsed.data.pubDate,
       // Import Markdown content into a “blocks” field’s “text” block, which has a rich text (Slate) field
