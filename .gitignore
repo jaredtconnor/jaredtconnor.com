@@ -8,8 +8,10 @@ node_modules
 # testing
 coverage
 
-# svelte
-.svelte-kit
+# next.js
+.next/
+out/
+build
 
 # misc
 .DS_Store
@@ -21,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -29,21 +32,5 @@ yarn-error.log*
 # turbo
 .turbo
 
-# mine I added
-build
-dist
-package
-.env
-.env.*
-!.env.example
-
-misc
-
-# Ignore files for PNPM, NPM and YARN
-# pnpm-lock.yaml
-# package-lock.json
-# yarn.lock
-
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
+# vercel
+.vercel

@@ -1,30 +1,46 @@
 {
+  "name": "turbopress",
+  "description": "A web + headless CMS turborepo",
   "private": true,
   "scripts": {
-    "build:no-logs": "turbo run build --output-logs=errors-only",
-    "build": "turbo run build --continue",
-    "build:web": "turbo run build --filter=web",
-    "build:web-astro": "turbo run build --filter=web-astro",
-    "start": "turbo run start",
-    "start:web": "turbo run start --filter=web",
-    "start:web-astro": "turbo run start --filter=web-astro",
-    "dev": "turbo run dev --parallel",
-    "dev:web": "turbo run dev --filter=web",
-    "dev:web-astro": "turbo run dev --filter=web-astro",
-    "dev:server": "turbo run dev --filter=server",
-    "build:server": "turbo run build --filter=server",
-    "start:server": "turbo run start --filter=server",
-    "lint": "turbo run lint",
-    "format": "prettier --write ."
+    "prepare": "husky install",
+    "build": "turbo build",
+    "build:api": "dotenv -- turbo build --filter=api",
+    "build:web": "dotenv -- turbo build --filter=web",
+    "dev": "dotenv -- turbo dev",
+    "dev:api": "dotenv -- turbo dev --filter=api",
+    "dev:web": "dotenv -- turbo dev --filter=web",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,astro}\"",
+    "generate:types": "dotenv -- pnpm --filter=api generate:types ",
+    "serve:api": "dotenv -- turbo serve --filter=api",
+    "serve:web": "dotenv -- turbo serve --filter=web",
+    "serve": "dotenv -- turbo serve"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.8",
-    "prettier-plugin-svelte": "^2.10.1",
-    "turbo": "^1.12.1"
+    "@turbo/gen": "^1.9.7",
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "latest",
+    "eslint-config-custom": "*",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "prettier-plugin-svelte": "latest",
+    "turbo": "latest"
   },
-  "dependencies": {
-    "wrangler": "^3.26.0"
+  "preinstall": "npx only-allow pnpm",
+  "lint-staged": {
+    "apps/**/*.{js,ts,astro}": [
+      "eslint --fix"
+    ],
+    "packages/**/*.{js,ts,astro}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   }
 }
