@@ -8,6 +8,7 @@
     "npm": ">=7.0.0"
   },
   "scripts": {
+    "start": "npx directus start",
     "prepare": "husky install",
     "build": "turbo build",
     "build:api": "dotenv -- turbo build --filter=api",
@@ -30,6 +31,10 @@
     "docker:stack:up": "docker-compose up -d",
     "docker:stack:down": "docker-compose down",
     "docker:push": "./dockerpush.sh"
+  },
+  "dependencies": {
+    "directus": "^10.7.0",
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",
