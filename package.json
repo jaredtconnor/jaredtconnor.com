@@ -1,7 +1,12 @@
 {
   "name": "turbopress",
-  "description": "A web + headless CMS turborepo",
+  "description": "Web and headless CMS blog with Astro and Svelte",
   "private": true,
+  "engines": {
+    "// node": ">=14.0.0",
+    "node": "18.x",
+    "npm": ">=7.0.0"
+  },
   "scripts": {
     "prepare": "husky install",
     "build": "turbo build",
@@ -16,7 +21,15 @@
     "generate:types": "dotenv -- pnpm --filter=api generate:types ",
     "serve:api": "dotenv -- turbo serve --filter=api",
     "serve:web": "dotenv -- turbo serve --filter=web",
-    "serve": "dotenv -- turbo serve"
+    "serve": "dotenv -- turbo serve",
+    "docker:build": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build",
+    "docker:build:web": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build web",
+    "docker:build:server": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build server",
+    "docker:run:web": "dotenv -- turbo run docker:run --filter=@apps/web",
+    "docker:run:server": "dotenv -- turbo run docker:run --filter=@apps/server",
+    "docker:stack:up": "docker-compose up -d",
+    "docker:stack:down": "docker-compose down",
+    "docker:push": "./dockerpush.sh"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",

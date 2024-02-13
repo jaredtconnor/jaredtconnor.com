@@ -1,5 +1,5 @@
 {
-  "name": "@turbopress/web",
+  "name": "@turbopress/web-astro",
   "description": "Front end website based on Astro",
   "type": "module",
   "version": "0.0.1",

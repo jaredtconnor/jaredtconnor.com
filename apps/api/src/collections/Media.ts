@@ -2,10 +2,20 @@ import type { CollectionConfig } from "payload/types";
 
 const Media: CollectionConfig = {
   slug: "media",
+  admin: {},
   access: {
-    read: () => true,
+    read: (): boolean => true,
+    create: () => true,
+    update: () => true,
   },
   upload: {
+    staticURL: "/media",
+    staticDir: "media",
+    mimeTypes: [
+      "image/*",
+      "text/html",
+      "application/pdf"
+    ],
     disableLocalStorage: true,
     adminThumbnail: "thumbnail",
     imageSizes: [
@@ -23,7 +33,12 @@ const Media: CollectionConfig = {
       },
     ],
   },
-  fields: [],
+  fields: [
+    {
+      name: "alt",
+      type: "text",
+    }
+  ],
 };
 
 export default Media;

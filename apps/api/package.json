@@ -15,22 +15,27 @@
     "serve": "PAYLOAD_CONFIG_PATH=dist/payload.config.js node dist/server.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "latest",
+    "@aws-sdk/lib-storage": "latest",
+    "@payloadcms/bundler-webpack": "^1.0.6",
+    "@payloadcms/db-mongodb": "^1.4.1",
+    "@payloadcms/plugin-cloud-storage": "latest",
+    "@payloadcms/plugin-seo": "latest",
+    "@payloadcms/richtext-slate": "^1.4.0",
+    "@trpc/client": "^10.35.0",
+    "@trpc/server": "^10.35.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "payload": "latest",
-    "@payloadcms/plugin-seo": "latest",
-    "@payloadcms/plugin-cloud-storage": "latest",
-    "@aws-sdk/client-s3": "latest",
-    "@aws-sdk/lib-storage": "latest"
+    "payload": "latest"
   },
   "devDependencies": {
-    "eslint": "latest",
     "@types/express": "^4.17.9",
     "copyfiles": "^2.4.1",
+    "eslint": "latest",
+    "eslint-config-custom": "*",
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1",
     "typescript": "^4.8.4",
-    "webpack-hot-middleware": "^2.25.4",
-    "eslint-config-custom": "*"
+    "webpack-hot-middleware": "^2.25.4"
   }
 }

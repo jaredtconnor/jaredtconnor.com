@@ -8,9 +8,11 @@ interface Props {
 }
 
 const { richText } = Astro.props;
+console.log(richText)
 ---
 
 {
+richText && Array.isArray(richText) &&
   richText.map((node) => {
     return Text.isText(node) ? (
       <Fragment>

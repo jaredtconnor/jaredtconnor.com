@@ -13,7 +13,7 @@
       "payload/generated-types": ["./types/payload.ts"]
     }
   },
-  "include": ["src", "types"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist", "build"],
   "ts-node": {
     "transpileOnly": true,

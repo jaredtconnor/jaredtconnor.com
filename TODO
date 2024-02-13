@@ -1,0 +1,43 @@
+Project:
+  Admin:
+    ☐ @critical deploy payloadcms images to oracle server
+    ☐ @critical point simiromba.org to oracle server
+  Docker:
+    ✔ push images to hub @done(23-08-07 23:08)
+    ✔ docker-compose-prod.yml @done(23-08-07 23:08)
+  ✔ build all docker images from root and with turbo @done(23-08-07 23:29)
+    https://turbo.build/repo/docs/handbook/deploying-with-docker
+    web app need to builded that way, because need access to `"@apps/server": "workspace:*"`
+  ✔ optimize server image 1.75GB @done(23-07-26 01:09)
+    check payload project image size
+  ✔ clean and finish NOTES.md @done(23-08-08 00:17)
+  ✔ remove apps/server/scripts/win @done(23-08-07 23:29)
+    and all replacer and dum references
+  ✔ clean up apps/server/scripts/build.sh @done(23-08-08 00:42)
+  ✔ @critical change project name sk-trpc-payload @done(23-08-08 00:44)
+  ✔ remove all references to dawnvalley, sktrpcpayloadcms, sk- and call it starter, to use this as a starter for dawnvalley project @done(23-08-08 00:45)
+  ✔ test dev environment @done(23-08-08 00:44)
+  ☐ remove unocss and use only tailwind css or skeleton ui
+  ☐ test search forms and add it's links to homepage
+  ☐ @critical clean TODO:'s
+  ✔ fork sk project and create a new one in my github @done(23-08-08 20:02)
+  ✔ Fix UnoCSS VsCode Extension with Svelte 4.x.x @done(23-08-08 20:03)
+  ☐ move all notes related to dawnvalley and oracle server to dawnvalley project
+  ☐ @low How can I get autocomplete / intellisense on custom shortcuts in UnoCSS with SvelteKit? 
+    https://stackoverflow.com/questions/75748861/how-can-i-get-autocomplete-intellisense-on-custom-shortcuts-in-unocss-with-sve
+  ✔ improve search and search pages, beutify @done(23-08-10 22:16)
+  ☐ check whole web project and do some clean up, clean up todos to
+  ☐ enable debug
+  ☐ add navigator to all pages, ex back
+  ☐ add login/logout to payloadcms
+  ☐ convert SearchForm.svelte from get to post with actions
+  Add to notes:
+    ☐ How to Autofocus on Inputs in Svelte
+      https://haseebmajid.dev/posts/2023-01-19-til-how-to-autofocus-on-inputs-in-svelte/    
+    ☐ [nodemon] Internal watch failed: ENOSPC: System limit for number of file watchers reached
+    https://stackoverflow.com/questions/34662574/node-js-getting-error-nodemon-internal-watch-failed-watch-enospc
+    FIXED with: 
+      https://github.com/orgs/pnpm/discussions/4413#discussioncomment-2301767
+        You can get the location of the store via `pnpm store path` and then just run `rm -rf`
+  ☐ Bindings Text Inputs
+    https://svelte.dev/tutorial/text-inputs
