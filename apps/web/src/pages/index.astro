@@ -8,13 +8,13 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
-import { directus } from '@utils/directus';
+import directus  from '@utils/directus';
 import { readSingleton } from "@directus/sdk";
 import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
 
-const configstuff = await directus.requests(readSingleton("global"))
+const configstuff = await directus.request(readSingleton("global"))
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
@@ -165,3 +165,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply my-8 text-center;
   }
 </style>
+lib/directus
+@utils/directus
+lib/directus

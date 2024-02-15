@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import directus from "@utils/directus";
+import { readItems } from "@directus/sdk";
+import { SITE } from "@config";
+
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+
+export async function getStaticPaths() {
+  const pages = await directus.request(readItems("pages"));
+  console.log(pages)
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: page,
+  }));
+}
+
+const page = Astro.props;
+---
+
+<Layout title={`${SITE.title}`}>
+  <Header activeNav="about" />
+  <Breadcrumbs />
+  <main id="main-content">
+    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">test</h1>
+      <div set:html={page.content} />
+      <slot />
+    </section>
+  </main>
+  <Footer />
+</Layout>
