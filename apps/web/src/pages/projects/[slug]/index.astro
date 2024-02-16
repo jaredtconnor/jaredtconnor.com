@@ -1,0 +1,73 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Posts from "@layouts/Posts.astro";
+import PostDetails from "@layouts/PostDetails.astro";
+import getSortedPosts from "@utils/getSortedPosts";
+import getPageNumbers from "@utils/getPageNumbers";
+import getPagination from "@utils/getPagination";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+import Layout from "@layouts/Layout.astro";
+import directus from "@utils/directus";
+import { readItems } from "@directus/sdk";
+import { SITE } from "@config";
+
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+
+export async function getStaticPaths() {
+  const pages = await directus.request(readItems("pages"));
+  console.log(pages)
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: page,
+  }));
+}
+
+const page = Astro.props;
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  const postResult = posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+
+  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
+    params: { slug: String(pageNum) },
+  }));
+
+  return [...postResult, ...pagePaths];
+}
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+
+const pagination = getPagination({
+  posts: sortedPosts,
+  page: slug,
+});
+---
+
+
+<Layout title={`${SITE.title}`}>
+  <Header activeNav="about" />
+  <Breadcrumbs />
+  <main id="main-content">
+    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
+      <h1 class="text-2xl tracking-wider sm:text-3xl">test</h1>
+      <div set:html={page.content} />
+      <slot />
+    </section>
+  </main>
+  <Footer />
+</Layout>
+{post ? <PostDetails post={post} /> : <Posts {...pagination} />}

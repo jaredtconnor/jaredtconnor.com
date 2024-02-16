@@ -13,7 +13,7 @@ import directus from '@utils/directus';
 import { readItems } from '@directus/sdk';
 
 const posts = await directus.request(
-  readItems('posts', {
+  readItems('projects', {
     fields: ['slug', 'title', 'published_date', { author: ['name'] }],
     sort: ['-published_date'],
   }),
