@@ -29,7 +29,7 @@ const posts = await directus.request(
       {
         posts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}`}>
+            <a href={`/projects/${post.slug}`}>
               <h2>{post.title}</h2>
             </a>
           </li>

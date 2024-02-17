@@ -1,32 +1,37 @@
 ---
-import { getCollection } from "astro:content";
-import TagPosts from "@layouts/TagPosts.astro";
-import getPostsByTag from "@utils/getPostsByTag";
-import getPagination from "@utils/getPagination";
-import getUniqueTags from "@utils/getUniqueTags";
+// import { getCollection } from 'astro:content';
+// import Posts from '@layouts/Posts.astro';
+// import getSortedPosts from '@utils/getSortedPosts';
+// import getPagination from '@utils/getPagination';
+import Layout from '@layouts/Layout.astro';
+import Main from '@layouts/Main.astro';
+import Header from '@components/Header.astro';
+import Card from '@components/Card';
+import { SITE } from '@config';
 
-export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+import directus from '@utils/directus';
+import { readItems } from '@directus/sdk';
 
-  const tags = getUniqueTags(posts);
+const tags = await directus.request(
+  readItems('tags', {
+    fields: ['tag'],
+  }),
+);
 
-  return tags.map(({ tag, tagName }) => {
-    return {
-      params: { tag },
-      props: { tag, tagName, posts },
-    };
-  });
-}
-
-const { tag, tagName, posts } = Astro.props;
-
-const postsByTag = getPostsByTag(posts, tag);
-
-const pagination = getPagination({
-  posts: postsByTag,
-  page: 1,
-  isIndex: true,
-});
+// const posts = await getCollection("blog");
 ---
 
-<TagPosts {...pagination} {tag} {tagName} />
+<Layout title={`Tags | ${SITE.title}`}>
+  <Header activeNav="tags" />
+  <Main pageTitle="Tags" pageDesc="All the articles I've posted.">
+    <ul>
+      {
+        tags.map((tag) => (
+          <li>
+            <p>{tag.tag}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+</Layout>
