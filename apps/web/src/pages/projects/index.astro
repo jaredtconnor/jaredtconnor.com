@@ -1,40 +1,41 @@
 ---
-// import { getCollection } from 'astro:content';
-// import Posts from '@layouts/Posts.astro';
-// import getSortedPosts from '@utils/getSortedPosts';
-// import getPagination from '@utils/getPagination';
-import Layout from '@layouts/Layout.astro';
-import Main from '@layouts/Main.astro';
-import Header from '@components/Header.astro';
-import Card from '@components/Card';
-import { SITE } from '@config';
+import Main from "@layouts/Main.astro";
+import Header from "@components/main/Header.astro";
+import Card from "@components/cards/Card.astro";
+import Content from "@components/article/Content.astro";
+import Footer from "@components/main/Footer.astro";
+import { SITE } from "@config";
 
-import directus from '@utils/directus';
-import { readItems } from '@directus/sdk';
+import directus from "@utils/directus";
+import { readItems } from "@directus/sdk";
 
 const posts = await directus.request(
-  readItems('projects', {
-    fields: ['slug', 'title', 'published_date', { author: ['name'] }],
-    sort: ['-published_date'],
+  readItems("projects", {
+    fields: ["slug", "title", "published_date", { author: ["name"] }],
+    sort: ["-published_date"],
   }),
 );
 
 // const posts = await getCollection("blog");
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
-  <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/projects/${post.slug}`}>
-              <h2>{post.title}</h2>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </Main>
-</Layout>
+<Main>
+  <Card>
+    <Header />
+    <Content>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/projects/${post.slug}`}>
+                <h2>{post.title}</h2>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Content>
+  </Card>
+  <Footer />
+  <Main />
+</Main>

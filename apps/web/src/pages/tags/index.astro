@@ -1,50 +1,38 @@
 ---
-import { getCollection } from "astro:content";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
+import Header from "@components/main/Header.astro";
+import Card from "@components/cards/Card.astro";
+import Content from "@components/article/Content.astro";
+import Footer from "@components/main/Footer.astro";
 import Tag from "@components/lists/Tag.astro";
-import getUniqueTags from "@utils/getUniqueTags";
 import { SITE } from "@config";
 
-const posts = await getCollection("blog");
-
-// let tags = getUniqueTags(posts);
-
-// import { getCollection } from 'astro:content';
-// import Posts from '@layouts/Posts.astro';
-// import getSortedPosts from '@utils/getSortedPosts';
-// import getPagination from '@utils/getPagination';
-import Layout from '@layouts/Layout.astro';
-import Main from '@layouts/Main.astro';
-import Header from '@components/Header.astro';
-import Card from '@components/Card';
-import { SITE } from '@config';
-
-import directus from '@utils/directus';
-import { readItems } from '@directus/sdk';
+import directus from "@utils/directus";
+import { readItems } from "@directus/sdk";
 
 const tags = await directus.request(
-  readItems('tags', {
-    fields: ['tag'],
+  readItems("tags", {
+    fields: ["tag"],
   }),
 );
 
 // const posts = await getCollection("blog");
 ---
 
-<Layout title={`Tags | ${SITE.title}`}>
-  <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the articles I've posted.">
-    <ul>
-      {
-        tags.map((tag) => (
-          <li>
-            <p>{tag.tag}</p>
-          </li>
-        ))
-      }
-    </ul>
-  </Main>
-</Layout>
+<Main>
+  <Card>
+    <Header />
+    <Content>
+      <ul>
+        {
+          tags.map((tag) => (
+            <li>
+              <p>{tag.tag}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </Content>
+  </Card>
+  <Footer />
+</Main>
