@@ -1,13 +1,20 @@
 ---
-import Main from "@layouts/Main.astro";
-import Header from "@components/main/Header.astro";
-import Card from "@components/cards/Card.astro";
-import Content from "@components/article/Content.astro";
-import Footer from "@components/main/Footer.astro";
-import { SITE } from "@config";
+import ListCard from "@components/main/MainList.astro";
+import MainCard from '@components/common/MainCard.astro';
+import Header from "@components/common/Header.astro";
+import Nav from "@components/common/Nav.astro"
+import Main from '@layouts/Main.astro';
+
+import Footer from "@components/common/Footer.astro";
+
+import Base from "@layouts/Base.astro";
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
+import { readSingleton } from "@directus/sdk";
+import { readItem } from "@directus/sdk";
+
+const pageContent = await directus.request(readItem("pages", "posts"));
 
 const posts = await directus.request(
   readItems("posts", {
@@ -19,22 +26,34 @@ const posts = await directus.request(
 // const posts = await getCollection("blog");
 ---
 
-<Main>
-  <Card>
-    <Header />
-    <Content>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/posts/${post.slug}`}>
-                <h2>{post.title}</h2>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </Content>
-  </Card>
-  <Footer />
-</Main>
+<Base>
+  <main
+    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
+    style="max-width: 1000px;"
+  >
+    <div class="flex flex-col text-black sm:flex sm:flex-row">
+      <Nav />
+      <Header activeNav='posts'/>
+      <MainCard>
+        <div class="prose prose-code:text-blue-500">
+          <p set:html={pageContent.content}/>
+        </div>
+
+        <table class="p-2 text-black" style="border-spacing: 2px;">
+          <tbody class="" style="border-spacing: 2px;">
+            {
+              posts.map((post) => (
+                <ListCard
+                  date={post.published_date}
+                  title={post.title}
+                  href={`/posts/${post.slug}`}
+                />
+              ))
+            }
+          </tbody>
+        </table>
+      </MainCard>
+    </div>
+    <Footer />
+  </main>
+</Base>

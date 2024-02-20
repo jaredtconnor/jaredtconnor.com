@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin')
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -60,16 +61,27 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            pre: {
-              color: false,
-            },
-            code: {
-              color: false,
-            },
+
+            // Override specific styles if necessary
+            'code::before': { content: 'none' },
+            'code::after': { content: 'none' },
+
+            // Ensure preformatted text is not overly styled by Tailwind
+            pre: false,
+            code: false,
+            'pre code': false,
+            'code::before': false,
+            'code::after': false,
+
+            // Set line height for styles
+            lineHeight: '1.35rem'
           },
         },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+  ],
+
 };

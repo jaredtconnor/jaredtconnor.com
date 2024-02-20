@@ -1,22 +1,27 @@
 ---
-import { SITE } from "@config";
-import Main from "@layouts/Main.astro";
-import Header from "@components/main/Header.astro";
-import Card from "@components/cards/Card.astro";
-import Content from "@components/article/Content.astro";
-import Footer from "@components/main/Footer.astro";
+import Header from "@components/common/Header.astro";
+import Content from "@components/article/ArticleCard.astro";
+import Card from "@components/article/ArticleCard.astro";
+import MainCard from "@components/common/MainCard.astro";
+import Footer from "@components/common/Footer.astro";
+import Base from "@layouts/Base.astro";
 ---
 
-<Main>
-  <Card>
-    <Header />
-    <Content>
-      <div class="not-found-wrapper">
-        <h1 aria-label="404 Not Found">404</h1>
-        <span aria-hidden="true">¯\_(ツ)_/¯</span>
-        <p>Page Not Found</p>
-      </div>
-    </Content>
-  </Card>
-  <Footer />
-</Main>
+<Base>
+  <main
+    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
+    style="max-width: 1000px;"
+  >
+    <div class="flex flex-col text-black sm:flex sm:flex-row">
+      <Header />
+      <MainCard>
+        <div class="not-found-wrapper">
+          <h1 aria-label="404 Not Found">404</h1>
+          <span aria-hidden="true">¯\_(ツ)_/¯</span>
+          <p>Page Not Found</p>
+        </div>
+      </MainCard>
+    </div>
+    <Footer />
+  </main>
+</Base>

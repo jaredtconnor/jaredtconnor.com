@@ -1,0 +1,13 @@
+---
+export interface Props {
+  activeNav?: "posts" | "projects" | "about" | "search";
+}
+
+const { activeNav } = Astro.props;
+---
+
+<header>
+  <h1 class="mb-1 text-3xl font-bold leading-5 text-black">
+    {activeNav}
+  </h1>
+</header>

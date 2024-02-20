@@ -1,12 +1,21 @@
 ---
-import Base from "./Base.astro";
-import Header from '@components/main/Header.astro';
-import Footer from '@components/main/Footer.astro';
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+
+export interface Props {
+  title: string;
+  desc: string;
+}
+
+const { title, desc } = Astro.props;
 ---
 
-<Base>
-
-  <main class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto" style="max-width: 1000px;">
-    <slot />
-    </main>
-</Base>
+<Breadcrumbs />
+<main id="main-content">
+  <h1 class="mb-1 text-3xl font-bold leading-5 text-black">
+    {title}
+  </h1>
+  <p class="mt-5 font-extralight leading-6 text-black">
+    {desc}
+  </p>
+  <slot />
+</main>

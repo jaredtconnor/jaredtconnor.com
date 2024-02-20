@@ -1,10 +1,14 @@
 ---
 import Main from "@layouts/Main.astro";
-import Card from "@components/cards/Card.astro";
-import Header from "@components/main/Header.astro";
-import Content from "@components/article/Content.astro";
-import Footer from "@components/main/Footer.astro";
+import Card from "@components/main/MainCard.astro";
+import Header from "@components/common/Header.astro";
+import Article from "@components/article/ArticleCard.astro";
+import Footer from "@components/common/Footer.astro";
+import Title from '@components/blocks/Title.astro';
+import Date from '@components/blocks/Date.astro';
+import Content from '@components/blocks/Content.astro'
 import { SITE } from "@config";
+import { renderMarkdownToHtml } from "@utils/renderContent"
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
@@ -23,13 +27,11 @@ const post = Astro.props;
 <Main>
   <Card>
     <Header />
-    <Content>
-      <img
-        src={`${import.meta.env.DIRECTUS_URL}/assets/${post.image}?width=500`}
-      />
-      <h1>{post.title}</h1>
-      <div set:html={post.content} />
-    </Content>
+    <Article>
+      <Title title={post.title} />
+      <Date date={post.published_date} />
+      <Content markdownContent={post.content} />
+    </Article>
   </Card>
   <Footer />
   <Main />

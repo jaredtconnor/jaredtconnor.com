@@ -1,9 +1,9 @@
 ---
 import Main from "@layouts/Main.astro";
-import Header from "@components/main/Header.astro";
-import Card from "@components/cards/Card.astro";
-import Content from "@components/article/Content.astro";
-import Footer from "@components/main/Footer.astro";
+import Header from "@components/common/Header.astro";
+import Card from "@components/main/MainCard.astro";
+import Content from "@components/article/ArticleCard.astro";
+import Footer from "@components/common/Footer.astro";
 import { SITE } from "@config";
 
 import directus from "@utils/directus";
@@ -24,9 +24,6 @@ const post = Astro.props;
   <Card>
     <Header />
     <Content>
-      <img
-        src={`${import.meta.env.DIRECTUS_URL}/assets/${post.image}?width=500`}
-      />
       <h1>{post.title}</h1>
       <div set:html={post.content} />
     </Content>
