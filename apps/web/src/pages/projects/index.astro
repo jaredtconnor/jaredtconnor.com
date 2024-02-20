@@ -1,10 +1,9 @@
 ---
 
-import ListCard from "@components/main/MainList.astro";
-import Nav from "@components/common/Nav.astro"
-import MainCard from "@components/common/MainCard.astro";
-import Content from "@components/article/ArticleCard.astro";
-import Footer from "@components/common/Footer.astro";
+import ListCard from "@components/ListCard.astro";
+import Nav from "@components/Nav.astro"
+import Content from "@components/ArticleCard.astro";
+import Footer from "@components/Footer.astro";
 import Base from "@layouts/Base.astro";
 
 import directus from "@utils/directus";
@@ -29,25 +28,7 @@ const posts = await directus.request(
   >
     <div class="flex flex-col text-black sm:flex sm:flex-row">
       <Nav />
-      <Content>
-        <div class="prose prose-code:text-blue-500">
-          <p set:html={pageContent.content}/>
-        </div>
-
-        <table class="p-2 text-black" style="border-spacing: 2px;">
-          <tbody class="" style="border-spacing: 2px;">
-            {
-              posts.map((post) => (
-                <ListCard
-                  date={post.published_date}
-                  title={post.title}
-                  href={`/posts/${post.slug}`}
-                />
-              ))
-            }
-          </tbody>
-        </table>
-      </Content>
+      <ListCard title={pageContent.title} desc={pageContent.content} posts={posts}>
     </div>
     <Footer />
   </main>

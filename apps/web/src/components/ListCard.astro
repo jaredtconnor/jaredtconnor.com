@@ -1,0 +1,41 @@
+---
+import Title from "./Title.astro";
+
+export interface Props {
+  title: string;
+  desc: string;
+  posts: any[];
+}
+
+const { title, desc, posts } = Astro.props;
+---
+
+<div class="sm:w-2/3">
+
+  <table class="p-2 text-black" style="border-spacing: 2px;">
+    <tbody class="" style="border-spacing: 2px;">
+      {
+        posts.map((post) => (
+          <tr class="" style="border-spacing: 2px;">
+            <td
+              class="p-2 font-extralight text-right"
+              style="min-width: 100px; border-spacing: 2px;"
+            >
+              {post.published_date}
+            </td>
+            <td class="p-0" style="max-width: 1em; border-spacing: 2px;"></td>
+            <td class="p-2" style="border-spacing: 2px;">
+              <a
+                href={post.href}
+                class="p-0 border-b-2 border-yellow-400 border-solid cursor-pointer hover:text-yellow-400"
+                style="text-decoration: none; border-spacing: 2px;"
+              >
+                {post.title}
+              </a>
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
