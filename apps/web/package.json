@@ -17,6 +17,7 @@
     "@astrojs/rss": "^4.0.2",
     "@directus/sdk": "^15.0.0",
     "@resvg/resvg-js": "^2.6.0",
+    "@types/markdown-it": "^13.0.7",
     "astro": "^4.2.1",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",

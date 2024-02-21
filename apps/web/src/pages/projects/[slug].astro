@@ -1,33 +1,37 @@
 ---
-import Main from "@layouts/Main.astro";
+import Base from '@layouts/Base.astro';
+import Nav from '@components/Nav.astro';
+import Card from '@components/Card.astro';
+import ArticleCard from '@components/ArticleCard.astro';
 import Header from "@components/Header.astro";
-import Card from "@components/main/MainCard.astro";
-import Content from "@components/ArticleCard.astro";
 import Footer from "@components/Footer.astro";
-import { SITE } from "@config";
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
 
 export async function getStaticPaths() {
-  const posts = await directus.request(
+  const projects = await directus.request(
     readItems("projects", {
       fields: ["*", { relation: ["*"] }],
     }),
   );
-  return posts.map((post) => ({ params: { slug: post.slug }, props: post }));
+  return projects.map((project) => ({ params: { slug: project.slug }, props: project }));
 }
-const post = Astro.props;
+const project = Astro.props;
 ---
 
-<Main>
-  <Card>
-    <Header />
-    <Content>
-      <h1>{post.title}</h1>
-      <div set:html={post.content} />
-    </Content>
-  </Card>
-  <Footer />
-  <Main />
-</Main>
+<Base>
+  <main
+    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
+    style="max-width: 1000px;"
+  >
+    <div class="flex flex-col text-black sm:flex sm:flex-row">
+      <Nav />
+      <Card>
+        <Header header={project.title}/>
+        <ArticleCard content={project.content} />
+      </Card>
+    </div>
+    <Footer />
+  </main>
+</Base>

@@ -1,9 +1,10 @@
 ---
-import ListCard from "@components/ListCard.astro";
 import Header from "@components/Header.astro";
 import Nav from "@components/Nav.astro";
 import Footer from "@components/Footer.astro";
 import Base from "@layouts/Base.astro";
+import Card from "@components/Card.astro";
+import ListCard from "@components/ListCard.astro";
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
@@ -27,13 +28,13 @@ const posts = await directus.request(
   >
     <div class="flex flex-col text-black sm:flex sm:flex-row">
       <Nav />
-      <ListCard
-        title={pageContent.title}
-        desc={pageContent.content}
-        posts={posts}
-      >
-        <Header activeNav="posts" />
-      </ListCard>
+      <Card>
+        <Header header={pageContent.title} content={pageContent.content}/>
+        <ListCard
+          posts={posts}
+          slug = "/posts"
+        />
+      </Card>
     </div>
     <Footer />
   </main>

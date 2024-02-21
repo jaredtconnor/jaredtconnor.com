@@ -1,14 +1,10 @@
 ---
-import Main from "@layouts/Main.astro";
-import Card from "@components/main/MainCard.astro";
+import Base from '@layouts/Base.astro';
+import Nav from '@components/Nav.astro';
+import Card from '@components/Card.astro';
+import ArticleCard from '@components/ArticleCard.astro';
 import Header from "@components/Header.astro";
-import Article from "@components/ArticleCard.astro";
 import Footer from "@components/Footer.astro";
-import Title from '@components/blocks/Title.astro';
-import Date from '@components/blocks/Date.astro';
-import Content from '@components/blocks/Content.astro'
-import { SITE } from "@config";
-import { renderMarkdownToHtml } from "@utils/renderContent"
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
@@ -24,15 +20,18 @@ export async function getStaticPaths() {
 const post = Astro.props;
 ---
 
-<Main>
-  <Card>
-    <Header />
-    <Article>
-      <Title title={post.title} />
-      <Date date={post.published_date} />
-      <Content markdownContent={post.content} />
-    </Article>
-  </Card>
-  <Footer />
-  <Main />
-</Main>
+<Base>
+  <main
+    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
+    style="max-width: 1000px;"
+  >
+    <div class="flex flex-col text-black sm:flex sm:flex-row">
+      <Nav />
+      <Card>
+        <Header header={post.title}/>
+        <ArticleCard content={post.content} />
+      </Card>
+    </div>
+    <Footer />
+  </main>
+</Base>

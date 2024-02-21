@@ -1,24 +1,24 @@
 ---
-
-import ListCard from "@components/ListCard.astro";
-import Nav from "@components/Nav.astro"
-import Content from "@components/ArticleCard.astro";
+import Header from "@components/Header.astro";
+import Nav from "@components/Nav.astro";
 import Footer from "@components/Footer.astro";
 import Base from "@layouts/Base.astro";
+import Card from "@components/Card.astro";
+import ListCard from "@components/ListCard.astro";
 
 import directus from "@utils/directus";
 import { readItems } from "@directus/sdk";
 import { readSingleton } from "@directus/sdk";
 import { readItem } from "@directus/sdk";
+
 const pageContent = await directus.request(readItem("pages", "projects"));
 
-const posts = await directus.request(
+const projects = await directus.request(
   readItems("projects", {
     fields: ["slug", "title", "published_date", { author: ["name"] }],
     sort: ["-published_date"],
   }),
 );
-
 ---
 
 <Base>
@@ -28,7 +28,13 @@ const posts = await directus.request(
   >
     <div class="flex flex-col text-black sm:flex sm:flex-row">
       <Nav />
-      <ListCard title={pageContent.title} desc={pageContent.content} posts={posts}>
+      <Card>
+        <Header header={pageContent.title} content={pageContent.content}/>
+        <ListCard
+          posts={projects}
+          slug = "/projects"
+        />
+      </Card>
     </div>
     <Footer />
   </main>

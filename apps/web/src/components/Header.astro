@@ -1,13 +1,20 @@
 ---
+import { renderMarkdownToHtml } from "@utils/renderContent";
+
 export interface Props {
-  activeNav?: "posts" | "projects" | "about" | "search";
+  header?: string;
+  content?: string;
 }
 
-const { activeNav } = Astro.props;
+const { header, content } = Astro.props;
+
+const renderedContent = content ? renderMarkdownToHtml(content) : null;
 ---
 
 <header>
   <h1 class="mb-1 text-3xl font-bold leading-5 text-black">
-    {activeNav}
+    {header}
   </h1>
+
+  <div set:html={renderedContent} class="prose" />
 </header>

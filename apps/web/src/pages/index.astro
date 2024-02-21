@@ -1,7 +1,8 @@
 ---
 import Header from "@components/Header.astro";
-import Nav from "@components/Nav.astro"
-import MainCard from '@components/MainCard.astro';
+import Nav from "@components/Nav.astro";
+import Card from "@components/Card.astro";
+import MainCard from "@components/MainCard.astro";
 import Footer from "@components/Footer.astro";
 import directus from "@utils/directus";
 import { readSingleton } from "@directus/sdk";
@@ -23,10 +24,10 @@ const page = await directus.request(readItem("pages", "home"));
   >
     <div class="flex flex-col text-black sm:flex sm:flex-row">
       <Nav />
-      <MainCard>
-      <Header />
-        <p set:html={page.content} />
-      </MainCard>
+      <Card>
+        <Header />
+        <MainCard content={page.content} />
+      </Card>
     </div>
     <Footer />
   </main>
