@@ -4,17 +4,19 @@ import { renderMarkdownToHtml } from "@utils/renderContent";
 export interface Props {
   header?: string;
   content?: string;
+  mdContent?: string;
 }
 
-const { header, content } = Astro.props;
+const { header, content, mdContent } = Astro.props;
 
-const renderedContent = content ? renderMarkdownToHtml(content) : null;
+const renderedContent = mdContent ? renderMarkdownToHtml(mdContent) : null;
 ---
 
 <header>
-  <h1 class="mb-1 text-3xl font-bold leading-5 text-black">
+  <h1 class="mb-2 text-3xl font-bold leading-7 text-black">
     {header}
   </h1>
 
-  <div set:html={renderedContent} class="prose" />
+  <div set:html={renderedContent} class="prose mt-4 mb-4" />
+  <div set:html={content} class="prose mt-4 mb-4" />
 </header>

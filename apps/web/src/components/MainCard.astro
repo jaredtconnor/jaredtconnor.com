@@ -1,14 +1,12 @@
 ---
-import { renderMarkdownToHtml } from "@utils/renderContent";
 
 export interface Props {
   content?: string;
 }
 
 const { content } = Astro.props;
-const renderedContent = content ? renderMarkdownToHtml(content) : null;
 ---
 
 <div class="prose">
-  <div set:html={renderedContent} />
+  <div set:html={content} />
 </div>
