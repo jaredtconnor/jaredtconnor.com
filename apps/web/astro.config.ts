@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
+import svelte from "@astrojs/svelte";
+import preact from "@astrojs/preact";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
@@ -13,8 +14,9 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    react(),
-    sitemap(),
+    preact(),
+    sitemap(), 
+    svelte(),
   ],
   markdown: {
     remarkPlugins: [

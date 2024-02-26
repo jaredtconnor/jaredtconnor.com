@@ -68,10 +68,7 @@ module.exports = {
 
             // Ensure preformatted text is not overly styled by Tailwind
             pre: false,
-            code: false,
-            'pre code': false,
-            'code::before': false,
-            'code::after': false,
+            code: false, 
 
             // Set line height for styles
             lineHeight: '1.35rem'

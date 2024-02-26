@@ -1,6 +1,6 @@
 ---
 import { LOCALE, SITE } from '@config';
-import '@styles/base.css';
+import '@styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
@@ -25,10 +25,6 @@ const {
   scrollSmooth = false,
 } = Astro.props;
 
-// Import highlight.js and a theme of your choice
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/github.css'; // Example theme
 ---
 
 <!doctype html>
@@ -82,24 +78,32 @@ import 'highlight.js/styles/github.css'; // Example theme
       rel="stylesheet"
     />
 
-    <meta name="theme-color" content="" />
+    <meta name="theme-color" content="" /> 
 
+    <script is:inline>
+      // Necessary for view transitions
+      document.addEventListener('astro:after-swap', () => {
+        if (
+          localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark');
+        }
+      });
+
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
     <ViewTransitions />
 
-    <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
     <slot />
-  </body><script is:inline>
-    // On document load
-    document.addEventListener('DOMContentLoaded', (event) => {
-      // Register the language you need
-      hljs.registerLanguage('javascript', javascript);
-
-      // Highlight all code blocks
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    });
-  </script>
+  </body>
 </html>
