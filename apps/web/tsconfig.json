@@ -23,7 +23,7 @@
         "pages/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "assets/styles/*"
       ],
       "@utils/*": [
         "utils/*"

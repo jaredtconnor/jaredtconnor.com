@@ -1,4 +1,5 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin') 
+
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
@@ -21,26 +22,60 @@ module.exports = {
     screens: {
       sm: "640px",
     },
-    extend: { 
-      darkMode: 'class',
+    extend: {
+      textColor: {
+        skin: {
+          base: withOpacity("--color-text-base"),
+          accent: withOpacity("--color-accent"),
+          inverted: withOpacity("--color-fill"),
+        },
+      },
+      backgroundColor: {
+        skin: {
+          fill: withOpacity("--color-fill"),
+          accent: withOpacity("--color-accent"),
+          inverted: withOpacity("--color-text-base"),
+          card: withOpacity("--color-card"),
+          "card-muted": withOpacity("--color-card-muted"),
+        },
+      },
+      outlineColor: {
+        skin: {
+          fill: withOpacity("--color-accent"),
+        },
+      },
+      borderColor: {
+        skin: {
+          line: withOpacity("--color-border"),
+          fill: withOpacity("--color-text-base"),
+          accent: withOpacity("--color-accent"),
+        },
+      },
+      fill: {
+        skin: {
+          base: withOpacity("--color-text-base"),
+          accent: withOpacity("--color-accent"),
+        },
+        transparent: "transparent",
+      },
+      fontFamily: {
+        mono: ["IBM Plex Mono", "monospace"],
+      },
       typography: {
         DEFAULT: {
           css: {
-
-            // Override specific styles if necessary
-            'code::before': { content: 'none' },
-            'code::after': { content: 'none' },
-
-            // Ensure preformatted text is not overly styled by Tailwind
-            pre: false,
-            code: false, 
-
+            pre: {
+              color: false,
+            },
+            code: {
+              color: false,
+            },
+          },
             // Set line height for styles
             lineHeight: '1.35rem'
-          },
         },
       },
+
     },
   },
-
-};
+}; 
