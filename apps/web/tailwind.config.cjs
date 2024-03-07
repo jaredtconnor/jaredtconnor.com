@@ -1,34 +1,22 @@
-const plugin = require('tailwindcss/plugin') 
-
-function withOpacity(variableName) {
-  return ({ opacityValue }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
-    }
-    return `rgb(var(${variableName}))`;
-  };
-}
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   plugins: [
-    require("@tailwindcss/typography"), 
-    require("postcss-color-scheme/tailwind")
+    require("@tailwindcss/typography"),
+    require("postcss-color-scheme/tailwind"),
+    plugin(function ({ addVariant }) {
+      addVariant("color", ':root[class~="color"] &')
+    }),
   ],
+  darkMode: "class",
   theme: {
-    // Remove the following screen breakpoint or add other breakpoints
-    // if one breakpoint is not enough for you
-    screens: {
-      sm: "640px",
-    },
     extend: {
-      },
-      darkMode: 'class',
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
-        mono: ['IBM Plex Mono', 'monospace'],
+
+      colors: {
+        bgColor: "var(--color-bgColor)",
+        contentColor: "var(--color-contentColor)",
       },
       typography: {
         DEFAULT: {
@@ -40,11 +28,10 @@ module.exports = {
               color: false,
             },
           },
-            // Set line height for styles
-            lineHeight: '1.35rem'
+          // Set line height for styles
+          lineHeight: "1.35rem",
         },
       },
-
     },
   },
-}; 
+};

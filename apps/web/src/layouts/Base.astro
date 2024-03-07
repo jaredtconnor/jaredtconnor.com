@@ -1,15 +1,14 @@
---- 
-import Meta from "@components/common/Meta.astro" 
-import Scripts from "@components/common/Scripts.astro"
-import Fonts from "@components/common/Fonts.astro"
+---
+import Meta from "@components/common/Meta.astro";
+import Scripts from "@components/common/Scripts.astro";
+import Fonts from "@components/common/Fonts.astro";
 
-
-import { LOCALE, SITE } from '@config';
-import '@styles/global.css';
-import { ViewTransitions } from 'astro:transitions';  
+import { LOCALE, SITE } from "@config";
+import "@styles/global.css";
+import { ViewTransitions } from "astro:transitions";
 import mod from "astro/zod";
 
-export interface Props { 
+export interface Props {
   title?: string;
   author?: string;
   description?: string;
@@ -30,31 +29,29 @@ const {
   modDatetime,
   scrollSmooth = false,
 } = Astro.props;
-
 ---
 
 <!doctype html>
 <html
   lang=`${LOCALE.lang ?? "en"}`
-  class={`${scrollSmooth && 'scroll-smooth'} theme`}
+  class={`${scrollSmooth && "scroll-smooth"} theme`}
 >
-  <head> 
-    <Meta 
+  <head>
+    <Meta
       title={title}
-      author={author} 
-      description={description} 
-      ogImage={ogImage} 
-      canonicalURL={canonicalURL} 
-      pubDatetime={pubDatetime} 
+      author={author}
+      description={description}
+      ogImage={ogImage}
+      canonicalURL={canonicalURL}
+      pubDatetime={pubDatetime}
       modDatetime={modDatetime}
-    /> 
-    <Scripts /> 
+    />
+    <Scripts />
     <Fonts />
 
     <ViewTransitions />
-
   </head>
-  <body class="">
+  <body style="background-color: rgb(var(--color-bgColor)); color: rgb(var(--color-contentColor));">
     <slot />
   </body>
 </html>

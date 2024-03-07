@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import preact from "@astrojs/preact";
@@ -15,8 +16,9 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     preact(),
-    sitemap(), 
+    sitemap(),
     svelte(),
+    icon(),
   ],
   markdown: {
     remarkPlugins: [
