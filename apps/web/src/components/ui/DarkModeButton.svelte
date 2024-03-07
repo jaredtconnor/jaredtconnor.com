@@ -5,7 +5,20 @@
   let body: HTMLBodyElement;
 
   onMount(() => {
-    darkMode = document.documentElement.classList.contains("dark");
+    // Retrieve the theme preference from localStorage
+    const storedTheme = localStorage.getItem('theme');
+
+    // Apply the stored theme preference if it exists
+    if (storedTheme) {
+      darkMode = storedTheme === 'dark';
+    } else {
+      // If no preference is stored, use the system preference
+      darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // Apply the theme to the document and body
+    document.documentElement.classList.toggle("dark", darkMode);
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
     body = document.querySelector("body") as HTMLBodyElement;
   });
 
@@ -13,17 +26,14 @@
     console.log("Changing theme");
     body.style.transition = "color .1s, background-color .3s";
 
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.theme = "light";
-      darkMode = false;
-    } else {
-      document.documentElement.classList.add("dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.theme = "dark";
-      darkMode = true;
-    }
+    darkMode = !darkMode; // Toggle the darkMode state
+
+    // Apply the theme change
+    document.documentElement.classList.toggle("dark", darkMode);
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+
+    // Store the new theme preference in localStorage
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }
 </script>
 
