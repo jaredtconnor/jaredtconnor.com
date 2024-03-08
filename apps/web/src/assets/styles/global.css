@@ -7,8 +7,8 @@
 @layer base {
   :root,
   :root[data-theme="light"] {
-    --color-bgColor: 221 230 237;
-    --color-contentColor: 34 40 49;
+    --color-bgColor: 250 245 245; /* Updated background color to match the target website's style */
+    --color-contentColor: 50 50 50; /* Updated text color to be slightly darker */
     --sun-fill: rgb(0, 0, 0);
     --moon-fill: transparent;
   }
