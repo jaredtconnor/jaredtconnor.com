@@ -1,64 +1,33 @@
 {
-  "name": "turbopress",
-  "description": "Web and headless CMS blog with Astro and Svelte",
+  "name": "blogster-sleek",
+  "version": "0.0.1",
   "private": true,
-  "engines": {
-    "// node": ">=14.0.0",
-    "node": "20.11.*",
-    "npm": ">=7.0.0"
-  },
   "scripts": {
-    "start": "npx directus start",
-    "prepare": "husky install",
-    "build": "turbo build",
-    "build:api": "dotenv -- turbo build --filter=api",
-    "build:web": "dotenv -- turbo build --filter=web",
-    "dev": "dotenv -- turbo dev",
-    "dev:api": "dotenv -- turbo dev --filter=api",
-    "dev:web": "dotenv -- turbo dev --filter=web",
-    "test": "turbo test",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,astro}\"",
-    "generate:types": "dotenv -- pnpm --filter=api generate:types ",
-    "serve:api": "dotenv -- turbo serve --filter=api",
-    "serve:web": "dotenv -- turbo serve --filter=web",
-    "serve": "dotenv -- turbo serve",
-    "docker:build": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build",
-    "docker:build:web": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build web",
-    "docker:build:server": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build server",
-    "docker:run:web": "dotenv -- turbo run docker:run --filter=@apps/web",
-    "docker:run:server": "dotenv -- turbo run docker:run --filter=@apps/server",
-    "docker:stack:up": "docker-compose up -d",
-    "docker:stack:down": "docker-compose down",
-    "docker:push": "./dockerpush.sh"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
-    "directus": "^10.7.0",
-    "pg": "^8.11.1"
+    "@astrojs/prism": "^1.0.2",
+    "@astrojs/rss": "^2.4.4",
+    "@astrojs/sitemap": "^1.4.0",
+    "@astrojs/tailwind": "^2.1.3",
+    "@directus/sdk": "^15.0.2",
+    "@markdoc/markdoc": "^0.2.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "astro": "^1.9.2",
+    "astro-markdoc-renderer": "0.0.1-alpha.1",
+    "globby": "^13.2.2",
+    "gray-matter": "^4.0.3",
+    "slugify": "^1.6.6",
+    "tailwindcss": "^3.4.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "dotenv": "^8.2.0",
-    "dotenv-cli": "^7.2.1",
-    "eslint": "latest",
-    "eslint-config-custom": "*",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "latest",
-    "prettier-plugin-astro": "latest",
-    "prettier-plugin-svelte": "latest",
-    "turbo": "latest"
-  },
-  "preinstall": "npx only-allow pnpm",
-  "lint-staged": {
-    "apps/**/*.{js,ts,astro}": [
-      "eslint --fix"
-    ],
-    "packages/**/*.{js,ts,astro}": [
-      "eslint --fix"
-    ],
-    "*.json": [
-      "prettier --write"
-    ]
+    "prettier-plugin-astro": "^0.7.2",
+    "typescript": "^4.9.5"
   }
 }
