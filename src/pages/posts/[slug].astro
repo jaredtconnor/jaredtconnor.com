@@ -1,0 +1,37 @@
+---
+import Base from '@layouts/Base.astro';
+import Nav from '@components/Nav.astro';
+import Card from '@components/Card.astro';
+import ArticleCard from '@components/ArticleCard.astro';
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import directus from "@utils/directus";
+import { readItems } from "@directus/sdk";
+
+export async function getStaticPaths() {
+  const posts = await directus.request(
+    readItems("posts", {
+      fields: ["*", { relation: ["*"] }],
+    }),
+  );
+  return posts.map((post) => ({ params: { slug: post.slug }, props: post }));
+}
+const post = Astro.props;
+---
+
+<Base>
+  <main
+    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
+    style="max-width: 1000px;"
+  >
+    <div class="flex flex-col text-black sm:flex sm:flex-row">
+      <Nav />
+      <Card>
+        <Header header={post.title}/>
+        <ArticleCard content={post.content} />
+      </Card>
+    </div>
+    <Footer />
+  </main>
+</Base>
