@@ -1,33 +1,15 @@
 ---
-import Page from "@layouts/Page.astro";
-import Header from "@components/Header.astro";
-import Card from "@components/Card.astro";
-import MainCard from "@components/MainCard.astro"; 
-import HomeCard from "@components/HomeCard.astro";
-import directus from "@utils/directus";
-import { readSingleton } from "@directus/sdk";
-import { SOCIALS } from "@config";
-import { readItem, readAssetRaw } from "@directus/sdk";
-
-const configstuff = await directus.request(readSingleton("global"));
-
-const socialCount = SOCIALS.filter((social) => social.active).length;
-
-const page = await directus.request(readItem("pages", "home")); 
-
-import logo from "../assets/images/logo.jpeg";
+import PageMeta from "../components/PageMeta.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import Intro from "../components/Intro.astro";
+import AboutTheTheme from "../components/AboutTheTheme.astro";
+import { SITE_TITLE } from "../config";
 ---
 
-<Page>
-  <Card slot="card">
-    <Header />
-    <HomeCard content={page.content}>
-      <img
-        class="float-left my-4 mr-8 w-32 h-32 leading-6 text-black rounded-md"
-        src={logo.src}
-        alt="Thorsten Ball's profile picture"
-        title="profile picture"
-      />
-    </MainCard>
-  </Card>
-</Page>
+<PageLayout>
+  <PageMeta title={`${SITE_TITLE} | Web Ninja`} slot="meta" />
+  <Fragment slot="main">
+    <Intro />
+    <AboutTheTheme />
+  </Fragment>
+</PageLayout>
