@@ -1,15 +1,10 @@
 ---
-import Header from "@components/Header.astro";
-import Nav from "@components/Nav.astro";
-import Footer from "@components/Footer.astro";
-import Base from "@layouts/Base.astro";
-import Card from "@components/Card.astro";
-import ListCard from "@components/ListCard.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import PageMeta from "../../components/PageMeta.astro";
+import { SITE_TITLE } from "../../config";
 
-import directus from "@utils/directus";
-import { readItems } from "@directus/sdk";
-import { readSingleton } from "@directus/sdk";
-import { readItem } from "@directus/sdk";
+import directus from "../../utils/directus";
+import { readItem, readItems } from '@directus/sdk';
 
 const pageContent = await directus.request(readItem("pages", "posts"));
 
@@ -19,23 +14,47 @@ const posts = await directus.request(
     sort: ["-published_date"],
   }),
 );
+
+
+
 ---
 
-<Base>
-  <main
-    class="flex flex-col mx-4 mt-8 leading-6 text-black sm:mx-auto sm:mt-20 sm:mb-auto"
-    style="max-width: 1000px;"
-  >
-    <div class="flex flex-col text-black sm:flex sm:flex-row">
-      <Nav />
-      <Card>
-        <Header header={pageContent.title} content={pageContent.content}/>
-        <ListCard
-          posts={posts}
-          slug = "/posts"
-        />
-      </Card>
-    </div>
-    <Footer />
-  </main>
-</Base>
+<PageLayout>
+  <PageMeta title={`Posts | ${SITE_TITLE}`} slot="meta" />
+  <section slot="main">
+    <ul>
+      {
+        posts.map((post) => {
+          const formattedDate = new Date(
+            post.published_date
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+          return (
+            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a
+                  href={post.slug}
+                  target="_blank"
+                  class="unset hover:text-text-link"
+                >
+                  <span>{post.title}</span>
+                  <span>
+                    <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+                  </span>
+                </a>
+              </div>
+              <div class="text-text-muted text-sm italic pt-1">
+                <time datetime={post.published_date}>
+                  {formattedDate}
+                </time>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</PageLayout>
