@@ -11,7 +11,7 @@
 @layer base {
 
     /* light theme */
-    .theme-sleek {
+    .theme {
         /* Tailwind orange-500 #f97316 */
         --color-primary-main: 249 115 22;
 
@@ -43,7 +43,7 @@
     }
 
     /* dark theme */
-    .theme-sleek.dark {
+    .theme.dark {
         /* Tailwind yellow-400 #facc15 */
         --color-primary-main: 250 204 21;
 
