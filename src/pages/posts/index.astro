@@ -4,7 +4,9 @@ import PageMeta from "../../components/PageMeta.astro";
 import { SITE_TITLE } from "../../config";
 
 import directus from "../../utils/directus";
-import { readItem, readItems } from '@directus/sdk';
+import { readItem, readItems } from '@directus/sdk'; 
+
+import { parseMarkdownContent } from "../../utils/parseContent"
 
 const pageContent = await directus.request(readItem("pages", "posts"));
 
@@ -21,7 +23,8 @@ const posts = await directus.request(
 
 <PageLayout>
   <PageMeta title={`Posts | ${SITE_TITLE}`} slot="meta" />
-  <section slot="main">
+  <section slot="main"> 
+    <p set:html={pageContent.content} />
     <ul>
       {
         posts.map((post) => {

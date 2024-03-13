@@ -20,6 +20,7 @@ const projects = await directus.request(
 <PageLayout>
   <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
+    <p set:html={pageContent.content} />
     <ul>
       {
         projects.map((project) => {
