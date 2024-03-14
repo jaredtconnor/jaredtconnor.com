@@ -4,7 +4,9 @@ import PageMeta from "../../components/PageMeta.astro";
 import { SITE_TITLE } from "../../config";
 
 import directus from "../../utils/directus";
-import { readItem, readItems } from '@directus/sdk';
+import { readItem, readItems } from '@directus/sdk'; 
+
+import { formatDate } from "../../utils/dateUtils"
 
 const pageContent = await directus.request(readItem("pages", "projects"));
 
@@ -24,13 +26,7 @@ const projects = await directus.request(
     <ul>
       {
         projects.map((project) => {
-          const formattedDate = new Date(
-            project.published_date
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
+          const formattedDate = formatDate(project.published_date);
           return (
             <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
               <div class="title">
@@ -40,9 +36,6 @@ const projects = await directus.request(
                   class="unset hover:text-text-link"
                 >
                   <span>{project.title}</span>
-                  <span>
-                    <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-                  </span>
                 </a>
               </div>
               <div class="text-text-muted text-sm italic pt-1">

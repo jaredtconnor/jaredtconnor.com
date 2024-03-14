@@ -4,9 +4,11 @@ import PageMeta from "../../components/PageMeta.astro";
 import { SITE_TITLE } from "../../config";
 
 import directus from "../../utils/directus";
-import { readItem, readItems } from '@directus/sdk'; 
+import { readItem, readItems } from '@directus/sdk';  
 
-import { parseMarkdownContent } from "../../utils/parseContent"
+import { formatDate } from "../../utils/dateUtils"
+
+import { parseMarkdownContent } from "../../utils/parseContent" 
 
 const pageContent = await directus.request(readItem("pages", "posts"));
 
@@ -17,8 +19,6 @@ const posts = await directus.request(
   }),
 );
 
-
-
 ---
 
 <PageLayout>
@@ -27,26 +27,17 @@ const posts = await directus.request(
     <p set:html={pageContent.content} />
     <ul>
       {
-        posts.map((post) => {
-          const formattedDate = new Date(
-            post.published_date
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
+        posts.map((post) => { 
+          const formattedDate = formatDate(post.published_date);
           return (
             <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
               <div class="title">
                 <a
-                  href={post.slug}
-                  target="_blank"
+                  href={`posts/${post.slug}`} 
+                  target="_self"
                   class="unset hover:text-text-link"
                 >
                   <span>{post.title}</span>
-                  <span>
-                    <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
-                  </span>
                 </a>
               </div>
               <div class="text-text-muted text-sm italic pt-1">
