@@ -13,18 +13,20 @@ export async function getStaticPaths() {
     }),
   )
   return posts.map(post => ({ params: { slug: post.slug }, props: post }))
+  console.log(post.content)
 }
 
-const { slug } = Astro.params
+
+const { post } = Astro.params
 ---
 
 <ContentLayout title={post.title} date={post.date}>
   <BlogPostMeta
-    title={frontmatter.title}
-    description={frontmatter.external ? undefined : frontmatter.description}
-    publishDate={frontmatter.date.toISOString()}
-    pagePath={`/blog/${slug}`}
-    ogImageAbsoluteUrl={ogImageAbsoluteUrl}
+    title={post.title}
+    description={post.external ? undefined : post.description}
+    publishDate={post.date.toISOString()}
+    pagePath={`/post/${post.slug}`}
+    ogImageAbsoluteUrl={post.ogImageAbsoluteUrl ? undefined : post.ogImagePath}
     slot="meta"
   />
   <Renderer content={post} slot="content" />
