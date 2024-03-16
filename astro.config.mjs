@@ -1,39 +1,37 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
+// Loading environment variables from .env files
+// https://docs.astro.build/en/guides/configuring-astro/#environment-variables
+import { loadEnv } from "vite";
+const {
+  PUBLIC_SANITY_STUDIO_PROJECT_ID,
+  PUBLIC_SANITY_STUDIO_DATASET,
+  PUBLIC_SANITY_PROJECT_ID,
+  PUBLIC_SANITY_DATASET,
+} = loadEnv(import.meta.env.MODE, process.cwd(), "");
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 
-/* 
-  We are doing some URL mumbo jumbo here to tell Astro what the URL of your website will be.
-  In local development, your SEO meta tags will have localhost URL.
-  In built production websites, your SEO meta tags should have your website URL.
-  So we give our website URL here and the template will know what URL to use 
-  for meta tags during build.
-  If you don't know your website URL yet, don't worry about this
-  and leave it empty or use localhost URL. It won't break anything.
-*/
+// Different environments use different variables
+const projectId = PUBLIC_SANITY_STUDIO_PROJECT_ID || PUBLIC_SANITY_PROJECT_ID;
+const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
 
-const SERVER_PORT = 3000;
-// the url to access your blog during local development
-const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
-// the url to access your blog after deploying it somewhere (Eg. Netlify)
-const LIVE_URL = "https://yourwebsiteurl.com";
-// this is the astro command your npm script runs
-const SCRIPT = process.env.npm_lifecycle_script || "";
-const isBuild = SCRIPT.includes("astro build");
-let BASE_URL = LOCALHOST_URL;
-// When you're building your site in local or in CI, you could just set your URL manually
-if (isBuild) {
-  BASE_URL = LIVE_URL;
-}
+import sanity from "@sanity/astro";
+import react from "@astrojs/react";
 
+// Change this depending on your hosting provider (Vercel, Netlify etc)
+// https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
 export default defineConfig({
-  server: { port: SERVER_PORT },
-  site: BASE_URL,
-  integrations: [
-    sitemap(),
-    tailwind({
-      config: { applyBaseStyles: false },
-    }),
-  ],
+  // Hybrid+adapter is required to support embedded Sanity Studio
+  output: "hybrid",
+  adapter: vercel(),
+  integrations: [sanity({
+    projectId,
+    dataset,
+    studioBasePath: "/admin",
+    useCdn: false,
+    // `false` if you want to ensure fresh data
+    apiVersion: "2023-03-20" // Set to date of setup to use the latest API version
+  }), react() // Required for Sanity Studio
+  ]
 });

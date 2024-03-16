@@ -1,50 +1,78 @@
-# Blogster
+# A minimal Astro site with Sanity Studio
 
-Theme: **sleek**
+This starter uses [Astro](https://astro.build/) for the front end and [Sanity](https://sanity.io/) to handle its content.
 
-Blogster is a collection of beautiful, accessible and performant blog templates built with [Astro](https://astro.build) and [Markdoc](https://markdoc.dev).
+## Featuring
 
-Check out the demo here - [Blogster sleek template](https://blogster-sleek.netlify.app).
+- How to fetch content as data from [the Sanity Content Lake](https://www.sanity.io/docs/datastore)
+- How to render block content with [Portable Text](https://www.sanity.io/docs/presenting-block-text)
+- A [Sanity Studio](https://www.sanity.io/docs/sanity-studio) to create and edit content
+- How to crop and render images with [Sanity Image URLs](https://www.sanity.io/docs/presenting-images)
 
-## Sleek Template
+## Prerequisites
 
-A beautiful, performant and accessible theme built with [Tailwind](https://tailwindcss.com).
+- [Node.js](https://nodejs.org/en/) (v16.12 or later)
 
-- **Fast**. Fast by default. Astro websites are engineered to be fast and load before you could blink, even when not cached.
-- **Dark mode**. All themes have light/dark mode built-in.
-- **Mobile first**. Responsive and loads fast in all devices.
-- **Accessible**. A well thought out semantic and accessible content.
-- **Perfect lighthouse score.** 100 across the board.
-- **Easy content authoring**. Author content using markdown (`.md`) from your code editor or directly in GitHub.
-- **Extended markdown with [Markdoc](https://markdoc.dev).** Type-safe custom components like YouTube embed, Twitter embed (or anything you want really) in your markdown (`.md`) files.
-- **RSS feed**. Your blog has an RSS feed setup that can be accessed at `/rss.xml`.
-- **SEO**. All pages are setup with all the SEO you might need.
+## Getting started
 
-## How do I add content?
+Run the following commands
 
-All the content is written in markdown (.md) and grouped as `blog` or `projects` in the `content` directory. All the default markdown syntax will work. You also have a few example custom markdown elements like _YouTube embed_, _Twitter embed_, etc. You can create your own custom components too in two easy steps.
+1. `npm install` to install dependencies
+2. `npx sanity@latest init --env`, this will:
 
-1. Add a markdoc config. Check out the markdoc config in [src/lib/markdoc/config.ts](src/lib/markdoc/config.ts) to learn how to add custom components.
-2. Add a component to render your custom component. Check out the Renderer in [src/components/Renderer.astro](src/components/Renderer.astro).
+   - ask you to select or create a Sanity project and dataset
+   - output a `.env` file with appropriate variables
+   - _(or use `sanity init --env` if you have the CLI installed)_
 
-## How do I make it my blog?
+3. Rename the variables in the .env file:
 
-Easy.
+   - ~~SANITY_STUDIO_PROJECT_ID~~ → PUBLIC_SANITY_STUDIO_PROJECT_ID
+   - ~~SANITY_STUDIO_DATASET~~ → PUBLIC_SANITY_STUDIO_DATASET
 
-- All content is static and everything is straight forward. Change whatever you need to change.
-- Delete or update the content in `content/{content-group}`. `content-group` could be `blog`, `projects` or `anything`.
-- (Optional) If you need more content types like _Notes_, just create a new dir in `content` and add a new frontmatter validator like [src/lib/markdoc/blog/frontmatter](src/lib/markdoc/blog/frontmatter).
+4. `npm run dev` to start the development server
 
-## How do I deploy?
+Your Astro app should now be running on [http://localhost:4321/](http://localhost:4321/) and Studio on [http://localhost:4321/admin](http://localhost:4321/admin).
 
-`yarn build` will generate a static website in `dist` dir. You can host it with any static hosting. If you need a recommendation, check out [Netlify](netlify.com).
+### Add content
 
-## Credit
+1. Visit the Studio and create and publish a new `Post` document
+2. Visit the homepage and refresh the page to see your content rendered on the page
 
-Thanks to other templates that inspired this theme.
+The schema for the `Post` document is defined in the `/schema` folder. You can [add more document types](https://www.sanity.io/docs/schema-types) to the Studio to suit your needs.
 
-- [Official Astro Blog template](https://github.com/withastro/astro/tree/main/examples/blog)
+## Removing TypeScript
 
-## License
+If you do not wish to use TypeScript, we've included a `remove-typescript.mjs` file in the root of this repository. You can run this file with `node remove-typescript.mjs` to strip all types from this project. Please run this before tampering with any code to ensure that all types are properly removed.
 
-MIT © [Dinesh Pandiyan](https://github.com/flexdinesh)
+If you intend to use TypeScript, you can safely remove the `remove-typescript.mjs` file.
+
+## Removing the embedded Studio
+
+If you wish to manage and host the Studio separately, you remove the `studioBasePath` property for the `sanity` configuration in `astro.config.mjs`. You can also remove the following dependencies:
+
+- `output` in `astro.config.mjs`…
+  - …and `adapter` in `astro.config.mjs`
+- `react()` in `astro.config.mjs`
+- `@sanity/vision` `react` `react-dom` `@types/react` `@types/react-dom` from `package.json`
+- `schema` folder (you might want to copy this to the new Studio location)
+- `sanity.config.ts` (you might want to copy this to the new Studio location)
+
+## Deployments
+
+Feel free to deploy the App to whichever hosting provider you prefer ([Vercel](https://vercel.com/), [Netlify](https://netlify.com), [Cloudflare](https://pages.cloudflare.com/), etc). Remember [to change the adapter](https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter) in the `astro.config.mjs` file to match your hosting provider.
+
+### Deploying the Studio on \*\.sanity.studio
+
+You can also deploy the Sanity Studio on its own URL by running `npx sanity deploy`, provided you have added a [`sanity.cli.ts` configuration file](https://www.sanity.io/docs/cli):
+
+```ts
+// sanity.cli.ts
+import { defineCliConfig } from "sanity/cli";
+
+export default defineCliConfig({
+  api: {
+    projectId: "<your-project-id>",
+    dataset: "<your-dataset-name>",
+  },
+});
+```

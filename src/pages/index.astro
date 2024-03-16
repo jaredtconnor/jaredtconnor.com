@@ -1,20 +1,14 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Intro from "../components/Intro.astro";
-import AboutTheTheme from "../components/AboutTheTheme.astro";
-import { SITE_TITLE } from "../config";
+import Card from "../components/Card.astro";
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import { getPosts } from "../utils/sanity";
 
-import directus from "../utils/directus"
-import { readSingleton, readItem } from '@directus/sdk';
-const page = await directus.request(readItem("pages", "home"));
-
+const posts = await getPosts();
 ---
 
-<PageLayout>
-  <PageMeta title={`${SITE_TITLE}`} slot="meta" />
-  <Fragment slot="main">
-    <Intro />
-    <AboutTheTheme />
-  </Fragment>
-</PageLayout>
+<Layout title="Welcome to Astro.">
+  <section>
+    {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
+  </section>
+</Layout>
