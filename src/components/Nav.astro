@@ -1,0 +1,35 @@
+---
+import NavLink from './NavLink.astro'
+import DarkModeToggle from './DarkModeToggle.astro'
+---
+
+<header>
+  <a href="/" class="" style="font-size: xx-large;">Jared Connor</a>
+</header>
+
+<div id="menu" class="flex flex-wrap justify-between mt-4 mb-8 sm:flex-col">
+  <div class="m-1">
+    <a
+      href="/about"
+      class="p-0 border-b-2 border-yellow-400 border-solid cursor-pointer hover:text-yellow-400"
+      >About</a
+    >
+  </div>
+  <div class="m-1" style="text-decoration: none;">
+    <a
+      href="/posts"
+      class="p-0 border-b-2 border-yellow-400 border-solid cursor-pointer hover:text-yellow-400"
+      >Posts</a
+    >
+  </div>
+  <div class="m-1" style="text-decoration: none;">
+    <a
+      href="/projects"
+      class="p-0 border-b-2 border-yellow-400 border-solid cursor-pointer hover:text-yellow-400"
+      >Projects</a
+    >
+  </div>
+  <div class="m-1" style="text-decoration: none;">
+    <DarkModeToggle />
+  </div>
+</div>

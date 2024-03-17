@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import TagPosts from "@layouts/TagPosts.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  const tags = getUniqueTags(posts);
+
+  return tags.flatMap(({ tag, tagName }) => {
+    const tagPosts = getPostsByTag(posts, tag);
+    const totalPages = getPageNumbers(tagPosts.length);
+
+    return totalPages.map(page => ({
+      params: { tag, page },
+      props: { tag, tagName },
+    }));
+  });
+}
+
+const { page } = Astro.params;
+const { tag, tagName } = Astro.props;
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+const postsByTag = getPostsByTag(posts, tag);
+
+const pagination = getPagination({
+  posts: postsByTag,
+  page,
+});
+---
+
+<TagPosts {...pagination} {tag} {tagName} />

@@ -1,0 +1,54 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import PageMeta from "../../components/PageMeta.astro";
+import { SITE_TITLE } from "../../config";
+
+import directus from "../../utils/directus";
+import { readItem, readItems } from '@directus/sdk';  
+
+import { formatDate } from "../../utils/dateUtils"
+
+import { parseMarkdownContent } from "../../utils/parseContent" 
+
+const pageContent = await directus.request(readItem("pages", "posts"));
+
+const posts = await directus.request(
+  readItems("posts", {
+    fields: ["slug", "title", "published_date", { author: ["name"] }],
+    sort: ["-published_date"],
+  }),
+);
+
+---
+
+<PageLayout>
+  <PageMeta title={`Posts | ${SITE_TITLE}`} slot="meta" />
+  <section slot="main"> 
+    <p set:html={pageContent.content} />
+    <ul>
+      {
+        posts.map((post) => { 
+          const formattedDate = formatDate(post.published_date);
+          return (
+            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a
+                  href={`posts/${post.slug}`} 
+                  target="_self"
+                  class="unset hover:text-text-link"
+                >
+                  <span>{post.title}</span>
+                </a>
+              </div>
+              <div class="text-text-muted text-sm italic pt-1">
+                <time datetime={post.published_date}>
+                  {formattedDate}
+                </time>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</PageLayout>
