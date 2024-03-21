@@ -1,23 +1,12 @@
----
+--- 
+
+
 import PageLayout from "../../layouts/PageLayout.astro";
 import PageMeta from "../../components/PageMeta.astro";
 import { SITE_TITLE } from "../../config";
 
-import directus from "../../utils/directus";
-import { readItem, readItems } from '@directus/sdk';  
-
 import { formatDate } from "../../utils/dateUtils"
 
-import { parseMarkdownContent } from "../../utils/parseContent" 
-
-const pageContent = await directus.request(readItem("pages", "posts"));
-
-const posts = await directus.request(
-  readItems("posts", {
-    fields: ["slug", "title", "published_date", { author: ["name"] }],
-    sort: ["-published_date"],
-  }),
-);
 
 ---
 
