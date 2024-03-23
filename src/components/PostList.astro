@@ -1,17 +1,14 @@
---- 
-import ListItem from "./ListItem.astro";
-const { posts } = Astro.props;
+---
+import ListItem from './ListItem.astro'
+const { posts } = Astro.props
+---
 
---- 
-
-    <ul>
-      { 
-          posts.data && posts.data.elgnth > 0 ? posts.data.map((post) => 
-
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">  
-              <ListItem post={post} />
-            </li>
-
-          ) : "No posts found"
-      }
-    </ul>
+<ul>
+  {
+    posts.map(post => (
+      <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+        <ListItem post={post} />
+      </li>
+    ))
+  }
+</ul>
