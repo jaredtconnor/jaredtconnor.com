@@ -1,5 +1,4 @@
---- 
-
+---
 import PageLayout from '../../layouts/PageLayout.astro'
 import PageMeta from '../../components/PageMeta.astro'
 import { SITE_TITLE } from '../../config'
@@ -13,16 +12,22 @@ const posts = await fetchApi<Post[]>({
   endpoint: 'posts',
   wrappedByKey: 'data',
 })
-
-console.log(posts)
 ---
 
 <PageLayout>
   <PageMeta title={`Posts | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
     <ul>
-      {}
+      {
+        posts.map(post => (
+          <li>
+            <a href={`/post/${post.attributes.slug}/`}>
+              <p>{post.attributes.title}</p>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </section>
-</PageLayout> 
-
+</PageLayout>
+src/lib/api/interfaces/post
