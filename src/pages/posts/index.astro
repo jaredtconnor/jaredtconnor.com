@@ -13,7 +13,8 @@ import type Post from 'src/interfaces/post'
 const posts = await fetchApi<Post[]>({
   endpoint: 'posts',
   wrappedByKey: 'data',
-})
+}) 
+
 ---
 
 <PageLayout>
