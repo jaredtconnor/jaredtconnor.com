@@ -1,0 +1,9 @@
+---
+import type Post from '../../interfaces/Post'
+
+type Props = Post
+
+const { post } = Astro.props
+---
+
+<div class="prose" set:html={post.attributes.content} />
