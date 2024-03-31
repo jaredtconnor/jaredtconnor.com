@@ -1,14 +1,6 @@
---- 
+---
 import PostListItem from './PostListItem.astro'
 const { posts } = Astro.props
 ---
 
-<ul>
-  {
-    posts.map(post => (
-      <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-        <PostListItem post={post} />
-      </li>
-    ))
-  }
-</ul>
+{posts.map(post => <PostListItem post={post} />)}

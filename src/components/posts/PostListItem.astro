@@ -1,17 +1,13 @@
---- 
-const { post } = Astro.props;
-const { slug, title, published_date, excerpt, author } = post.attributes;
-const url = import.meta.env.STRAPI_URL;  
+---
+const { post } = Astro.props
+const { slug, title, published_date } = post.attributes
+---
 
---- 
-<div class="title">
-  <a
-    href={`posts/${slug}`} 
-    target="_self"
-    class="unset hover:text-text-link"
-  >
-    <span>{title}</span>
-      </a>
-    </div>
-  <div class="text-text-muted text-sm italic pt-1">
-</div>
+<tr>
+  <td> {post.attributes.published_date}</td>
+  <td>
+    <a href={slug}>
+      {title}
+    </a>
+  </td>
+</tr>
