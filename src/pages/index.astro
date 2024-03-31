@@ -1,24 +1,21 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Intro from "../components/Intro.astro";
-import AboutTheTheme from "../components/AboutTheTheme.astro";
-import { SITE_TITLE } from "../config";
+import PageMeta from '../components/PageMeta.astro'
+import PageLayout from '../layouts/PageLayout.astro'
+import Intro from '../components/Intro.astro'
+import { SITE_TITLE } from '../config'
 
-import fetchApi from "src/lib/strapi";
-import type Article from "src/interfaces/article";
+import fetchApi from 'src/lib/strapi'
+import type Article from 'src/interfaces/article'
 
 const articles = await fetchApi<Article[]>({
   endpoint: 'articles?populate=image',
   wrappedByKey: 'data',
-});
+})
 ---
 
 <PageLayout>
   <PageMeta title={`${SITE_TITLE}`} slot="meta" />
   <Fragment slot="main">
     <Intro />
-    <AboutTheTheme />
   </Fragment>
-</PageLayout>
-src/lib/api/interfaces/article
+</PageLayout>src/lib/api/interfaces/article
