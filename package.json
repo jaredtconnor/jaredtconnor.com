@@ -32,5 +32,11 @@
   "devDependencies": {
     "prettier-plugin-astro": "^0.7.2",
     "typescript": "^4.9.5"
+  }, 
+  "paths": { 
+    "@lib/*": ["src/lib/*"],
+    "@components/*": ["src/components/*"],
+    "@layouts/*": ["src/components/*"],
+    "@pages/*": ["src/pages/*"]
   }
 }
