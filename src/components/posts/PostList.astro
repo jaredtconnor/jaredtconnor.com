@@ -3,6 +3,17 @@ import PostListItem from './PostListItem.astro'
 const { posts } = Astro.props
 ---
 
-<table class="leading-6 text-black" style="border-spacing: 2px;">
-  {posts.map(post => <PostListItem post={post} />)}
+<table class="">
+  {
+    posts.map(post => (
+      <tr class="">
+        <td class="">{post.attributes.published_date}</td>
+        <td class="">
+          <a href={`/posts/${post.attributes.slug}/`} class="">
+            {post.attributes.title}
+          </a>
+        </td>
+      </tr>
+    ))
+  }
 </table>

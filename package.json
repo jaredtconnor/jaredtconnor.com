@@ -36,7 +36,8 @@
   "paths": { 
     "@lib/*": ["src/lib/*"],
     "@components/*": ["src/components/*"],
-    "@layouts/*": ["src/components/*"],
+    "@layouts/*": ["src/layouts/*"],
     "@pages/*": ["src/pages/*"]
-  }
+  } ,
+  "moduleResolution": "node"
 }

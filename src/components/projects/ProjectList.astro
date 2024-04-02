@@ -1,14 +1,19 @@
 ---
-import ListItem from './ListItem.astro'
+import PostListItem from './PostListItem.astro'
 const { posts } = Astro.props
 ---
 
-<ul>
+<table class="">
   {
     posts.map(post => (
-      <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-        <ListItem post={post} />
-      </li>
+      <tr class="">
+        <td class="">{post.attributes.published_date}</td>
+        <td class="">
+          <a href={`/posts/${post.attributes.slug}/`} class="">
+            {post.attributes.title}
+          </a>
+        </td>
+      </tr>
     ))
   }
-</ul>
+</table>

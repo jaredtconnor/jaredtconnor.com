@@ -1,11 +1,11 @@
 ---
-import PageLayout from '@layouts/PageLayout.astro'
-import PageMeta from '@components/PageMeta.astro'
+import PageLayout from '../../layouts/PageLayout.astro'
+import PageMeta from '../../components/PageMeta.astro'
 import { SITE_TITLE } from '../../config'
 
-import PostList from 'src/components/posts/PostList.astro'
-import fetchApi from 'src/lib/strapi'
-import type Post from 'src/interfaces/post'
+import PostList from '../../components/posts/PostList.astro'
+import fetchApi from '../../lib/strapi'
+import type Post from '../../interfaces/Post'
 
 const posts = await fetchApi<Post[]>({
   endpoint: 'posts',
