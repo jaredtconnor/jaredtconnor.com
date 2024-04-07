@@ -1,52 +1,21 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
-import PageMeta from "../../components/PageMeta.astro";
-import { SITE_TITLE } from "../../config";
+import PageLayout from '../../layouts/PageLayout.astro'
+import PageMeta from '../../components/PageMeta.astro'
+import { SITE_TITLE } from '../../config'
 
-import directus from "../../utils/directus";
-import { readItem, readItems } from '@directus/sdk'; 
+import ProjectList from '../../components/projects/ProjectList.astro'
+import fetchApi from '../../lib/strapi'
+import type Project from '../../interfaces/Project'
 
-import { formatDate } from "../../utils/dateUtils"
-
-const pageContent = await directus.request(readItem("pages", "projects"));
-
-const projects = await directus.request(
-  readItems("projects", {
-    fields: ["slug", "title", "published_date", { author: ["name"] }],
-    sort: ["-published_date"],
-  }),
-);
-
+const projects = await fetchApi<Project[]>({
+  endpoint: 'projects',
+  wrappedByKey: 'data',
+})
 ---
 
 <PageLayout>
   <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
-    <p set:html={pageContent.content} />
-    <ul>
-      {
-        projects.map((project) => {
-          const formattedDate = formatDate(project.published_date);
-          return (
-            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-              <div class="title">
-                <a
-                  href={project.slug}
-                  target="_blank"
-                  class="unset hover:text-text-link"
-                >
-                  <span>{project.title}</span>
-                </a>
-              </div>
-              <div class="text-text-muted text-sm italic pt-1">
-                <time datetime={project.published_date}>
-                  {formattedDate}
-                </time>
-              </div>
-            </li>
-          );
-        })
-      }
-    </ul>
+    <ProjectList title="Projects" projects={projects} />
   </section>
 </PageLayout>

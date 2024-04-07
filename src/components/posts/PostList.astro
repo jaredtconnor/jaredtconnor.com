@@ -1,19 +1,26 @@
 ---
-import PostListItem from './PostListItem.astro'
-const { posts } = Astro.props
+const { posts, title } = Astro.props
 ---
 
-<table class="">
-  {
-    posts.map(post => (
-      <tr class="">
-        <td class="">{post.attributes.published_date}</td>
-        <td class="">
-          <a href={`/posts/${post.attributes.slug}/`} class="">
-            {post.attributes.title}
-          </a>
-        </td>
-      </tr>
-    ))
-  }
+<h1 id="title" class="mb-4 text-3xl font-bold leading-5">{title}</h1>
+<table class="" >
+  <tbody class="">
+    {
+      posts.map(post => (
+        <tr class="" style="border-spacing: 2px;">
+          <td class="p-2 font-extralight text-center align-middle">
+            {post.attributes.published_date}
+          </td>
+          <td class="p-2">
+            <a
+              href={`/posts/${post.attributes.slug}/`}
+              class="p-0"
+            >
+              {post.attributes.title}
+            </a>
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
 </table>

@@ -16,6 +16,6 @@ const posts = await fetchApi<Post[]>({
 <PageLayout>
   <PageMeta title={`Posts | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
-    <PostList posts={posts} />
+    <PostList title="Posts" posts={posts} />
   </section>
 </PageLayout>
