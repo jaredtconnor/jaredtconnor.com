@@ -1,21 +1,18 @@
 ---
+import { formatDate } from 'src/utils/dateUtils'
 const { projects, title } = Astro.props
 ---
 
-<h1 id="title" class="mb-4 text-3xl font-bold leading-5">{title}</h1>
-<table class="" >
+<table class="">
   <tbody class="">
     {
       projects.map(project => (
         <tr class="" style="border-spacing: 2px;">
-          <td class="p-2 font-extralight text-center align-middle">
-            {project.attributes.published_date}
+          <td class="p-2 font-extralight text-center align-middle text-sm">
+            {formatDate(project.attributes.published_date)}
           </td>
           <td class="p-2">
-            <a
-              href={`/projects/${project.attributes.slug}/`}
-              class="p-0"
-            >
+            <a href={`/projects/${project.attributes.slug}/`} class="p-0">
               {project.attributes.title}
             </a>
           </td>

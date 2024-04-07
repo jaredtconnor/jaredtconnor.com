@@ -16,6 +16,7 @@ const projects = await fetchApi<Project[]>({
 <PageLayout>
   <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
   <section slot="main">
+    <h1 id="title" class="mb-4 text-3xl font-bold leading-5">Projects</h1>
     <ProjectList title="Projects" projects={projects} />
   </section>
 </PageLayout>
