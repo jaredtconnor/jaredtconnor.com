@@ -11,9 +11,11 @@
 @layer base {
 
     /* light theme */
+
+
     .theme {
-        /* Tailwind orange-500 #f97316 */
-        --color-primary-main: 249 115 22;
+        /* Tailwind sky-700 #1d4ed8 */
+        --color-primary-main: 29 78 216;
 
         /* Tailwind gray-700 #374151 */
         --color-text-body: 55 65 81;
@@ -23,8 +25,8 @@
         --color-text-bold: 55 65 81;
         /* Tailwind gray-500 #6b7280 */
         --color-text-muted: 107 114 128;
-        /* Tailwind orange-500 #f97316 */
-        --color-text-link: 249 115 22;
+        /* Tailwind sky-700 #1d4ed8 */
+        --color-text-link: 29 78 216;
         /* black */
         --color-text-code: 0 0 0;
         /* black */
@@ -32,20 +34,19 @@
 
         /* white */
         --color-bg-body: 255 255 255;
-        /* Tailwind orange-50 #fff7ed */
-        --color-bg-code: 255 247 237;
-        /* Tailwind amber-200 #fde68a */
-        --color-bg-selection: 253 230 138;
+        /* Tailwind sky-600 #2563eb */
+        --color-bg-code: 37 99 235;
+        /* Tailwind sky-500 #3b82f6 */
+        --color-bg-selection: 59 130 246;
 
-        /* Tailwind orange-100 #ffedd5 */
-        --color-border-code: 255 237 213;
-
+        /* Tailwind sky-500 #3b82f6 */
+        --color-border-code: 59 130 246;
     }
 
     /* dark theme */
     .theme.dark {
-        /* Tailwind yellow-400 #facc15 */
-        --color-primary-main: 250 204 21;
+        /* Tailwind orange-600 #ea580c */
+        --color-primary-main: 234 88 12;
 
         /* Tailwind stone-300 #d6d3d1 */
         --color-text-body: 214 211 209;
@@ -55,22 +56,26 @@
         --color-text-bold: 255 255 255;
         /* Tailwind stone-400 #a8a29e */
         --color-text-muted: 168 162 158;
-        /* Tailwind yellow-400 #facc15 */
-        --color-text-link: 250 204 21;
-        /* black */
+        /* Tailwind orange-600 #ea580c */
+        --color-text-link: 234 88 12;
+        /* white */
         --color-text-code: 255 255 255;
         /* black */
         --color-text-selection: 0 0 0;
 
         /* #0e141b */
         --color-bg-body: 14 20 27;
-        /* Tailwind yellow-500 #eab308 */
-        --color-bg-code: 234 179 8;
-        /* Tailwind yellow-300 #fde047 */
-        --color-bg-selection: 253 224 71;
+        /* Tailwind orange-700 #c2410c */
+        --color-bg-code: 194 65 12;
+        /* Tailwind orange-500 #f97316 */
+        --color-bg-selection: 249 115 22;
 
-        /* Tailwind yellow-100 #fef9c3 */
-        --color-border-code: 254 243 199;
+        /* Tailwind orange-500 #f97316 */
+        --color-border-code: 249 115 22;
+    }
+
+    a:hover {
+        border-color: rgb(var(--color-border-code));
     }
 
     :root {

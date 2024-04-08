@@ -12,7 +12,10 @@ const { projects, title } = Astro.props
             {formatDate(project.attributes.published_date)}
           </td>
           <td class="p-2">
-            <a href={`/projects/${project.attributes.slug}/`} class="p-0">
+            <a
+              href={`/projects/${project.attributes.slug}/`}
+              class="p-0 border-b-2 border-solid cursor-pointer" style="border-color: rgb(var(--color-border-code));"
+            >
               {project.attributes.title}
             </a>
           </td>
