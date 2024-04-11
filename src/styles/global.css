@@ -11,8 +11,6 @@
 @layer base {
 
     /* light theme */
-
-
     .theme {
         /* Tailwind sky-700 #1d4ed8 */
         --color-primary-main: 29 78 216;
@@ -74,10 +72,6 @@
         --color-border-code: 249 115 22;
     }
 
-    a:hover {
-        border-color: rgb(var(--color-border-code));
-    }
-
     :root {
         background-color: theme('colors.bg.body');
         color: theme('colors.text.body');
@@ -125,6 +119,10 @@
     ::selection {
         background: theme('colors.bg.selection');
         color: theme('colors.text.selection');
+    }
+
+    .post-link {
+        @apply border-b-2 border-solid cursor-pointer border-border-code hover:border-border-code;
     }
 
     /* ------ GLOBAL STYLES - END ------ */
