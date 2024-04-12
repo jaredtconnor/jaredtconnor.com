@@ -13,7 +13,7 @@ const { posts } = Astro.props
             {formatDate(post.attributes.published_date)}
           </td>
           <td class="p-2">
-            <a href={`/posts/${post.attributes.slug}/`} class="post-link hover:bg-black">
+            <a href={`/posts/${post.attributes.slug}/`} class="post-link">
               {post.attributes.title}
             </a>
           </td>
