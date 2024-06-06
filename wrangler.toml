@@ -1,6 +1,6 @@
 name = "jtc-blog"
 main = "dist/woker/idex.js"
-compatability_data = "2022-05-10"
+compatability_data = "2024-06-06"
 
 [site]
 bucket = "./dist"
