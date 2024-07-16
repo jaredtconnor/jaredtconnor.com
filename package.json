@@ -1,31 +1,11 @@
 {
-  "name": "web",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "astroad",
+  "description": "A pre-configured setup for easy website development with Astro and Payload CMS using Docker.",
+  "license": "MIT",
+  "version": "1.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/cloudflare": "^10.2.6",
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.5",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.6.0",
-    "@fontsource/inter": "^5.0.18",
-    "@fontsource/twinkle-star": "^5.0.20",
-    "astro": "^4.10.0",
-    "markdown-it": "^14.1.0",
-    "sanitize-html": "^2.13.0",
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "tailwindcss": "^3.4.4"
+    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml  up --build",
+    "prod": "docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build",
+    "stop": "docker compose -f docker-compose.yml -f docker-compose-dev.yml down && docker compose -f docker-compose.yml -f docker-compose-prod.yml down"
   }
 }
