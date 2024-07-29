@@ -1,0 +1,15 @@
+FROM node:20-alpine3.19
+
+WORKDIR /app
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+COPY ./apps/migrator/package.json ./package.json
+COPY ./apps/migrator/tsconfig.json ./tsconfig.json
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod
+
+COPY ./apps/cms/src/config ./src/config
+COPY ./apps/cms/src/migrations ./src/migrations

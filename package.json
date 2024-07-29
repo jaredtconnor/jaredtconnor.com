@@ -1,11 +1,24 @@
 {
-  "name": "astroad",
-  "description": "A pre-configured setup for easy website development with Astro and Payload CMS using Docker.",
-  "license": "MIT",
-  "version": "1.1",
+  "name": "turbo-starterkit",
+  "private": true,
   "scripts": {
-    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml  up --build",
-    "prod": "docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build",
-    "stop": "docker compose -f docker-compose.yml -f docker-compose-dev.yml down && docker compose -f docker-compose.yml -f docker-compose-prod.yml down"
+    "db": "docker compose -f docker-compose.db.yml up -d",
+    "db:down": "docker compose -f docker-compose.db.yml down",
+    "prod": "pnpm run sync-config && docker compose -f docker-compose.prod.yml up --build",
+    "down": "docker compose -f docker-compose.prod.yml down",
+    "build": "pnpm run sync-config && turbo build --filter=cms --filter=web",
+    "payload": "cd apps/cms && pnpm payload",
+    "dev": "pnpm run sync-config && turbo dev --filter=cms --filter=web",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "sync-config": "node scripts/watcher.js"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "engines": {
+    "node": ">=20"
   }
 }
