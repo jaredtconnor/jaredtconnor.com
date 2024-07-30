@@ -24,7 +24,7 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString: process.env.DATABASE_URI || 'postgresql://postgres:postgres_S3cret@127.0.0.1:5432/backend',
     },
   }),
   // sharp,
