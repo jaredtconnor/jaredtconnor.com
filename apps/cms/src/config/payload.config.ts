@@ -12,7 +12,8 @@ import { Media } from './collections/Media'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-export default buildConfig({
+export default buildConfig({ 
+  
   admin: {
     user: Users.slug,
   },
@@ -24,7 +25,7 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || 'postgresql://postgres:postgres_S3cret@127.0.0.1:5432/backend',
+      connectionString: process.env.DATABASE_URI || '',
     },
   }),
   // sharp,
