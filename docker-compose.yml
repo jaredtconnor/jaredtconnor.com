@@ -11,20 +11,9 @@ services:
     ports:
       - ${CMS_PORT:-5000}:3000
     depends_on:
-      - mongo
-  
-  postgres:
-    container_name: ${NAME}-postgres
-    image: postgres:latest
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-    networks:
-      - back
+      db:
+        condition: service_healthy
+        restart: true
 
   web:
     build: ./apps/web

@@ -12,8 +12,7 @@ import { Media } from './collections/Media'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-export default buildConfig({ 
-  
+export default buildConfig({
   admin: {
     user: Users.slug,
   },

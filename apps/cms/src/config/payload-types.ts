@@ -16,9 +16,6 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  db: {
-    defaultIDType: number;
-  };
   globals: {};
   locale: null;
   user: User & {
@@ -30,15 +27,12 @@ export interface UserAuthOperations {
     email: string;
   };
   login: {
-    email: string;
     password: string;
+    email: string;
   };
   registerFirstUser: {
     email: string;
     password: string;
-  };
-  unlock: {
-    email: string;
   };
 }
 /**
