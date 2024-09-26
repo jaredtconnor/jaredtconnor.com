@@ -7,7 +7,7 @@
     "prod": "pnpm run sync-config && docker compose -f docker-compose.prod.yml up --build",
     "down": "docker compose -f docker-compose.prod.yml down",
     "build": "pnpm run sync-config && turbo build --filter=cms --filter=web",
-    "payload": "cd apps/cms && pnpm payload",
+    "payload": "cd apps/cms && pnpm dev",
     "dev": "pnpm run sync-config && turbo dev --filter=cms --filter=web",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
