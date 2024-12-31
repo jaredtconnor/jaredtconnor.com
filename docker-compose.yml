@@ -1,4 +1,15 @@
-services:
+services: 
+
+  blog: 
+    container_name: sveltekit
+    restart: unless-stopped
+    build:  
+      context: blog
+    networks: 
+      - font
+    depends_on:
+        cms
+
   database:
     container_name: database
     image: postgres:12
@@ -17,13 +28,13 @@ services:
     networks:
       - directus
 
-  directus:
+  cms:
     container_name: directus
     image: directus/directus:v9.0.0-rc.24
     ports:
       - 8055:8055
     networks:
-      - directus
+      - back 
     depends_on:
       - cache
       - database
@@ -46,5 +57,7 @@ services:
       ADMIN_PASSWORD: 'd1r3ctu5'
 
 networks:
-  directus:
+  front:  
+  back:
+
 
