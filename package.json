@@ -1,29 +1,11 @@
 {
-  "name": "blog",
-  "private": true,
-   "scripts": {
-    "build:no-logs": "turbo run build --output-logs=errors-only",
-    "build": "turbo run build --continue",
-    "build:web": "turbo run build --filter=web",
-    "start": "turbo run start",
-    "start:web": "turbo run start --filter=web",
-    "dev": "turbo run dev --parallel",
-    "dev:web": "turbo run dev --filter=web",
-    "dev:server": "turbo run dev --filter=server",
-    "build:server": "turbo run build --filter=server",
-    "start:server": "turbo run start --filter=server",
-    "lint": "turbo run lint",
-    "format": "prettier --write ."
-  },
-    "devDependencies": {
-    "eslint": "^8.46.0",
-    "prettier-plugin-svelte": "^2.10.0",
-    "prettier": "^3.2.5",
-    "typescript": "5.5.4",
-    "turbo": "^1.10.12"
-  },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
+  "name": "astroad",
+  "description": "A pre-configured setup for easy website development with Astro and Payload CMS using Docker.",
+  "license": "MIT",
+  "version": "1.1",
+  "scripts": {
+    "dev": "docker compose -f docker-compose.yml -f docker-compose-dev.yml  up --build",
+    "prod": "docker compose -f docker-compose.yml -f docker-compose-prod.yml up -d --build",
+    "stop": "docker compose -f docker-compose.yml -f docker-compose-dev.yml down && docker compose -f docker-compose.yml -f docker-compose-prod.yml down"
   }
 }

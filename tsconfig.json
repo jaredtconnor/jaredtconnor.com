@@ -1,0 +1,11 @@
+{
+  "include": ["*.ts"],
+  "references": [
+    {
+      "path": "./blog/tsconfig.json"
+    },
+    {
+      "path": "./cms/tsconfig.json"
+    }
+  ]
+}
