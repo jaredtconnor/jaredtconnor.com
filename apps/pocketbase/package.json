@@ -1,0 +1,7 @@
+{
+  "name": "pocketbase",
+  "private": true,
+  "scripts": {
+    "dev": "./pocketbase serve"
+  }
+}
