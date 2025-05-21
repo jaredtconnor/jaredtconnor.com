@@ -4,8 +4,7 @@ import { Inter } from 'next/font/google';
 import { Providers } from '@/app/providers';
 import { SITE } from '@/app/(landing)/const';
 
-// Load Inter font with subsets
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
   description: 'Personal website and blog with minimal design',
   authors: [{ name: 'Your Name' }],
   generator: 'Next.js',
-}; 
+};
 
 export const viewport = "width=device-width, initial-scale=1";
 
