@@ -1,0 +1,11 @@
+:root {
+  /* Light Mode */
+  --primary: hsla(217, 44%, 17%, 1);
+  --border-color: hsla(210, 16%, 92%, 1);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --primary: hsla(217, 44%, 17%, 1);
+  --border-color: hsla(210, 16%, 20%, 1);
+}

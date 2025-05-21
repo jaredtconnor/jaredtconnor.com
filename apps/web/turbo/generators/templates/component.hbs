@@ -1,0 +1,16 @@
+import styles from './{{ pascalCase name }}.module.scss';
+
+type Props = {
+  // Add props here 
+};
+
+export function {{ pascalCase name }}(props: Props) {
+  return (
+    <div className={styles.container}>
+      {{ pascalCase name }}
+    </div>
+  );
+}
+{{ pascalCase name }}.displayName = '{{ pascalCase name }}';
+
+export default {{ pascalCase name }};
