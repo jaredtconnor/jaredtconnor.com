@@ -1,0 +1,29 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { PROJECTS } from "@consts";
+---
+
+<PageLayout title="About" description="About Nano - Software Engineer, Web Enthusiast">
+  <Container>
+    <div class="max-w-2xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold mb-6 text-black dark:text-white">About</h1>
+      <div class="prose prose-neutral dark:prose-invert mb-10">
+        <p>
+          Hello, I'm Nano.<br />
+          I'm a software engineer and web enthusiast. I love building modern, performant web applications and exploring new tools in the JavaScript and TypeScript ecosystem.<br />
+          My journey began with a passion for open source and a drive to make the web better for everyone. When I'm not coding, you can find me hiking, reading, or experimenting with new recipes in the kitchen.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold mb-4 text-black dark:text-white">Technical Contributions</h2>
+        <ul class="list-disc pl-6 space-y-2 text-neutral-800 dark:text-neutral-200">
+          <li>Built and maintained several open source projects in the JavaScript ecosystem.</li>
+          <li>Contributed to UI libraries and developer tooling for better DX.</li>
+          <li>Advocate for type safety and modern web standards.</li>
+          <li>Enjoy collaborating with teams to deliver robust, scalable solutions.</li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

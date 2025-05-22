@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import { dateRange } from "@lib/utils";
+import { WORK } from "@consts";
+
+const collection = (await getCollection("work"))
+  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf());
+
+const work = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
+---
+
+<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Work
+      </div>
+      <ul class="flex flex-col space-y-4">
+        <li class="animate">
+          <div class="text-sm opacity-75">Oct 2017 – Present</div>
+          <div class="font-semibold text-black dark:text-white">Umpqua Bank</div>
+          <div class="text-sm opacity-75">Financial Analyst, Treasury</div>
+          <article class="last-of-type:[&>p]:mb-0">
+            <p>Developed a Python-based ETL framework and data warehouse, boosting reporting efficiency by 10 days and enabling real-time liquidity insights from 5M+ wire records. Led the Interest Rate Risk reporting team, redeveloped econometric models, and helped steer strategic decisions during turbulent markets. I love turning data chaos into clarity!</p>
+          </article>
+        </li>
+        <li class="animate">
+          <div class="text-sm opacity-75">Aug 2016 – Aug 2017</div>
+          <div class="font-semibold text-black dark:text-white">Simple Finance</div>
+          <div class="text-sm opacity-75">Customer Relations</div>
+          <article class="last-of-type:[&>p]:mb-0">
+            <p>Worked at a pioneering banking startup, helping onboard new users and solve customer challenges with empathy and a startup mindset.</p>
+          </article>
+        </li>
+      </ul>
+<!-- 
+      <ul class="animate flex flex-col gap-4">
+
+      </ul> -->
+    </div>
+  </Container>
+</PageLayout>
