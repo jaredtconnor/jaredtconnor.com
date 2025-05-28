@@ -1,0 +1,153 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Blog-specific models
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  image         String?
+  bio           String?
+  website       String?
+  twitter       String?
+  github        String?
+  
+  // Authentication
+  accounts      Account[]
+  sessions      Session[]
+  
+  // Blog features
+  posts         Post[]
+  comments      Comment[]
+  bookmarks     Bookmark[]
+  likes         Like[]
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  @@map("users")
+}
+
+model Post {
+  id            String    @id @default(cuid())
+  title         String
+  slug          String    @unique
+  content       String
+  excerpt       String?
+  coverImage    String?
+  published     Boolean   @default(false)
+  featured      Boolean   @default(false)
+  readingTime   Int?      // in minutes
+  
+  // Relations
+  author        User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId      String
+  tags          Tag[]
+  comments      Comment[]
+  bookmarks     Bookmark[]
+  likes         Like[]
+  
+  // SEO
+  metaTitle     String?
+  metaDescription String?
+  
+  publishedAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  @@map("posts")
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  content   String
+  
+  // Relations
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId  String
+  post      Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String
+  
+  // Threading support
+  parent    Comment?  @relation("CommentThread", fields: [parentId], references: [id])
+  parentId  String?
+  replies   Comment[] @relation("CommentThread")
+  
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  @@map("comments")
+}
+
+model Tag {
+  id      String @id @default(cuid())
+  name    String @unique
+  slug    String @unique
+  color   String? // For tag styling
+  posts   Post[]
+  
+  @@map("tags")
+}
+
+model Bookmark {
+  id     String @id @default(cuid())
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, postId])
+  @@map("bookmarks")
+}
+
+model Like {
+  id     String @id @default(cuid())
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([userId, postId])
+  @@map("likes")
+}
+
+// NextAuth.js models (if not already present)
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}

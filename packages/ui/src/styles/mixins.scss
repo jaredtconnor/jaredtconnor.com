@@ -1,0 +1,18 @@
+@mixin input {
+  border-radius: var(--border-radius);
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-color);
+}
+
+@mixin hover($color) {
+  background-color: $color;
+  transition:
+    background-color var(--transition-duration) ease-in-out,
+    border-color var(--transition-duration) ease-in-out;
+  border: 1px solid transparent;
+  &:hover {
+    cursor: pointer;
+    background-color: hsla(from $color h s l / 0.7);
+    border-color: var(--border-color);
+  }
+}
