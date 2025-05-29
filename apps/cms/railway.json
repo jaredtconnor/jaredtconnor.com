@@ -1,0 +1,12 @@
+{
+    "$schema": "https://railway.app/railway.schema.json",
+    "build": {
+      "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter cms build"
+    },
+    "deploy": {
+      "startCommand": "pnpm start",
+      "healthcheckPath": "/admin/health",
+      "healthcheckTimeout": 100,
+      "restartPolicyType": "ON_FAILURE"
+    }
+  }

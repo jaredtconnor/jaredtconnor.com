@@ -1,6 +1,5 @@
 {
-  "name": "landing",
-  "type": "module",
+  "name": "@repo/landing",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
