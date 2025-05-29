@@ -1,16 +1,28 @@
-{
-  "name": "testi",
+ {
+  "name": "personal-site-monorepo",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build", 
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean",
+    
+    "dev:landing": "turbo run dev --filter=landing",
+    "dev:blog": "turbo run dev --filter=blog", 
+    "dev:cms": "turbo run dev --filter=@repo/cms",
+    
+    "build:landing": "turbo run build --filter=landing",
+    "build:blog": "turbo run build --filter=blog",
+    "build:cms": "turbo run build --filter=@repo/cms",
+    
+    "cms:types": "turbo run generate:types --filter=@repo/cms"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "prettier": "^3.5.0",
+    "prettier": "^3.5.0", 
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },

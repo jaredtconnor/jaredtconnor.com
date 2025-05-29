@@ -1,7 +1,6 @@
 {
   "name": "@repo/blog",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
@@ -32,7 +31,6 @@
     "remark-html": "^16.0.0",
     "gray-matter": "^4.0.3",
     "@repo/db": "workspace:*",
-    "@repo/trpc": "workspace:*",
     "@repo/ui": "workspace:*"
   },
   "devDependencies": {
