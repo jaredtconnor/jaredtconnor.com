@@ -15,8 +15,8 @@ app.use(cors({
 }));
 
 // Health check endpoint
-app.use("/health", (_, res) => {
-  return res.json({ status: "OK" });
+app.get("/health", (_req, res) => {
+  res.send("ok");
 });
 
 app.use('/trpc', trpcExpress)
