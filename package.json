@@ -18,7 +18,9 @@
     "build:blog": "turbo run build --filter=blog",
     "build:cms": "turbo run build --filter=@repo/cms",
     
-    "cms:types": "turbo run generate:types --filter=@repo/cms"
+    "cms:types": "turbo run generate:types --filter=@repo/cms", 
+    "sst:dev": "sst dev",
+    "sst:deploy": "sst deploy --stage production"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
