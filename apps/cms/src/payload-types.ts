@@ -93,10 +93,10 @@ export interface Config {
     defaultIDType: number;
   };
   globals: {
-    'site-settings': SiteSetting;
+    settings: Setting;
   };
   globalsSelect: {
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    settings: SettingsSelect<false> | SettingsSelect<true>;
   };
   locale: null;
   user: User & {
@@ -864,273 +864,187 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings".
+ * via the `definition` "settings".
  */
-export interface SiteSetting {
+export interface Setting {
   id: number;
-  siteInfo: {
-    /**
-     * The name of your website
-     */
-    siteName: string;
-    /**
-     * Brief description of your website
-     */
-    siteDescription: string;
-    /**
-     * Full URL of your website (used for SEO and social sharing)
-     */
-    siteUrl: string;
-    /**
-     * Site logo
-     */
-    logo?: (number | null) | Media;
-    /**
-     * Site favicon
-     */
-    favicon?: (number | null) | Media;
-  };
-  navigation?: {
-    mainNavigation?:
-      | {
-          label: string;
-          type: 'page' | 'url' | 'path';
-          page?: (number | null) | Page;
-          url?: string | null;
-          /**
-           * Custom path like /blog, /projects, etc.
-           */
-          path?: string | null;
-          openInNewTab?: boolean | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  contact?: {
-    /**
-     * Primary contact email
-     */
-    email?: string | null;
-    /**
-     * Contact phone number
-     */
-    phone?: string | null;
-    address?: {
-      street?: string | null;
-      city?: string | null;
-      state?: string | null;
-      zipCode?: string | null;
-      country?: string | null;
-    };
-  };
-  socialMedia?: {
-    socialLinks?:
-      | {
-          platform: 'github' | 'linkedin' | 'twitter' | 'instagram' | 'youtube' | 'discord' | 'other';
-          url: string;
-          /**
-           * Custom label for "Other" platform
-           */
-          customLabel?: string | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  seoDefaults?: {
-    /**
-     * Default title template (e.g., "%s | Jared Connor")
-     */
-    defaultTitle?: string | null;
-    /**
-     * Default meta description when page-specific description is not provided
-     */
-    defaultDescription?: string | null;
-    /**
-     * Default keywords (comma-separated)
-     */
-    defaultKeywords?: string | null;
-    /**
-     * Default Open Graph image for social sharing
-     */
-    defaultOgImage?: (number | null) | Media;
-    /**
-     * Twitter handle (without @) for Twitter Card metadata
-     */
-    twitterHandle?: string | null;
-  };
-  footer?: {
-    copyrightText?: string | null;
-    footerLinks?:
-      | {
-          label: string;
-          url: string;
-          openInNewTab?: boolean | null;
-          id?: string | null;
-        }[]
-      | null;
-    /**
-     * Additional footer content (rich text)
-     */
-    additionalContent?: {
-      root: {
+  /**
+   * The name of your website
+   */
+  siteName: string;
+  /**
+   * Brief description of your website
+   */
+  siteDescription: string;
+  /**
+   * Full URL of your website (used for SEO and social sharing)
+   */
+  siteUrl: string;
+  /**
+   * Site logo
+   */
+  logo?: (number | null) | Media;
+  /**
+   * Site favicon
+   */
+  favicon?: (number | null) | Media;
+  navLinks?:
+    | {
+        label: string;
+        type: 'page' | 'url' | 'path';
+        page?: (number | null) | Page;
+        url?: string | null;
+        /**
+         * Custom path like /blog, /projects, etc.
+         */
+        path?: string | null;
+        newTab?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Primary contact email
+   */
+  email?: string | null;
+  /**
+   * Contact phone number
+   */
+  phone?: string | null;
+  socialLinks?:
+    | {
+        platform: 'github' | 'linkedin' | 'twitter' | 'instagram' | 'youtube' | 'discord' | 'other';
+        url: string;
+        /**
+         * Custom label for "Other" platform
+         */
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Default title template (e.g., "%s | Jared Connor")
+   */
+  seoTitle?: string | null;
+  /**
+   * Default meta description when page-specific description is not provided
+   */
+  seoDescription?: string | null;
+  /**
+   * Default keywords (comma-separated)
+   */
+  seoKeywords?: string | null;
+  /**
+   * Default Open Graph image for social sharing
+   */
+  seoImage?: (number | null) | Media;
+  /**
+   * Twitter handle (without @) for Twitter Card metadata
+   */
+  twitterHandle?: string | null;
+  copyrightText?: string | null;
+  footerLinks?:
+    | {
+        label: string;
+        url: string;
+        newTab?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Additional footer content (rich text)
+   */
+  footerContent?: {
+    root: {
+      type: string;
+      children: {
         type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
         version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-  };
-  theme?: {
-    /**
-     * Primary brand color (hex code)
-     */
-    primaryColor?: string | null;
-    /**
-     * Secondary brand color (hex code)
-     */
-    secondaryColor?: string | null;
-    fontFamily?: ('inter' | 'roboto' | 'open-sans' | 'lato' | 'poppins') | null;
-  };
-  analytics?: {
-    /**
-     * Google Analytics tracking ID (GA4)
-     */
-    googleAnalyticsId?: string | null;
-    /**
-     * Google Tag Manager container ID
-     */
-    googleTagManagerId?: string | null;
-    /**
-     * Facebook Pixel ID
-     */
-    facebookPixelId?: string | null;
-    customScripts?:
-      | {
-          /**
-           * Name/description of the script
-           */
-          name: string;
-          /**
-           * Script content (HTML/JavaScript)
-           */
-          script: string;
-          location: 'head' | 'body';
-          id?: string | null;
-        }[]
-      | null;
-  };
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Primary brand color (hex code)
+   */
+  primaryColor?: string | null;
+  /**
+   * Secondary brand color (hex code)
+   */
+  secondaryColor?: string | null;
+  fontFamily?: ('inter' | 'roboto' | 'open-sans' | 'lato' | 'poppins') | null;
+  /**
+   * Google Analytics tracking ID (GA4)
+   */
+  googleAnalyticsId?: string | null;
+  /**
+   * Google Tag Manager container ID
+   */
+  googleTagManagerId?: string | null;
+  /**
+   * Facebook Pixel ID
+   */
+  facebookPixelId?: string | null;
   _status?: ('draft' | 'published') | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings_select".
+ * via the `definition` "settings_select".
  */
-export interface SiteSettingsSelect<T extends boolean = true> {
-  siteInfo?:
+export interface SettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  siteDescription?: T;
+  siteUrl?: T;
+  logo?: T;
+  favicon?: T;
+  navLinks?:
     | T
     | {
-        siteName?: T;
-        siteDescription?: T;
-        siteUrl?: T;
-        logo?: T;
-        favicon?: T;
+        label?: T;
+        type?: T;
+        page?: T;
+        url?: T;
+        path?: T;
+        newTab?: T;
+        id?: T;
       };
-  navigation?:
+  email?: T;
+  phone?: T;
+  socialLinks?:
     | T
     | {
-        mainNavigation?:
-          | T
-          | {
-              label?: T;
-              type?: T;
-              page?: T;
-              url?: T;
-              path?: T;
-              openInNewTab?: T;
-              id?: T;
-            };
+        platform?: T;
+        url?: T;
+        label?: T;
+        id?: T;
       };
-  contact?:
+  seoTitle?: T;
+  seoDescription?: T;
+  seoKeywords?: T;
+  seoImage?: T;
+  twitterHandle?: T;
+  copyrightText?: T;
+  footerLinks?:
     | T
     | {
-        email?: T;
-        phone?: T;
-        address?:
-          | T
-          | {
-              street?: T;
-              city?: T;
-              state?: T;
-              zipCode?: T;
-              country?: T;
-            };
+        label?: T;
+        url?: T;
+        newTab?: T;
+        id?: T;
       };
-  socialMedia?:
-    | T
-    | {
-        socialLinks?:
-          | T
-          | {
-              platform?: T;
-              url?: T;
-              customLabel?: T;
-              id?: T;
-            };
-      };
-  seoDefaults?:
-    | T
-    | {
-        defaultTitle?: T;
-        defaultDescription?: T;
-        defaultKeywords?: T;
-        defaultOgImage?: T;
-        twitterHandle?: T;
-      };
-  footer?:
-    | T
-    | {
-        copyrightText?: T;
-        footerLinks?:
-          | T
-          | {
-              label?: T;
-              url?: T;
-              openInNewTab?: T;
-              id?: T;
-            };
-        additionalContent?: T;
-      };
-  theme?:
-    | T
-    | {
-        primaryColor?: T;
-        secondaryColor?: T;
-        fontFamily?: T;
-      };
-  analytics?:
-    | T
-    | {
-        googleAnalyticsId?: T;
-        googleTagManagerId?: T;
-        facebookPixelId?: T;
-        customScripts?:
-          | T
-          | {
-              name?: T;
-              script?: T;
-              location?: T;
-              id?: T;
-            };
-      };
+  footerContent?: T;
+  primaryColor?: T;
+  secondaryColor?: T;
+  fontFamily?: T;
+  googleAnalyticsId?: T;
+  googleTagManagerId?: T;
+  facebookPixelId?: T;
   _status?: T;
   updatedAt?: T;
   createdAt?: T;
