@@ -14,6 +14,7 @@ import type {
   Tag, 
   User, 
   Media,
+  SiteSettings,
   ContentQuery,
   ContentResponse 
 } from './types.js'
@@ -60,6 +61,7 @@ export type {
   Tag,
   User,
   Media,
+  SiteSettings,
   ContentQuery,
   ContentResponse
 } from './types.js'
@@ -200,16 +202,127 @@ export async function getMediaItem(id: string, depth = 1): Promise<Media | null>
 }
 
 /**
- * Utility function to invalidate cache for a specific collection
+ * Global content fetching utilities
+ * These functions provide access to global site settings and configuration
+ */
+
+/**
+ * Generic function to fetch global content with caching
+ */
+async function fetchGlobal<T>(
+  globalSlug: string,
+  params: any = {}
+): Promise<T> {
+  const config = getClientConfig()
+  
+  // Generate cache key
+  const cacheKey = generateCacheKey(`global:${globalSlug}`, 'find', params)
+  
+  // Try cache first if enabled
+  if (config.cache?.enabled) {
+    const cached = getCache().get<T>(cacheKey)
+    if (cached !== null) {
+      return cached
+    }
+  }
+  
+  // Execute with retry and timeout
+  const result = await executeWithRetry(async () => {
+    if (config.mode === 'local') {
+      const payload = getPayload()
+      return await payload.findGlobal({
+        slug: globalSlug,
+        ...params,
+      })
+    } else {
+      // REST API mode
+      const endpoint = `/globals/${globalSlug}?depth=${params.depth || 1}`
+      return await restRequest(endpoint)
+    }
+  })
+  
+  // Cache the result if caching is enabled
+  if (config.cache?.enabled && config.cache.ttl) {
+    getCache().set(cacheKey, result, config.cache.ttl)
+  }
+  
+  return result as T
+}
+
+export async function getSiteSettings(depth = 2): Promise<SiteSettings | null> {
+  try {
+    return await fetchGlobal<SiteSettings>('site-settings', { depth })
+  } catch (error) {
+    if (error instanceof PayloadNotFoundError) {
+      return null
+    }
+    throw error
+  }
+}
+
+/**
+ * Utility function to get navigation data specifically
+ */
+export async function getNavigation(): Promise<SiteSettings['navigation'] | null> {
+  try {
+    const settings = await getSiteSettings(2)
+    return settings?.navigation || null
+  } catch (error) {
+    console.error('Error fetching navigation:', error)
+    return null
+  }
+}
+
+/**
+ * Utility function to get site info specifically
+ */
+export async function getSiteInfo(): Promise<SiteSettings['siteInfo'] | null> {
+  try {
+    const settings = await getSiteSettings(1)
+    return settings?.siteInfo || null
+  } catch (error) {
+    console.error('Error fetching site info:', error)
+    return null
+  }
+}
+
+/**
+ * Utility function to get social media links specifically
+ */
+export async function getSocialLinks(): Promise<SiteSettings['socialMedia']['socialLinks'] | []> {
+  try {
+    const settings = await getSiteSettings(1)
+    return settings?.socialMedia?.socialLinks || []
+  } catch (error) {
+    console.error('Error fetching social links:', error)
+    return []
+  }
+}
+
+/**
+ * Utility function to get footer content specifically
+ */
+export async function getFooterContent(): Promise<SiteSettings['footer'] | null> {
+  try {
+    const settings = await getSiteSettings(1)
+    return settings?.footer || null
+  } catch (error) {
+    console.error('Error fetching footer content:', error)
+    return null
+  }
+}
+
+/**
+ * Utility function to invalidate cache for a specific collection or global
  */
 export function invalidateCache(collection?: string): void {
   const cache = getCache()
   
   if (collection) {
-    // Remove entries for specific collection
+    // Remove entries for specific collection or global
     const stats = cache.getStats()
     stats.keys.forEach(key => {
-      if (key.startsWith(`${collection}:`)) {
+      if (key.startsWith(`${collection}:`) || key.startsWith(`global:${collection}:`)) {
         cache.delete(key)
       }
     })
@@ -217,6 +330,13 @@ export function invalidateCache(collection?: string): void {
     // Clear all cache
     cache.clear()
   }
+}
+
+/**
+ * Utility function to invalidate cache for site settings specifically
+ */
+export function invalidateSiteSettingsCache(): void {
+  invalidateCache('site-settings')
 }
 
 /**

@@ -1,0 +1,186 @@
+---
+import Container from "@components/Container.astro";
+import CMSPageLayout from "@layouts/CMSPageLayout.astro";
+import Link from "@components/Link.astro";
+import { 
+  getSiteSettingsWithFallback,
+  buildPageTitle,
+  buildPageDescription
+} from "@utils/cms";
+import { getProjects } from "@repo/db";
+
+// Initialize CMS
+await import("@utils/cms").then(m => m.initializeCMS());
+
+// Fetch CMS data at build time
+const siteSettings = await getSiteSettingsWithFallback();
+let projects: any[] = [];
+
+try {
+  const projectsResponse = await getProjects({
+    where: { status: { not_equals: 'draft' } },
+    sort: '-createdAt'
+  });
+  projects = projectsResponse.docs;
+} catch (error) {
+  console.error('Failed to fetch projects:', error);
+}
+
+// Build page metadata
+const pageTitle = buildPageTitle("Projects", siteSettings);
+const pageDescription = buildPageDescription(
+  "Explore my portfolio of development projects, from Unix shells to web applications and data analysis tools.",
+  siteSettings
+);
+---
+
+<CMSPageLayout title={pageTitle} description={pageDescription}>
+  <Container>
+    <div class="animate">
+      <h1 class="font-bold text-4xl text-black dark:text-white mb-4">
+        Projects
+      </h1>
+      <p class="text-lg opacity-75 mb-8">
+        A collection of projects I've built, from systems programming to web development and data analysis.
+      </p>
+    </div>
+
+    {projects.length > 0 ? (
+      <div class="animate space-y-8">
+        <div class="grid gap-6">
+          {projects.map((project) => (
+            <article class="group border-b pb-6 border-zinc-200 dark:border-zinc-800 last:border-b-0">
+              <div class="flex items-start gap-4">
+                {project.image && (
+                  <div class="flex-shrink-0 w-20 h-20 overflow-hidden rounded-lg">
+                    <img 
+                      src={project.image.url} 
+                      alt={project.image.alt || project.title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div class="flex-1 min-w-0">
+                  <h2 class="font-semibold text-xl text-black dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h2>
+                  {project.description && (
+                    <p class="text-base opacity-80 mb-3">
+                      {project.description}
+                    </p>
+                  )}
+                  
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      {project.technologies.map((tech: string) => (
+                        <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  
+                  {project.links && project.links.length > 0 && (
+                    <div class="flex flex-wrap gap-3">
+                      {project.links.map((link: any) => (
+                        <Link href={link.url} external>
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              {project.gallery && project.gallery.length > 0 && (
+                <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {project.gallery.slice(0, 6).map((image: any) => (
+                    <div class="aspect-video overflow-hidden rounded-md">
+                      <img 
+                        src={image.url} 
+                        alt={image.alt || project.title}
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div class="animate space-y-8">
+        <p class="text-lg opacity-75 mb-8">
+          Projects will appear here once they're added to the CMS. For now, here are some featured projects:
+        </p>
+        
+        <div class="grid gap-6">
+          <article class="group border-b pb-6 border-zinc-200 dark:border-zinc-800">
+            <h2 class="font-semibold text-xl text-black dark:text-white mb-2">
+              <Link href="https://github.com/jaredtconnor/smallsh" external>
+                Smallsh
+              </Link>
+            </h2>
+            <p class="text-base opacity-80 mb-3">
+              A Unix-based shell written in C, supporting foreground/background execution, I/O redirection, and built-in commands. Built for fun, learning, and a love of the command line.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">C</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Unix</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Systems Programming</span>
+            </div>
+            <Link href="https://github.com/jaredtconnor/smallsh" external>
+              View on GitHub
+            </Link>
+          </article>
+
+          <article class="group border-b pb-6 border-zinc-200 dark:border-zinc-800">
+            <h2 class="font-semibold text-xl text-black dark:text-white mb-2">
+              <Link href="https://github.com/jaredtconnor/reddit-archiver" external>
+                Reddit Archiver
+              </Link>
+            </h2>
+            <p class="text-base opacity-80 mb-3">
+              A Flask-based CRUD web app simulating Reddit-style sharing, with a MySQL backend on AWS. Designed the ER model and implemented full-stack features for a social platform experience.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Python</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Flask</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">MySQL</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">AWS</span>
+            </div>
+            <Link href="https://github.com/jaredtconnor/reddit-archiver" external>
+              View on GitHub
+            </Link>
+          </article>
+
+          <article class="group border-b pb-6 border-zinc-200 dark:border-zinc-800 last:border-b-0">
+            <h2 class="font-semibold text-xl text-black dark:text-white mb-2">
+              <Link href="https://github.com/jaredtconnor/wikipedia-table-scraper" external>
+                Wikipedia Table Scraper
+              </Link>
+            </h2>
+            <p class="text-base opacity-80 mb-3">
+              A Python REST API microservice that parses tables from Wikipedia and returns JSON. Built for data wrangling and fun API design.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Python</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">REST API</span>
+              <span class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2 py-1 rounded-md">Web Scraping</span>
+            </div>
+            <Link href="https://github.com/jaredtconnor/wikipedia-table-scraper" external>
+              View on GitHub
+            </Link>
+          </article>
+        </div>
+      </div>
+    )}
+
+    <div class="animate mt-12">
+      <Link href="/">
+        ← Back to Home
+      </Link>
+    </div>
+  </Container>
+</CMSPageLayout>

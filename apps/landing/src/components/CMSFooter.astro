@@ -1,0 +1,62 @@
+---
+import { 
+  getFooterContentWithFallback,
+  getSiteInfoWithFallback,
+  processRichText
+} from "@utils/cms";
+
+// Fetch footer data
+const footer = await getFooterContentWithFallback();
+const siteInfo = await getSiteInfoWithFallback();
+
+// Process additional footer content if available
+const additionalContent = footer?.additionalContent ? processRichText(footer.additionalContent) : null;
+---
+
+<footer class="animate relative py-5 pb-10 text-sm show">
+  <div class="mx-auto max-w-screen-sm px-6">
+    <div class="space-y-4">
+      <!-- Footer Links -->
+      {footer?.footerLinks && footer.footerLinks.length > 0 && (
+        <div class="flex flex-wrap gap-4 mb-4">
+          {footer.footerLinks.map((link) => (
+            <a 
+              href={link.url} 
+              target={link.openInNewTab ? "_blank" : undefined}
+              rel={link.openInNewTab ? "noopener noreferrer" : undefined}
+              class="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+      
+      <!-- Additional Content -->
+      {additionalContent && (
+        <div class="prose prose-sm prose-zinc dark:prose-invert max-w-none mb-4">
+          <div set:html={additionalContent} />
+        </div>
+      )}
+      
+      <!-- Copyright -->
+      <div class="text-zinc-600 dark:text-zinc-400">
+        {footer?.copyrightText || `© ${new Date().getFullYear()} | ${siteInfo?.siteName || 'Jared Connor'}`}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer :global(p) {
+    @apply mb-2;
+  }
+  
+  footer :global(a) {
+    @apply text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors;
+  }
+  
+  footer :global(strong) {
+    @apply font-semibold text-black dark:text-white;
+  }
+</style>

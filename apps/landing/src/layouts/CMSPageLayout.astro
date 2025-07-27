@@ -1,0 +1,90 @@
+---
+import Head from "@components/Head.astro";
+import CMSHeader from "@components/CMSHeader.astro";
+import CMSFooter from "@components/CMSFooter.astro";
+import BackToTop from "@components/BackToTop.astro";
+import { getSiteInfoWithFallback } from "@utils/cms";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+
+// Get site info for metadata
+const siteInfo = await getSiteInfoWithFallback();
+const siteName = siteInfo?.siteName || 'Jared Connor';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title.includes(siteName) ? title : `${title} | ${siteName}`} description={description} />
+  </head>
+  <body>
+    <CMSHeader />
+    <main>
+      <slot />
+    </main>
+    <CMSFooter />
+    <div class="fixed bottom-8 w-full">
+      <div class="mx-auto max-w-screen-sm px-6">
+        <div class="flex flex-nowrap justify-end w-full">
+          <BackToTop />
+        </div>
+      </div>
+    </div>
+    <script>
+      function animate() {
+        const animateElements = document.querySelectorAll(".animate");
+        animateElements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add("show");
+          }, index * 150);
+        });
+      }
+      function onScroll() {
+        if (window.scrollY > 0) {
+          document.documentElement.classList.add("scrolled");
+        } else {
+          document.documentElement.classList.remove("scrolled");
+        }
+      }
+      function scrollToTop(event: Event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function toggleTheme(dark: boolean) {
+        const css = document.createElement("style");
+        css.appendChild(document.createTextNode(`* {-webkit-transition: none !important;-moz-transition: none !important;-o-transition: none !important;-ms-transition: none !important;transition: none !important;}`));
+        document.head.appendChild(css);
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+        window.getComputedStyle(css).opacity;
+        document.head.removeChild(css);
+      }
+      function preloadTheme() {
+        const userTheme = localStorage.theme;
+        toggleTheme(userTheme !== "light");
+      }
+      function init() {
+        preloadTheme();
+        onScroll();
+        animate();
+        const themeButton = document.getElementById("theme-button");
+        themeButton?.addEventListener("click", () => {
+          const dark = document.documentElement.classList.contains("dark");
+          localStorage.theme = dark ? "light" : "dark";
+          toggleTheme(!dark);
+        });
+        const backToTop = document.getElementById("back-to-top");
+        backToTop?.addEventListener("click", (event) => scrollToTop(event));
+        document.addEventListener("scroll", onScroll);
+      }
+      document.addEventListener("DOMContentLoaded", () => init());
+      document.addEventListener("astro:after-swap", () => init());
+      preloadTheme();
+    </script>
+  </body>
+</html>

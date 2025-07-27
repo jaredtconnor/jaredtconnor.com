@@ -1,0 +1,165 @@
+---
+import Container from "@components/Container.astro";
+import CMSPageLayout from "@layouts/CMSPageLayout.astro";
+import Link from "@components/Link.astro";
+import { 
+  getSiteSettingsWithFallback,
+  getPageBySlug,
+  processRichText,
+  buildPageTitle,
+  buildPageDescription
+} from "@utils/cms";
+
+export async function getStaticPaths() {
+  // Initialize CMS
+  await import("@utils/cms").then(m => m.initializeCMS());
+  
+  try {
+    const { getPages } = await import("@repo/db");
+    const pagesResponse = await getPages({
+      where: { status: { equals: 'published' } },
+    });
+    
+    return pagesResponse.docs.map((page) => ({
+      params: { slug: page.slug },
+      props: { page },
+    }));
+  } catch (error) {
+    console.error('Failed to fetch pages for static paths:', error);
+    return [];
+  }
+}
+
+const { slug } = Astro.params;
+const { page } = Astro.props;
+
+// Fallback: try to fetch the page if not provided via props
+let pageData: any = page;
+if (!pageData && slug) {
+  pageData = await getPageBySlug(slug as string);
+}
+
+// If no page found, return 404
+if (!pageData) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Page not found'
+  });
+}
+
+// Fetch site settings for metadata
+const siteSettings = await getSiteSettingsWithFallback();
+
+// Build page metadata
+const pageTitle = buildPageTitle(pageData.title, siteSettings);
+const pageDescription = buildPageDescription(
+  pageData.excerpt || pageData.meta?.description,
+  siteSettings
+);
+
+// Process rich text content
+const processedContent = processRichText(pageData.content);
+---
+
+<CMSPageLayout title={pageTitle} description={pageDescription}>
+  <Container>
+    <div class="animate">
+      <Link href="/">
+        ← Back to Home
+      </Link>
+      
+      <article class="prose prose-zinc dark:prose-invert max-w-none">
+        <header class="not-prose mb-8">
+          <h1 class="font-bold text-4xl text-black dark:text-white mb-4">
+            {pageData.title}
+          </h1>
+          
+          {pageData.excerpt && (
+            <p class="text-lg opacity-75 mb-4">
+              {pageData.excerpt}
+            </p>
+          )}
+          
+          {pageData.featuredImage && (
+            <div class="aspect-video overflow-hidden rounded-lg mb-6">
+              <img 
+                src={pageData.featuredImage.url} 
+                alt={pageData.featuredImage.alt || pageData.title}
+                class="w-full h-full object-cover"
+              />
+            </div>
+          )}
+        </header>
+        
+        <div class="content">
+          {processedContent ? (
+            <div set:html={processedContent} />
+          ) : (
+            <p class="italic opacity-75">Content is being processed...</p>
+          )}
+        </div>
+      </article>
+      
+      <div class="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="flex justify-between items-center text-sm opacity-75">
+          <time datetime={pageData.updatedAt}>
+            Last updated: {new Date(pageData.updatedAt).toLocaleDateString()}
+          </time>
+          
+          <Link href="/">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    </div>
+  </Container>
+</CMSPageLayout>
+
+<style>
+  .content :global(h1),
+  .content :global(h2),
+  .content :global(h3),
+  .content :global(h4),
+  .content :global(h5),
+  .content :global(h6) {
+    @apply font-semibold text-black dark:text-white mt-8 mb-4;
+  }
+  
+  .content :global(h1) { @apply text-3xl; }
+  .content :global(h2) { @apply text-2xl; }
+  .content :global(h3) { @apply text-xl; }
+  .content :global(h4) { @apply text-lg; }
+  
+  .content :global(p) {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .content :global(ul),
+  .content :global(ol) {
+    @apply mb-4 pl-6;
+  }
+  
+  .content :global(li) {
+    @apply mb-2;
+  }
+  
+  .content :global(blockquote) {
+    @apply border-l-4 border-zinc-300 dark:border-zinc-600 pl-4 italic mb-4;
+  }
+  
+  .content :global(code) {
+    @apply bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-sm;
+  }
+  
+  .content :global(pre) {
+    @apply bg-zinc-100 dark:bg-zinc-800 p-4 rounded overflow-x-auto mb-4;
+  }
+  
+  .content :global(img) {
+    @apply rounded-lg mb-4;
+  }
+  
+  .content :global(a) {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+</style>
