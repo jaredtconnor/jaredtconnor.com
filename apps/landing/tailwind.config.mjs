@@ -5,6 +5,8 @@ export default {
   darkMode: ["class"],
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    // Include UI package components
+    "../../packages/ui/src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {

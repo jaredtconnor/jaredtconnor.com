@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles.css'
 
 export const metadata = {
@@ -6,9 +5,11 @@ export const metadata = {
   title: 'Payload Blank Template',
 }
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
-
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body>
