@@ -189,10 +189,10 @@ const pageDescription = buildPageDescription(
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">
-          {siteSettings?.socialMedia?.socialLinks?.map((social) => (
+          {siteSettings?.socialLinks?.map((social) => (
             <li>
               <Link href={social.url} external aria-label={`Jared Connor on ${social.platform}`}>
-                {social.customLabel || social.platform}
+                {social.label || social.platform}
               </Link>
             </li>
           )) || (

@@ -91,75 +91,47 @@ export interface Media {
   updatedAt: string
 }
 
-// Global content types
+// Global content types - simplified structure
 export interface SiteSettings {
   id: string
-  siteInfo: {
-    siteName: string
-    siteDescription: string
-    siteUrl: string
-    logo?: Media
-    favicon?: Media
-  }
-  navigation: {
-    mainNavigation: Array<{
-      label: string
-      type: 'page' | 'url' | 'path'
-      page?: Page
-      url?: string
-      path?: string
-      openInNewTab: boolean
-    }>
-  }
-  contact: {
-    email?: string
-    phone?: string
-    address?: {
-      street?: string
-      city?: string
-      state?: string
-      zipCode?: string
-      country?: string
-    }
-  }
-  socialMedia: {
-    socialLinks: Array<{
-      platform: 'github' | 'linkedin' | 'twitter' | 'instagram' | 'youtube' | 'discord' | 'other'
-      url: string
-      customLabel?: string
-    }>
-  }
-  seoDefaults: {
-    defaultTitle?: string
-    defaultDescription?: string
-    defaultKeywords?: string
-    defaultOgImage?: Media
-    twitterHandle?: string
-  }
-  footer: {
-    copyrightText?: string
-    footerLinks: Array<{
-      label: string
-      url: string
-      openInNewTab: boolean
-    }>
-    additionalContent?: any
-  }
-  theme: {
-    primaryColor?: string
-    secondaryColor?: string
-    fontFamily?: 'inter' | 'roboto' | 'open-sans' | 'lato' | 'poppins'
-  }
-  analytics: {
-    googleAnalyticsId?: string
-    googleTagManagerId?: string
-    facebookPixelId?: string
-    customScripts: Array<{
-      name: string
-      script: string
-      location: 'head' | 'body'
-    }>
-  }
+  siteName: string
+  siteDescription: string
+  siteUrl: string
+  logo?: Media
+  favicon?: Media
+  navLinks?: Array<{
+    label: string
+    type: 'page' | 'url' | 'path'
+    page?: Page
+    url?: string
+    path?: string
+    newTab: boolean
+  }>
+  email?: string
+  phone?: string
+  socialLinks?: Array<{
+    platform: 'github' | 'linkedin' | 'twitter' | 'instagram' | 'youtube' | 'discord' | 'other'
+    url: string
+    label?: string
+  }>
+  seoTitle?: string
+  seoDescription?: string
+  seoKeywords?: string
+  seoImage?: Media
+  twitterHandle?: string
+  copyrightText?: string
+  footerLinks?: Array<{
+    label: string
+    url: string
+    newTab: boolean
+  }>
+  footerContent?: any
+  primaryColor?: string
+  secondaryColor?: string
+  fontFamily?: 'inter' | 'roboto' | 'open-sans' | 'lato' | 'poppins'
+  googleAnalyticsId?: string
+  googleTagManagerId?: string
+  facebookPixelId?: string
   createdAt: string
   updatedAt: string
 }

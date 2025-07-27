@@ -251,7 +251,7 @@ async function fetchGlobal<T>(
 
 export async function getSiteSettings(depth = 2): Promise<SiteSettings | null> {
   try {
-    return await fetchGlobal<SiteSettings>('site-settings', { depth })
+    return await fetchGlobal<SiteSettings>('settings', { depth })
   } catch (error) {
     if (error instanceof PayloadNotFoundError) {
       return null
@@ -263,23 +263,31 @@ export async function getSiteSettings(depth = 2): Promise<SiteSettings | null> {
 /**
  * Utility function to get navigation data specifically
  */
-export async function getNavigation(): Promise<SiteSettings['navigation'] | null> {
+export async function getNavigation(): Promise<SiteSettings['navLinks'] | []> {
   try {
     const settings = await getSiteSettings(2)
-    return settings?.navigation || null
+    return settings?.navLinks || []
   } catch (error) {
     console.error('Error fetching navigation:', error)
-    return null
+    return []
   }
 }
 
 /**
  * Utility function to get site info specifically
  */
-export async function getSiteInfo(): Promise<SiteSettings['siteInfo'] | null> {
+export async function getSiteInfo(): Promise<Pick<SiteSettings, 'siteName' | 'siteDescription' | 'siteUrl' | 'logo' | 'favicon'> | null> {
   try {
     const settings = await getSiteSettings(1)
-    return settings?.siteInfo || null
+    if (!settings) return null
+    
+    return {
+      siteName: settings.siteName,
+      siteDescription: settings.siteDescription,
+      siteUrl: settings.siteUrl,
+      logo: settings.logo,
+      favicon: settings.favicon,
+    }
   } catch (error) {
     console.error('Error fetching site info:', error)
     return null
@@ -289,10 +297,10 @@ export async function getSiteInfo(): Promise<SiteSettings['siteInfo'] | null> {
 /**
  * Utility function to get social media links specifically
  */
-export async function getSocialLinks(): Promise<SiteSettings['socialMedia']['socialLinks'] | []> {
+export async function getSocialLinks(): Promise<SiteSettings['socialLinks'] | []> {
   try {
     const settings = await getSiteSettings(1)
-    return settings?.socialMedia?.socialLinks || []
+    return settings?.socialLinks || []
   } catch (error) {
     console.error('Error fetching social links:', error)
     return []
@@ -302,10 +310,16 @@ export async function getSocialLinks(): Promise<SiteSettings['socialMedia']['soc
 /**
  * Utility function to get footer content specifically
  */
-export async function getFooterContent(): Promise<SiteSettings['footer'] | null> {
+export async function getFooterContent(): Promise<Pick<SiteSettings, 'copyrightText' | 'footerLinks' | 'footerContent'> | null> {
   try {
     const settings = await getSiteSettings(1)
-    return settings?.footer || null
+    if (!settings) return null
+    
+    return {
+      copyrightText: settings.copyrightText,
+      footerLinks: settings.footerLinks,
+      footerContent: settings.footerContent,
+    }
   } catch (error) {
     console.error('Error fetching footer content:', error)
     return null
@@ -336,7 +350,7 @@ export function invalidateCache(collection?: string): void {
  * Utility function to invalidate cache for site settings specifically
  */
 export function invalidateSiteSettingsCache(): void {
-  invalidateCache('site-settings')
+  invalidateCache('settings')
 }
 
 /**

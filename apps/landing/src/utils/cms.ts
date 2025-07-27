@@ -79,14 +79,12 @@ export async function getSiteInfoWithFallback() {
 export async function getNavigationWithFallback() {
   return await fetchCMSData(
     () => getNavigation(),
-    {
-      mainNavigation: [
-        { label: 'Home', type: 'path' as const, path: '/', openInNewTab: false },
-        { label: 'About', type: 'path' as const, path: '/about', openInNewTab: false },
-        { label: 'Work', type: 'path' as const, path: '/work', openInNewTab: false },
-        { label: 'Blog', type: 'url' as const, url: '/blog', openInNewTab: false },
-      ]
-    },
+    [
+      { label: 'Home', type: 'path' as const, path: '/', newTab: false },
+      { label: 'About', type: 'path' as const, path: '/about', newTab: false },
+      { label: 'Work', type: 'path' as const, path: '/work', newTab: false },
+      { label: 'Blog', type: 'url' as const, url: '/blog', newTab: false },
+    ],
     'Failed to fetch navigation'
   )
 }
@@ -108,6 +106,7 @@ export async function getFooterContentWithFallback() {
     {
       copyrightText: '© 2024 Jared Connor. All rights reserved.',
       footerLinks: [],
+      footerContent: null,
     },
     'Failed to fetch footer content'
   )
@@ -211,7 +210,7 @@ export function buildPageDescription(pageDescription?: string, siteSettings?: Si
 }
 
 // URL Utilities  
-export function resolveNavigationUrl(navItem: SiteSettings['navigation']['mainNavigation'][0]): string {
+export function resolveNavigationUrl(navItem: NonNullable<SiteSettings['navLinks']>[0]): string {
   switch (navItem.type) {
     case 'page':
       return navItem.page?.slug ? `/${navItem.page.slug}` : '/'

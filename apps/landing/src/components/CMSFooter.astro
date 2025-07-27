@@ -10,7 +10,7 @@ const footer = await getFooterContentWithFallback();
 const siteInfo = await getSiteInfoWithFallback();
 
 // Process additional footer content if available
-const additionalContent = footer?.additionalContent ? processRichText(footer.additionalContent) : null;
+const additionalContent = footer?.footerContent ? processRichText(footer.footerContent) : null;
 ---
 
 <footer class="animate relative py-5 pb-10 text-sm show">
@@ -22,8 +22,8 @@ const additionalContent = footer?.additionalContent ? processRichText(footer.add
           {footer.footerLinks.map((link) => (
             <a 
               href={link.url} 
-              target={link.openInNewTab ? "_blank" : undefined}
-              rel={link.openInNewTab ? "noopener noreferrer" : undefined}
+              target={link.newTab ? "_blank" : undefined}
+              rel={link.newTab ? "noopener noreferrer" : undefined}
               class="text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
             >
               {link.label}

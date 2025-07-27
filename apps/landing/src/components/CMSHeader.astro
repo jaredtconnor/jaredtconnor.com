@@ -31,13 +31,13 @@ const siteInfo = await getSiteInfoWithFallback();
       </a>
       
       <nav class="flex flex-nowrap">
-        {navigation?.mainNavigation?.map((item) => {
+        {navigation?.map((item) => {
           const url = resolveNavigationUrl(item);
           return (
             <a 
               href={url}
-              target={item.openInNewTab ? "_blank" : undefined}
-              rel={item.openInNewTab ? "noopener noreferrer" : undefined}
+              target={item.newTab ? "_blank" : undefined}
+              rel={item.newTab ? "noopener noreferrer" : undefined}
               class="px-2 py-0.5 rounded-md flex items-center transition-colors duration-300 ease-in-out hover:text-black hover:dark:text-white hover:bg-black/5 hover:dark:bg-white/15"
             >
               {item.label}
