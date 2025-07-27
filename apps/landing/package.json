@@ -33,6 +33,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2",
     "@repo/ui": "workspace:*",
+    "@repo/db": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

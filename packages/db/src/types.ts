@@ -20,6 +20,18 @@ export interface Page {
   title: string
   content?: any
   slug: string
+  excerpt?: string
+  featuredImage?: Media
+  status?: 'draft' | 'published' | 'archived'
+  template?: string
+  showInNavigation?: boolean
+  navigationOrder?: number
+  seo?: {
+    title?: string
+    description?: string
+    keywords?: string
+    ogImage?: Media
+  }
   meta?: {
     title?: string
     description?: string
@@ -75,6 +87,79 @@ export interface Media {
   width?: number
   height?: number
   url: string
+  createdAt: string
+  updatedAt: string
+}
+
+// Global content types
+export interface SiteSettings {
+  id: string
+  siteInfo: {
+    siteName: string
+    siteDescription: string
+    siteUrl: string
+    logo?: Media
+    favicon?: Media
+  }
+  navigation: {
+    mainNavigation: Array<{
+      label: string
+      type: 'page' | 'url' | 'path'
+      page?: Page
+      url?: string
+      path?: string
+      openInNewTab: boolean
+    }>
+  }
+  contact: {
+    email?: string
+    phone?: string
+    address?: {
+      street?: string
+      city?: string
+      state?: string
+      zipCode?: string
+      country?: string
+    }
+  }
+  socialMedia: {
+    socialLinks: Array<{
+      platform: 'github' | 'linkedin' | 'twitter' | 'instagram' | 'youtube' | 'discord' | 'other'
+      url: string
+      customLabel?: string
+    }>
+  }
+  seoDefaults: {
+    defaultTitle?: string
+    defaultDescription?: string
+    defaultKeywords?: string
+    defaultOgImage?: Media
+    twitterHandle?: string
+  }
+  footer: {
+    copyrightText?: string
+    footerLinks: Array<{
+      label: string
+      url: string
+      openInNewTab: boolean
+    }>
+    additionalContent?: any
+  }
+  theme: {
+    primaryColor?: string
+    secondaryColor?: string
+    fontFamily?: 'inter' | 'roboto' | 'open-sans' | 'lato' | 'poppins'
+  }
+  analytics: {
+    googleAnalyticsId?: string
+    googleTagManagerId?: string
+    facebookPixelId?: string
+    customScripts: Array<{
+      name: string
+      script: string
+      location: 'head' | 'body'
+    }>
+  }
   createdAt: string
   updatedAt: string
 }

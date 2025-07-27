@@ -163,6 +163,9 @@ importers:
       '@fontsource/lora':
         specifier: ^5.0.16
         version: 5.2.5
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
