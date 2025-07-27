@@ -68,6 +68,10 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    posts: Post;
+    pages: Page;
+    projects: Project;
+    tags: Tag;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -76,6 +80,10 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -119,6 +127,42 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  firstName: string;
+  lastName: string;
+  /**
+   * Brief description about the user
+   */
+  bio?: string | null;
+  /**
+   * Profile picture
+   */
+  avatar?: (number | null) | Media;
+  role: 'admin' | 'editor' | 'author' | 'viewer';
+  socialLinks?: {
+    /**
+     * Personal website URL
+     */
+    website?: string | null;
+    /**
+     * Twitter/X handle (without @)
+     */
+    twitter?: string | null;
+    /**
+     * GitHub username
+     */
+    github?: string | null;
+    /**
+     * LinkedIn profile URL
+     */
+    linkedin?: string | null;
+  };
+  preferences?: {
+    theme?: ('auto' | 'light' | 'dark') | null;
+    /**
+     * Receive email notifications
+     */
+    emailNotifications?: boolean | null;
+  };
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -126,6 +170,8 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
+  _verified?: boolean | null;
+  _verificationToken?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password?: string | null;
@@ -136,7 +182,33 @@ export interface User {
  */
 export interface Media {
   id: number;
+  /**
+   * Alternative text for accessibility and SEO
+   */
   alt: string;
+  /**
+   * Optional caption for the image
+   */
+  caption?: string | null;
+  /**
+   * Detailed description of the image
+   */
+  description?: string | null;
+  /**
+   * Photo credit or attribution
+   */
+  credit?: string | null;
+  /**
+   * Tags to help organize media files
+   */
+  tags?: (number | Tag)[] | null;
+  /**
+   * Focal point for responsive image cropping
+   *
+   * @minItems 2
+   * @maxItems 2
+   */
+  focal?: [number, number] | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -148,6 +220,321 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    tablet?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    desktop?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: number;
+  name: string;
+  /**
+   * URL-friendly version of the tag name
+   */
+  slug: string;
+  /**
+   * Brief description of what this tag represents
+   */
+  description?: string | null;
+  /**
+   * Hex color code for tag styling (e.g., #3B82F6)
+   */
+  color?: string | null;
+  /**
+   * Optional icon name or emoji for the tag
+   */
+  icon?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the title
+   */
+  slug: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Brief description of the post for previews
+   */
+  excerpt?: string | null;
+  /**
+   * Main image for the post
+   */
+  featuredImage?: (number | null) | Media;
+  status: 'draft' | 'published' | 'archived';
+  /**
+   * When this post should be published
+   */
+  publishedAt?: string | null;
+  /**
+   * Feature this post on the homepage
+   */
+  featured?: boolean | null;
+  /**
+   * Estimated reading time in minutes
+   */
+  readingTime?: number | null;
+  tags?: (number | Tag)[] | null;
+  author: number | User;
+  seo?: {
+    /**
+     * Custom SEO title (falls back to post title)
+     */
+    title?: string | null;
+    /**
+     * Meta description for search engines
+     */
+    description?: string | null;
+    /**
+     * Comma-separated keywords
+     */
+    keywords?: string | null;
+    /**
+     * Custom image for social media sharing
+     */
+    ogImage?: (number | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  /**
+   * URL path for this page (e.g., "about", "contact")
+   */
+  slug: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Brief description of the page
+   */
+  excerpt?: string | null;
+  /**
+   * Main image for the page
+   */
+  featuredImage?: (number | null) | Media;
+  status: 'draft' | 'published' | 'archived';
+  /**
+   * Page template to use for rendering
+   */
+  template?: ('default' | 'about' | 'contact' | 'landing') | null;
+  /**
+   * Include this page in the main navigation
+   */
+  showInNavigation?: boolean | null;
+  /**
+   * Order in navigation (lower numbers appear first)
+   */
+  navigationOrder?: number | null;
+  seo?: {
+    /**
+     * Custom SEO title (falls back to page title)
+     */
+    title?: string | null;
+    /**
+     * Meta description for search engines
+     */
+    description?: string | null;
+    /**
+     * Comma-separated keywords
+     */
+    keywords?: string | null;
+    /**
+     * Custom image for social media sharing
+     */
+    ogImage?: (number | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly version of the project title
+   */
+  slug: string;
+  /**
+   * Brief description of the project
+   */
+  description: string;
+  /**
+   * Detailed project information
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Main project image/screenshot
+   */
+  featuredImage: number | Media;
+  /**
+   * Additional project images
+   */
+  gallery?:
+    | {
+        image: number | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  status: 'draft' | 'published' | 'archived';
+  /**
+   * Feature this project on the homepage
+   */
+  featured?: boolean | null;
+  /**
+   * Current status of the project
+   */
+  projectStatus?: ('in-progress' | 'completed' | 'ongoing' | 'archived') | null;
+  /**
+   * When the project was started
+   */
+  startDate?: string | null;
+  /**
+   * When the project was completed (if applicable)
+   */
+  endDate?: string | null;
+  /**
+   * Technologies used in this project
+   */
+  technologies?:
+    | {
+        name: string;
+        /**
+         * Icon name or emoji for the technology
+         */
+        icon?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  links?: {
+    /**
+     * Link to live/deployed project
+     */
+    live?: string | null;
+    /**
+     * Link to GitHub repository
+     */
+    github?: string | null;
+    /**
+     * Link to demo or preview
+     */
+    demo?: string | null;
+    /**
+     * Link to project documentation
+     */
+    documentation?: string | null;
+  };
+  tags?: (number | Tag)[] | null;
+  seo?: {
+    /**
+     * Custom SEO title (falls back to project title)
+     */
+    title?: string | null;
+    /**
+     * Meta description for search engines
+     */
+    description?: string | null;
+    /**
+     * Comma-separated keywords
+     */
+    keywords?: string | null;
+    /**
+     * Custom image for social media sharing
+     */
+    ogImage?: (number | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -159,6 +546,22 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'projects';
+        value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: number | Tag;
       } | null)
     | ({
         relationTo: 'media';
@@ -211,6 +614,25 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  firstName?: T;
+  lastName?: T;
+  bio?: T;
+  avatar?: T;
+  role?: T;
+  socialLinks?:
+    | T
+    | {
+        website?: T;
+        twitter?: T;
+        github?: T;
+        linkedin?: T;
+      };
+  preferences?:
+    | T
+    | {
+        theme?: T;
+        emailNotifications?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -218,8 +640,124 @@ export interface UsersSelect<T extends boolean = true> {
   resetPasswordExpiration?: T;
   salt?: T;
   hash?: T;
+  _verified?: T;
+  _verificationToken?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  content?: T;
+  excerpt?: T;
+  featuredImage?: T;
+  status?: T;
+  publishedAt?: T;
+  featured?: T;
+  readingTime?: T;
+  tags?: T;
+  author?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        ogImage?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  content?: T;
+  excerpt?: T;
+  featuredImage?: T;
+  status?: T;
+  template?: T;
+  showInNavigation?: T;
+  navigationOrder?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        ogImage?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects_select".
+ */
+export interface ProjectsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  content?: T;
+  featuredImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  status?: T;
+  featured?: T;
+  projectStatus?: T;
+  startDate?: T;
+  endDate?: T;
+  technologies?:
+    | T
+    | {
+        name?: T;
+        icon?: T;
+        id?: T;
+      };
+  links?:
+    | T
+    | {
+        live?: T;
+        github?: T;
+        demo?: T;
+        documentation?: T;
+      };
+  tags?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        ogImage?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  description?: T;
+  color?: T;
+  icon?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -227,6 +765,11 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  caption?: T;
+  description?: T;
+  credit?: T;
+  tags?: T;
+  focal?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -238,6 +781,50 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        tablet?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        desktop?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

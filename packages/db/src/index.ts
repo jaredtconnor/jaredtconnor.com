@@ -10,3 +10,9 @@ export const prisma =
   });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+
+// PayloadCMS types are available from the CMS app:
+// import type { Post, User, Page, Project, Tag, Media } from '@repo/cms/src/payload-types'
+
+// The main content models (User, Post, Page, Project, Tag, Media) are now managed by PayloadCMS
+// Use the PayloadCMS REST API or GraphQL API to interact with content data
