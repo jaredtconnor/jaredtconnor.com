@@ -2,19 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: "/blog",
-  async rewrites() {
-    return {
-      beforeFiles: [
-        // These rewrites are checked after headers/redirects
-        // and before all files including _next/public files
-        {
-          source: '/blog/:path*',
-          destination: '/:path*',
-        },
-      ],
-    }
-  },
+  // Remove basePath for local development - will be handled by deployment config
+  // basePath: "/blog",
+  transpilePackages: ["@repo/ui", "@repo/db"],
 };
 
 export default nextConfig;
