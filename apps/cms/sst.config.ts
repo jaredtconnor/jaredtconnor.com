@@ -18,7 +18,7 @@ export default $config({
         : undefined,
       environment: {
         PAYLOAD_SECRET: process.env.PAYLOAD_SECRET || "your-secret-key",
-        POSTGRES_URI: process.env.POSTGRES_URI || "postgresql://postgres:postgres@localhost:5432/payload",
+        DATABASE_URL: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/payload",
         PAYLOAD_CONFIG_PATH: "dist/payload.config.js",
         NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000",
       },
