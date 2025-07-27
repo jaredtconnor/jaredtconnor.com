@@ -33,53 +33,53 @@ const { title, description } = Astro.props;
     </div>
     <script>
       function animate() {
-        const animateElements = document.querySelectorAll('.animate');
+        const animateElements = document.querySelectorAll(".animate");
         animateElements.forEach((element, index) => {
           setTimeout(() => {
-            element.classList.add('show');
+            element.classList.add("show");
           }, index * 150);
         });
       }
       function onScroll() {
         if (window.scrollY > 0) {
-          document.documentElement.classList.add('scrolled');
+          document.documentElement.classList.add("scrolled");
         } else {
-          document.documentElement.classList.remove('scrolled');
+          document.documentElement.classList.remove("scrolled");
         }
       }
       function scrollToTop(event: Event) {
         event.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
       function toggleTheme(dark: boolean) {
-        const css = document.createElement('style');
+        const css = document.createElement("style");
         css.appendChild(document.createTextNode(`* {-webkit-transition: none !important;-moz-transition: none !important;-o-transition: none !important;-ms-transition: none !important;transition: none !important;}`));
         document.head.appendChild(css);
-        document.documentElement.classList.toggle('dark', dark);
-        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
         window.getComputedStyle(css).opacity;
         document.head.removeChild(css);
       }
       function preloadTheme() {
         const userTheme = localStorage.theme;
-        toggleTheme(userTheme !== 'light');
+        toggleTheme(userTheme !== "light");
       }
       function init() {
         preloadTheme();
         onScroll();
         animate();
-        const themeButton = document.getElementById('theme-button');
-        themeButton?.addEventListener('click', () => {
-          const dark = document.documentElement.classList.contains('dark');
-          localStorage.theme = dark ? 'light' : 'dark';
+        const themeButton = document.getElementById("theme-button");
+        themeButton?.addEventListener("click", () => {
+          const dark = document.documentElement.classList.contains("dark");
+          localStorage.theme = dark ? "light" : "dark";
           toggleTheme(!dark);
         });
-        const backToTop = document.getElementById('back-to-top');
-        backToTop?.addEventListener('click', (event) => scrollToTop(event));
-        document.addEventListener('scroll', onScroll);
+        const backToTop = document.getElementById("back-to-top");
+        backToTop?.addEventListener("click", (event) => scrollToTop(event));
+        document.addEventListener("scroll", onScroll);
       }
-      document.addEventListener('DOMContentLoaded', () => init());
-      document.addEventListener('astro:after-swap', () => init());
+      document.addEventListener("DOMContentLoaded", () => init());
+      document.addEventListener("astro:after-swap", () => init());
       preloadTheme();
     </script>
   </body>

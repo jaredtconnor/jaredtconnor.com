@@ -19,7 +19,10 @@
 - Error handling should use try/catch blocks with appropriate logging
 - Use TailwindCSS for styling (with clsx/tailwind-merge for conditionals)
 - Follow ESLint rules (varies by app - landing uses Astro, blog uses Next.js)
-- Use TypeScript's strict mode (strictNullChecks enabled) 
+- Use TypeScript's strict mode (strictNullChecks enabled)  
+
+## Agent guidelines 
+- Please do not use emojies
 
 # MyApp Project
 
