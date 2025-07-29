@@ -131,7 +131,7 @@ export async function restRequest(
     throw new Error('REST API calls require REST client mode. Use initializeRestClient().')
   }
   
-  const url = `${config.apiUrl}/api${endpoint}`
+  const url = `${config.apiUrl}${endpoint}`
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...(options.headers as Record<string, string> || {})

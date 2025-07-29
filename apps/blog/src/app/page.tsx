@@ -154,7 +154,7 @@ export default async function BlogHome() {
                 </h2>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   This is where I share my thoughts on technology, economics, development, and life. 
-                  Posts will appear here once they're published through the CMS.
+                  Posts will appear here once they&apos;re published through the CMS.
                 </p>
                 <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-8 text-left">
                   <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">

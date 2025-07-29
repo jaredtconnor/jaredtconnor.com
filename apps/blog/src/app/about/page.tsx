@@ -60,21 +60,21 @@ export default async function About() {
                 Welcome to My Digital Garden
               </h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                Hi, I'm Jared Connor, a developer with a passion for building scalable systems and APIs 
+                Hi, I&apos;m Jared Connor, a developer with a passion for building scalable systems and APIs 
                 that drive equitable economic growth. With a background in economic forecasting and a love 
                 for creative problem-solving, I thrive at the intersection of data, finance, and technology.
               </p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Whether I'm wrangling millions of records for real-time liquidity reporting, designing 
-                microservices, or hacking together a new shell in C, I'm always looking for ways to make 
-                an impact. I believe in the power of tech to solve real-world problems—and I'm always up 
-                for a challenge, whether it's a new API or a new hiking trail.
+                Whether I&apos;m wrangling millions of records for real-time liquidity reporting, designing 
+                microservices, or hacking together a new shell in C, I&apos;m always looking for ways to make 
+                an impact. I believe in the power of tech to solve real-world problems—and I&apos;m always up 
+                for a challenge, whether it&apos;s a new API or a new hiking trail.
               </p>
             </section>
 
             <section className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
-                What You'll Find Here
+                What You&apos;ll Find Here
               </h3>
               <ul className="space-y-3 text-slate-600 dark:text-slate-400">
                 <li className="flex items-start gap-3">
@@ -162,11 +162,11 @@ export default async function About() {
 
             <section>
               <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                 Want to discuss tech, economics, collaborate on a project, or just say hi? 
-                I'm always open to interesting conversations and new opportunities.
+                I&apos;m always open to interesting conversations and new opportunities.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a

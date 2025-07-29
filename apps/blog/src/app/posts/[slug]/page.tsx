@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getPost, getPosts, getSiteSettings } from '@repo/db'
+import { getPosts, getSiteSettings } from '@repo/db'
 
 interface PageProps {
   params: {
@@ -86,41 +86,51 @@ export default async function BlogPost({ params }: PageProps) {
   const siteName = siteSettings?.siteName || 'Jared Connor'
 
   // Simple rich text processing for Lexical content
-  const processRichText = (richText: any): string => {
-    if (!richText || !richText.root) return ''
+  const processRichText = (richText: unknown): string => {
+    const richTextData = richText as { root?: unknown }
+    if (!richTextData || !richTextData.root) return ''
     
     try {
-      return extractTextFromLexical(richText.root)
+      return extractTextFromLexical(richTextData.root)
     } catch (error) {
       console.error('Error processing rich text:', error)
       return ''
     }
   }
 
-  const extractTextFromLexical = (node: any): string => {
-    if (!node || !node.children) return ''
+  const extractTextFromLexical = (node: unknown): string => {
+    const nodeData = node as { children?: unknown[] }
+    if (!nodeData || !nodeData.children) return ''
     
-    return node.children.map((child: any) => {
-      if (child.type === 'text') {
-        return child.text || ''
-      } else if (child.type === 'paragraph') {
+    return nodeData.children.map((child: unknown) => {
+      const childData = child as {
+        type?: string
+        text?: string
+        tag?: string
+        listType?: string
+        children?: unknown[]
+      }
+      
+      if (childData.type === 'text') {
+        return childData.text || ''
+      } else if (childData.type === 'paragraph') {
         return `<p class="mb-4">${extractTextFromLexical(child)}</p>`
-      } else if (child.type === 'heading') {
-        const level = child.tag || 'h2'
+      } else if (childData.type === 'heading') {
+        const level = childData.tag || 'h2'
         const classes = level === 'h1' ? 'text-3xl font-bold mb-6 mt-8' :
                        level === 'h2' ? 'text-2xl font-bold mb-4 mt-6' :
                        level === 'h3' ? 'text-xl font-bold mb-3 mt-5' :
                        'text-lg font-bold mb-2 mt-4'
         return `<${level} class="${classes} text-slate-900 dark:text-slate-100">${extractTextFromLexical(child)}</${level}>`
-      } else if (child.type === 'list') {
-        const tag = child.listType === 'number' ? 'ol' : 'ul'
-        const classes = child.listType === 'number' ? 'list-decimal list-inside mb-4 space-y-1' : 'list-disc list-inside mb-4 space-y-1'
+      } else if (childData.type === 'list') {
+        const tag = childData.listType === 'number' ? 'ol' : 'ul'
+        const classes = childData.listType === 'number' ? 'list-decimal list-inside mb-4 space-y-1' : 'list-disc list-inside mb-4 space-y-1'
         return `<${tag} class="${classes}">${extractTextFromLexical(child)}</${tag}>`
-      } else if (child.type === 'listitem') {
+      } else if (childData.type === 'listitem') {
         return `<li class="text-slate-600 dark:text-slate-400">${extractTextFromLexical(child)}</li>`
-      } else if (child.type === 'quote') {
+      } else if (childData.type === 'quote') {
         return `<blockquote class="border-l-4 border-blue-500 pl-4 italic mb-4 text-slate-600 dark:text-slate-400">${extractTextFromLexical(child)}</blockquote>`
-      } else if (child.children) {
+      } else if (childData.children) {
         return extractTextFromLexical(child)
       }
       return ''
