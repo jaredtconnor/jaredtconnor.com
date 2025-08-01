@@ -4,12 +4,23 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
+const getSiteUrl = () => {
+  if (process.env.SITE_URL) return process.env.SITE_URL;
+  if (process.env.NODE_ENV === "production") return "https://jaredconnor.dev";
+  return "http://localhost:4321";
+};
+
+const getBlogUrl = () => {
+  if (process.env.NODE_ENV === "production") return "https://blog.jaredconnor.dev";
+  return "http://localhost:3001";
+};
+
 export default defineConfig({
-  site: "https://astro-nano-demo.vercel.app",
+  site: getSiteUrl(),
   integrations: [mdx(), react(), sitemap(), tailwind()],
   redirects: {
-    '/blog': 'http://localhost:3001',
-    '/blog/*': 'http://localhost:3001/[...path]'
+    '/blog': getBlogUrl(),
+    '/blog/*': `${getBlogUrl()}/[...path]`
   },
   vite: {
     resolve: {

@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getPosts, getSiteSettings } from '@repo/db'
+import { getPosts } from '@repo/db'
+import { ListDetailView } from '@/components/layouts'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -42,6 +43,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params
   // Initialize CMS client
   try {
     const { initializeRestClient } = await import('@repo/db')
@@ -64,17 +66,16 @@ export default async function BlogPost({ params }: PageProps) {
     console.error('Failed to initialize CMS client:', error)
   }
 
-  // Fetch post and site settings
+  // Fetch post
   let post = null
-  let siteSettings = null
 
   try {
     const postsResponse = await getPosts({
-      where: { slug: { equals: params.slug } },
+      where: { slug: { equals: slug } },
       limit: 1
     })
     post = postsResponse.docs[0] || null
-    siteSettings = await getSiteSettings()
+    // siteSettings = await getSiteSettings() // Not currently used
   } catch (error) {
     console.error('Failed to fetch post:', error)
   }
@@ -83,7 +84,7 @@ export default async function BlogPost({ params }: PageProps) {
     notFound()
   }
 
-  const siteName = siteSettings?.siteName || 'Jared Connor'
+  // const siteName = siteSettings?.siteName || 'Jared Connor'
 
   // Simple rich text processing for Lexical content
   const processRichText = (richText: unknown): string => {
@@ -140,124 +141,99 @@ export default async function BlogPost({ params }: PageProps) {
   const processedContent = processRichText(post.content)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Header */}
-        <header className="mb-12">
-          <nav className="mb-8">
-            <Link 
-              href="/" 
-              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
-            >
-              ← Back to Blog
-            </Link>
-          </nav>
-          
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-8">
-            <div className="mb-6">
-              <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400 mb-4">
-                {post.publishedDate && (
-                  <time dateTime={post.publishedDate}>
-                    {new Date(post.publishedDate).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </time>
-                )}
-                {post.tags && post.tags.length > 0 && (
-                  <div className="flex gap-2">
-                    {post.tags.map((tag) => (
-                      <span 
-                        key={tag.id}
-                        className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded text-xs font-medium"
-                      >
-                        {tag.name}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-              
-              <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-                {post.title}
-              </h1>
-              
-              {post.excerpt && (
-                <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {post.excerpt}
-                </p>
+    <ListDetailView
+      list={
+        <div className="p-8 space-y-8">
+          {/* Header */}
+          <header>
+            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+              {post.publishedDate && (
+                <time dateTime={post.publishedDate}>
+                  {new Date(post.publishedDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
               )}
-              
-              {post.author && (
-                <div className="flex items-center gap-2 mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
-                  <span className="text-slate-500 dark:text-slate-400">by</span>
-                  <span className="font-medium text-slate-900 dark:text-slate-100">
-                    {post.author.name || post.author.email}
-                  </span>
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex gap-2">
+                  {post.tags.map((tag) => (
+                    <span 
+                      key={tag.id}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded text-xs font-medium"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
                 </div>
               )}
             </div>
-          </div>
-        </header>
+            
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              {post.title}
+            </h1>
+            
+            {post.excerpt && (
+              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                {post.excerpt}
+              </p>
+            )}
+            
+            {post.author && (
+              <div className="flex items-center gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <span className="text-gray-500 dark:text-gray-400">by</span>
+                <span className="font-medium text-gray-900 dark:text-white">
+                  {post.author.name || post.author.email}
+                </span>
+              </div>
+            )}
+          </header>
 
-        {/* Main Content */}
-        <main>
-          <article className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-8">
+          {/* Content */}
+          <main>
             {processedContent ? (
               <div 
-                className="prose prose-slate dark:prose-invert max-w-none"
+                className="prose prose-gray dark:prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: processedContent }}
               />
             ) : (
               <div className="text-center py-12">
-                <p className="text-slate-500 dark:text-slate-400 mb-4">
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
                   Content is being processed...
                 </p>
-                <p className="text-sm text-slate-400 dark:text-slate-500">
+                <p className="text-sm text-gray-400 dark:text-gray-500">
                   If this persists, the post content may need to be published in the CMS.
                 </p>
               </div>
             )}
-          </article>
-        </main>
+          </main>
 
-        {/* Footer */}
-        <footer className="mt-12">
-          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-center sm:text-left">
-                <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">
-                  Thanks for Reading!
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                  Want to discuss this post or have questions? Feel free to reach out.
-                </p>
-              </div>
-              <div className="flex gap-4">
+          {/* Footer */}
+          <footer className="pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Thanks for reading! Have thoughts or questions?
+              </p>
+              <div className="flex justify-center gap-4">
                 <Link 
-                  href="/" 
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  href="/writing" 
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
-                  More Posts
+                  ← All posts
                 </Link>
                 <a
                   href="mailto:jaredconnor301@gmail.com"
-                  className="px-4 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-medium"
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                 >
-                  Contact
+                  Email me
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700 text-center">
-            <p className="text-slate-500 dark:text-slate-400">
-              {siteSettings?.copyrightText || `© ${new Date().getFullYear()} ${siteName}. All rights reserved.`}
-            </p>
-          </div>
-        </footer>
-      </div>
-    </div>
+          </footer>
+        </div>
+      }
+      hasDetail={false}
+    />
   )
 }

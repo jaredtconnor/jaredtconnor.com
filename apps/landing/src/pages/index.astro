@@ -7,142 +7,95 @@ import { HOME } from "@consts";
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <h1 class="animate font-bold text-4xl text-black dark:text-white mb-2">
-      Hi, I'm Jared Connor <span class="text-2xl">👋🏻</span>
-    </h1>
-    <h2 class="animate text-xl font-semibold text-black dark:text-white mb-6">
-      Junior Developer & Economic Systems Enthusiast
-    </h2>
-    <div class="space-y-16">
-      <section>
-        <article class="space-y-4">
-          <p class="animate">
-            I'm a developer with a passion for building scalable systems and APIs that drive equitable economic growth. With a background in economic forecasting and a love for creative problem-solving, I thrive at the intersection of data, finance, and technology.
-          </p>
-          <p class="animate">
-            Whether I'm wrangling millions of records for real-time liquidity reporting, designing microservices, or hacking together a new shell in C, I'm always looking for ways to make an impact. I believe in the power of tech to solve real-world problems—and I'm always up for a challenge, whether it's a new API or a new hiking trail.
-          </p>
-        </article>
+    <div class="max-w-2xl">
+      <h1 class="animate text-3xl font-bold text-black dark:text-white mb-8">
+        Jared Connor
+      </h1>
+      
+      <section class="animate space-y-4 mb-12">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Me</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          I'm a developer, data engineer, and financial analyst at Umpqua Bank. I build scalable systems and APIs, wrangle millions of records for real-time liquidity reporting, and love solving problems at the intersection of data, finance, and technology.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Whether I'm designing microservices, building econometric models, or hacking together a new shell in C, I'm always looking for ways to make an impact. I believe in the power of tech to solve real-world problems.
+        </p>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work">
-            See all work
-          </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          <li>
-            <div class="text-sm opacity-75">Oct 2017 – Present</div>
-            <div class="font-semibold text-black dark:text-white">Umpqua Bank</div>
-            <div class="text-sm opacity-75">Financial Analyst, Treasury</div>
-            <article class="last-of-type:[&>p]:mb-0">
-              <p>Developed a Python-based ETL framework and data warehouse, boosting reporting efficiency by 10 days and enabling real-time liquidity insights from 5M+ wire records. Led the Interest Rate Risk reporting team, redeveloped econometric models, and helped steer strategic decisions during turbulent markets. I love turning data chaos into clarity!</p>
-            </article>
+      <section class="animate space-y-4 mb-12">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Work</h2>
+        <ul class="space-y-3">
+          <li class="flex justify-between items-start">
+            <div>
+              <div class="font-medium text-black dark:text-white">Umpqua Bank</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Financial Analyst, Treasury</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-500">Oct 2017 – Present</div>
           </li>
-          <li>
-            <div class="text-sm opacity-75">Aug 2016 – Aug 2017</div>
-            <div class="font-semibold text-black dark:text-white">Simple Finance</div>
-            <div class="text-sm opacity-75">Customer Relations</div>
-            <article class="last-of-type:[&>p]:mb-0">
-              <p>Worked at a pioneering banking startup, helping onboard new users and solve customer challenges with empathy and a startup mindset.</p>
-            </article>
+          <li class="flex justify-between items-start">
+            <div>
+              <div class="font-medium text-black dark:text-white">Simple Finance</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Customer Relations</div>
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-500">Aug 2016 – Aug 2017</div>
           </li>
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Featured Projects
-          </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          <li class="group relative">
-            <a href="https://github.com/jaredtconnor/smallsh" target="_blank" class="block border-b py-4 pr-8 border-zinc-200 dark:border-zinc-800">
-              <p class="font-semibold group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">Smallsh</p>
-              <p class="text-sm">A Unix-based shell written in C, supporting foreground/background execution, I/O redirection, and built-in commands. Built for fun, learning, and a love of the command line.</p>
+      <section class="animate space-y-4 mb-12">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Projects</h2>
+        <ul class="space-y-2">
+          <li>
+            <a href="https://github.com/jaredtconnor/smallsh" target="_blank" class="group block">
+              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Smallsh</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">A Unix-based shell written in C</div>
             </a>
           </li>
-          <li class="group relative">
-            <a href="https://github.com/jaredtconnor/reddit-archiver" target="_blank" class="block border-b py-4 pr-8 border-zinc-200 dark:border-zinc-800">
-              <p class="font-semibold group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">Reddit Archiver</p>
-              <p class="text-sm">A Flask-based CRUD web app simulating Reddit-style sharing, with a MySQL backend on AWS. Designed the ER model and implemented full-stack features for a social platform experience.</p>
+          <li>
+            <a href="https://github.com/jaredtconnor/reddit-archiver" target="_blank" class="group block">
+              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Reddit Archiver</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Flask CRUD web app with MySQL backend</div>
             </a>
           </li>
-          <li class="group relative">
-            <a href="https://github.com/jaredtconnor/wikipedia-table-scraper" target="_blank" class="block border-b py-4 pr-8 border-zinc-200 dark:border-zinc-800">
-              <p class="font-semibold group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">Wikipedia Table Scraper</p>
-              <p class="text-sm">A Python REST API microservice that parses tables from Wikipedia and returns JSON. Built for data wrangling and fun API design.</p>
+          <li>
+            <a href="https://github.com/jaredtconnor/wikipedia-table-scraper" target="_blank" class="group block">
+              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Wikipedia Table Scraper</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Python REST API for parsing Wikipedia tables</div>
             </a>
           </li>
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Education
-          </h5>
-        </div>
-        <ul class="flex flex-col space-y-2">
+      <section class="animate space-y-4 mb-12">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Education</h2>
+        <ul class="space-y-3">
           <li>
-            <div class="font-semibold text-black dark:text-white">Oregon State University</div>
-            <div class="text-sm opacity-75">B.S. in Computer Science, 2021 &mdash; GPA: 3.54</div>
-            <div class="text-sm">Relevant coursework: Data Structures, Web Development, Algorithm Analysis, Databases, Agile Development</div>
+            <div class="font-medium text-black dark:text-white">Oregon State University</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">B.S. Computer Science, 2021</div>
           </li>
           <li>
-            <div class="font-semibold text-black dark:text-white">University of Oregon</div>
-            <div class="text-sm opacity-75">B.S. in Economics, Minors: Philosophy, Business, 2016 &mdash; GPA: 3.52</div>
-            <div class="text-sm">Relevant coursework: Econometrics, Linear Algebra, Time Series Forecasting, Economics of the PNW</div>
+            <div class="font-medium text-black dark:text-white">University of Oregon</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">B.S. Economics, 2016</div>
           </li>
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Technical Skills
-          </h5>
-        </div>
-        <ul class="flex flex-wrap gap-4 text-sm">
-          <li><span class="font-semibold">Languages:</span> Python, C/C++, JavaScript, R</li>
-          <li><span class="font-semibold">Frameworks:</span> Flask, Django, Node.js, Express.js, pandas, NumPy, Dash, Tidyverse</li>
-          <li><span class="font-semibold">Tools:</span> Git, Bash, MS-DOS, AWS, Azure</li>
-          <li><span class="font-semibold">Databases:</span> MS-SQL/T-SQL, MySQL</li>
-          <li><span class="font-semibold">Concepts:</span> REST APIs, agile data modeling, liquidity/funding forecasting, econometrics</li>
-        </ul>
-      </section>
-
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
-        </h5>
-        <article>
-          <p>
-            Want to talk tech, economics, or just say hi? Reach out on social or send me an email. I'm always open to new connections and opportunities!
-          </p>
-        </article>
-        <ul class="flex flex-wrap gap-2">
+      <section class="animate space-y-4 mb-12">
+        <h2 class="text-xl font-semibold text-black dark:text-white">Online</h2>
+        <ul class="space-y-1">
           <li>
             <Link href="https://github.com/jaredtconnor" external aria-label="Jared Connor on Github">
-              Github
+              GitHub
             </Link>
           </li>
           <li>
             <Link href="mailto:jaredconnor301@gmail.com" aria-label="Email Jared Connor">
-              jaredconnor301@gmail.com
+              Email
             </Link>
           </li>
           <li>
             <Link href="/blog" aria-label="Jared Connor's Blog">
-              Blog
+              Writing
             </Link>
           </li>
         </ul>

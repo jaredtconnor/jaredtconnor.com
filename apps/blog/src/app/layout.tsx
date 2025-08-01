@@ -1,12 +1,13 @@
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { SiteLayout } from '@/components/layouts';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Your Blog',
-  description: 'A modern blog built with Next.js',
+  title: 'Jared Connor',
+  description: 'Developer, data engineer, and financial analyst. Building scalable systems and exploring the intersection of data, finance, and technology.',
 };
 
 export default function RootLayout({
@@ -16,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, 'min-h-screen bg-background')}>
-        <div className="relative flex min-h-screen flex-col">
-          <main className="flex-1">{children}</main>
-        </div>
+      <body className={cn(inter.className, 'min-h-screen bg-white dark:bg-gray-900')}>
+        <SiteLayout>
+          {children}
+        </SiteLayout>
       </body>
     </html>
   );

@@ -10,11 +10,13 @@
         "!.next/cache/**",
         "dist/**",
         ".astro/**"
-      ]
+      ],
+      "env": ["NODE_ENV", "DATABASE_URL", "API_URL", "NEXTAUTH_SECRET", "PAYLOAD_SECRET"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["NODE_ENV", "PORT", "DATABASE_URL", "API_URL"]
     },
     "lint": {
       "dependsOn": ["^lint"],
@@ -29,6 +31,9 @@
       "cache": false
     },
     "generate:types": {
+      "cache": false
+    },
+    "migrate": {
       "cache": false
     }
   }

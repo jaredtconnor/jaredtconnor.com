@@ -1,12 +1,12 @@
 import { ListDetailView } from '@/components/layouts'
-import { AboutSection } from '@/components/content'
+import { ProjectsList } from '@/components/content'
 
-export default function AboutPage() {
+export default function ProjectsPage() {
   return (
     <ListDetailView
       list={
         <div className="p-8">
-          <AboutSection />
+          <ProjectsList showAll />
         </div>
       }
       hasDetail={false}

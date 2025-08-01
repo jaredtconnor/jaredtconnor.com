@@ -190,8 +190,8 @@ function extractTextFromLexical(node: any): string {
 
 // SEO Utilities
 export function buildPageTitle(pageTitle?: string, siteSettings?: SiteSettings | null): string {
-  const siteName = siteSettings?.siteInfo?.siteName || 'Jared Connor'
-  const titleTemplate = siteSettings?.seoDefaults?.defaultTitle || '%s | %s'
+  const siteName = siteSettings?.siteName || 'Jared Connor'
+  const titleTemplate = siteSettings?.seoTitle || '%s | %s'
   
   if (!pageTitle) return siteName
   
@@ -204,8 +204,8 @@ export function buildPageTitle(pageTitle?: string, siteSettings?: SiteSettings |
 
 export function buildPageDescription(pageDescription?: string, siteSettings?: SiteSettings | null): string {
   return pageDescription || 
-         siteSettings?.seoDefaults?.defaultDescription || 
-         siteSettings?.siteInfo?.siteDescription ||
+         siteSettings?.seoDescription || 
+         siteSettings?.siteDescription ||
          'Personal website and digital garden of Jared Connor'
 }
 

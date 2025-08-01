@@ -5,17 +5,13 @@
 
 declare module "sst" {
   export interface Resource {
-    "Blog": {
-      "type": "sst.aws.Nextjs"
-      "url": string
-    }
-    "CMS": {
-      "type": "sst.aws.Nextjs"
-      "url": string
-    }
-    "Landing": {
+    "LandingPage": {
       "type": "sst.aws.Astro"
       "url": string
+    }
+    "MediaBucket": {
+      "name": string
+      "type": "sst.aws.Bucket"
     }
   }
 }

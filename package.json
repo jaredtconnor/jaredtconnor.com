@@ -1,9 +1,9 @@
- {
+{
   "name": "personal-site-monorepo",
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build", 
+    "build": "turbo run build",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
@@ -11,23 +11,27 @@
     "clean": "turbo run clean",
     "check": "pnpm lint && pnpm check-types && pnpm build",
     "check:fix": "pnpm lint:fix && pnpm format",
-    
     "dev:landing": "turbo run dev --filter=landing",
-    "dev:blog": "turbo run dev --filter=blog", 
+    "dev:blog": "turbo run dev --filter=blog",
     "dev:cms": "turbo run dev --filter=@repo/cms",
-    
+    "dev:backend": "turbo run dev --filter=@repo/backend",
     "build:landing": "turbo run build --filter=landing",
     "build:blog": "turbo run build --filter=blog",
     "build:cms": "turbo run build --filter=@repo/cms",
-    
+    "build:backend": "turbo run build --filter=@repo/backend",
     "cms:types": "turbo run generate:types --filter=@repo/cms",
     "cms:migrate": "turbo run migrate --filter=@repo/cms",
     "sst:dev": "sst dev",
-    "sst:deploy": "sst deploy --stage production"
+    "sst:deploy:dev": "sst deploy --stage dev",
+    "sst:deploy:staging": "sst deploy --stage staging",
+    "sst:deploy:prod": "sst deploy --stage production",
+    "sst:remove": "sst remove",
+    "sst:console": "sst console"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
-    "prettier": "^3.5.0", 
+    "prettier": "^3.5.0",
+    "sst": "3.17.0",
     "turbo": "^2.4.2",
     "typescript": "5.7.3"
   },
