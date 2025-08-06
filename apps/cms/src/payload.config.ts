@@ -2,6 +2,7 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -42,6 +43,22 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    s3Storage({
+      collections: {
+        media: {
+          prefix: process.env.NODE_ENV || 'development',
+          generateFileURL: ({ filename, prefix }) => {
+            const bucketName = process.env.MEDIA_BUCKET_NAME || 'default-bucket';
+            return `https://${bucketName}.s3.us-west-2.amazonaws.com/${prefix}/${filename}`;
+          }
+        }
+      },
+      bucket: process.env.MEDIA_BUCKET_NAME || 'default-bucket',
+      config: {
+        forcePathStyle: false,
+        region: 'us-west-2',
+        endpoint: undefined, // Use default AWS endpoint
+      },
+    }),
   ],
 })

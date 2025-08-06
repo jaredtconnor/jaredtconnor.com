@@ -10,6 +10,7 @@ export default function AboutPage() {
         </div>
       }
       hasDetail={false}
+      detail={null}
     />
   )
 }

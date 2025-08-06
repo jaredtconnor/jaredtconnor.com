@@ -1,54 +1,34 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Navigation } from './Navigation'
-// import { cn } from '@/lib/utils'
+import * as React from 'react'
+import { TitleBar } from './TitleBar'
+import { SidebarNavigation } from './SidebarNavigation'
+import { SidebarOverlay } from './SidebarOverlay'
+import { GlobalNavigationContext } from '../providers'
 
-interface SidebarProps {
-  onClose?: () => void
-}
-
-export function Sidebar({ onClose }: SidebarProps) {
-  const pathname = usePathname()
-
+export function Sidebar() {
+  const { isOpen } = React.useContext(GlobalNavigationContext)
+  const scrollContainerRef = React.useRef<HTMLElement | null>(null)
+  
   return (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
-        <Link 
-          href="/" 
-          className="text-xl font-bold text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-          onClick={onClose}
-        >
-          Jared Connor
-        </Link>
-        {onClose && (
-          <button
-            onClick={onClose}
-            className="lg:hidden p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-800"
-          >
-            <span className="sr-only">Close sidebar</span>
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        )}
-      </div>
+    <>
+      <nav
+        ref={scrollContainerRef}
+        className={`${
+          isOpen
+            ? 'absolute inset-y-0 left-0 translate-x-0 shadow-lg'
+            : 'absolute -translate-x-full'
+        } 3xl:w-80 z-30 flex h-full max-h-screen min-h-screen w-3/4 flex-none transform flex-col overflow-y-auto border-r border-gray-150 bg-white pb-10 transition duration-200 ease-in-out dark:border-gray-800 dark:bg-gray-900 sm:w-1/2 sm:pb-0 md:w-1/3 lg:relative lg:z-auto lg:w-56 lg:translate-x-0 lg:bg-gray-50 lg:dark:bg-gray-900 2xl:w-72`}
+      >
+        <TitleBar
+          scrollContainerRef={scrollContainerRef}
+          leadingAccessory={null}
+          title="Jared Connor"
+        />
+        <SidebarNavigation />
+      </nav>
 
-      {/* Navigation */}
-      <div className="flex-1 overflow-y-auto">
-        <Navigation currentPath={pathname} onNavigate={onClose} />
-      </div>
-
-      {/* Footer */}
-      <div className="p-6 border-t border-gray-200 dark:border-gray-800">
-        <div className="text-xs text-gray-500 dark:text-gray-400 space-y-1">
-          <p>© {new Date().getFullYear()} Jared Connor</p>
-          <p>Built with Next.js & PayloadCMS</p>
-        </div>
-      </div>
-    </div>
+      <SidebarOverlay />
+    </>
   )
 }

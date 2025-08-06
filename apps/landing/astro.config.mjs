@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
@@ -12,12 +11,12 @@ const getSiteUrl = () => {
 
 const getBlogUrl = () => {
   if (process.env.NODE_ENV === "production") return "https://blog.jaredconnor.dev";
-  return "http://localhost:3001";
+  return "http://localhost:3002";
 };
 
 export default defineConfig({
   site: getSiteUrl(),
-  integrations: [mdx(), react(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind()],
   redirects: {
     '/blog': getBlogUrl(),
     '/blog/*': `${getBlogUrl()}/[...path]`

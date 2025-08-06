@@ -1,5 +1,6 @@
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
 /* DO NOT MODIFY IT BECAUSE IT COULD BE REWRITTEN AT ANY TIME. */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import config from '@payload-config'
 import '@payloadcms/next/css'
 import type { ServerFunctionClient } from 'payload'
@@ -22,10 +23,13 @@ const serverFunction: ServerFunctionClient = async function (args) {
   })
 }
 
-const Layout = ({ children }: Args) => (
-  <RootLayout config={config} importMap={importMap} serverFunction={serverFunction}>
-    {children}
-  </RootLayout>
-)
+const Layout = ({ children }: Args) => {
+  const LayoutComponent = RootLayout as any
+  return (
+    <LayoutComponent config={config} importMap={importMap} serverFunction={serverFunction}>
+      {children}
+    </LayoutComponent>
+  )
+}
 
-export default Layout
+export default Layout as any

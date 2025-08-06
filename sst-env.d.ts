@@ -5,13 +5,38 @@
 
 declare module "sst" {
   export interface Resource {
+    "Api": {
+      "name": string
+      "type": "sst.aws.Function"
+      "url": string
+    }
+    "BlogApp": {
+      "type": "sst.aws.Nextjs"
+      "url": string
+    }
+    "CmsApp": {
+      "type": "sst.aws.Nextjs"
+      "url": string
+    }
+    "DatabaseUrl": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
     "LandingPage": {
-      "type": "sst.aws.Astro"
+      "type": "sst.aws.StaticSite"
       "url": string
     }
     "MediaBucket": {
       "name": string
       "type": "sst.aws.Bucket"
+    }
+    "NextAuthSecret": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "PayloadSecret": {
+      "type": "sst.sst.Secret"
+      "value": string
     }
   }
 }

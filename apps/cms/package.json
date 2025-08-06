@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
-    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev --port 3003",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
@@ -21,6 +21,7 @@
     "@payloadcms/next": "3.39.1",
     "@payloadcms/payload-cloud": "3.39.1",
     "@payloadcms/richtext-lexical": "3.39.1",
+    "@payloadcms/storage-s3": "3.39.1",
     "@payloadcms/ui": "3.39.1",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
@@ -29,7 +30,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sharp": "0.32.6",
-    "sst": "3.17.0"
+    "sst": "3.17.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
