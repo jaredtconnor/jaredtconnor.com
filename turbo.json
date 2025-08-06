@@ -11,12 +11,20 @@
         "dist/**",
         ".astro/**"
       ],
-      "env": ["NODE_ENV", "DATABASE_URL", "API_URL", "NEXTAUTH_SECRET", "PAYLOAD_SECRET"]
+      "env": ["NODE_ENV", "DATABASE_URL", "API_URL", "NEXTAUTH_SECRET", "PAYLOAD_SECRET", "MEDIA_BUCKET_NAME"]
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "env": ["NODE_ENV", "PORT", "DATABASE_URL", "API_URL"]
+      "env": ["NODE_ENV", "PORT", "DATABASE_URL", "API_URL", "MEDIA_BUCKET_NAME"]
+    },
+    "sst:dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "sst:deploy": {
+      "dependsOn": ["build"],
+      "cache": false
     },
     "lint": {
       "dependsOn": ["^lint"],

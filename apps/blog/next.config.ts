@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  outputFileTracingRoot: process.cwd(),
-  env: {
-    API_URL: process.env.API_URL || "http://localhost:3002",
+  outputFileTracingRoot: path.join(__dirname, "../.."),
+  experimental: {
+    optimizePackageImports: ['@repo/ui']
   },
   images: {
     remotePatterns: [

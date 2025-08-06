@@ -38,3 +38,5 @@ yarn-error.log*
 *.pem
 .sst
 .env
+apps/blog/.open-next
+.env.local

@@ -117,6 +117,7 @@ export default function StackPage() {
         </div>
       }
       hasDetail={false}
+      detail={null}
     />
   )
 }

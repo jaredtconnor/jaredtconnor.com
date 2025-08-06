@@ -38,7 +38,7 @@ export const Tags: CollectionConfig = {
       admin: {
         description: 'Hex color code for tag styling (e.g., #3B82F6)',
       },
-      validate: (value) => {
+      validate: (value: string | null | undefined) => {
         if (value && !/^#[0-9A-F]{6}$/i.test(value)) {
           return 'Please enter a valid hex color code (e.g., #3B82F6)'
         }

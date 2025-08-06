@@ -1,9 +1,13 @@
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { SiteLayout } from '@/components/layouts';
+import { GlobalNavigationProvider } from '@/components/providers';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Jared Connor',
@@ -16,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, 'min-h-screen bg-white dark:bg-gray-900')}>
-        <SiteLayout>
-          {children}
-        </SiteLayout>
+    <html lang="en">
+      <body className={cn(inter.className, 'antialiased')}>
+        <GlobalNavigationProvider>
+          <SiteLayout>
+            {children}
+          </SiteLayout>
+        </GlobalNavigationProvider>
       </body>
     </html>
   );

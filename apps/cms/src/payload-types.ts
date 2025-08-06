@@ -213,6 +213,7 @@ export interface Media {
    * @maxItems 2
    */
   focal?: [number, number] | null;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -774,6 +775,7 @@ export interface MediaSelect<T extends boolean = true> {
   credit?: T;
   tags?: T;
   focal?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -990,8 +992,8 @@ export interface Setting {
    */
   facebookPixelId?: string | null;
   _status?: ('draft' | 'published') | null;
-  updatedAt: string;
-  createdAt: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -290,5 +290,4 @@ export const SiteSettings: GlobalConfig = {
   versions: {
     drafts: true,
   },
-  timestamps: true,
 }

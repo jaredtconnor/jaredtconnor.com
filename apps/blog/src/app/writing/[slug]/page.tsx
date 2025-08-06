@@ -10,20 +10,25 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
+  // Skip static generation during build if CMS is not available
+  if (process.env.NODE_ENV === 'production' || !process.env.NEXT_PUBLIC_PAYLOAD_API_URL) {
+    return []
+  }
+
   try {
     const { initializeRestClient } = await import('@repo/db')
     initializeRestClient({
-      apiUrl: process.env.NEXT_PUBLIC_PAYLOAD_API_URL || 'http://localhost:3000/api',
+      apiUrl: process.env.NEXT_PUBLIC_PAYLOAD_API_URL,
       environment: 'development',
       cache: {
         enabled: true,
         ttl: 5 * 60 * 1000,
         maxSize: 100,
       },
-      timeout: 10000,
+      timeout: 5000, // Reduced timeout for build
       retry: {
-        attempts: 3,
-        delay: 1000,
+        attempts: 1, // Reduced retry attempts for build
+        delay: 500,
         backoff: 'exponential'
       },
     })
@@ -37,18 +42,24 @@ export async function generateStaticParams() {
       slug: post.slug,
     }))
   } catch (error) {
-    console.error('Failed to generate static params:', error)
+    console.warn('CMS not available during build, skipping static generation:', error instanceof Error ? error.message : String(error))
     return []
   }
 }
 
 export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params
+  
+  // Check if CMS is available
+  if (!process.env.NEXT_PUBLIC_PAYLOAD_API_URL) {
+    notFound()
+  }
+
   // Initialize CMS client
   try {
     const { initializeRestClient } = await import('@repo/db')
     initializeRestClient({
-      apiUrl: process.env.NEXT_PUBLIC_PAYLOAD_API_URL || 'http://localhost:3000/api',
+      apiUrl: process.env.NEXT_PUBLIC_PAYLOAD_API_URL,
       environment: 'development',
       cache: {
         enabled: true,
@@ -64,6 +75,7 @@ export default async function BlogPost({ params }: PageProps) {
     })
   } catch (error) {
     console.error('Failed to initialize CMS client:', error)
+    notFound()
   }
 
   // Fetch post
@@ -234,6 +246,7 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       }
       hasDetail={false}
+      detail={null}
     />
   )
 }

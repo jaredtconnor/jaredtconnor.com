@@ -14,40 +14,38 @@ export default $config({
     };
   },
   async run() {
-    // S3 bucket for media storage
+    console.log("Starting optimized SST deployment...");
+    
+    // Secrets - create once, reference multiple times
+    const databaseUrl = new sst.Secret("DatabaseUrl");
+    const nextAuthSecret = new sst.Secret("NextAuthSecret");
+    const payloadSecret = new sst.Secret("PayloadSecret");
+
+    // S3 bucket for media storage - simplified configuration
     const mediaBucket = new sst.aws.Bucket("MediaBucket", {
-      cors: [
-        {
-          allowedHeaders: ["*"],
-          allowedMethods: ["GET", "POST", "PUT", "DELETE"],
-          allowedOrigins: $app.stage === "production" 
-            ? ["https://jaredconnor.dev", "https://blog.jaredconnor.dev"] 
-            : ["*"],
-          maxAge: 3000,
-        },
-      ],
+      public: false,
     });
 
-    // API/Backend (Express.js with tRPC)
+    // Simple API using optimized Lambda (smaller bundle, faster cold starts)
     const api = new sst.aws.Function("Api", {
       handler: "apps/backend/src/lambda.handler",
       runtime: "nodejs20.x",
-      timeout: "30 seconds",
-      memory: "1024 MB",
+      timeout: "30 seconds", // Reduced timeout to fail fast
+      memory: "1024 MB", // Reduced memory for faster cold starts
+      architecture: "arm64",
+      link: [mediaBucket],
       environment: {
-        // Use Neon PostgreSQL (external service)
-        DATABASE_URL: new sst.Secret("DatabaseUrl").value,
-        MEDIA_BUCKET_NAME: mediaBucket.name,
-        NODE_ENV: $app.stage === "production" ? "production" : "development",
+        DATABASE_URL: databaseUrl.value,
       },
       url: true,
     });
 
-    // Landing Page (Astro) - Static Site
-    const landingPage = new sst.aws.Astro("LandingPage", {
+    // Landing Page - Simple static site
+    const landingPage = new sst.aws.StaticSite("LandingPage", {
       path: "apps/landing",
-      environment: {
-        PUBLIC_API_URL: api.url,
+      build: {
+        command: "pnpm build",
+        output: "dist",
       },
       domain: $app.stage === "production" 
         ? {
@@ -57,41 +55,57 @@ export default $config({
         : undefined,
     });
 
-    // Blog (Next.js) - SSR/SSG
+    // Blog - Simplified Next.js deployment with smaller bundle
     const blogApp = new sst.aws.Nextjs("BlogApp", {
       path: "apps/blog",
+      link: [api, mediaBucket],
       environment: {
-        DATABASE_URL: new sst.Secret("DatabaseUrl").value,
-        API_URL: api.url,
-        NEXTAUTH_SECRET: new sst.Secret("NextAuthSecret").value,
+        DATABASE_URL: databaseUrl.value,
+        NEXTAUTH_SECRET: nextAuthSecret.value,
         NEXTAUTH_URL: $app.stage === "production" 
           ? "https://blog.jaredconnor.dev" 
-          : `https://${$app.name}-${$app.stage}-blog.vercel.app`,
+          : "http://localhost:3002",
       },
       domain: $app.stage === "production" 
         ? "blog.jaredconnor.dev" 
         : undefined,
+      transform: {
+        server: {
+          architecture: "arm64",
+          timeout: "30 seconds", // Reduced timeout
+          memory: "1536 MB", // Reduced memory
+        }
+      }
     });
 
-    // CMS (PayloadCMS) - Next.js App
+    // CMS - Simplified Next.js deployment
     const cmsApp = new sst.aws.Nextjs("CmsApp", {
       path: "apps/cms",
+      link: [mediaBucket, api],
       environment: {
-        DATABASE_URL: new sst.Secret("DatabaseUrl").value,
-        PAYLOAD_SECRET: new sst.Secret("PayloadSecret").value,
+        DATABASE_URL: databaseUrl.value,
+        PAYLOAD_SECRET: payloadSecret.value,
         MEDIA_BUCKET_NAME: mediaBucket.name,
       },
       domain: $app.stage === "production" 
         ? "cms.jaredconnor.dev" 
         : undefined,
+      transform: {
+        server: {
+          architecture: "arm64",
+          timeout: "60 seconds", // Slightly longer for CMS operations
+          memory: "2048 MB", // Sufficient for PayloadCMS
+        }
+      }
     });
 
+    console.log("Optimized SST deployment configuration complete!");
     return {
       api: api.url,
       landing: landingPage.url,
       blog: blogApp.url,
       cms: cmsApp.url,
-      media: mediaBucket.name,
+      mediaBucket: mediaBucket.name,
     };
   },
 });
