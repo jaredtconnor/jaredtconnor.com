@@ -2,16 +2,17 @@
 
 import { usePathname } from 'next/navigation'
 import * as React from 'react'
-import { 
-  Home, 
-  PenTool, 
-  Folder, 
-  User, 
-  ExternalLink, 
-  Github, 
-  Twitter, 
-  Linkedin 
-} from 'lucide-react'
+
+import {
+  HomeIcon,
+  WritingIcon,
+  BookmarksIcon,
+  StackIcon,
+  InformationIcon,
+  ExternalLinkIcon,
+  GitHubIcon,
+  TwitterIcon,
+} from '@/components/Icon'
 
 import { NavigationLink } from './NavigationLink'
 
@@ -25,7 +26,7 @@ export function SidebarNavigation() {
         {
           href: '/',
           label: 'Home',
-          icon: Home,
+          icon: HomeIcon,
           trailingAccessory: null,
           isActive: pathname === '/',
           trailingAction: null,
@@ -34,7 +35,7 @@ export function SidebarNavigation() {
         {
           href: '/writing',
           label: 'Writing',
-          icon: PenTool,
+          icon: WritingIcon,
           trailingAccessory: null,
           isActive: pathname.startsWith('/writing'),
           trailingAction: null,
@@ -45,19 +46,19 @@ export function SidebarNavigation() {
     {
       label: 'Me',
       items: [
-        {
-          href: '/about',
-          label: 'About',
-          icon: User,
+        { 
+          href: '/bookmarks',
+          label: 'Bookmarks',
+          icon: BookmarksIcon,
           trailingAccessory: null,
-          isActive: pathname.startsWith('/about'),
+          isActive: pathname.startsWith('/bookmarks'),
           trailingAction: null,
           isExternal: false,
         },
         {
           href: '/stack',
           label: 'Stack',
-          icon: Folder,
+          icon: StackIcon,
           trailingAccessory: null,
           isActive: pathname.startsWith('/stack'),
           trailingAction: null,
@@ -71,9 +72,18 @@ export function SidebarNavigation() {
         {
           href: '/projects',
           label: 'Projects',
-          icon: Folder,
+          icon: StackIcon,
           trailingAccessory: null,
           isActive: pathname.startsWith('/projects'),
+          trailingAction: null,
+          isExternal: false,
+        },
+        {
+          href: '/information',
+          label: 'Information',
+          icon: InformationIcon,
+          trailingAccessory: null,
+          isActive: pathname.startsWith('/information'),
           trailingAction: null,
           isExternal: false,
         },
@@ -85,8 +95,8 @@ export function SidebarNavigation() {
         {
           href: 'https://github.com/jaredtconnor',
           label: 'GitHub',
-          icon: Github,
-          trailingAccessory: ExternalLink,
+          icon: GitHubIcon,
+          trailingAccessory: ExternalLinkIcon,
           isActive: false,
           trailingAction: null,
           isExternal: true,
@@ -94,17 +104,8 @@ export function SidebarNavigation() {
         {
           href: 'https://twitter.com/jaredtconnor',
           label: 'Twitter',
-          icon: Twitter,
-          trailingAccessory: ExternalLink,
-          isActive: false,
-          trailingAction: null,
-          isExternal: true,
-        },
-        {
-          href: 'https://linkedin.com/in/jaredtconnor',
-          label: 'LinkedIn',
-          icon: Linkedin,
-          trailingAccessory: ExternalLink,
+          icon: TwitterIcon,
+          trailingAccessory: ExternalLinkIcon,
           isActive: false,
           trailingAction: null,
           isExternal: true,
@@ -121,7 +122,7 @@ export function SidebarNavigation() {
             {section.label && (
               <h4
                 key={i}
-                className="px-2 pt-5 pb-2 text-xs font-semibold text-gray-1000 text-opacity-40"
+                className="px-2 pt-5 pb-2 text-xs font-semibold text-gray-1000 text-opacity-40 dark:text-white"
               >
                 {section.label}
               </h4>

@@ -2,39 +2,447 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #050505;
-  background: #ffffff;
-  line-height: 1.6;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  html {
+    @apply max-h-screen overflow-hidden text-base antialiased;
   }
-  
-  .bg-dots {
-    background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
-    background-size: 20px 20px;
+
+  /* handles safari overscroll background color */
+  body:after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    z-index: -1;
+    @apply bg-white dark:bg-black;
   }
-  
-  .filter-blur {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+
+  /* handles dark mode in native uis */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+    }
   }
 }
 
 @layer components {
+  /* needed to override tailwind forms styles */
+  select {
+    @apply w-full px-4 py-2 border border-gray-200 rounded outline-none text-primary bg-gray-1000 bg-opacity-5 hover:bg-opacity-10 focus:border-gray-1000 focus:outline-none focus:ring-0 dark:border-gray-800 dark:bg-white dark:focus:border-gray-600;
+  }
+
+  button:focus,
+  a:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-blue-500 dark:ring-offset-black;
+  }
+
+  button:active:not(:focus-visible),
+  a:active:not(:focus-visible),
+  button:focus:not(:focus-visible),
+  a:focus:not(:focus-visible) {
+    @apply outline-none ring-0 ring-offset-0;
+  }
+
+  input[type='text'],
+  textarea {
+    @apply bg-white border border-gray-200 outline-none dark:border-gray-700 dark:bg-gray-800;
+  }
+
+  input[type='checkbox'] {
+    @apply dark:border-gray-600 dark:bg-gray-700;
+  }
+
+  input:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-black;
+  }
+
+  .font-list-heading {
+    @apply font-sans text-lg font-bold text-primary;
+  }
+
+  .tabbed-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-dots {
+    background: linear-gradient(90deg, #f9fafb 15px, transparent 1%) center,
+      linear-gradient(#f9fafb 15px, transparent 1%) center, rgba(0, 0, 0, 0.24);
+    background-size: 16px 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .bg-dots {
+      background: linear-gradient(90deg, #050505 15px, transparent 1%) center,
+        linear-gradient(#050505 15px, transparent 1%) center,
+        rgba(255, 255, 255, 0.16);
+      background-size: 16px 16px;
+    }
+  }
+
   .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    @apply text-gray-1000 dark:text-gray-100;
+  }
+
+  .text-secondary {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .text-tertiary {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+
+  .text-quaternary {
+    @apply text-gray-400 dark:text-gray-500;
+  }
+
+  .bg-elevated {
+    @apply bg-gray-400 bg-opacity-5 dark:bg-gray-50;
+  }
+
+  .filter-none {
+    filter: none;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .filter-saturate {
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+  }
+
+  .filter-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .highlight-link-hover {
+    @apply -mx-0.5 rounded-sm bg-opacity-20 px-0.5 text-gray-1000 no-underline dark:bg-opacity-100 dark:text-gray-300 md:hover:bg-yellow-400 md:hover:bg-opacity-30 md:dark:hover:bg-yellow-500 md:dark:hover:bg-opacity-100 md:dark:hover:text-gray-1000;
+  }
+
+  .highlight-link {
+    @apply -mx-0.5 bg-opacity-20 px-0.5 text-gray-1000 dark:bg-gray-100 dark:bg-opacity-20 dark:text-gray-300 md:hover:bg-opacity-30 md:dark:hover:bg-yellow-500 md:dark:hover:bg-opacity-100 md:dark:hover:text-gray-1000;
+  }
+
+  .blink {
+    animation: blink-animation 1.5s steps(2, start) infinite;
+    -webkit-animation: blink-animation 1.5s steps(2, start) infinite;
+  }
+
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  .ripple {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    animation: ripple 2s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  @keyframes ripple {
+    0% {
+      opacity: 0.8;
+      transform: scale(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .meta-wrap {
+    background: transparent;
+    animation: 48s spin ease-in-out infinite;
+    -webkit-filter: brightness(105%) saturate(200%) contrast(1);
+    filter: brightness(105%) saturate(200%) contrast(1);
+    border-radius: 16px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .meta:before,
+  .meta:after {
+    content: '';
+    position: absolute;
+    width: 1024px;
+    height: 1024px;
+    left: 50%;
+    top: 50%;
+    margin: -50px;
+    background: linear-gradient(#ff9900, #ff007a);
+    border-radius: 50%;
+    -webkit-filter: blur(60px);
+    filter: blur(60px);
+    animation: move 100s infinite alternate ease-in-out;
+  }
+
+  .meta.small:before,
+  .meta.small:after {
+    width: 196px;
+    height: 196px;
+  }
+
+  .meta:before {
+    animation-duration: 29.3s;
+    animation-delay: -3.3s;
+  }
+
+  .meta:nth-child(2):before {
+    animation-duration: 34.7s;
+    animation-delay: -2.7s;
+  }
+
+  .meta:nth-child(2):after {
+    animation-duration: 28.7s;
+    animation-delay: -5.32s;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(0%, 2%);
+    }
+    15% {
+      transform: translate(-20%, 20%);
+    }
+    30% {
+      transform: translate(30%, -30%);
+    }
+    40% {
+      transform: translate(-20%, 20%);
+    }
+    60% {
+      transform: translate(20%, -20%);
+    }
+    80% {
+      transform: translate(-20%, -10%);
+    }
+    100% {
+      transform: translate(20%, 10%);
+    }
+  }
+}
+
+/* Prose styles for blog content - briOS style */
+.prose {
+  @apply text-gray-700 dark:text-gray-400 max-w-none;
+}
+
+.prose blockquote {
+  @apply font-normal border-l-2 border-gray-200 dark:border-gray-800 dark:text-gray-400;
+}
+
+.prose figure {
+  @apply md:-mx-6;
+}
+
+.prose img {
+  @apply w-full rounded-md;
+}
+
+.prose a {
+  @apply font-normal text-blue-600 no-underline break-words hover:underline dark:text-blue-500;
+}
+
+.prose a code {
+  @apply text-blue-600 dark:text-blue-500;
+}
+
+.prose table {
+  @apply my-2 border border-gray-200 rounded-md text-gray-1000 dark:border-gray-800 dark:text-gray-50;
+}
+
+.prose.comment table {
+  @apply my-2;
+}
+
+.prose thead {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.prose thead th {
+  @apply p-2;
+  padding-left: 1rem !important;
+}
+
+.prose thead th,
+.prose tbody th,
+.prose tbody td {
+  @apply p-2 border-r border-gray-200 dark:border-gray-800;
+  padding-left: 1rem !important;
+}
+
+.prose tbody tr {
+  @apply border-b border-gray-200 dark:border-gray-800;
+}
+
+.prose thead tr {
+  @apply border-b-2 border-gray-200 dark:border-gray-800;
+}
+
+.prose tbody tr:nth-child(2n) {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
+.prose b,
+.prose strong {
+  @apply font-bold text-gray-900 dark:text-gray-300;
+}
+
+.prose hr {
+  @apply border-gray-200 dark:border-gray-800;
+}
+
+/* the kg-embed-card gets applied to iframes sent from Ghost. this preserves a good video aspect ratio */
+.prose .kg-embed-card {
+  @apply my-4;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.prose .kg-embed-card iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply font-sans font-bold text-gray-900 dark:text-gray-100;
+  scroll-margin-top: 4rem;
+}
+
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a,
+.prose h5 a,
+.prose h6 a {
+  @apply font-sans font-bold no-underline text-gray-1000 dark:text-gray-100;
+}
+
+.prose h5 {
+  @apply mt-12 -mb-3 text-xl;
+}
+
+.prose pre {
+  @apply px-8 py-6 space-y-4 text-sm text-gray-800 bg-gray-400 border-gray-300 rounded-md bg-opacity-5 dark:border-gray-800 dark:text-gray-200;
+}
+
+.prose.comment {
+  @apply max-w-none;
+}
+
+.prose.comment pre {
+  @apply px-3 py-2 my-2;
+}
+
+/* this is needed to avoid HN comments from overflowing off the right edge of the screen */
+.prose p {
+  @apply break-words;
+  word-break: break-word;
+}
+
+.prose.comment p,
+.prose.comment ul,
+.prose.comment ol {
+  @apply my-3;
+}
+
+.prose.comment p:first-of-type {
+  margin-top: 0 !important;
+}
+
+.prose.comment p + p {
+  margin-top: 0;
+}
+
+.prose.comment pre {
+  @apply my-3;
+}
+
+.prose.comment a {
+  @apply break-all;
+}
+
+.prose p + p {
+  margin-top: 0;
+}
+
+.prose code {
+  @apply rounded-md border-gray-100 bg-gray-100 px-1 py-0.5 text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200;
+}
+
+.prose code,
+.prose pre {
+  @apply text-sm font-medium whitespace-pre-wrap;
+  word-break: break-word;
+}
+
+.prose pre > code {
+  @apply text-gray-200 bg-gray-800;
+}
+
+.prose pre {
+  @apply text-gray-100 bg-gray-800;
+}
+
+.prose sup {
+  @apply text-sm text-blue-500 dark:text-gray-400;
+  vertical-align: super;
+  top: 0px;
+  position: relative;
+  scroll-margin-top: 4rem;
 }

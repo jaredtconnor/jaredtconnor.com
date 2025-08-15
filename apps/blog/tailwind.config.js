@@ -1,5 +1,16 @@
 const colors = require('tailwindcss/colors')
 
+const mono = [
+  'ui-monospace',
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Liberation Mono',
+  'Courier New',
+  'monospace',
+]
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -45,6 +56,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono,
       },
       maxWidth: {
         'content': '800px',
@@ -58,6 +70,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 }
 

@@ -1,6 +1,50 @@
-import Link from 'next/link'
-import { ListDetailView } from '@/components/layouts'
 import { getPosts, type Post } from '@repo/db'
+import { DetailLayout, SectionTitle, SectionContent, SectionContainer, TableRow } from '@/components/shared/DetailLayout'
+
+const projects = [
+  {
+    href: '/projects',
+    title: 'Personal Blog Platform',
+    subtitle: '',
+    date: '2024',
+    internal: true,
+  },
+  {
+    href: '/projects',
+    title: 'Financial Data Pipeline',
+    subtitle: '',
+    date: '2023',
+    internal: true,
+  },
+  {
+    href: '/projects',
+    title: 'Analytics Dashboard',
+    subtitle: '',
+    date: '2023',
+    internal: true,
+  },
+]
+
+const workHistory = [
+  {
+    href: '#',
+    title: 'Senior Software Engineer',
+    subtitle: 'Building scalable data systems',
+    date: '2023—Present',
+  },
+  {
+    href: '#',
+    title: 'Data Engineer',
+    subtitle: 'Financial data platforms',
+    date: '2021—23',
+  },
+  {
+    href: '#',
+    title: 'Financial Analyst',
+    subtitle: 'Investment analysis and modeling',
+    date: '2019—21',
+  },
+]
 
 export default async function HomePage() {
   let recentPosts: Post[] = []
@@ -37,190 +81,102 @@ export default async function HomePage() {
   }
 
   return (
-    <ListDetailView
-      list={
-        <div className="flex flex-col space-y-16 p-8 pb-16">
-          {/* Me */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-1000 mb-6">Me</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                I&apos;m a developer, data engineer, and financial analyst. I build scalable systems 
-                and explore the intersection of data, finance, and technology.
-              </p>
-              <p>
-                I work with modern web technologies, distributed systems, and data pipelines. 
-                I&apos;m passionate about building tools that help teams make better decisions with data.
-              </p>
+    <DetailLayout data-cy="home-intro">
+      <SectionContainer>
+        <SectionTitle />
+        <SectionContent>
+          <div className="prose text-primary">
+            <p>
+              Hey, I&apos;m Jared. I&apos;m a developer, data engineer, and financial analyst. 
+              I build scalable systems and explore the intersection of data, finance, and technology.
+            </p>
+            <p>
+              I work with modern web technologies, distributed systems, and data pipelines. 
+              I&apos;m passionate about building tools that help teams make better decisions with data.
+            </p>
+          </div>
+        </SectionContent>
+      </SectionContainer>
+
+      <SectionContainer>
+        <SectionTitle>Online</SectionTitle>
+        <SectionContent>
+          <div className="flex flex-col gap-5 lg:gap-3">
+            <TableRow
+              href="https://github.com/jaredtconnor"
+              title="GitHub"
+              subtitle="Follow"
+              date=""
+            />
+            <TableRow
+              href="https://linkedin.com/in/jaredtconnor"
+              title="LinkedIn"
+              subtitle="Connect"
+              date=""
+            />
+            <TableRow
+              href="https://twitter.com/jaredtconnor"
+              title="Twitter"
+              subtitle="Follow"
+              date=""
+            />
+          </div>
+        </SectionContent>
+      </SectionContainer>
+
+      {recentPosts.length > 0 && (
+        <SectionContainer>
+          <SectionTitle>Writing</SectionTitle>
+          <SectionContent>
+            <div className="flex flex-col space-y-3">
+              {recentPosts.slice(0, 5).map((post) => (
+                <TableRow
+                  key={post.id}
+                  internal
+                  href={`/writing/${post.slug}`}
+                  title={post.title}
+                  date={post.publishedDate ? new Date(post.publishedDate).getFullYear().toString() : undefined}
+                />
+              ))}
             </div>
-          </section>
+          </SectionContent>
+        </SectionContainer>
+      )}
 
-          {/* Online */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-1000 mb-6">Online</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  href="https://github.com/jaredtconnor" 
-                  className="text-gray-700 hover:text-gray-1000 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="https://linkedin.com/in/jaredtconnor" 
-                  className="text-gray-700 hover:text-gray-1000 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="https://twitter.com/jaredtconnor" 
-                  className="text-gray-700 hover:text-gray-1000 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Twitter
-                </Link>
-              </li>
-            </ul>
-          </section>
+      <SectionContainer>
+        <SectionTitle>Work</SectionTitle>
+        <SectionContent>
+          <div className="flex flex-col space-y-3">
+            {workHistory.map((job) => (
+              <TableRow
+                href={job.href}
+                title={job.title}
+                subtitle={job.subtitle}
+                date={job.date}
+                key={job.title}
+              />
+            ))}
+          </div>
+        </SectionContent>
+      </SectionContainer>
 
-          {/* Writing */}
-          {recentPosts.length > 0 && (
-            <section>
-              <h2 className="text-2xl font-semibold text-gray-1000 mb-6">Writing</h2>
-              <ul className="space-y-4">
-                {recentPosts.slice(0, 5).map((post) => (
-                  <li key={post.id} className="flex justify-between items-start">
-                    <Link 
-                      href={`/writing/${post.slug}`}
-                      className="text-gray-700 hover:text-gray-1000 transition-colors flex-1"
-                    >
-                      {post.title}
-                    </Link>
-                    {post.publishedDate && (
-                      <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                        {new Date(post.publishedDate).getFullYear()}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <Link 
-                  href="/writing"
-                  className="text-gray-700 hover:text-gray-1000 transition-colors"
-                >
-                  View all writing →
-                </Link>
-              </div>
-            </section>
-          )}
-
-          {/* Projects */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-1000 mb-6">Projects</h2>
-            <ul className="space-y-4">
-              <li className="flex justify-between items-start">
-                <Link 
-                  href="/projects/blog-platform"
-                  className="text-gray-700 hover:text-gray-1000 transition-colors flex-1"
-                >
-                  Personal Blog Platform
-                </Link>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2024
-                </span>
-              </li>
-              <li className="flex justify-between items-start">
-                <Link 
-                  href="/projects/data-pipeline"
-                  className="text-gray-700 hover:text-gray-1000 transition-colors flex-1"
-                >
-                  Financial Data Pipeline
-                </Link>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2023
-                </span>
-              </li>
-              <li className="flex justify-between items-start">
-                <Link 
-                  href="/projects/analytics-dashboard"
-                  className="text-gray-700 hover:text-gray-1000 transition-colors flex-1"
-                >
-                  Analytics Dashboard
-                </Link>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2023
-                </span>
-              </li>
-            </ul>
-            <div className="mt-6">
-              <Link 
-                href="/projects"
-                className="text-gray-700 hover:text-gray-1000 transition-colors"
-              >
-                View all projects →
-              </Link>
-            </div>
-          </section>
-
-          {/* Work */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-1000 mb-6">Work</h2>
-            <ul className="space-y-4">
-              <li className="flex justify-between items-start">
-                <div className="flex-1">
-                  <div className="text-gray-700 hover:text-gray-1000 transition-colors">
-                    Senior Software Engineer
-                  </div>
-                  <div className="text-gray-500 text-sm">
-                    Building scalable data systems
-                  </div>
-                </div>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2023–Present
-                </span>
-              </li>
-              <li className="flex justify-between items-start">
-                <div className="flex-1">
-                  <div className="text-gray-700 hover:text-gray-1000 transition-colors">
-                    Data Engineer
-                  </div>
-                  <div className="text-gray-500 text-sm">
-                    Financial data platforms
-                  </div>
-                </div>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2021–2023
-                </span>
-              </li>
-              <li className="flex justify-between items-start">
-                <div className="flex-1">
-                  <div className="text-gray-700 hover:text-gray-1000 transition-colors">
-                    Financial Analyst
-                  </div>
-                  <div className="text-gray-500 text-sm">
-                    Investment analysis and modeling
-                  </div>
-                </div>
-                <span className="text-gray-500 text-sm ml-4 flex-shrink-0">
-                  2019–2021
-                </span>
-              </li>
-            </ul>
-          </section>
-        </div>
-      }
-      hasDetail={false}
-      detail={null}
-    />
+      <SectionContainer>
+        <SectionTitle>Projects</SectionTitle>
+        <SectionContent>
+          <div className="flex flex-col gap-5 lg:gap-3">
+            {projects.map((project) => (
+              <TableRow
+                internal={project.internal}
+                href={project.href}
+                title={project.title}
+                subtitle={project.subtitle}
+                date={project.date}
+                key={project.title}
+              />
+            ))}
+          </div>
+        </SectionContent>
+      </SectionContainer>
+    </DetailLayout>
   )
 }

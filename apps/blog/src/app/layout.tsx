@@ -1,27 +1,28 @@
-import { Inter } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { SiteLayout } from '@/components/layouts';
-import { GlobalNavigationProvider } from '@/components/providers';
-import './globals.css';
+import { Inter } from 'next/font/google'
+import { cn } from '@/lib/utils'
+import { SiteLayout } from '@/components/Layouts'
+import { GlobalNavigationProvider } from '@/components/providers'
+import './globals.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-});
+  variable: '--font-inter'
+})
 
 export const metadata = {
-  title: 'Jared Connor',
-  description: 'Developer, data engineer, and financial analyst. Building scalable systems and exploring the intersection of data, finance, and technology.',
-};
+  title: 'Jared Connor - Designer & Developer',
+  description: 'Personal blog and portfolio of Jared Connor. Developer, data engineer, and financial analyst building scalable systems.',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, 'antialiased')}>
+    <html lang="en" className={inter.variable}>
+      <body className={cn('font-sans antialiased', inter.className)}>
         <GlobalNavigationProvider>
           <SiteLayout>
             {children}
@@ -29,5 +30,5 @@ export default function RootLayout({
         </GlobalNavigationProvider>
       </body>
     </html>
-  );
+  )
 }
