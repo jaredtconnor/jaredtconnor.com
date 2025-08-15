@@ -1,4 +1,4 @@
-import { ListDetailView } from '@/components/Layouts'
+import { ListDetailView } from '@/components/layouts'
 import { Detail } from '@/components/ListDetail/Detail'
 
 interface ListLayoutProps {

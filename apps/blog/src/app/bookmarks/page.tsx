@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ListDetailView } from '@/components/Layouts'
+import { ListDetailView } from '@/components/layouts'
 import { getBookmarks } from '@/lib/payload'
 import type { Bookmark } from '@repo/db'
 

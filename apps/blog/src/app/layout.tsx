@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import { SiteLayout } from '@/components/Layouts'
+import { SiteLayout } from '@/components/layouts'
 import { GlobalNavigationProvider } from '@/components/providers'
 import './globals.css'
 
