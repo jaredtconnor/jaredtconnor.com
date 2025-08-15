@@ -41,7 +41,7 @@ export default buildConfig({
     schemaName: 'payload',
     migrationDir: './migrations',
   }),
-  sharp,
+  sharp: sharp as any,
   plugins: [
     payloadCloudPlugin(),
     s3Storage({
