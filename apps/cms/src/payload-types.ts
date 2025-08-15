@@ -72,6 +72,7 @@ export interface Config {
     pages: Page;
     projects: Project;
     tags: Tag;
+    bookmarks: Bookmark;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -84,6 +85,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
+    bookmarks: BookmarksSelect<false> | BookmarksSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -543,6 +545,180 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookmarks".
+ */
+export interface Bookmark {
+  id: number;
+  /**
+   * Unique identifier from Instapaper API
+   */
+  instapaperID?: string | null;
+  /**
+   * The bookmark URL
+   */
+  url: string;
+  /**
+   * Bookmark title (from Instapaper or manually entered)
+   */
+  title: string;
+  /**
+   * Original description from the source
+   */
+  description?: string | null;
+  /**
+   * Data synced from Instapaper
+   */
+  instapaperData?: {
+    /**
+     * Starred in Instapaper
+     */
+    starred?: boolean | null;
+    /**
+     * Reading progress (0-1) from Instapaper
+     */
+    readingProgress?: number | null;
+    /**
+     * When bookmark was added to Instapaper
+     */
+    addedAt?: string | null;
+  };
+  /**
+   * Feature this bookmark prominently
+   */
+  featured?: boolean | null;
+  /**
+   * Your commentary and thoughts about this bookmark (public)
+   */
+  publicNote?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Private notes (only visible in admin)
+   */
+  privateNote?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Categorize this bookmark
+   */
+  tags?: (number | Tag)[] | null;
+  /**
+   * Primary category for this bookmark
+   */
+  category?:
+    | (
+        | 'development'
+        | 'design'
+        | 'technology'
+        | 'business'
+        | 'personal'
+        | 'tutorial'
+        | 'article'
+        | 'tool'
+        | 'resource'
+        | 'other'
+      )
+    | null;
+  /**
+   * Publication status
+   */
+  status: 'draft' | 'published' | 'archived';
+  /**
+   * When this bookmark should be published
+   */
+  publishedAt?: string | null;
+  /**
+   * Automatically extracted from the URL
+   */
+  metadata?: {
+    /**
+     * Domain name (e.g., github.com)
+     */
+    host?: string | null;
+    /**
+     * URL to the site favicon
+     */
+    faviconUrl?: string | null;
+    /**
+     * Featured image URL (og:image)
+     */
+    image?: string | null;
+    /**
+     * Content author if available
+     */
+    author?: string | null;
+    /**
+     * Original publication date
+     */
+    publishDate?: string | null;
+    /**
+     * Estimated reading time in minutes
+     */
+    readingTime?: number | null;
+    /**
+     * Content language
+     */
+    language?: string | null;
+    /**
+     * Extracted keywords
+     */
+    keywords?: string | null;
+  };
+  /**
+   * Sync status with Instapaper
+   */
+  syncStatus: 'synced' | 'pending' | 'error' | 'manual';
+  /**
+   * Last successful sync with Instapaper
+   */
+  lastSyncedAt?: string | null;
+  /**
+   * Error message from last sync attempt
+   */
+  syncError?: string | null;
+  seo?: {
+    /**
+     * Custom SEO title (falls back to bookmark title)
+     */
+    title?: string | null;
+    /**
+     * Meta description for search engines
+     */
+    description?: string | null;
+    /**
+     * Comma-separated keywords
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -567,6 +743,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'tags';
         value: number | Tag;
+      } | null)
+    | ({
+        relationTo: 'bookmarks';
+        value: number | Bookmark;
       } | null)
     | ({
         relationTo: 'media';
@@ -761,6 +941,54 @@ export interface TagsSelect<T extends boolean = true> {
   description?: T;
   color?: T;
   icon?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bookmarks_select".
+ */
+export interface BookmarksSelect<T extends boolean = true> {
+  instapaperID?: T;
+  url?: T;
+  title?: T;
+  description?: T;
+  instapaperData?:
+    | T
+    | {
+        starred?: T;
+        readingProgress?: T;
+        addedAt?: T;
+      };
+  featured?: T;
+  publicNote?: T;
+  privateNote?: T;
+  tags?: T;
+  category?: T;
+  status?: T;
+  publishedAt?: T;
+  metadata?:
+    | T
+    | {
+        host?: T;
+        faviconUrl?: T;
+        image?: T;
+        author?: T;
+        publishDate?: T;
+        readingTime?: T;
+        language?: T;
+        keywords?: T;
+      };
+  syncStatus?: T;
+  lastSyncedAt?: T;
+  syncError?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

@@ -68,6 +68,46 @@ export interface Tag {
   updatedAt: string
 }
 
+export interface Bookmark {
+  id: string
+  instapaperID?: string
+  url: string
+  title: string
+  description?: string
+  featured?: boolean
+  publicNote?: any
+  privateNote?: any
+  tags?: Tag[]
+  category?: 'development' | 'design' | 'technology' | 'business' | 'personal' | 'tutorial' | 'article' | 'tool' | 'resource' | 'other'
+  status: 'draft' | 'published' | 'archived'
+  publishedAt?: string
+  instapaperData?: {
+    starred: boolean
+    readingProgress: number
+    addedAt: string
+  }
+  metadata?: {
+    host: string
+    faviconUrl?: string
+    image?: string
+    author?: string
+    publishDate?: string
+    readingTime?: number
+    language?: string
+    keywords?: string
+  }
+  syncStatus: 'synced' | 'pending' | 'error' | 'manual'
+  lastSyncedAt?: string
+  syncError?: string
+  seo?: {
+    title?: string
+    description?: string
+    keywords?: string
+  }
+  createdAt: string
+  updatedAt: string
+}
+
 export interface User {
   id: string
   email: string

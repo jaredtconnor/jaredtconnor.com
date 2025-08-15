@@ -14,6 +14,7 @@ import type {
   Tag, 
   User, 
   Media,
+  Bookmark,
   SiteSettings,
   ContentQuery,
   ContentResponse 
@@ -61,6 +62,7 @@ export type {
   Tag,
   User,
   Media,
+  Bookmark,
   SiteSettings,
   ContentQuery,
   ContentResponse
@@ -193,6 +195,21 @@ export async function getMedia(query: ContentQuery = {}): Promise<ContentRespons
 export async function getMediaItem(id: string, depth = 1): Promise<Media | null> {
   try {
     return await fetchContent<Media>('media', 'findByID', { id, depth })
+  } catch (error) {
+    if (error instanceof PayloadNotFoundError) {
+      return null
+    }
+    throw error
+  }
+}
+
+export async function getBookmarks(query: ContentQuery = {}): Promise<ContentResponse<Bookmark>> {
+  return fetchContent<ContentResponse<Bookmark>>('bookmarks', 'find', query)
+}
+
+export async function getBookmark(id: string, depth = 1): Promise<Bookmark | null> {
+  try {
+    return await fetchContent<Bookmark>('bookmarks', 'findByID', { id, depth })
   } catch (error) {
     if (error instanceof PayloadNotFoundError) {
       return null

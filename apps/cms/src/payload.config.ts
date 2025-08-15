@@ -14,6 +14,7 @@ import { Posts } from './collections/Posts'
 import { Pages } from './collections/Pages'
 import { Projects } from './collections/Projects'
 import { Tags } from './collections/Tags'
+import { Bookmarks } from './collections/Bookmarks'
 import { SiteSettings } from './globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
@@ -26,7 +27,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Posts, Pages, Projects, Tags, Media],
+  collections: [Users, Posts, Pages, Projects, Tags, Bookmarks, Media],
   globals: [SiteSettings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
