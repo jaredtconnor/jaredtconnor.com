@@ -13,7 +13,7 @@ const siteInfo = await getSiteInfoWithFallback();
 <header class="fixed top-0 left-0 right-0 z-50 py-5 bg-gradient-to-b backdrop-blur-sm saturate-200 from-zinc-100 via-zinc-100 via-35% to-zinc-100/5 dark:from-zinc-900 dark:via-zinc-900 dark:via-35% dark:to-zinc-900/5">
   <div class="mx-auto max-w-screen-sm px-6">
     <div class="flex flex-nowrap items-center justify-between">
-      <a href="/" aria-label={`Go to ${siteInfo?.siteName || 'home page'}`}>
+      <a href="/" aria-label={`Go to ${siteInfo?.siteName || "home page"}`}>
         {siteInfo?.logo ? (
           <img 
             src={siteInfo.logo.url} 
@@ -21,7 +21,6 @@ const siteInfo = await getSiteInfoWithFallback();
             class="w-8 h-8 object-contain"
           />
         ) : (
-          <!-- Minimal, Clean Abstract SVG Logo -->
           <svg id="brand" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="13" class="fill-zinc-900 dark:fill-zinc-100"/>
             <circle cx="16" cy="16" r="7" class="fill-zinc-100 dark:fill-zinc-900"/>

@@ -22,11 +22,19 @@
     "cms:types": "turbo run generate:types --filter=@repo/cms",
     "cms:migrate": "turbo run migrate --filter=@repo/cms",
     "sst:dev": "sst dev",
-    "sst:deploy:dev": "sst deploy --stage dev",
-    "sst:deploy:staging": "sst deploy --stage staging",
-    "sst:deploy:prod": "sst deploy --stage production",
+    "sst:deploy": "sst deploy",
+    "sst:deploy:development": "sst deploy --stage development",
+    "sst:deploy:staging": "sst deploy --stage staging", 
+    "sst:deploy:production": "sst deploy --stage production",
     "sst:remove": "sst remove",
-    "sst:console": "sst console"
+    "sst:remove:development": "sst remove --stage development",
+    "sst:remove:staging": "sst remove --stage staging",
+    "sst:remove:jaredconnor": "sst remove --stage jaredconnor",
+    "sst:console": "sst console",
+    "sst:secret": "sst secret",
+    "cleanup": "./scripts/cleanup.sh",
+    "cleanup:jaredconnor": "./scripts/cleanup.sh jaredconnor",
+    "cleanup:local": "./scripts/cleanup.sh local"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",

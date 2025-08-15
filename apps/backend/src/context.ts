@@ -20,7 +20,7 @@ export type Context = inferAsyncReturnType<typeof createContext>;
 export function getMediaBucketName(): string {
   // In SST development/production, this will be available via Resource linking
   try {
-    // @ts-ignore - SST Resource is injected at runtime
+    // @ts-expect-error - SST Resource is injected at runtime
     return Resource?.MediaBucket?.name || process.env.MEDIA_BUCKET_NAME || '';
   } catch {
     return process.env.MEDIA_BUCKET_NAME || '';

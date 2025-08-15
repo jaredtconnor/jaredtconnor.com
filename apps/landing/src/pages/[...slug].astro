@@ -9,6 +9,7 @@ import {
   buildPageTitle,
   buildPageDescription
 } from "@utils/cms";
+import type { Page } from "@repo/db";
 
 export async function getStaticPaths() {
   // Initialize CMS
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
   try {
     const { getPages } = await import("@repo/db");
     const pagesResponse = await getPages({
-      where: { status: { equals: 'published' } },
+      where: { status: { equals: "published" } },
     });
     
     return pagesResponse.docs.map((page) => ({
@@ -25,7 +26,7 @@ export async function getStaticPaths() {
       props: { page },
     }));
   } catch (error) {
-    console.error('Failed to fetch pages for static paths:', error);
+    console.error("Failed to fetch pages for static paths:", error);
     return [];
   }
 }
@@ -34,7 +35,7 @@ const { slug } = Astro.params;
 const { page } = Astro.props;
 
 // Fallback: try to fetch the page if not provided via props
-let pageData: any = page;
+let pageData: Page | null = page;
 if (!pageData && slug) {
   pageData = await getPageBySlug(slug as string);
 }
@@ -43,7 +44,7 @@ if (!pageData && slug) {
 if (!pageData) {
   return new Response(null, {
     status: 404,
-    statusText: 'Page not found'
+    statusText: "Page not found"
   });
 }
 

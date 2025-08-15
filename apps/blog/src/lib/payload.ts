@@ -1,5 +1,8 @@
 import { getPosts as getPostsFromDB, getBookmarks as getBookmarksFromDB, type Bookmark } from '@repo/db'
 
+// Re-export types for components
+export type { Bookmark }
+
 // Re-export the database functions with cleaner names
 export const getPosts = async () => {
   try {

@@ -7,23 +7,23 @@ import {
   buildPageTitle,
   buildPageDescription
 } from "@utils/cms";
-import { getProjects } from "@repo/db";
+import { getProjects, type Project } from "@repo/db";
 
 // Initialize CMS
 await import("@utils/cms").then(m => m.initializeCMS());
 
 // Fetch CMS data at build time
 const siteSettings = await getSiteSettingsWithFallback();
-let projects: any[] = [];
+let projects: Project[] = [];
 
 try {
   const projectsResponse = await getProjects({
-    where: { status: { not_equals: 'draft' } },
-    sort: '-createdAt'
+    where: { status: { not_equals: "draft" } },
+    sort: "-createdAt"
   });
   projects = projectsResponse.docs;
 } catch (error) {
-  console.error('Failed to fetch projects:', error);
+  console.error("Failed to fetch projects:", error);
 }
 
 // Build page metadata
@@ -82,7 +82,7 @@ const pageDescription = buildPageDescription(
                   
                   {project.links && project.links.length > 0 && (
                     <div class="flex flex-wrap gap-3">
-                      {project.links.map((link: any) => (
+                      {project.links.map((link) => (
                         <Link href={link.url} external>
                           {link.label}
                         </Link>
@@ -94,7 +94,7 @@ const pageDescription = buildPageDescription(
               
               {project.gallery && project.gallery.length > 0 && (
                 <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {project.gallery.slice(0, 6).map((image: any) => (
+                  {project.gallery.slice(0, 6).map((image) => (
                     <div class="aspect-video overflow-hidden rounded-md">
                       <img 
                         src={image.url} 

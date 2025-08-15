@@ -16,17 +16,22 @@ export const config = [
   {
     plugins: {
       turbo: turboPlugin,
+      onlyWarn,
     },
     rules: {
       "turbo/no-undeclared-env-vars": "warn",
+      // Fix for typescript-eslint compatibility
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        {
+          allowShortCircuit: true,
+          allowTernary: true,
+          allowTaggedTemplates: true,
+        },
+      ],
     },
   },
   {
-    plugins: {
-      onlyWarn,
-    },
-  },
-  {
-    ignores: ["dist/**"],
+    ignores: ["dist/**", "node_modules/**", ".next/**", ".astro/**"],
   },
 ];

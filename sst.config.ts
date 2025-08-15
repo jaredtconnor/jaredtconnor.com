@@ -9,12 +9,19 @@ export default $config({
       providers: {
         aws: {
           region: "us-west-2",
+          // Don't use profile in CI/CD
+          profile: process.env.GITHUB_ACTIONS ? undefined : undefined,
         },
       },
     };
   },
   async run() {
-    console.log("Starting optimized SST deployment...");
+    console.log(`Starting SST deployment for stage: ${$app.stage}...`);
+    
+    // Environment-specific configuration
+    const isProd = $app.stage === "production";
+    const isStaging = $app.stage === "staging";
+    const isDev = $app.stage === "development";
     
     // Secrets - create once, reference multiple times
     const databaseUrl = new sst.Secret("DatabaseUrl");
@@ -47,11 +54,13 @@ export default $config({
         command: "pnpm build",
         output: "dist",
       },
-      domain: $app.stage === "production" 
+      domain: isProd 
         ? {
             name: "jaredconnor.dev",
             redirects: ["www.jaredconnor.dev"],
           }
+        : isStaging
+        ? "staging.jaredconnor.dev"
         : undefined,
     });
 
@@ -62,12 +71,16 @@ export default $config({
       environment: {
         DATABASE_URL: databaseUrl.value,
         NEXTAUTH_SECRET: nextAuthSecret.value,
-        NEXTAUTH_URL: $app.stage === "production" 
-          ? "https://blog.jaredconnor.dev" 
+        NEXTAUTH_URL: isProd
+          ? "https://blog.jaredconnor.dev"
+          : isStaging
+          ? "https://blog-staging.jaredconnor.dev"
           : "http://localhost:3002",
       },
-      domain: $app.stage === "production" 
-        ? "blog.jaredconnor.dev" 
+      domain: isProd
+        ? "blog.jaredconnor.dev"
+        : isStaging
+        ? "blog-staging.jaredconnor.dev"
         : undefined,
       transform: {
         server: {
@@ -87,8 +100,10 @@ export default $config({
         PAYLOAD_SECRET: payloadSecret.value,
         MEDIA_BUCKET_NAME: mediaBucket.name,
       },
-      domain: $app.stage === "production" 
-        ? "cms.jaredconnor.dev" 
+      domain: isProd
+        ? "cms.jaredconnor.dev"
+        : isStaging
+        ? "cms-staging.jaredconnor.dev"
         : undefined,
       transform: {
         server: {
@@ -99,8 +114,28 @@ export default $config({
       }
     });
 
-    console.log("Optimized SST deployment configuration complete!");
+    console.log(`SST deployment complete for ${$app.stage}!`);
+    
+    // Log deployment URLs for easy access
+    if (isProd) {
+      console.log("🚀 Production URLs:");
+      console.log("  Landing: https://jaredconnor.dev");
+      console.log("  Blog: https://blog.jaredconnor.dev");
+      console.log("  CMS: https://cms.jaredconnor.dev");
+    } else if (isStaging) {
+      console.log("🧪 Staging URLs:");
+      console.log("  Landing: https://staging.jaredconnor.dev");
+      console.log("  Blog: https://blog-staging.jaredconnor.dev");
+      console.log("  CMS: https://cms-staging.jaredconnor.dev");
+    } else {
+      console.log("🛠️ Development URLs:");
+      console.log(`  Landing: ${landingPage.url}`);
+      console.log(`  Blog: ${blogApp.url}`);
+      console.log(`  CMS: ${cmsApp.url}`);
+    }
+    
     return {
+      stage: $app.stage,
       api: api.url,
       landing: landingPage.url,
       blog: blogApp.url,
