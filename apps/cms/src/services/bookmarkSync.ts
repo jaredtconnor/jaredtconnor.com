@@ -76,7 +76,7 @@ export class BookmarkSyncService {
           if (existing) {
             // Update existing bookmark if needed
             if (forceRefresh || this.shouldUpdate(existing, instapaperBookmark)) {
-              await this.updateBookmark(existing.id, instapaperBookmark, enrichMetadata)
+              await this.updateBookmark(String(existing.id), instapaperBookmark, enrichMetadata)
               result.updated++
               console.log(`Updated bookmark: ${instapaperBookmark.title}`)
             }
@@ -178,7 +178,7 @@ export class BookmarkSyncService {
       instapaperData: {
         starred: instapaperBookmark.starred === '1',
         readingProgress: instapaperBookmark.progress,
-        addedAt: new Date(instapaperBookmark.time * 1000),
+        addedAt: new Date(instapaperBookmark.time * 1000).toISOString(),
       },
       
       // Metadata
@@ -187,16 +187,16 @@ export class BookmarkSyncService {
         faviconUrl: metadata.faviconUrl,
         image: metadata.image,
         author: metadata.author,
-        publishDate: metadata.publishDate,
+        publishDate: metadata.publishDate?.toISOString(),
         readingTime: metadata.readingTime,
         language: metadata.language,
         keywords: metadata.keywords,
       } : undefined,
       
       // Default status
-      status: 'draft',
-      syncStatus: 'synced',
-      lastSyncedAt: new Date(),
+      status: 'draft' as const,
+      syncStatus: 'synced' as const,
+      lastSyncedAt: new Date().toISOString(),
       
       // Auto-categorize based on host
       category: this.categorizeByHost(metadata?.host || new URL(instapaperBookmark.url).hostname),
@@ -235,7 +235,7 @@ export class BookmarkSyncService {
       instapaperData: {
         starred: instapaperBookmark.starred === '1',
         readingProgress: instapaperBookmark.progress,
-        addedAt: new Date(instapaperBookmark.time * 1000),
+        addedAt: new Date(instapaperBookmark.time * 1000).toISOString(),
       },
       
       // Update metadata if extracted
@@ -245,15 +245,15 @@ export class BookmarkSyncService {
           faviconUrl: metadata.faviconUrl,
           image: metadata.image,
           author: metadata.author,
-          publishDate: metadata.publishDate,
+          publishDate: metadata.publishDate?.toISOString(),
           readingTime: metadata.readingTime,
           language: metadata.language,
           keywords: metadata.keywords,
         },
       }),
       
-      syncStatus: 'synced',
-      lastSyncedAt: new Date(),
+      syncStatus: 'synced' as const,
+      lastSyncedAt: new Date().toISOString(),
     }
 
     return await this.payload.update({
@@ -266,8 +266,8 @@ export class BookmarkSyncService {
   /**
    * Auto-categorize bookmark based on hostname
    */
-  private categorizeByHost(host: string): string {
-    const categoryMap: Record<string, string> = {
+  private categorizeByHost(host: string): 'development' | 'design' | 'technology' | 'business' | 'personal' | 'tutorial' | 'article' | 'tool' | 'resource' | 'other' {
+    const categoryMap: Record<string, 'development' | 'design' | 'technology' | 'business' | 'personal' | 'tutorial' | 'article' | 'tool' | 'resource' | 'other'> = {
       'github.com': 'development',
       'stackoverflow.com': 'development',
       'dev.to': 'development',
@@ -308,7 +308,7 @@ export class BookmarkSyncService {
       const instapaper = getInstapaperService()
       const instapaperBookmark = await instapaper.addBookmark(bookmark.url, {
         title: bookmark.title,
-        description: bookmark.description,
+        description: bookmark.description || undefined,
       })
 
       // Update the bookmark with Instapaper ID
@@ -320,10 +320,10 @@ export class BookmarkSyncService {
           instapaperData: {
             starred: instapaperBookmark.starred === '1',
             readingProgress: instapaperBookmark.progress,
-            addedAt: new Date(instapaperBookmark.time * 1000),
+            addedAt: new Date(instapaperBookmark.time * 1000).toISOString(),
           },
-          syncStatus: 'synced',
-          lastSyncedAt: new Date(),
+          syncStatus: 'synced' as const,
+          lastSyncedAt: new Date().toISOString(),
         },
       })
 

@@ -5,12 +5,12 @@ import { createBookmarkSyncService } from '../../../../../../services/bookmarkSy
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const payload = await getPayload({ config })
     const syncService = createBookmarkSyncService(payload)
-    const bookmarkId = params.id
+    const { id: bookmarkId } = await context.params
 
     if (!bookmarkId) {
       return NextResponse.json(

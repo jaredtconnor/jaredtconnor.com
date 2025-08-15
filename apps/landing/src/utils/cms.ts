@@ -17,6 +17,7 @@ interface LexicalNode {
   type: string;
   children?: LexicalNode[];
   text?: string;
+  tag?: string; // For heading nodes
 }
 
 interface RichTextData {
