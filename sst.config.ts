@@ -59,9 +59,7 @@ export default $config({
             name: "jaredconnor.dev",
             redirects: ["www.jaredconnor.dev"],
           }
-        : isStaging
-        ? "staging.jaredconnor.dev"
-        : undefined,
+        : undefined, // Disable custom domains for staging and development
     });
 
     // Blog - Simplified Next.js deployment with smaller bundle
@@ -73,15 +71,11 @@ export default $config({
         NEXTAUTH_SECRET: nextAuthSecret.value,
         NEXTAUTH_URL: isProd
           ? "https://blog.jaredconnor.dev"
-          : isStaging
-          ? "https://blog-staging.jaredconnor.dev"
-          : "http://localhost:3002",
+          : $interpolate`https://${blogApp.url}`, // Use generated URL for non-prod
       },
       domain: isProd
         ? "blog.jaredconnor.dev"
-        : isStaging
-        ? "blog-staging.jaredconnor.dev"
-        : undefined,
+        : undefined, // Disable custom domains for staging and development
       transform: {
         server: {
           architecture: "arm64",
@@ -102,9 +96,7 @@ export default $config({
       },
       domain: isProd
         ? "cms.jaredconnor.dev"
-        : isStaging
-        ? "cms-staging.jaredconnor.dev"
-        : undefined,
+        : undefined, // Disable custom domains for staging and development
       transform: {
         server: {
           architecture: "arm64",
@@ -122,13 +114,8 @@ export default $config({
       console.log("  Landing: https://jaredconnor.dev");
       console.log("  Blog: https://blog.jaredconnor.dev");
       console.log("  CMS: https://cms.jaredconnor.dev");
-    } else if (isStaging) {
-      console.log("🧪 Staging URLs:");
-      console.log("  Landing: https://staging.jaredconnor.dev");
-      console.log("  Blog: https://blog-staging.jaredconnor.dev");
-      console.log("  CMS: https://cms-staging.jaredconnor.dev");
     } else {
-      console.log("🛠️ Development URLs:");
+      console.log(isStaging ? "🧪 Staging URLs:" : "🛠️ Development URLs:");
       console.log(`  Landing: ${landingPage.url}`);
       console.log(`  Blog: ${blogApp.url}`);
       console.log(`  CMS: ${cmsApp.url}`);
