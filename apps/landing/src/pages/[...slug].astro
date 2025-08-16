@@ -21,7 +21,7 @@ export async function getStaticPaths() {
       where: { status: { equals: "published" } },
     });
     
-    return pagesResponse.docs.map((page) => ({
+    return pagesResponse.docs.map((page: Page) => ({
       params: { slug: page.slug },
       props: { page },
     }));

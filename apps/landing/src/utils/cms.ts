@@ -83,6 +83,8 @@ export async function getSiteInfoWithFallback() {
       siteName: "Jared Connor",
       siteDescription: "Personal website and digital garden of Jared Connor",
       siteUrl: "https://jaredtconnor.com",
+      logo: undefined,
+      favicon: undefined,
     },
     "Failed to fetch site info"
   );

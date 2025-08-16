@@ -96,7 +96,7 @@ const pageDescription = buildPageDescription(
                   <p class="text-sm">{project.description}</p>
                   {project.technologies && project.technologies.length > 0 && (
                     <div class="flex flex-wrap gap-1 mt-2">
-                      {project.technologies.map((tech) => (
+                      {project.technologies.map((tech: string) => (
                         <span class="text-xs bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded">
                           {tech}
                         </span>
@@ -189,7 +189,7 @@ const pageDescription = buildPageDescription(
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">
-          {siteSettings?.socialLinks?.map((social) => (
+          {siteSettings?.socialLinks?.map((social: {platform: string, url: string, label?: string}) => (
             <li>
               <Link href={social.url} external aria-label={`Jared Connor on ${social.platform}`}>
                 {social.label || social.platform}

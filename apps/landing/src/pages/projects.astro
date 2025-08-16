@@ -7,7 +7,7 @@ import {
   buildPageTitle,
   buildPageDescription
 } from "@utils/cms";
-import { getProjects, type Project } from "@repo/db";
+import { getProjects, type Project, type Media } from "@repo/db";
 
 // Initialize CMS
 await import("@utils/cms").then(m => m.initializeCMS());
@@ -82,7 +82,7 @@ const pageDescription = buildPageDescription(
                   
                   {project.links && project.links.length > 0 && (
                     <div class="flex flex-wrap gap-3">
-                      {project.links.map((link) => (
+                      {project.links.map((link: {label: string, url: string}) => (
                         <Link href={link.url} external>
                           {link.label}
                         </Link>
@@ -94,7 +94,7 @@ const pageDescription = buildPageDescription(
               
               {project.gallery && project.gallery.length > 0 && (
                 <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {project.gallery.slice(0, 6).map((image) => (
+                  {project.gallery.slice(0, 6).map((image: Media) => (
                     <div class="aspect-video overflow-hidden rounded-md">
                       <img 
                         src={image.url} 
