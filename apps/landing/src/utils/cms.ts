@@ -31,9 +31,15 @@ export async function initializeCMS() {
   if (isInitialized) return;
   
   try {
+    // Use environment variables with proper fallbacks
+    const environment = (process.env.NODE_ENV as "development" | "staging" | "production") || "development";
+    const apiUrl = process.env.PAYLOAD_API_URL || (environment === "production" 
+      ? "https://cms.jaredconnor.dev/api" 
+      : "http://localhost:3002/api"); // Updated default port to match CMS
+    
     initializeRestClient({
-      apiUrl: process.env.PAYLOAD_API_URL || "http://localhost:3000/api",
-      environment: "development",
+      apiUrl,
+      environment,
       cache: {
         enabled: true,
         ttl: 5 * 60 * 1000, // 5 minutes for build-time caching
@@ -47,6 +53,7 @@ export async function initializeCMS() {
       },
     });
     isInitialized = true;
+    console.log(`CMS initialized for ${environment} environment with URL: ${apiUrl}`);
   } catch (error) {
     console.error("Failed to initialize CMS client:", error);
   }

@@ -47,45 +47,7 @@ export default $config({
       url: true,
     });
 
-    // Landing Page - Simple static site
-    const landingPage = new sst.aws.StaticSite("LandingPage", {
-      path: "apps/landing",
-      build: {
-        command: "pnpm build",
-        output: "dist",
-      },
-      domain: isProd 
-        ? {
-            name: "jaredconnor.dev",
-            redirects: ["www.jaredconnor.dev"],
-          }
-        : undefined, // Disable custom domains for staging and development
-    });
-
-    // Blog - Simplified Next.js deployment with smaller bundle
-    const blogApp = new sst.aws.Nextjs("BlogApp", {
-      path: "apps/blog",
-      link: [api, mediaBucket],
-      environment: {
-        DATABASE_URL: databaseUrl.value,
-        NEXTAUTH_SECRET: nextAuthSecret.value,
-        NEXTAUTH_URL: isProd
-          ? "https://blog.jaredconnor.dev"
-          : $interpolate`https://${blogApp.url}`, // Use generated URL for non-prod
-      },
-      domain: isProd
-        ? "blog.jaredconnor.dev"
-        : undefined, // Disable custom domains for staging and development
-      transform: {
-        server: {
-          architecture: "arm64",
-          timeout: "30 seconds", // Reduced timeout
-          memory: "1536 MB", // Reduced memory
-        }
-      }
-    });
-
-    // CMS - Simplified Next.js deployment
+    // CMS - Simplified Next.js deployment (moved before landing page)
     const cmsApp = new sst.aws.Nextjs("CmsApp", {
       path: "apps/cms",
       link: [mediaBucket, api],
@@ -105,6 +67,52 @@ export default $config({
         }
       }
     });
+
+    // Landing Page - Static site with CMS integration
+    const landingPage = new sst.aws.StaticSite("LandingPage", {
+      path: "apps/landing",
+      build: {
+        command: "pnpm build",
+        output: "dist",
+      },
+      environment: {
+        // Provide CMS URL for build-time data fetching
+        PAYLOAD_API_URL: isProd
+          ? "https://cms.jaredconnor.dev/api"
+          : $interpolate`https://${cmsApp.url}/api`,
+        NODE_ENV: isProd ? "production" : (isStaging ? "staging" : "development"),
+      },
+      domain: isProd 
+        ? {
+            name: "jaredconnor.dev",
+            redirects: ["www.jaredconnor.dev"],
+          }
+        : undefined, // Disable custom domains for staging and development
+    });
+
+    // Blog - Simplified Next.js deployment with smaller bundle
+    const blogApp = new sst.aws.Nextjs("BlogApp", {
+      path: "apps/blog",
+      link: [api, mediaBucket],
+      environment: {
+        DATABASE_URL: databaseUrl.value,
+        NEXTAUTH_SECRET: nextAuthSecret.value,
+        NEXTAUTH_URL: isProd
+          ? "https://blog.jaredconnor.dev"
+          : `https://${$app.name}-blogapp-${$app.stage}.vercel.app`, // Use predictable URL pattern for non-prod
+      },
+      domain: isProd
+        ? "blog.jaredconnor.dev"
+        : undefined, // Disable custom domains for staging and development
+      transform: {
+        server: {
+          architecture: "arm64",
+          timeout: "30 seconds", // Reduced timeout
+          memory: "1536 MB", // Reduced memory
+        }
+      }
+    });
+
 
     console.log(`SST deployment complete for ${$app.stage}!`);
     

@@ -94,6 +94,8 @@ jobs:
           NEXT_PUBLIC_API_URL: https://api.example.com
           NEXTAUTH_SECRET: mock-secret
           PAYLOAD_SECRET: mock-secret
+          PAYLOAD_API_URL: https://mock-cms.example.com/api
+          NODE_ENV: production
 
   deploy-development:
     runs-on: ubuntu-latest
