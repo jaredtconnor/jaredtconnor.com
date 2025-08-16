@@ -3,103 +3,217 @@ import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import Link from "@components/Link.astro";
 import { HOME } from "@consts";
+import { 
+  HeroSection, 
+  HeroContent, 
+  HeroTitle, 
+  HeroDescription,
+  TimelineWrapper,
+  ProjectGrid,
+  ThemeToggle
+} from "@repo/ui";
+
+// Work experience data
+const workExperience = [
+  {
+    period: "Oct 2017 – Present",
+    title: "Umpqua Bank",
+    subtitle: "Financial Analyst, Treasury",
+    description: "Build scalable systems and APIs, wrangle millions of records for real-time liquidity reporting. Design microservices and econometric models at the intersection of data, finance, and technology."
+  },
+  {
+    period: "Aug 2016 – Aug 2017", 
+    title: "Simple Finance",
+    subtitle: "Customer Relations"
+  }
+];
+
+// Education data
+const education = [
+  {
+    period: "2021",
+    title: "Oregon State University",
+    subtitle: "B.S. Computer Science"
+  },
+  {
+    period: "2016",
+    title: "University of Oregon", 
+    subtitle: "B.S. Economics"
+  }
+];
+
+// Projects data
+const projects = [
+  {
+    title: "Smallsh",
+    description: "A Unix-based shell written in C with support for built-in commands, I/O redirection, and signal handling.",
+    technologies: ["C", "Unix", "Systems Programming"],
+    href: "https://github.com/jaredtconnor/smallsh",
+    external: true,
+    featured: true
+  },
+  {
+    title: "Reddit Archiver", 
+    description: "Flask CRUD web application with MySQL backend for archiving and searching Reddit content.",
+    technologies: ["Python", "Flask", "MySQL", "Web Scraping"],
+    href: "https://github.com/jaredtconnor/reddit-archiver",
+    external: true
+  },
+  {
+    title: "Wikipedia Table Scraper",
+    description: "Python REST API for parsing and extracting structured data from Wikipedia tables.",
+    technologies: ["Python", "REST API", "Data Processing"],
+    href: "https://github.com/jaredtconnor/wikipedia-table-scraper", 
+    external: true
+  }
+];
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <!-- Hero Section -->
+  <HeroSection variant="gradient" className="relative">
+    <Container>
+      <HeroContent spacing="relaxed" className="max-w-4xl">
+        <div class="flex items-start justify-between mb-8">
+          <div class="flex-1">
+            <HeroTitle size="lg" gradient={true} className="mb-6">
+              Jared Connor
+            </HeroTitle>
+            <HeroDescription maxWidth="lg" className="text-xl">
+              Developer, data engineer, and financial analyst building scalable systems at the intersection of data, finance, and technology.
+            </HeroDescription>
+          </div>
+          <!-- Theme Toggle in top right -->
+          <div class="ml-8 mt-2">
+            <ThemeToggle client:load size="lg" />
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+            I build scalable systems and APIs, wrangle millions of records for real-time liquidity reporting, and love solving problems at the intersection of data, finance, and technology.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+            Whether I'm designing microservices, building econometric models, or hacking together a new shell in C, I'm always looking for ways to make an impact.
+          </p>
+        </div>
+      </HeroContent>
+    </Container>
+  </HeroSection>
+
+  <!-- Main Content -->
   <Container>
-    <div class="max-w-2xl">
-      <h1 class="animate text-3xl font-bold text-black dark:text-white mb-8">
-        Jared Connor
-      </h1>
+    <div class="max-w-4xl mx-auto space-y-24 py-16">
       
-      <section class="animate space-y-4 mb-12">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Me</h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          I'm a developer, data engineer, and financial analyst at Umpqua Bank. I build scalable systems and APIs, wrangle millions of records for real-time liquidity reporting, and love solving problems at the intersection of data, finance, and technology.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Whether I'm designing microservices, building econometric models, or hacking together a new shell in C, I'm always looking for ways to make an impact. I believe in the power of tech to solve real-world problems.
-        </p>
+      <!-- Work Experience -->
+      <section class="animate">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <span class="w-8 h-px bg-gradient-to-r from-primary-500 to-accent-purple"></span>
+          Work Experience
+        </h2>
+        <TimelineWrapper 
+          items={workExperience}
+          className="ml-4"
+          client:load
+        />
       </section>
 
-      <section class="animate space-y-4 mb-12">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Work</h2>
-        <ul class="space-y-3">
-          <li class="flex justify-between items-start">
-            <div>
-              <div class="font-medium text-black dark:text-white">Umpqua Bank</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Financial Analyst, Treasury</div>
+      <!-- Featured Projects -->
+      <section class="animate">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <span class="w-8 h-px bg-gradient-to-r from-primary-500 to-accent-purple"></span>
+          Featured Projects
+        </h2>
+        <ProjectGrid 
+          projects={projects}
+          layout="grid"
+          className="gap-6"
+          client:load
+        />
+      </section>
+
+      <!-- Education -->
+      <section class="animate">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <span class="w-8 h-px bg-gradient-to-r from-primary-500 to-accent-purple"></span>
+          Education
+        </h2>
+        <TimelineWrapper 
+          items={education}
+          className="ml-4"
+          client:load
+        />
+      </section>
+
+      <!-- Connect Section -->
+      <section class="animate">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+          <span class="w-8 h-px bg-gradient-to-r from-primary-500 to-accent-purple"></span>
+          Let's Connect
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Link 
+            href="https://github.com/jaredtconnor" 
+            external 
+            aria-label="Jared Connor on Github"
+            class="group p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span class="font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">GitHub</span>
             </div>
-            <div class="text-sm text-gray-500 dark:text-gray-500">Oct 2017 – Present</div>
-          </li>
-          <li class="flex justify-between items-start">
-            <div>
-              <div class="font-medium text-black dark:text-white">Simple Finance</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Customer Relations</div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Check out my open source projects</p>
+          </Link>
+
+          <Link 
+            href="mailto:jaredconnor301@gmail.com" 
+            aria-label="Email Jared Connor"
+            class="group p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span class="font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Email</span>
             </div>
-            <div class="text-sm text-gray-500 dark:text-gray-500">Aug 2016 – Aug 2017</div>
-          </li>
-        </ul>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Get in touch directly</p>
+          </Link>
+
+          <Link 
+            href="/blog" 
+            aria-label="Jared Connor's Blog"
+            class="group p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-lg hover:shadow-primary-500/10 dark:hover:shadow-primary-400/10 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+              </svg>
+              <span class="font-medium text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Writing</span>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Read my thoughts on tech and finance</p>
+          </Link>
+        </div>
       </section>
 
-      <section class="animate space-y-4 mb-12">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Projects</h2>
-        <ul class="space-y-2">
-          <li>
-            <a href="https://github.com/jaredtconnor/smallsh" target="_blank" class="group block">
-              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Smallsh</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">A Unix-based shell written in C</div>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jaredtconnor/reddit-archiver" target="_blank" class="group block">
-              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Reddit Archiver</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Flask CRUD web app with MySQL backend</div>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jaredtconnor/wikipedia-table-scraper" target="_blank" class="group block">
-              <div class="font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">Wikipedia Table Scraper</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">Python REST API for parsing Wikipedia tables</div>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="animate space-y-4 mb-12">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Education</h2>
-        <ul class="space-y-3">
-          <li>
-            <div class="font-medium text-black dark:text-white">Oregon State University</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">B.S. Computer Science, 2021</div>
-          </li>
-          <li>
-            <div class="font-medium text-black dark:text-white">University of Oregon</div>
-            <div class="text-sm text-gray-600 dark:text-gray-400">B.S. Economics, 2016</div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="animate space-y-4 mb-12">
-        <h2 class="text-xl font-semibold text-black dark:text-white">Online</h2>
-        <ul class="space-y-1">
-          <li>
-            <Link href="https://github.com/jaredtconnor" external aria-label="Jared Connor on Github">
-              GitHub
-            </Link>
-          </li>
-          <li>
-            <Link href="mailto:jaredconnor301@gmail.com" aria-label="Email Jared Connor">
-              Email
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog" aria-label="Jared Connor's Blog">
-              Writing
-            </Link>
-          </li>
-        </ul>
-      </section>
     </div>
   </Container>
 </PageLayout>
+
+<style>
+  .animate {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
