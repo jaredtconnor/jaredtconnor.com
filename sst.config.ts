@@ -15,6 +15,27 @@ export default $config({
       },
     };
   },
+  console: {
+    autodeploy: {
+      target: "staging",
+      async workflow({ $, event }) {
+        console.log(`Auto-deploying to staging - Action: ${event.action}`);
+        
+        // Install dependencies
+        await $`pnpm install --frozen-lockfile`;
+        
+        // Build the database package
+        await $`pnpm --filter @repo/db build`;
+        
+        // Deploy or remove based on the action
+        if (event.action === "removed") {
+          await $`pnpm sst remove --stage staging`;
+        } else {
+          await $`pnpm sst deploy --stage staging`;
+        }
+      }
+    }
+  },
   async run() {
     console.log(`Starting SST deployment for stage: ${$app.stage}...`);
     
