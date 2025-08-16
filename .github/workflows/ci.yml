@@ -126,6 +126,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build packages
+        run: pnpm --filter @repo/db build
+
       - name: Deploy to development
         run: pnpm sst deploy --stage development
         env:
