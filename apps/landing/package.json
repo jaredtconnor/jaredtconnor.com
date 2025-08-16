@@ -35,6 +35,6 @@
     "@repo/ui": "workspace:*"
   },
   "devDependencies": {
-    "@astrojs/node": "^9.2.2"
+    "@astrojs/node": "^9.4.1"
   }
 }
