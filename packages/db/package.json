@@ -8,7 +8,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "payload": "^3.39.1"
+    "payload": "^3.44.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
